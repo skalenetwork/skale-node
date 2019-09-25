@@ -1,0 +1,44 @@
+{
+  "schain": {
+    "name": "skalelabshub/schain",
+    "version": "1.0.0-develop.10",
+    "args": {
+      "security_opt": [
+        "seccomp=unconfined"
+      ],
+      "ulimits_list": [
+        {
+          "name": "core",
+          "soft": -1,
+          "hard": -1
+        }
+      ],
+      "restart_policy": {
+        "MaximumRetryCount": 10,
+        "Name": "on-failure"
+      },
+      "network": "host",
+      "volumes": {
+        "/skale_node_data": {
+          "bind": "/skale_node_data",
+          "mode": "ro"
+        }
+      }
+    }
+  },
+  "mta": {
+    "name": "skalelabshub/ima",
+    "version": "1.0.0-develop.25",
+    "args": {
+      "restart_policy": {
+        "MaximumRetryCount": 10,
+        "Name": "on-failure"
+      },
+      "network": "host",
+      "volumes": [
+        "/skale_node_data:/skale_node_data",
+        "/skale_vol:/skale_vol"
+      ]
+    }
+  }
+}

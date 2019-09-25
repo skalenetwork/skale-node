@@ -1,0 +1,85 @@
+version: '3.3'
+
+services:
+  base: &skale_base
+    image: kubernetes/pause
+    restart: always
+    labels:
+      com.skale.prefix: "node"
+    environment:
+      ENDPOINT: ${ENDPOINT}
+      MTA_ENDPOINT: ${MTA_ENDPOINT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      DB_PORT: ${DB_PORT}
+      DOCKER_USERNAME: ${DOCKER_USERNAME}
+      DOCKER_PASSWORD: ${DOCKER_PASSWORD}
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
+      FLASK_APP_PORT: 3007
+      FLASK_APP_HOST: "0.0.0.0"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /skale_vol:/skale_vol
+      - /data_dir:/data_dir
+      - /skale_node_data:/skale_node_data
+    network_mode: host
+
+  admin:
+    <<: *skale_base
+    container_name: skale_admin
+    image: skalelabshub/admin:0.3.2
+    tty: true
+    #depends_on:
+    #  - mysql
+  mysql:
+    <<: *skale_base
+    container_name: skale_mysql
+    image: mysql/mysql-server:5.7
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: "db_skale"
+    ports:
+      - ${DB_PORT}:3306
+    network_mode: bridge
+  sla:
+    <<: *skale_base
+    container_name: skale_sla
+    image: skalelabshub/sla-manager:latest
+  bounty:
+    <<: *skale_base
+    container_name: skale_bounty
+    image: skalelabshub/bounty-agent:latest
+  #events:
+  # <<: *skale_base
+  # container_name: skale_events
+  # image: skalelabshub/events-collect:latest
+  advisor:
+   <<: *skale_base
+   container_name: ash_cadvisor
+   image: google/cadvisor:latest
+   volumes:
+     - /:/rootfs:ro
+     - /var/run:/var/run:ro
+     - /sys:/sys:ro
+     - /var/lib/docker/:/var/lib/docker:ro
+     - /dev/disk/:/dev/disk:ro
+   ports:
+     - "8090:8080"
+  node-exporter:
+   <<: *skale_base
+   container_name: ash_node_exporter
+   image: quay.io/prometheus/node-exporter
+   volumes:
+     - /proc:/host/proc:ro
+     - /sys:/host/sys:ro
+     - /:/rootfs:ro
+   command:
+     - '--path.procfs=/host/proc'
+     - '--path.rootfs=/rootfs'
+     - '--path.sysfs=/host/sys'
+     - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
