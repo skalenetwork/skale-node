@@ -23,7 +23,7 @@ NODE_DATA_DIR="/skale_node_data"
 : "${DOCKER_USERNAME?Need to set DOCKER_USERNAME}" # todo: remove after containers open-sourcing
 : "${DOCKER_PASSWORD?Need to set DOCKER_PASSWORD}" # todo: remove after containers open-sourcing
 
-docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD # todo: remove after containers open-sourcing
+echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin # todo: remove after containers open-sourcing
 
 echo "Creating subdirectories in  $SKALE_VOL and $NODE_DATA_DIR..."
 mkdir -p $SKALE_VOL/{config,data,tools,contracts_info}

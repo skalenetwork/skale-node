@@ -28,7 +28,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalelabshub/admin:0.3.2
+    image: skalelabshub/admin-v2:0.4.0-develop.0
     tty: true
     #depends_on:
     #  - mysql
