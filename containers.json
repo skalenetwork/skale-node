@@ -26,7 +26,7 @@
       }
     }
   },
-  "mta": {
+  "ima": {
     "name": "skalelabshub/ima",
     "version": "1.0.0-develop.25",
     "args": {
