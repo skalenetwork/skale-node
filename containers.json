@@ -2,16 +2,22 @@
   "schain": {
     "name": "skalelabshub/schain",
     "version": "1.0.0-develop.10",
-    "args": {
-      "security_opt": [
-        "seccomp=unconfined"
-      ],
+    "custom_args": {
       "ulimits_list": [
         {
           "name": "core",
           "soft": -1,
           "hard": -1
         }
+      ],
+      "logs": {
+        "max-size": "250m",
+        "max-file": "5"
+      }
+    },
+    "args": {
+      "security_opt": [
+        "seccomp=unconfined"
       ],
       "restart_policy": {
         "MaximumRetryCount": 10,
@@ -29,6 +35,7 @@
   "ima": {
     "name": "skalelabshub/ima",
     "version": "1.0.0-develop.25",
+    "custom_args": {},
     "args": {
       "restart_policy": {
         "MaximumRetryCount": 10,

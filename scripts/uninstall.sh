@@ -23,4 +23,4 @@ rm -rf $SKALE_VOL
 rm -rf $NODE_DATA_DIR
 
 docker ps -a --format '{{.Names}}' | grep "^skale_schain_" | awk '{print $1}' | xargs -I {} docker rm -f {}
-docker ps -a --format '{{.Names}}' | grep "^skale_mta_" | awk '{print $1}' | xargs -I {} docker rm -f {}
+docker ps -a --format '{{.Names}}' | grep "^skale_ima_" | awk '{print $1}' | xargs -I {} docker rm -f {}

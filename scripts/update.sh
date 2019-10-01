@@ -9,14 +9,14 @@ NODE_DATA_DIR="/skale_node_data"
 docker-compose -f $SKALE_VOL/config/docker-compose.yml rm  -s -f
 
 docker ps -a --format '{{.Names}}' | grep "^skale_schain_" | awk '{print $1}' | xargs -I {} docker rm -f {}
-docker ps -a --format '{{.Names}}' | grep "^skale_mta_" | awk '{print $1}' | xargs -I {} docker rm -f {}
+docker ps -a --format '{{.Names}}' | grep "^skale_ima_" | awk '{print $1}' | xargs -I {} docker rm -f {}
 
 rm -rf /tmp/skale_vol
 cp -r /skale_vol /tmp/skale_vol
 rm -rf $SKALE_VOL
 
 : "${ENDPOINT?Need to set ENDPOINT}"
-: "${MTA_ENDPOINT?Need to set MTA_ENDPOINT}"
+: "${IMA_ENDPOINT?Need to set IMA_ENDPOINT}"
 
 : "${DB_USER?Need to set DB_USER}"
 : "${DB_PORT?Need to set DB_PORT}"

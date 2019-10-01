@@ -8,7 +8,7 @@ services:
       com.skale.prefix: "node"
     environment:
       ENDPOINT: ${ENDPOINT}
-      MTA_ENDPOINT: ${MTA_ENDPOINT}
+      IMA_ENDPOINT: ${IMA_ENDPOINT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
       DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}

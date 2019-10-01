@@ -9,7 +9,7 @@ NODE_DATA_DIR="/skale_node_data"
 
 : "${DISK_MOUNTPOINT?Need to set DISK_MOUNTPOINT}"
 : "${ENDPOINT?Need to set ENDPOINT}"
-: "${MTA_ENDPOINT?Need to set MTA_ENDPOINT}"
+: "${IMA_ENDPOINT?Need to set IMA_ENDPOINT}"
 
 : "${DB_USER?Need to set DB_USER}"
 : "${DB_PORT?Need to set DB_PORT}"
