@@ -6,7 +6,7 @@ SKALE Node Installation, update and uninstall scripts
 
 Environment variables needed to execute the installation script
 
-    MTA_ENDPOINT     - IMA endpoint to connect ('http://<IP>:1919')
+    IMA_ENDPOINT     - IMA endpoint to connect ('http://<IP>:1919')
     ENDPOINT         - RPC endpoint of the node in the network where SKALE Manager is deployed ('ws://<IP>:1920')
     RPC_IP           - RPC IP of the network with SKALE Manager ('<IP>')
     RPC_PORT         - RPC port of the network with SKALE Manager (default is 1920)
