@@ -2,6 +2,10 @@
 
 [![Discord](https://img.shields.io/discord/534485763354787851.svg)](https://discord.gg/vvUtWJB)
 
+## An important note about production readiness
+
+SKALE-node is still in active development and therefore should be regarded as alpha software. The development is still subject to security hardening, further testing, and breaking changes. This repository has not yet been reviewed or audited for security.
+
 SKALE Node Installation, update and uninstall scripts
 
 ## Arguments:
