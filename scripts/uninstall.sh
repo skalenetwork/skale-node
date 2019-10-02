@@ -6,7 +6,7 @@ PROJECT_DIR=$(dirname $(pwd))
 SKALE_VOL="/skale_vol"
 NODE_DATA_DIR="/skale_node_data"
 
-DB_PORT=3306 TAG=latest docker-compose -f $SKALE_VOL/config/docker-compose.yml rm  -s -f
+DB_PORT=0 docker-compose -f $SKALE_VOL/config/docker-compose.yml rm  -s -f
 
 rm -rf /skale
 
