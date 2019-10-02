@@ -1,5 +1,7 @@
 # SKALE node
 
+[![Discord](https://img.shields.io/discord/534485763354787851.svg)](https://discord.gg/vvUtWJB)
+
 SKALE Node Installation, update and uninstall scripts
 
 ## Arguments:
@@ -79,3 +81,15 @@ assigned randomly to a SKALE chain in the network by SKALE Manager
 
     IMA     # SKALE Interchain Messaging Agent
     SCHAIN  # SKALE Chain container with SKALED which includes SKALE Consensus
+
+## Contributing
+
+**If you have any questions please ask our development community on [Discord](http://skale.chat).**
+
+[![Discord](https://img.shields.io/discord/534485763354787851.svg)](https://discord.gg/vvUtWJB)
+
+## License
+
+[![License](https://img.shields.io/github/license/skalenetwork/skale-node.svg)](LICENSE)
+
+Copyright (C) 2019-present SKALE Labs
