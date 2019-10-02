@@ -1,4 +1,4 @@
-# SKALE node
+# SKALE Node
 
 [![Discord](https://img.shields.io/discord/534485763354787851.svg)](https://discord.gg/vvUtWJB)
 
@@ -6,9 +6,9 @@
 
 SKALE-node is still in active development and therefore should be regarded as alpha software. The development is still subject to security hardening, further testing, and breaking changes. This repository has not yet been reviewed or audited for security.
 
-SKALE Node Installation, update and uninstall scripts
+## Installation, update and uninstall scripts
 
-## Arguments:
+### Arguments:
 
 Environment variables needed to execute the installation script
 
@@ -20,23 +20,23 @@ Environment variables needed to execute the installation script
     DB_USER          - MySQL user for local node database (default is root)
     DB_ROOT_PASSWORD - Password for root user of node internal database (equal to user password by default)
 
-## Scripts
+### Scripts
 
 How to execute install, uninstall or update scripts: 
 
-### Installation
+#### Installation
 
 ```bash
 export $(grep -v '^#' .env | xargs) && sudo -E bash ./scripts/install.sh
 ```
 
-### Uninstall
+#### Uninstall
 
 ```bash
 export $(grep -v '^#' .env | xargs) && sudo -E bash ./scripts/uninstall.sh
 ```
 
-### Update
+#### Update
 
 ```bash
 export $(grep -v '^#' .env | xargs) && sudo -E bash ./scripts/update.sh
@@ -94,6 +94,6 @@ assigned randomly to a SKALE chain in the network by SKALE Manager
 
 ## License
 
-[![License](https://img.shields.io/github/license/skalenetwork/skale-node.svg)](LICENSE)
+[![License](https://img.shields.io/github/license/skalenetwork/skale-node)](LICENSE)
 
 Copyright (C) 2019-present SKALE Labs
