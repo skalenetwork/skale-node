@@ -39,6 +39,7 @@ services:
     image: mysql/mysql-server:5.7
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - /skale_node_data/mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_USER: ${DB_USER}
@@ -60,27 +61,38 @@ services:
   # container_name: skale_events
   # image: skalelabshub/events-collect:latest
   advisor:
-   <<: *skale_base
-   container_name: ash_cadvisor
-   image: google/cadvisor:latest
-   volumes:
-     - /:/rootfs:ro
-     - /var/run:/var/run:ro
-     - /sys:/sys:ro
-     - /var/lib/docker/:/var/lib/docker:ro
-     - /dev/disk/:/dev/disk:ro
-   ports:
-     - "8090:8080"
+    <<: *skale_base
+    container_name: monitor_cadvisor
+    image: google/cadvisor:latest
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    ports:
+      - "8090:8080"
   node-exporter:
-   <<: *skale_base
-   container_name: ash_node_exporter
-   image: quay.io/prometheus/node-exporter
-   volumes:
-     - /proc:/host/proc:ro
-     - /sys:/host/sys:ro
-     - /:/rootfs:ro
-   command:
-     - '--path.procfs=/host/proc'
-     - '--path.rootfs=/rootfs'
-     - '--path.sysfs=/host/sys'
-     - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+    <<: *skale_base
+    container_name: monitor_node_exporter
+    image: quay.io/prometheus/node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+  filebeat:
+    <<: *skale_base
+    container_name: monitor_filebeat
+    user: root
+    image: docker.elastic.co/beats/filebeat:7.3.1
+    environment:
+      FILEBEAT_HOST: ${FILEBEAT_HOST}
+    volumes:
+      - /skale_node_data/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/lib/docker:/var/lib/docker:ro
+      - /var/run/docker.sock:/var/run/docker.sock

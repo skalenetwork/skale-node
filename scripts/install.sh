@@ -23,6 +23,8 @@ NODE_DATA_DIR="/skale_node_data"
 : "${DOCKER_USERNAME?Need to set DOCKER_USERNAME}" # todo: remove after containers open-sourcing
 : "${DOCKER_PASSWORD?Need to set DOCKER_PASSWORD}" # todo: remove after containers open-sourcing
 
+: "${FILEBEAT_HOST?Need to set FILEBEAT_HOST}" # todo: remove later
+
 echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin # todo: remove after containers open-sourcing
 
 echo "Creating subdirectories in  $SKALE_VOL and $NODE_DATA_DIR..."
@@ -31,6 +33,8 @@ mkdir -p $NODE_DATA_DIR/{schains,log,ssl}
 
 echo "Copying config folder..."
 cp -R $PROJECT_DIR/. /skale_vol/config/
+
+cp $PROJECT_DIR/filebeat.yml $NODE_DATA_DIR/
 
 curl -L $MANAGER_CONTRACTS_INFO_URL >  $SKALE_VOL/contracts_info/manager.json
 curl -L $IMA_CONTRACTS_INFO_URL >  $SKALE_VOL/contracts_info/ima.json
