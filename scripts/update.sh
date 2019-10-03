@@ -43,5 +43,6 @@ curl -L $MANAGER_CONTRACTS_INFO_URL >  $SKALE_VOL/contracts_info/manager.json
 curl -L $IMA_CONTRACTS_INFO_URL >  $SKALE_VOL/contracts_info/ima.json
 curl -L $DKG_CONTRACTS_INFO_URL >  $SKALE_VOL/contracts_info/dkg.json
 
+docker-compose -f $SKALE_VOL/config/docker-compose.yml pull
 docker-compose -f $SKALE_VOL/config/docker-compose.yml up -d
 
