@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 PROJECT_DIR=$(dirname $DIR)
 
@@ -53,5 +55,10 @@ export FLASK_SECRET_KEY=$FLASK_SECRET_KEY
 DISK_MOUNTPOINT_FILE=$NODE_DATA_DIR/disk_mountpoint.txt
 echo $DISK_MOUNTPOINT >> $DISK_MOUNTPOINT_FILE
 
+bash $DIR/build_dkgpython.sh
+
+if [[ $? -ne 0 ]] ; then
+    exit 1
+fi
 
 docker-compose -f $SKALE_VOL/config/docker-compose.yml up -d
