@@ -1,0 +1,21 @@
+filebeat.inputs:
+- type: container
+  paths:
+    - '/var/lib/docker/containers/*/*.log'
+
+processors:
+- add_host_metadata:
+#    netinfo.enabled: false
+- add_docker_metadata:
+    host: "unix:///var/run/docker.sock"
+- decode_json_fields:
+    fields: ["message", "log"]
+#    target: "json"
+    target: ""
+    overwrite_keys: true
+
+output.logstash:
+  hosts: ${FILEBEAT_HOST}
+
+logging.json: true
+logging.metrics.enabled: false
