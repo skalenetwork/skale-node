@@ -8,12 +8,6 @@ sudo apt-get install -y automake libboost-all-dev
 cd /tmp
 git clone https://github.com/skalenetwork/libBLS.git --recursive
 
-git clone git@github.com:boostorg/boost.git --recursive
-cd boost
-./bootstrap.sh
-./b2 link=static threading=multi runtime-link=static stage
-./b2 link=static threading=multi runtime-link=static install
-
 cd /tmp/libBLS
 
 mkdir -p build
