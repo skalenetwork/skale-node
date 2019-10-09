@@ -3,7 +3,8 @@
 NODE_DATA_DIR="/skale_node_data"
 
 sudo apt-get update
-sudo apt-get install -y automake libboost-all-dev
+sudo apt-get install -y automake cmake libboost-all-dev build-essential libprocps-dev\
+                        libgmp3-dev libssl-dev pkg-config\
 
 cd /tmp
 git clone https://github.com/skalenetwork/libBLS.git --recursive
