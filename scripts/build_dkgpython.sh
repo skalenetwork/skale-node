@@ -10,25 +10,25 @@ git clone https://github.com/skalenetwork/libBLS.git --recursive
 
 cd /tmp/libBLS
 
-mkdir -p build
-cd build
-cmake .. -DBUILD_WITH_FPIC=ON
+mkdir -p /tmp/libBLS/build
+cd /tmp/libBLS/build
+cmake /tmp/libBLS/ -DBUILD_WITH_FPIC=ON
 if [[ $? -ne 0 ]] ; then
   exit 1
 fi
-
+x
 make -j$(nproc) bls
 if [[ $? -ne 0 ]] ; then
   exit 1
 fi
 
-cd ../python/
+cd /tmp/libBLS/python/
 bash setup.sh
 if [[ $? -ne 0 ]] ; then
   exit 1
 fi
 
-mv build/lib.linux-x86_64-3.6/dkgpython.cpython-36m-x86_64-linux-gnu.so $NODE_DATA_DIR/dkgpython.so
+mv /tmp/libBLS/python/dkgpython.so $NODE_DATA_DIR/dkgpython.so
 
 cd /tmp
 rm -rf libBLS
