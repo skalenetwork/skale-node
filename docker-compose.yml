@@ -21,9 +21,8 @@ services:
       FLASK_DEBUG_MODE: "False"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /skale_vol:/skale_vol
-      - /data_dir:/data_dir
-      - /skale_node_data:/skale_node_data
+      - ~/.skale:/skale_vol
+      - ~/.skale/node_data:/skale_node_data
     network_mode: host
 
   admin:
@@ -39,7 +38,7 @@ services:
     image: mysql/mysql-server:5.7
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - /skale_node_data/mysql-data:/var/lib/mysql
+      - ~/.skale/node_data/mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_USER: ${DB_USER}
@@ -93,6 +92,6 @@ services:
     environment:
       FILEBEAT_HOST: ${FILEBEAT_HOST}
     volumes:
-      - /skale_node_data/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - ~/.skale/node_data/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
       - /var/lib/docker:/var/lib/docker:ro
       - /var/run/docker.sock:/var/run/docker.sock

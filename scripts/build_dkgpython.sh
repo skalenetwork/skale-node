@@ -1,6 +1,8 @@
 #!/bin/bash
+set -e
 
-NODE_DATA_DIR="/skale_node_data"
+export CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $CURRENT_DIR/helper.sh
 
 sudo apt-get update
 sudo apt-get install -y automake cmake libboost-all-dev build-essential libprocps-dev\
