@@ -19,7 +19,7 @@ cmake /tmp/libBLS/ -DBUILD_WITH_FPIC=ON
 if [[ $? -ne 0 ]] ; then
   exit 1
 fi
-x
+
 make -j$(nproc) bls
 if [[ $? -ne 0 ]] ; then
   exit 1
