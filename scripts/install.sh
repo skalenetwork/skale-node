@@ -55,7 +55,7 @@ export FLASK_SECRET_KEY=$FLASK_SECRET_KEY
 DISK_MOUNTPOINT_FILE=$NODE_DATA_DIR/disk_mountpoint.txt
 echo $DISK_MOUNTPOINT >> $DISK_MOUNTPOINT_FILE
 
-bash $DIR/build_dkgpython.sh
+bash "$DIR"/build_dkgpython.sh
 
 if [[ $? -ne 0 ]] ; then
     exit 1
