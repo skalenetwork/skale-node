@@ -38,7 +38,6 @@ check_env_variables () {
 
     : "${MANAGER_CONTRACTS_INFO_URL?Need to set MANAGER_CONTRACTS_INFO_URL}"
     : "${IMA_CONTRACTS_INFO_URL?Need to set IMA_CONTRACTS_INFO_URL}"
-    : "${DKG_CONTRACTS_INFO_URL?Need to set DKG_CONTRACTS_INFO_URL}"
 
     : "${DOCKER_USERNAME?Need to set DOCKER_USERNAME}" # todo: remove after containers open-sourcing
     : "${DOCKER_PASSWORD?Need to set DOCKER_PASSWORD}" # todo: remove after containers open-sourcing
