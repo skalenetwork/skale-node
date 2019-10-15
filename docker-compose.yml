@@ -19,6 +19,7 @@ services:
       FLASK_APP_PORT: 3007
       FLASK_APP_HOST: "0.0.0.0"
       FLASK_DEBUG_MODE: "False"
+      SKALE_DIR_HOST: ${SKALE_DIR}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ~/.skale:/skale_vol
