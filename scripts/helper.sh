@@ -2,7 +2,7 @@
 
 export DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 export PROJECT_DIR=$(dirname $DIR)
-export SKALE_DIR=~/.skale
+export SKALE_DIR="$HOME"/.skale
 export NODE_DATA_DIR=$SKALE_DIR/node_data
 export CONFIG_DIR=$SKALE_DIR/config
 export FLASK_SECRET_KEY_FILE=$NODE_DATA_DIR/flask_db_key.txt
