@@ -5,12 +5,16 @@ export CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && 
 source $CURRENT_DIR/helper.sh
 
 sudo apt-get update
-sudo apt-get install -y automake cmake libboost-all-dev build-essential libprocps-dev\
-                        libgmp3-dev libssl-dev pkg-config\
+sudo apt-get install -y automake cmake build-essential libprocps4-dev\
+                        pkg-config yasm texinfo autoconf
 
 cd /tmp
-git clone https://github.com/skalenetwork/libBLS.git --recursive
+git clone https://github.com/skalenetwork/libBLS.git
 
+cd /tmp/libBLS
+
+cd /tmp/libBLS/deps
+./build.sh PARALLEL_COUNT=j$(nproc)
 cd /tmp/libBLS
 
 mkdir -p /tmp/libBLS/build
