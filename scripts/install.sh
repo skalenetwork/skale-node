@@ -25,7 +25,7 @@ else
 fi
 export FLASK_SECRET_KEY=$FLASK_SECRET_KEY
 
-echo $DISK_MOUNTPOINT >> $DISK_MOUNTPOINT_FILE
+echo $DISK_MOUNTPOINT > $DISK_MOUNTPOINT_FILE
 
 bash "$DIR"/build_dkgpython.sh
 

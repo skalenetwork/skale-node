@@ -8,9 +8,14 @@ export CONFIG_DIR=$SKALE_DIR/config
 export FLASK_SECRET_KEY_FILE=$NODE_DATA_DIR/flask_db_key.txt
 export DISK_MOUNTPOINT_FILE=$NODE_DATA_DIR/disk_mountpoint.txt
 
-remove_dynamic_containers () {
+remove_dynamic_containers () { # remove containers only
     docker ps -a --format '{{.Names}}' | grep "^skale_schain_" | awk '{print $1}' | xargs -I {} docker rm -f {}
     docker ps -a --format '{{.Names}}' | grep "^skale_ima_" | awk '{print $1}' | xargs -I {} docker rm -f {}
+}
+
+remove_dynamic_containers_full () { # remove containers and attached volumes
+    docker ps -a --format '{{.Names}}' | grep "^skale_schain_" | awk '{print $1}' | xargs -I {} docker rm -f -v {}
+    docker ps -a --format '{{.Names}}' | grep "^skale_ima_" | awk '{print $1}' | xargs -I {} docker rm -f -v {}
 }
 
 remove_compose_containers () {
