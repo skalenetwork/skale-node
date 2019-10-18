@@ -6,7 +6,7 @@ source $CURRENT_DIR/helper.sh
 
 sudo apt-get update
 sudo apt-get install -y automake cmake build-essential libprocps-dev libtool\
-                        pkg-config yasm texinfo autoconf flex bison python3-distutils.core python3-distutils
+                        pkg-config yasm texinfo autoconf flex bison python3-distutils
 
 cd /tmp
 git clone https://github.com/skalenetwork/libBLS.git
