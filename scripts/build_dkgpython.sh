@@ -5,7 +5,7 @@ export CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && 
 source $CURRENT_DIR/helper.sh
 
 sudo apt-get update
-sudo apt-get install -y automake cmake build-essential libprocps4-dev\
+sudo apt-get install -y automake cmake build-essential libprocps-dev\
                         pkg-config yasm texinfo autoconf
 
 cd /tmp
