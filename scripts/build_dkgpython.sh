@@ -10,7 +10,7 @@ sudo apt-get install -y automake cmake build-essential libprocps-dev libtool\
 
 cd /tmp
 git clone https://github.com/skalenetwork/libBLS.git
-
+git checkout bugfix/SKALE-1565-fix-node-build
 cd /tmp/libBLS
 
 cd /tmp/libBLS/deps
