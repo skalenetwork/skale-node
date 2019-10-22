@@ -12,6 +12,7 @@ processors:
     fields:
       id: {{ id }}
       ip: '{{ ip }}'
+      contract_address: '{{ contract_address }}'
 - decode_json_fields:
     fields: ["message", "log"]
 #    target: "json"
