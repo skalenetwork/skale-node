@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalelabshub/schain",
-    "version": "1.0.0-develop.37",
+    "version": "1.0.0-develop.41",
     "custom_args": {
       "ulimits_list": [
         {
