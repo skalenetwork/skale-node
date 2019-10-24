@@ -52,7 +52,6 @@ services:
       MYSQL_DATABASE: "db_skale"
     ports:
       - ${DB_PORT}:3306
-    network_mode: bridge
 
   sla:
     <<: *skale_base
@@ -67,6 +66,10 @@ services:
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
 
   bounty:
     <<: *skale_base
@@ -81,6 +84,11 @@ services:
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+
 
   advisor:
     <<: *skale_base
