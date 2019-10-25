@@ -102,7 +102,7 @@ services:
       - /dev/disk/:/dev/disk:ro
     ports:
       - "8090:8080"
-    network_mode: host
+    privileged: true
 
   node-exporter:
     <<: *skale_base
@@ -118,7 +118,6 @@ services:
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
-    network_mode: host
 
   filebeat:
     <<: *skale_base
