@@ -94,6 +94,7 @@ services:
     <<: *skale_base
     container_name: monitor_cadvisor
     image: google/cadvisor:latest
+    network_mode: host
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro
