@@ -57,7 +57,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalelabshub/sla-manager:latest
+    image: skalelabshub/sla-manager:0.3.0-develop.1
     environment:
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
@@ -71,7 +71,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalelabshub/bounty-agent:latest
+    image: skalelabshub/bounty-agent:0.3.0-develop.1
     environment:
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
