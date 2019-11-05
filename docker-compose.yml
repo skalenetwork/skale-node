@@ -15,7 +15,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalelabshub/admin-v2:0.5.0-develop.13
+    image: skalelabshub/admin-v2:0.5.0-develop.16
     tty: true
     environment:
       ENDPOINT: ${ENDPOINT}
@@ -52,7 +52,6 @@ services:
       MYSQL_DATABASE: "db_skale"
     ports:
       - ${DB_PORT}:3306
-    network_mode: bridge
 
   sla:
     <<: *skale_base
@@ -67,6 +66,10 @@ services:
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
 
   bounty:
     <<: *skale_base
@@ -81,6 +84,11 @@ services:
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+
 
   advisor:
     <<: *skale_base
@@ -93,7 +101,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
     ports:
-      - "8090:8080"
+      - "8080:8080"
 
   node-exporter:
     <<: *skale_base
@@ -109,6 +117,7 @@ services:
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+    network_mode: host
 
   filebeat:
     <<: *skale_base
