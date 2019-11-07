@@ -3,9 +3,20 @@ version: '3.3'
 services:
   base: &skale_base
     image: kubernetes/pause
-    restart: always
+    restart: unless-stopped
     labels:
       com.skale.prefix: "node"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+
+  admin:
+    <<: *skale_base
+    container_name: skale_admin
+    image: skalelabshub/admin-v2:0.5.0-develop.16
+    tty: true
     environment:
       ENDPOINT: ${ENDPOINT}
       IMA_ENDPOINT: ${IMA_ENDPOINT}
@@ -19,27 +30,20 @@ services:
       FLASK_APP_PORT: 3007
       FLASK_APP_HOST: "0.0.0.0"
       FLASK_DEBUG_MODE: "False"
+      SKALE_DIR_HOST: ${SKALE_DIR}
+    ports:
+      - 3007:3007
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /skale_vol:/skale_vol
-      - /data_dir:/data_dir
-      - /skale_node_data:/skale_node_data
-    network_mode: host
-
-  admin:
-    <<: *skale_base
-    container_name: skale_admin
-    image: skalelabshub/admin-v2:0.5.0-develop.18
-    tty: true
-    #depends_on:
-    #  - mysql
+      - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
   mysql:
     <<: *skale_base
     container_name: skale_mysql
     image: mysql/mysql-server:5.7
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - /skale_node_data/mysql-data:/var/lib/mysql
+      - ~/.skale/node_data/mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_USER: ${DB_USER}
@@ -47,19 +51,44 @@ services:
       MYSQL_DATABASE: "db_skale"
     ports:
       - ${DB_PORT}:3306
-    network_mode: bridge
+
   sla:
     <<: *skale_base
     container_name: skale_sla
     image: skalelabshub/sla-manager:latest
+    environment:
+      ENDPOINT: ${ENDPOINT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      DB_PORT: ${DB_PORT}
+    volumes:
+      - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+
   bounty:
     <<: *skale_base
     container_name: skale_bounty
     image: skalelabshub/bounty-agent:latest
-  #events:
-  # <<: *skale_base
-  # container_name: skale_events
-  # image: skalelabshub/events-collect:latest
+    environment:
+      ENDPOINT: ${ENDPOINT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      DB_PORT: ${DB_PORT}
+    volumes:
+      - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+
+
   advisor:
     <<: *skale_base
     container_name: monitor_cadvisor
@@ -71,11 +100,13 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
     ports:
-      - "8090:8080"
+      - "8080:8080"
+
   node-exporter:
     <<: *skale_base
     container_name: monitor_node_exporter
     image: quay.io/prometheus/node-exporter
+    restart: unless-stopped
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
@@ -85,6 +116,8 @@ services:
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+    network_mode: host
+
   filebeat:
     <<: *skale_base
     container_name: monitor_filebeat
@@ -93,6 +126,6 @@ services:
     environment:
       FILEBEAT_HOST: ${FILEBEAT_HOST}
     volumes:
-      - /skale_node_data/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - ${SKALE_DIR}/node_data/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
       - /var/lib/docker:/var/lib/docker:ro
       - /var/run/docker.sock:/var/run/docker.sock

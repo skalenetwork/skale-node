@@ -1,22 +1,40 @@
 #!/bin/bash
+set -e
+
+export CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $CURRENT_DIR/helper.sh
 
 sudo apt-get update
-sudo apt-get install -y automake
+sudo apt-get install -y automake cmake build-essential libprocps-dev libtool libpython3-dev\
+                        pkg-config yasm texinfo autoconf flex bison python3-distutils
 
-git clone https://github.com/skalenetwork/libBLS.git --recursive
-cd libBLS
-git checkout SKALE-1443-finish-DKG
+cd /tmp
+git clone https://github.com/skalenetwork/libBLS.git
+cd /tmp/libBLS
 
-mkdir -p build
-cd build
-cmake .. -DBUILD_WITH_FPIC=ON
+cd /tmp/libBLS/deps
+./build.sh PARALLEL_COUNT=j$(nproc)
+cd /tmp/libBLS
+
+mkdir -p /tmp/libBLS/build
+cd /tmp/libBLS/build
+cmake /tmp/libBLS/ -DBUILD_WITH_FPIC=ON
+if [[ $? -ne 0 ]] ; then
+  exit 1
+fi
+
 make -j$(nproc) bls
+if [[ $? -ne 0 ]] ; then
+  exit 1
+fi
 
-cd ../python/
+cd /tmp/libBLS/python/
 bash setup.sh
+if [[ $? -ne 0 ]] ; then
+  exit 1
+fi
 
-mv build/lib.linux-x86_64-3.6/dkgpython.cpython-36m-x86_64-linux-gnu.so ../../../tools/bls
-mv ../../../tools/bls/dkgpython.cpython-36m-x86_64-linux-gnu.so ../../../tools/bls/dkgpython.so
+mv /tmp/libBLS/python/dkgpython.so $NODE_DATA_DIR/dkgpython.so
 
-cd ../../
+cd /tmp
 rm -rf libBLS

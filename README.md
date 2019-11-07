@@ -61,7 +61,6 @@ Directories created with the installation script:
     │   │   │                             including all ip addresses and ports will be added to this base config. 
     │   │   │                             Precompiled smart contracts are stored here as well.
     │   │   ├── data.json               # ABIs and addresses
-    │   │   └── dkg_contract_data.json  # ABI used for DKG 
     │   │ 
     ├── skale_node_data                       # Runtime info generated with the node executions
     │   ├── schains                           # All SKALE chains (directories) served by the connected node

@@ -23,13 +23,7 @@
         "MaximumRetryCount": 10,
         "Name": "on-failure"
       },
-      "network": "host",
-      "volumes": {
-        "/skale_node_data": {
-          "bind": "/skale_node_data",
-          "mode": "ro"
-        }
-      }
+      "network": "host"
     }
   },
   "ima": {
@@ -41,11 +35,7 @@
         "MaximumRetryCount": 10,
         "Name": "on-failure"
       },
-      "network": "host",
-      "volumes": [
-        "/skale_node_data:/skale_node_data",
-        "/skale_vol:/skale_vol"
-      ]
+      "network": "host"
     }
   }
 }
