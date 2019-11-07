@@ -37,7 +37,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-
   mysql:
     <<: *skale_base
     container_name: skale_mysql
