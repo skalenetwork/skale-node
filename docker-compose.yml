@@ -55,7 +55,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalelabshub/sla-manager:latest
+    image: skalelabshub/sla-agent:latest
     environment:
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
