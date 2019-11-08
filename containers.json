@@ -28,7 +28,7 @@
   },
   "ima": {
     "name": "skalelabshub/ima",
-    "version": "1.0.0-develop.32",
+    "version": "1.0.0-develop.29",
     "custom_args": {},
     "args": {
       "restart_policy": {
