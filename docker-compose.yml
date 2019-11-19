@@ -29,7 +29,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalelabshub/admin-v2:0.5.0-develop.21
+    image: skalelabshub/admin-v2:0.5.0-develop.24
     tty: true
     environment:
       TM_URL: http://transaction-manager:3008
@@ -53,7 +53,10 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+    depends_on:
+      - mysql
     links:
+      - mysql:mysql
       - transaction-manager:transaction-manager
   mysql:
     <<: *skale_base
@@ -73,7 +76,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalelabshub/sla-agent:latest
+    image: skalelabshub/sla-agent:0.3.2-test
     environment:
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
@@ -91,7 +94,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalelabshub/bounty-agent:latest
+    image: skalelabshub/bounty-agent:0.3.2-test
     environment:
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
