@@ -78,6 +78,7 @@ services:
     container_name: skale_sla
     image: skalelabshub/sla-agent:0.4.0-beta.0
     environment:
+      TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
@@ -96,6 +97,7 @@ services:
     container_name: skale_bounty
     image: skalelabshub/bounty-agent:0.4.0-beta.0
     environment:
+      TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
