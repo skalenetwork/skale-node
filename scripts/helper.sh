@@ -52,3 +52,10 @@ check_disk_mountpoint () {
 dockerhub_login () {
     echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin # todo: remove after containers open-sourcing
 }
+
+docker_lvmpy_install () {
+    git clone  https://$GITHUB_TOKEN@github.com/skalenetwork/docker-lvmpy.git
+    cd docker-lvmpy
+    PHYSICAL_VOLUME=$DISK_MOUNTPOINT VOLUME_GROUP=schains scripts/install.sh
+    cd -
+}

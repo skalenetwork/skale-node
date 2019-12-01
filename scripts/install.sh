@@ -7,6 +7,7 @@ source $CURRENT_DIR/helper.sh
 check_env_variables
 check_disk_mountpoint
 dockerhub_login # todo: remove after containers open-sourcing
+docker_lvmpy_install
 
 echo "Creating SKALE node directories..."
 mkdir -p $SKALE_DIR/{node_data,contracts_info,config}
