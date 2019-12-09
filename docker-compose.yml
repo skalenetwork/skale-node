@@ -26,8 +26,6 @@ services:
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-    ports:
-      - "3008:3008"
   admin:
     <<: *skale_base
     container_name: skale_admin
