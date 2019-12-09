@@ -9,6 +9,7 @@ check_env_variables
 create_node_dirs
 copy_node_configs
 download_contracts
+configure_filebeat
 configure_flask
 
 if [ -z $DRY_RUN ]; then
