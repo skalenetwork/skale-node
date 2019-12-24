@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalelabshub/transaction-manager:0.0.1-develop.10
+    image: skalelabshub/transaction-manager:0.0.1-beta.0
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL} 
       ENDPOINT: ${ENDPOINT}
@@ -29,7 +29,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalelabshub/admin-v2:0.6.0-develop.0
+    image: skalelabshub/admin-v2:0.6.0-develop.6
     tty: true
     environment:
       TM_URL: http://transaction-manager:3008

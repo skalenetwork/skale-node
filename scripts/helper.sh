@@ -53,9 +53,34 @@ dockerhub_login () {
     echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin # todo: remove after containers open-sourcing
 }
 
+
 docker_lvmpy_install () {
     git clone "https://$GITHUB_TOKEN@github.com/skalenetwork/docker-lvmpy.git" || true
     cd docker-lvmpy
     PHYSICAL_VOLUME=$DISK_MOUNTPOINT VOLUME_GROUP=schains scripts/install.sh
     cd -
+
+create_node_dirs () {
+    echo "Creating SKALE node directories..."
+    mkdir -p $SKALE_DIR/{node_data,contracts_info,config}
+    mkdir -p $SKALE_DIR/node_data/{schains,log,ssl}
+}
+
+configure_flask () {
+    if [ -e $FLASK_SECRET_KEY_FILE ]; then
+      echo "File $FLASK_SECRET_KEY_FILE already exists!"
+    else
+      FLASK_SECRET_KEY=$(openssl rand -base64 32)
+      echo $FLASK_SECRET_KEY >> $FLASK_SECRET_KEY_FILE
+    fi
+    export FLASK_SECRET_KEY=$FLASK_SECRET_KEY
+}
+
+configure_filebeat () {
+    cp $PROJECT_DIR/filebeat.yml $NODE_DATA_DIR/
+}
+
+save_partition() {
+    echo $DISK_MOUNTPOINT >> $DISK_MOUNTPOINT_FILE
+
 }
