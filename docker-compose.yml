@@ -15,7 +15,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: admin-v2:0.6.0-develop.7
+    image: skalelabshub/admin-v2:0.6.0-develop.7
     tty: true
     environment:
       ENDPOINT: ${ENDPOINT}
