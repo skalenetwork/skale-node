@@ -11,13 +11,29 @@ services:
       options:
         max-file: "5"
         max-size: "10m"
-
+  transaction-manager:
+    <<: *skale_base
+    container_name: skale_transaction-manager
+    image: skalelabshub/transaction-manager:0.0.1-beta.0
+    environment:
+      SGX_SERVER_URL: ${SGX_SERVER_URL} 
+      ENDPOINT: ${ENDPOINT}
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY} # todo: use different flask secret key!
+      FLASK_APP_PORT: 3008
+      FLASK_APP_HOST: "0.0.0.0" # todo: change to localhost
+      FLASK_DEBUG_MODE: "False"
+      SKALE_DIR_HOST: ${SKALE_DIR}
+    volumes:
+      - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
   admin:
     <<: *skale_base
     container_name: skale_admin
     image: skalelabshub/admin-v2:0.6.0-beta.0
     tty: true
     environment:
+      TM_URL: http://transaction-manager:3008
+      SGX_SERVER_URL: ${SGX_SERVER_URL}
       ENDPOINT: ${ENDPOINT}
       IMA_ENDPOINT: ${IMA_ENDPOINT}
       DB_USER: ${DB_USER}
@@ -37,6 +53,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+      - transaction-manager:transaction-manager
   mysql:
     <<: *skale_base
     container_name: skale_mysql
@@ -57,6 +78,7 @@ services:
     container_name: skale_sla
     image: skalelabshub/sla-agent:0.4.1-beta.1
     environment:
+      TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
@@ -75,6 +97,7 @@ services:
     container_name: skale_bounty
     image: skalelabshub/bounty-agent:0.4.1-beta.1
     environment:
+      TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}

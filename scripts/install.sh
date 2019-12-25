@@ -5,32 +5,16 @@ export CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && 
 source $CURRENT_DIR/helper.sh
 
 check_env_variables
-check_disk_mountpoint
-dockerhub_login # todo: remove after containers open-sourcing
 
-echo "Creating SKALE node directories..."
-mkdir -p $SKALE_DIR/{node_data,contracts_info,config}
-mkdir -p $SKALE_DIR/node_data/{schains,log,ssl}
-
+create_node_dirs
 copy_node_configs
 download_contracts
+configure_filebeat
+configure_flask
 
-cp $PROJECT_DIR/filebeat.yml $NODE_DATA_DIR/
-
-if [ -e $FLASK_SECRET_KEY_FILE ]; then
-  echo "File $FLASK_SECRET_KEY_FILE already exists!"
-else
-  FLASK_SECRET_KEY=$(openssl rand -base64 32)
-  echo $FLASK_SECRET_KEY >> $FLASK_SECRET_KEY_FILE
+if [ -z $DRY_RUN ]; then
+    check_disk_mountpoint
+    save_partition
+    dockerhub_login # todo: remove after containers open-sourcing
+    docker-compose -f $CONFIG_DIR/docker-compose.yml up -d
 fi
-export FLASK_SECRET_KEY=$FLASK_SECRET_KEY
-
-echo $DISK_MOUNTPOINT >> $DISK_MOUNTPOINT_FILE
-
-bash "$DIR"/build_dkgpython.sh
-
-if [[ $? -ne 0 ]] ; then
-    exit 1
-fi
-
-docker-compose -f $CONFIG_DIR/docker-compose.yml up -d
