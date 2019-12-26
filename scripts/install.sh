@@ -17,5 +17,5 @@ if [ -z $DRY_RUN ]; then
     check_disk_mountpoint
     save_partition
     dockerhub_login # todo: remove after containers open-sourcing
-    docker-compose -f $CONFIG_DIR/docker-compose.yml up
+    docker-compose -f $CONFIG_DIR/docker-compose.yml up -d
 fi
