@@ -58,7 +58,7 @@ dockerhub_login () {
 create_node_dirs () {
     echo "Creating SKALE node directories..."
     mkdir -p $SKALE_DIR/{node_data,contracts_info,config}
-    mkdir -p $SKALE_DIR/node_data/{schains,log,ssl,$SGX_CERTIFICATES_DIR_NAME}
+    mkdir -p $SKALE_DIR/node_data/{schains,log,ssl,"$SGX_CERTIFICATES_DIR_NAME"}
 }
 
 configure_flask () {
