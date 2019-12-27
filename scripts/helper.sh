@@ -54,6 +54,16 @@ dockerhub_login () {
     echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin # todo: remove after containers open-sourcing
 }
 
+
+docker_lvmpy_install () {
+    if [[ ! -d docker-lvmpy ]]; then
+        git clone "https://$GITHUB_TOKEN@github.com/skalenetwork/docker-lvmpy.git"
+    fi
+    cd docker-lvmpy
+    PHYSICAL_VOLUME=$DISK_MOUNTPOINT VOLUME_GROUP=schains scripts/install.sh
+    cd -
+}
+
 create_node_dirs () {
     echo "Creating SKALE node directories..."
     mkdir -p $SKALE_DIR/{node_data,contracts_info,config}
