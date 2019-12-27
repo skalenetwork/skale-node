@@ -56,7 +56,9 @@ dockerhub_login () {
 
 
 docker_lvmpy_install () {
-    git clone "https://$GITHUB_TOKEN@github.com/skalenetwork/docker-lvmpy.git" || true
+    if [[ ! -d docker-lvmpy ]]; then
+        git clone "https://$GITHUB_TOKEN@github.com/skalenetwork/docker-lvmpy.git"
+    fi
     cd docker-lvmpy
     PHYSICAL_VOLUME=$DISK_MOUNTPOINT VOLUME_GROUP=schains scripts/install.sh
     cd -
