@@ -59,6 +59,7 @@ docker_lvmpy_install () {
     cd docker-lvmpy
     PHYSICAL_VOLUME=$DISK_MOUNTPOINT VOLUME_GROUP=schains scripts/install.sh
     cd -
+}
 
 create_node_dirs () {
     echo "Creating SKALE node directories..."
