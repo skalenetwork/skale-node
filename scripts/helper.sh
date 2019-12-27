@@ -7,6 +7,7 @@ export NODE_DATA_DIR=$SKALE_DIR/node_data
 export CONFIG_DIR=$SKALE_DIR/config
 export FLASK_SECRET_KEY_FILE=$NODE_DATA_DIR/flask_db_key.txt
 export DISK_MOUNTPOINT_FILE=$NODE_DATA_DIR/disk_mountpoint.txt
+export SGX_CERTIFICATES_DIR_NAME=sgx_certs
 
 remove_dynamic_containers () {
     docker ps -a --format '{{.Names}}' | grep "^skale_schain_" | awk '{print $1}' | xargs -I {} docker rm -f {}
@@ -56,7 +57,7 @@ dockerhub_login () {
 create_node_dirs () {
     echo "Creating SKALE node directories..."
     mkdir -p $SKALE_DIR/{node_data,contracts_info,config}
-    mkdir -p $SKALE_DIR/node_data/{schains,log,ssl}
+    mkdir -p $SKALE_DIR/node_data/{schains,log,ssl,"$SGX_CERTIFICATES_DIR_NAME"}
 }
 
 configure_flask () {
@@ -73,6 +74,6 @@ configure_filebeat () {
     cp $PROJECT_DIR/filebeat.yml $NODE_DATA_DIR/
 }
 
-save_partition() {
+save_partition () {
     echo $DISK_MOUNTPOINT >> $DISK_MOUNTPOINT_FILE
 }

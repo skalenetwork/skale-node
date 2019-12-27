@@ -11,6 +11,7 @@ copy_node_configs
 download_contracts
 configure_filebeat
 configure_flask
+generate_csr
 
 if [ -z $DRY_RUN ]; then
     check_disk_mountpoint

@@ -16,7 +16,8 @@ services:
     container_name: skale_transaction-manager
     image: skalelabshub/transaction-manager:0.0.1-beta.0
     environment:
-      SGX_SERVER_URL: ${SGX_SERVER_URL} 
+      SGX_SERVER_URL: ${SGX_SERVER_URL}
+      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY} # todo: use different flask secret key!
       FLASK_APP_PORT: 3008
@@ -34,6 +35,7 @@ services:
     environment:
       TM_URL: http://transaction-manager:3008
       SGX_SERVER_URL: ${SGX_SERVER_URL}
+      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       IMA_ENDPOINT: ${IMA_ENDPOINT}
       DB_USER: ${DB_USER}
