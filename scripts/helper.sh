@@ -87,3 +87,13 @@ configure_filebeat () {
 save_partition () {
     echo $DISK_MOUNTPOINT >> $DISK_MOUNTPOINT_FILE
 }
+
+generate_csr () {
+    echo "Generating csr keys..."
+    openssl req -new \
+        -newkey rsa:2048 \
+        -nodes \
+        -keyout $CERTIFICATES_DIR/sgx.key \
+        -out $CERTIFICATES_DIR/sgx.csr \
+        -subj "/CN=sgx"
+}
