@@ -5,7 +5,6 @@ source $CURRENT_DIR/helper.sh
 
 check_env_variables
 dockerhub_login
-docker_lvmpy_install
 
 remove_compose_containers
 remove_dynamic_containers
