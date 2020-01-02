@@ -30,7 +30,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalelabshub/admin-v2:0.6.0-develop.12
+    image: skalelabshub/admin-v2:0.7.0-develop.0
     tty: true
     environment:
       TM_URL: http://transaction-manager:3008
