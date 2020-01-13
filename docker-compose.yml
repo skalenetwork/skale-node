@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:0.1.0-develop.0
+    image: skalenetwork/transaction-manager:0.1.0-beta.0
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
@@ -30,7 +30,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.7.0-develop.6
+    image: skalenetwork/admin:0.7.0-beta.0
     tty: true
     environment:
       TM_URL: http://transaction-manager:3008
@@ -78,7 +78,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalelabshub/sla-agent:0.4.1-beta.1
+    image: skalelabshub/sla-agent:0.4.1-develop.5
     environment:
       TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
@@ -97,7 +97,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalelabshub/bounty-agent:0.4.1-beta.1
+    image: skalelabshub/bounty-agent:0.4.1-develop.5
     environment:
       TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
