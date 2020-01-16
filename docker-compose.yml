@@ -30,7 +30,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.8.0-develop.2
+    image: skalenetwork/admin:0.8.0-beta.0
     tty: true
     environment:
       TM_URL: http://transaction-manager:3008
@@ -78,7 +78,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalelabshub/sla-agent:0.4.1-develop.5
+    image: skalenetwork/sla-agent:0.4.1-beta.2
     environment:
       TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
@@ -97,7 +97,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalelabshub/bounty-agent:0.4.1-develop.5
+    image: skalenetwork/bounty-agent:0.4.1-beta.2
     environment:
       TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
