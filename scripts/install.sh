@@ -5,7 +5,7 @@ export CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && 
 source $CURRENT_DIR/helper.sh
 
 check_env_variables
-
+docker_lvmpy_install
 create_node_dirs
 copy_node_configs
 download_contracts

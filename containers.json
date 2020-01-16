@@ -23,7 +23,10 @@
         "MaximumRetryCount": 10,
         "Name": "on-failure"
       },
-      "network": "host"
+      "network": "host",
+      "cap_add": [
+        "SYS_PTRACE"
+      ]
     }
   },
   "ima": {
