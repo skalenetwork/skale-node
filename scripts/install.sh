@@ -12,6 +12,7 @@ download_contracts
 configure_filebeat
 configure_flask
 
+printenv > /root/init-env
 if [ -z $DRY_RUN ]; then
     check_disk_mountpoint
     save_partition
