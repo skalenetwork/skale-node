@@ -29,7 +29,6 @@ services:
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-    restart: unless-stopped
     ports:
       - 3008:3008
   admin:
