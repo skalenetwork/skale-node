@@ -65,7 +65,6 @@ services:
       - ${SKALE_DIR}/node_data:/skale_node_data
     depends_on:
       - mysql
-    restart: unless-stopped
   mysql:
     <<: *skale_base
     container_name: skale_mysql
@@ -137,7 +136,6 @@ services:
     <<: *skale_base
     container_name: monitor_node_exporter
     image: quay.io/prometheus/node-exporter
-    restart: unless-stopped
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
