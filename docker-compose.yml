@@ -84,7 +84,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalelabshub/sla-agent:0.4.1-beta.2
+    image: skalenetwork/sla-agent:0.4.1-beta.2
     network_mode: host
     environment:
       TM_URL: http://transaction-manager:3008
@@ -102,7 +102,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalelabshub/bounty-agent:0.4.1-beta.2
+    image: skalenetwork/bounty-agent:0.4.1-beta.2
     network_mode: host
     environment:
       TM_URL: http://transaction-manager:3008
