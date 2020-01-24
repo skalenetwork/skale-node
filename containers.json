@@ -30,7 +30,7 @@
     }
   },
   "ima": {
-    "name": "skalenetwork/ima",
+    "name": "skalelabshub/ima",
     "version": "1.0.0-develop.41",
     "custom_args": {},
     "args": {
