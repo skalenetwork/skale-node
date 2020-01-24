@@ -1,6 +1,6 @@
 {
   "schain": {
-    "name": "skalenetwork/schain",
+    "name": "skalelabshub/schain",
     "version": "1.39-beta.0",
     "custom_args": {
       "ulimits_list": [
