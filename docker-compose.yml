@@ -113,6 +113,15 @@ services:
     links:
       - mysql:mysql
 
+  watchdog:
+    <<: *skale_base
+    container_name: skale_watchdog
+    image: skalenetwork/watchdog:0.0.1-beta.1
+    environment:
+      FLASK_APP_PORT: 3009
+      FLASK_APP_HOST: "0.0.0.0"
+      FLASK_DEBUG_MODE: "False"
+
 
   advisor:
     <<: *skale_base
