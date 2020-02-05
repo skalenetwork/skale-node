@@ -84,7 +84,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalenetwork/sla-agent:0.4.1-beta.2
+    image: skalenetwork/sla-agent:0.4.2-beta.1
     network_mode: host
     environment:
       TM_URL: http://transaction-manager:3008
@@ -102,7 +102,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:0.4.1-beta.2
+    image: skalenetwork/bounty-agent:0.4.2-beta.1
     network_mode: host
     environment:
       TM_URL: http://transaction-manager:3008
@@ -121,6 +121,9 @@ services:
     <<: *skale_base
     container_name: skale_watchdog
     image: skalenetwork/watchdog:0.0.1-beta.1
+    network_mode: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     environment:
       FLASK_APP_PORT: 3009
       FLASK_APP_HOST: "0.0.0.0"
