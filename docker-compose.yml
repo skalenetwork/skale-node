@@ -34,7 +34,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.8.0-beta.0
+    image: skalenetwork/admin:0.8.0-develop.12
     network_mode: host
     tty: true
     cap_add:
@@ -128,7 +128,6 @@ services:
       FLASK_APP_PORT: 3009
       FLASK_APP_HOST: "0.0.0.0"
       FLASK_DEBUG_MODE: "False"
-
 
   advisor:
     <<: *skale_base
