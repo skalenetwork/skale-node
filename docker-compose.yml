@@ -87,7 +87,7 @@ services:
     image: skalenetwork/sla-agent:0.4.2-beta.2
     network_mode: host
     environment:
-      TM_URL: http://transaction-manager:3008
+      TM_URL: http://127.0.0.1:3008
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
@@ -105,7 +105,7 @@ services:
     image: skalenetwork/bounty-agent:0.4.2-beta.2
     network_mode: host
     environment:
-      TM_URL: http://transaction-manager:3008
+      TM_URL: http://127.0.0.1:3008
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
