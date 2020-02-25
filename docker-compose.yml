@@ -34,7 +34,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.8.0-beta.6
+    image: skalenetwork/admin:0.8.0-beta.7
     network_mode: host
     tty: true
     cap_add:
@@ -84,7 +84,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalenetwork/sla-agent:0.4.3-beta.0
+    image: skalenetwork/sla-agent:0.4.3-beta.1
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -102,7 +102,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:0.4.3-beta.0
+    image: skalenetwork/bounty-agent:0.4.3-beta.1
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
