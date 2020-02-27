@@ -18,7 +18,6 @@
     "minimumDifficulty": "0x020000",
     "difficultyBoundDivisor": "0x0800",
     "durationLimit": "0x0d",
-    "rotateAfterBlock": "16000000",
     "blockReward": "0x4563918244F40000"
   },
   "genesis": {
