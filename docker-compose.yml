@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:0.1.1-beta.0
+    image: skalenetwork/transaction-manager:0.1.1-develop.2
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
@@ -30,7 +30,7 @@ services:
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.8.0-beta.4
+    image: skalenetwork/admin:0.8.0-develop.24
     tty: true
     environment:
       TM_URL: http://transaction-manager:3008
