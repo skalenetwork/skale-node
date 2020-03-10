@@ -2,6 +2,9 @@
   "schain": {
     "name": "skalenetwork/schain",
     "version": "1.43-develop.4",
+    "config_options": {
+        "rotateAfterBlock": 128
+    },
     "custom_args": {
       "ulimits_list": [
         {
