@@ -78,7 +78,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalenetwork/sla-agent:0.5.0-develop4
+    image: skalenetwork/sla-agent:0.5.0-develop1
     environment:
       TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
@@ -97,7 +97,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:0.5.0-develop4
+    image: skalenetwork/bounty-agent:0.5.0-develop1
     environment:
       TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
