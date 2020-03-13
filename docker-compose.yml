@@ -15,33 +15,25 @@ services:
     <<: *skale_base
     container_name: skale_transaction-manager
     image: skalenetwork/transaction-manager:0.2.0-develop.0
-    network_mode: host
-    tty: true
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY} # todo: use different flask secret key!
       FLASK_APP_PORT: 3008
-      FLASK_APP_HOST: "127.0.0.1"
+      FLASK_APP_HOST: "0.0.0.0" # todo: change to localhost
       FLASK_DEBUG_MODE: "False"
       SKALE_DIR_HOST: ${SKALE_DIR}
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-    ports:
-      - 3008:3008
   admin:
     <<: *skale_base
     container_name: skale_admin
     image: skalenetwork/admin:0.10.0-develop.3
-    network_mode: host
     tty: true
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
     environment:
-      TM_URL: http://127.0.0.1:3008
+      TM_URL: http://transaction-manager:3008
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
@@ -54,7 +46,7 @@ services:
       DOCKER_PASSWORD: ${DOCKER_PASSWORD}
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
       FLASK_APP_PORT: 3007
-      FLASK_APP_HOST: "127.0.0.1"
+      FLASK_APP_HOST: "0.0.0.0"
       FLASK_DEBUG_MODE: "False"
       SKALE_DIR_HOST: ${SKALE_DIR}
     ports:
@@ -65,12 +57,13 @@ services:
       - ${SKALE_DIR}/node_data:/skale_node_data
     depends_on:
       - mysql
-
+    links:
+      - mysql:mysql
+      - transaction-manager:transaction-manager
   mysql:
     <<: *skale_base
     container_name: skale_mysql
     image: mysql/mysql-server:5.7
-    network_mode: host
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - ~/.skale/node_data/mysql-data:/var/lib/mysql
@@ -85,10 +78,9 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalenetwork/sla-agent:0.5.0-develop.1
-    network_mode: host
+    image: skalenetwork/sla-agent:0.5.2-develop.0
     environment:
-      TM_URL: http://127.0.0.1:3008
+      TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
@@ -99,14 +91,15 @@ services:
       - ${SKALE_DIR}/node_data:/skale_node_data
     depends_on:
       - mysql
+    links:
+      - mysql:mysql
 
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:0.5.0-develop.1
-    network_mode: host
+    image: skalenetwork/bounty-agent:0.5.2-develop.0
     environment:
-      TM_URL: http://127.0.0.1:3008
+      TM_URL: http://transaction-manager:3008
       ENDPOINT: ${ENDPOINT}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
@@ -117,24 +110,14 @@ services:
       - ${SKALE_DIR}/node_data:/skale_node_data
     depends_on:
       - mysql
+    links:
+      - mysql:mysql
 
-  watchdog:
-    <<: *skale_base
-    container_name: skale_watchdog
-    image: skalenetwork/watchdog:0.0.1-beta.1
-    network_mode: host
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      FLASK_APP_PORT: 3009
-      FLASK_APP_HOST: "0.0.0.0"
-      FLASK_DEBUG_MODE: "False"
 
   advisor:
     <<: *skale_base
     container_name: monitor_cadvisor
     image: google/cadvisor:latest
-    network_mode: host
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:ro
@@ -165,7 +148,6 @@ services:
     container_name: monitor_filebeat
     user: root
     image: docker.elastic.co/beats/filebeat:7.3.1
-    network_mode: host
     environment:
       FILEBEAT_HOST: ${FILEBEAT_HOST}
     volumes:
