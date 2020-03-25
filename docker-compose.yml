@@ -90,42 +90,7 @@ services:
       - ${SKALE_DIR}/node_data:/skale_node_data
     depends_on:
       - mysql
-
-  admin:
-    <<: *skale_base
-    container_name: skale_admin
-    image: skalenetwork/admin:0.10.0-develop.3
-    network_mode: host
-    tty: true
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
-    environment:
-      TM_URL: http://127.0.0.1:3008
-      SGX_SERVER_URL: ${SGX_SERVER_URL}
-      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
-      ENDPOINT: ${ENDPOINT}
-      IMA_ENDPOINT: ${IMA_ENDPOINT}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      DB_PORT: ${DB_PORT}
-      DOCKER_USERNAME: ${DOCKER_USERNAME}
-      DOCKER_PASSWORD: ${DOCKER_PASSWORD}
-      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
-      FLASK_APP_PORT: 3007
-      FLASK_APP_HOST: "127.0.0.1"
-      FLASK_DEBUG_MODE: "False"
-      SKALE_DIR_HOST: ${SKALE_DIR}
-    ports:
-      - 3007:3007
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ${SKALE_DIR}:/skale_vol
-      - ${SKALE_DIR}/node_data:/skale_node_data
-    depends_on:
-      - mysql
-        
+ 
   mysql:
     <<: *skale_base
     container_name: skale_mysql
