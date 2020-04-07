@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "1.45-develop.1",
+    "version": "1.45-develop.5",
     "config_options": {
         "rotateAfterBlock": 128
     },
