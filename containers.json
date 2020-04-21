@@ -15,7 +15,8 @@
       ],
       "logs": {
         "max-size": "250m",
-        "max-file": "5"
+        "max-file": "5",
+        "close_inactive": "2h"
       }
     },
     "args": {
