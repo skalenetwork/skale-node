@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "1.43-develop.4",
+    "version": "1.43-develop.9",
     "config_options": {
         "rotateAfterBlock": 128
     },
@@ -15,7 +15,8 @@
       ],
       "logs": {
         "max-size": "250m",
-        "max-file": "5"
+        "max-file": "5",
+        "close_inactive": "2h"
       }
     },
     "args": {
@@ -28,7 +29,8 @@
       },
       "network": "host",
       "cap_add": [
-        "SYS_PTRACE"
+        "SYS_PTRACE",
+        "SYS_ADMIN"
       ]
     }
   },
