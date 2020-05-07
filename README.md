@@ -6,42 +6,6 @@
 
 SKALE-node is still in active development and therefore should be regarded as alpha software. The development is still subject to security hardening, further testing, and breaking changes. This repository has not yet been reviewed or audited for security.
 
-## Installation, update and uninstall scripts
-
-### Arguments:
-
-Environment variables needed to execute the installation script
-
-    IMA_ENDPOINT     - IMA endpoint to connect ('http://<IP>:1919')
-    ENDPOINT         - RPC endpoint of the node in the network where SKALE Manager is deployed ('ws://<IP>:1920')
-    RPC_IP           - RPC IP of the network with SKALE Manager ('<IP>')
-    RPC_PORT         - RPC port of the network with SKALE Manager (default is 1920)
-    DB_PORT          - Port for of node internal database (default is `3306`)
-    DB_USER          - MySQL user for local node database (default is root)
-    DB_ROOT_PASSWORD - Password for root user of node internal database (equal to user password by default)
-
-### Scripts
-
-How to execute install, uninstall or update scripts: 
-
-#### Installation
-
-```bash
-export $(grep -v '^#' .env | xargs) && sudo -E bash ./scripts/install.sh
-```
-
-#### Uninstall
-
-```bash
-export $(grep -v '^#' .env | xargs) && sudo -E bash ./scripts/uninstall.sh
-```
-
-#### Update
-
-```bash
-export $(grep -v '^#' .env | xargs) && sudo -E bash ./scripts/update.sh
-```
-
 ## Documentation
 
 ### Volume
