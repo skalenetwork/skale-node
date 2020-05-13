@@ -1,7 +1,10 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "1.43-develop.4",
+    "version": "1.46-develop.10",
+    "config_options": {
+        "rotateAfterBlock": 128
+    },
     "custom_args": {
       "ulimits_list": [
         {
@@ -24,8 +27,7 @@
         "Name": "on-failure"
       },
       "network": "host",
-      "cap_add": [
-        "SYS_PTRACE"
+      "cap_add": [  
       ]
     }
   },

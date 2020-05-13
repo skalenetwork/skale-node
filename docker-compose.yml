@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:0.1.1-beta.0
+    image: skalenetwork/transaction-manager:0.2.0-beta.1
     network_mode: host
     tty: true
     environment:
@@ -31,10 +31,11 @@ services:
       - ${SKALE_DIR}/node_data:/skale_node_data
     ports:
       - 3008:3008
+
   admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.8.0-beta.8
+    image: skalenetwork/admin:0.11.0-beta.1
     network_mode: host
     tty: true
     cap_add:
@@ -65,6 +66,7 @@ services:
       - ${SKALE_DIR}/node_data:/skale_node_data
     depends_on:
       - mysql
+        
   mysql:
     <<: *skale_base
     container_name: skale_mysql
@@ -84,7 +86,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalenetwork/sla-agent:0.4.3-beta.1
+    image: skalenetwork/sla-agent:0.7.0-develop.4
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -102,7 +104,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:0.4.3-beta.1
+    image: skalenetwork/bounty-agent:0.7.0-develop.5
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -116,7 +118,6 @@ services:
       - ${SKALE_DIR}/node_data:/skale_node_data
     depends_on:
       - mysql
-
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
