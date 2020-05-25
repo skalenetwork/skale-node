@@ -27,7 +27,9 @@
         "Name": "on-failure"
       },
       "network": "host",
-      "cap_add": [  
+      "cap_add": [
+        "SYS_PTRACE",
+        "SYS_ADMIN"
       ]
     }
   },
