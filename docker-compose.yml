@@ -85,7 +85,8 @@ services:
       SKALE_DIR_HOST: ${SKALE_DIR}
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
-    command: "python3 app.py"
+    command: "gunicorn app:app -c gunicorn.conf.py"
+
     ports:
       - 3007:3007
     volumes:
