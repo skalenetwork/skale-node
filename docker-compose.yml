@@ -52,6 +52,8 @@ services:
       DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       DB_PORT: ${DB_PORT}
       SKALE_DIR_HOST: ${SKALE_DIR}
+      TG_API_KEY: ${TG_API_KEY}
+      TG_CHAT_ID: ${TG_CHAT_ID}
     command: "python3 admin.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -81,7 +83,10 @@ services:
       FLASK_APP_HOST: "127.0.0.1"
       FLASK_DEBUG_MODE: "False"
       SKALE_DIR_HOST: ${SKALE_DIR}
+      TG_API_KEY: ${TG_API_KEY}
+      TG_CHAT_ID: ${TG_CHAT_ID}
     command: "gunicorn app:app -c gunicorn.conf.py"
+
     ports:
       - 3007:3007
     volumes:
