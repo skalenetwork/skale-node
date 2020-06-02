@@ -81,7 +81,7 @@ services:
       FLASK_APP_HOST: "127.0.0.1"
       FLASK_DEBUG_MODE: "False"
       SKALE_DIR_HOST: ${SKALE_DIR}
-    command: "python3 app.py"
+    command: "gunicorn app:app -c gunicorn.conf.py"
     ports:
       - 3007:3007
     volumes:
