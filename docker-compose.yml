@@ -173,7 +173,7 @@ services:
       - "8080:8080"
 
   node-exporter:
-   <<: *skale_base
+    <<: *skale_base
     container_name: monitor_node_exporter
     image: quay.io/prometheus/node-exporter
     volumes:
