@@ -65,7 +65,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:0.12.0-develop.14
+    image: skalenetwork/admin:0.12.0-develop.17
     network_mode: host
     tty: true
     environment:
@@ -172,20 +172,20 @@ services:
     ports:
       - "8080:8080"
 
-#  node-exporter:
-#   <<: *skale_base
-#    container_name: monitor_node_exporter
-#    image: quay.io/prometheus/node-exporter
-#    volumes:
-#      - /proc:/host/proc:ro
-#      - /sys:/host/sys:ro
-#      - /:/rootfs:ro
-#    command:
-#      - '--path.procfs=/host/proc'
-#      - '--path.rootfs=/rootfs'
-#      - '--path.sysfs=/host/sys'
-#      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
-#    network_mode: host
+  node-exporter:
+   <<: *skale_base
+    container_name: monitor_node_exporter
+    image: quay.io/prometheus/node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+    network_mode: host
 
   filebeat:
     <<: *skale_base
