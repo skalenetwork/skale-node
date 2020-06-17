@@ -65,7 +65,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:0.12.0-develop.17
+    image: skalenetwork/admin:0.14.0-develop.4
     network_mode: host
     tty: true
     environment:
