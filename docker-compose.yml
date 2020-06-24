@@ -35,7 +35,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.14.0-develop.7
+    image: skalenetwork/admin:0.14.0-develop.9
     network_mode: host
     tty: true
     cap_add:
@@ -65,7 +65,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:0.14.0-develop.7
+    image: skalenetwork/admin:0.14.0-develop.9
     network_mode: host
     tty: true
     environment:
