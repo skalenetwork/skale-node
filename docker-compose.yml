@@ -35,7 +35,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.15.0-develop.2
+    image: skalenetwork/admin:0.15.0-develop.5
     network_mode: host
     tty: true
     cap_add:
@@ -65,7 +65,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:0.15.0-develop.2
+    image: skalenetwork/admin:0.15.0-develop.5
     network_mode: host
     tty: true
     environment:
@@ -115,7 +115,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalenetwork/sla-agent:test-latest
+    image: skalenetwork/sla-agent:0.9.3-develop.0
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
