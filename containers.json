@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "olegFixSgxPort",
+    "version": "develop.21",
     "config_options": {
         "rotateAfterBlock": 128,
         "snapshotIntervalMs": 180
