@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "olegConsensusLogs",
+    "version": "olegDisableEcdsa",
     "config_options": {
         "rotateAfterBlock": 128,
         "snapshotIntervalMs": 180
