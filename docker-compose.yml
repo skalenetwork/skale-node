@@ -54,6 +54,7 @@ services:
       SKALE_DIR_HOST: ${SKALE_DIR}
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
+      MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
     command: "python3 admin.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -85,6 +86,7 @@ services:
       SKALE_DIR_HOST: ${SKALE_DIR}
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
+      MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
     command: "gunicorn app:app -c gunicorn.conf.py"
 
     ports:
