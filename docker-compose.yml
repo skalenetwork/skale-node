@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:0.2.0-develop.17
+    image: skalenetwork/transaction-manager:0.4.1-develop.0
     network_mode: host
     tty: true
     environment:
@@ -35,7 +35,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.14.0-develop.13
+    image: skalenetwork/admin:0.15.0-develop.7
     network_mode: host
     tty: true
     cap_add:
@@ -65,7 +65,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:0.14.0-develop.13
+    image: skalenetwork/admin:0.15.0-develop.7
     network_mode: host
     tty: true
     environment:
@@ -133,7 +133,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:0.8.0-develop.0
+    image: skalenetwork/bounty-agent:0.9.1-develop.0
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
