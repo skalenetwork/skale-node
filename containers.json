@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "olegFixFilestorage",
+    "version": "olegFixDbPath2",
     "config_options": {
         "rotateAfterBlock": 128,
         "snapshotIntervalMs": 180
