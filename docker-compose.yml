@@ -107,7 +107,7 @@ services:
     network_mode: host
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ~/.skale/node_data/mysql-data:/var/lib/mysql
+      - ${SKALE_DIR}/node_data/mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_USER: ${DB_USER}
