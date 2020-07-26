@@ -148,17 +148,27 @@ services:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
 
-  watchdog:
-    <<: *skale_base
-    container_name: skale_watchdog
-    image: skalenetwork/watchdog:0.0.1-beta.1
-    network_mode: host
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      FLASK_APP_PORT: 3009
-      FLASK_APP_HOST: "0.0.0.0"
-      FLASK_DEBUG_MODE: "False"
+watchdog:
+  <<: *skale_base
+  container_name: skale_watchdog
+  image: skalenetwork/watchdog:0.1.0
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+  environment:
+    FLASK_APP_PORT: 3010
+    FLASK_APP_HOST: "127.0.0.1"
+    FLASK_DEBUG_MODE: "False"
+
+nginx:
+  <<: *skale_base
+  image: nginx:1.13.7
+  container_name: skale_nginx
+  depends_on:
+    - watchdog
+  volumes:
+    - ./nginx.conf:/etc/nginx/conf.d/default.conf
+  ports:
+    - 3009:3009
 
   advisor:
     <<: *skale_base
