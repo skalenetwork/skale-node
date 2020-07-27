@@ -108,6 +108,7 @@ services:
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - ${SKALE_DIR}/node_data/mysql-data:/var/lib/mysql
+      - ${SKALE_DIR}/node_data/.mysql-backup:/mysql-backup
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_USER: ${DB_USER}
