@@ -54,6 +54,8 @@ services:
       SKALE_DIR_HOST: ${SKALE_DIR}
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
+      MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
+      BACKUP_RUN: ${BACKUP_RUN}
     command: "python3 admin.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -85,6 +87,8 @@ services:
       SKALE_DIR_HOST: ${SKALE_DIR}
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
+      MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
+      BACKUP_RUN: ${BACKUP_RUN}
     command: "gunicorn app:app -c gunicorn.conf.py"
 
     ports:
@@ -103,7 +107,8 @@ services:
     network_mode: host
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ~/.skale/node_data/mysql-data:/var/lib/mysql
+      - ${SKALE_DIR}/node_data/mysql-data:/var/lib/mysql
+      - ${SKALE_DIR}/node_data/.mysql-backup:/mysql-backup
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_USER: ${DB_USER}
