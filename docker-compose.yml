@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:0.4.1-develop.2
+    image: skalenetwork/transaction-manager:0.4.1-develop.3
     network_mode: host
     tty: true
     environment:
@@ -35,12 +35,9 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.15.0-develop.25
+    image: skalenetwork/admin:0.15.0-develop.26
     network_mode: host
     tty: true
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
     environment:
       TM_URL: http://127.0.0.1:3008
       SGX_SERVER_URL: ${SGX_SERVER_URL}
@@ -67,7 +64,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:0.15.0-develop.25
+    image: skalenetwork/admin:0.15.0-develop.26
     network_mode: host
     tty: true
     environment:
@@ -97,13 +94,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-    depends_on:
-      - mysql
 
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:0.15.0-develop.5
+    image: skalenetwork/admin:0.15.0-develop.26
     network_mode: host
     tty: true
     environment:
@@ -179,7 +174,7 @@ services:
       - ${SKALE_DIR}/node_data:/skale_node_data
     depends_on:
       - mysql
-      
+
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
