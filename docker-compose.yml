@@ -99,6 +99,33 @@ services:
       - ${SKALE_DIR}/node_data:/skale_node_data
     depends_on:
       - mysql
+
+  celery:
+    <<: *skale_base
+    container_name: celery
+    image: skalenetwork/admin:0.15.0-develop.5
+    network_mode: host
+    tty: true
+    environment:
+      TG_API_KEY: ${TG_API_KEY}
+      TG_CHAT_ID: ${TG_CHAT_ID}
+    command: "celery -A tools.notifications.tasks worker --loglevel=info"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  redis:
+    <<: *skale_base
+    container_name: redis
+    image: "redis:6.0-alpine"
+    network_mode: host
+    tty: true
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    command: "redis-server /config/redis.conf"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
+      - ${SKALE_DIR}/config:/config:ro
  
   mysql:
     <<: *skale_base
