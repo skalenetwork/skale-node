@@ -38,6 +38,9 @@ services:
     image: skalenetwork/admin:0.15.0-develop.26
     network_mode: host
     tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     environment:
       TM_URL: http://127.0.0.1:3008
       SGX_SERVER_URL: ${SGX_SERVER_URL}
