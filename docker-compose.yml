@@ -145,7 +145,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalenetwork/sla-agent:0.9.6-test
+    image: skalenetwork/sla-agent:0.9.7-develop.0
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
