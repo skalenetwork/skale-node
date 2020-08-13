@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:0.4.1-develop.3
+    image: skalenetwork/transaction-manager:0.5.0-beta.0
     network_mode: host
     tty: true
     environment:
@@ -35,7 +35,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.15.0-develop.27
+    image: skalenetwork/admin:0.16.0-beta.1
     network_mode: host
     tty: true
     cap_add:
@@ -67,7 +67,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:0.15.0-develop.27
+    image: skalenetwork/admin:0.16.0-beta.1
     network_mode: host
     tty: true
     environment:
@@ -97,11 +97,13 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+    depends_on:
+      - mysql
 
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:0.15.0-develop.26
+    image: skalenetwork/admin:0.16.0-beta.1
     network_mode: host
     tty: true
     environment:
@@ -124,7 +126,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
       - ${SKALE_DIR}/config:/config:ro
- 
+
   mysql:
     <<: *skale_base
     container_name: skale_mysql
@@ -145,7 +147,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalenetwork/sla-agent:0.9.7-develop.0
+    image: skalenetwork/sla-agent:0.9.8-develop.0
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -163,7 +165,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:0.9.1-develop.0
+    image: skalenetwork/bounty-agent:0.9.2-develop.0
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -181,14 +183,14 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:0.1.0
+    image: skalenetwork/watchdog:0.1.0-develop.0
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       FLASK_APP_PORT: 3010
       FLASK_APP_HOST: "127.0.0.1"
       FLASK_DEBUG_MODE: "False"
-      
+
   nginx:
     <<: *skale_base
     image: nginx:1.13.7
@@ -199,7 +201,7 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 3009:3009
-      
+
   advisor:
     <<: *skale_base
     container_name: monitor_cadvisor
