@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "olegDevelop48WithoutSgx",docker
+    "version": "olegDevelop48WithoutSgx",
     "config_options": {
         "rotateAfterBlock": 128,
         "snapshotIntervalMs": 180
