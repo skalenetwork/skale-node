@@ -9,6 +9,48 @@
         "log_level_config": "info",
         "rotate_after_block": 128
     },
+    "cache_options": {
+        "small": {
+            "min_cache_size": 1000000,
+            "max_cache_size": 2000000,
+            "collection_queue_size": 2,
+            "collection_duration": 10,
+            "transaction_queue_size": 1000,
+            "max_open_leveldb_files": 25
+        },
+        "medium": {
+            "min_cache_size": 32000000,
+            "max_cache_size": 64000000,
+            "collection_queue_size": 20,
+            "collection_duration": 60,
+            "transaction_queue_size": 100000,
+            "max_open_leveldb_files": 256
+        },
+        "large": {
+            "min_cache_size": 32000000,
+            "max_cache_size": 64000000,
+            "collection_queue_size": 20,
+            "collection_duration": 60,
+            "transaction_queue_size": 100000,
+            "max_open_leveldb_files": 256
+        },
+        "test": {
+            "min_cache_size": 32000000,
+            "max_cache_size": 64000000,
+            "collection_queue_size": 20,
+            "collection_duration": 60,
+            "transaction_queue_size": 100000,
+            "max_open_leveldb_files": 256
+        },
+        "test4": {
+            "min_cache_size": 32000000,
+            "max_cache_size": 64000000,
+            "collection_queue_size": 20,
+            "collection_duration": 60,
+            "transaction_queue_size": 100000,
+            "max_open_leveldb_files": 256
+        }
+    },
     "schain": {
         "snapshot_interval_ms": 180,
         "empty_block_interval_ms": 10
