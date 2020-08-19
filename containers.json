@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "oleg53WithoutSgx",
+    "version": "schain:olegFixRotation52",
     "config_options": {
         "rotateAfterBlock": 128,
         "snapshotIntervalMs": 180
