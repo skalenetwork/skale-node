@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.4'
 
 services:
   base: &skale_base
@@ -54,11 +54,18 @@ services:
       TG_CHAT_ID: ${TG_CHAT_ID}
       MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
       BACKUP_RUN: ${BACKUP_RUN}
+      MAX_ALLOWED_LOG_TIME_DIFF: 600
     command: "python3 admin.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+    healthcheck:
+      test: ["CMD", "python3", "healthchecks/admin.py"]
+      interval: 1m
+      timeout: 10s
+      retries: 5
+      start_period: 30s
 
   skale-api:
     <<: *skale_base
