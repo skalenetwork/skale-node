@@ -64,7 +64,7 @@ services:
       test: ["CMD", "python3", "healthchecks/admin.py"]
       interval: 1m
       timeout: 10s
-      retries: 5
+      retries: 2
       start_period: 30s
 
   skale-api:
