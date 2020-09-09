@@ -52,7 +52,7 @@
         }
     },
     "schain": {
-        "snapshot_interval_ms": 259200,
+        "snapshot_interval_ms": 21600,
         "empty_block_interval_ms": 10
     }
 }
