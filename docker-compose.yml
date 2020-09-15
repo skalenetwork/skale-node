@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:0.5.0-develop.5
+    image: skalenetwork/transaction-manager:0.5.0-develop.7
     network_mode: host
     tty: true
     environment:
