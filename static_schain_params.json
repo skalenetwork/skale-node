@@ -5,7 +5,7 @@
     },
     "current_node_info": {
         "bind_ip": "0.0.0.0",
-        "log_level": "info",
+        "log_level": "trace",
         "log_level_config": "info",
         "rotate_after_block": 128
     },
@@ -52,7 +52,7 @@
         }
     },
     "schain": {
-        "snapshot_interval_ms": 180,
+        "snapshot_interval_ms": 21600,
         "empty_block_interval_ms": 10
     }
 }
