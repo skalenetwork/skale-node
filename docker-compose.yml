@@ -54,7 +54,7 @@ services:
       TG_CHAT_ID: ${TG_CHAT_ID}
       MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
       BACKUP_RUN: ${BACKUP_RUN}
-      MAX_ALLOWED_LOG_TIME_DIFF: 1
+      MAX_ALLOWED_LOG_TIME_DIFF: 600
     command: "python3 admin.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
