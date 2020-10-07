@@ -34,6 +34,7 @@ services:
     <<: *skale_base
     container_name: skale_admin
     image: skalenetwork/admin:0.17.0-beta.0
+    cpu_shares: 192
     network_mode: host
     tty: true
     cap_add:
@@ -209,6 +210,7 @@ services:
     <<: *skale_base
     container_name: monitor_cadvisor
     image: google/cadvisor:latest
+    cpu_shares: 128
     network_mode: host
     volumes:
       - /:/rootfs:ro
