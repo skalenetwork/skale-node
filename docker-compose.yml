@@ -169,7 +169,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:0.9.3-develop.0
+    image: skalenetwork/bounty-agent:1.0.0-develop.1
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
