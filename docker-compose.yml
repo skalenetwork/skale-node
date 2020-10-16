@@ -150,7 +150,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalenetwork/sla-agent:1.0.3-1hour-test
+    image: skalenetwork/sla-agent:1.0.2-beta.1
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -168,7 +168,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:1.0.0-develop.1
+    image: skalenetwork/bounty-agent:1.0.0-develop.2
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
