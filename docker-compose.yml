@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:0.5.0-beta.1
+    image: skalenetwork/transaction-manager:1.0.0-stable.0
     network_mode: host
     tty: true
     environment:
@@ -33,7 +33,8 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:0.17.0-beta.0
+    image: skalenetwork/admin:1.0.0-develop.6
+    cpu_shares: 192
     network_mode: host
     tty: true
     cap_add:
@@ -70,7 +71,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:0.17.0-beta.0
+    image: skalenetwork/admin:1.0.0-develop.6
     network_mode: host
     tty: true
     environment:
@@ -106,7 +107,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:0.17.0-beta.0
+    image: skalenetwork/admin:1.0.0-develop.6
     network_mode: host
     tty: true
     environment:
@@ -150,7 +151,7 @@ services:
   sla:
     <<: *skale_base
     container_name: skale_sla
-    image: skalenetwork/sla-agent:1.0.0-develop.0
+    image: skalenetwork/sla-agent:1.0.2-beta.1
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -168,7 +169,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:0.9.3-develop.0
+    image: skalenetwork/bounty-agent:1.0.0-develop.2
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -209,6 +210,7 @@ services:
     <<: *skale_base
     container_name: monitor_cadvisor
     image: google/cadvisor:latest
+    cpu_shares: 128
     network_mode: host
     volumes:
       - /:/rootfs:ro
