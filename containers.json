@@ -4,7 +4,7 @@
     "version": "1.46-develop.75",
     "config_options": {
         "rotateAfterBlock": 128,
-        "snapshotIntervalMs": 180
+        "snapshotIntervalMs": 86400
     },
     "custom_args": {
       "ulimits_list": [
