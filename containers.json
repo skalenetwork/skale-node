@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "olehTestExitStateRoot",
+    "version": "olehTestExitStateRoot200",
     "config_options": {
         "rotateAfterBlock": 128,
         "snapshotIntervalMs": 86400
