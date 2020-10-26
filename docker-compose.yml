@@ -33,7 +33,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:olehTestResponse
+    image: skalenetwork/admin:olehFixResponse1
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -71,7 +71,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:olehTestResponse
+    image: skalenetwork/admin:olehFixResponse1
     network_mode: host
     tty: true
     environment:
@@ -107,7 +107,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:olehTestResponse
+    image: skalenetwork/admin:olehFixResponse1
     network_mode: host
     tty: true
     environment:
