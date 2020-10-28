@@ -33,7 +33,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-develop.3
+    image: skalenetwork/admin:1.1.0-beta.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -73,7 +73,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-develop.3
+    image: skalenetwork/admin:1.1.0-beta.0
     network_mode: host
     tty: true
     environment:
@@ -111,7 +111,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-develop.3
+    image: skalenetwork/admin:1.1.0-beta.0
     network_mode: host
     tty: true
     environment:
