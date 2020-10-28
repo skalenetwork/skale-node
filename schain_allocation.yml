@@ -1,10 +1,10 @@
 schain_proportions:
   cpu:
     skaled: 0.7
-    ima: 0.7
+    ima: 0.3
   mem:
     skaled: 0.7
-    ima: 0.7
+    ima: 0.3
   volume:
     max_consensus_storage_bytes: 0.3
     max_skaled_leveldb_storage_bytes: 0.3
