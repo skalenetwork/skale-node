@@ -36,7 +36,7 @@
   },
   "ima": {
     "name": "skalenetwork/ima",
-    "version": "test-sgx.5",
+    "version": "test-sgx.7",
     "custom_args": {},
     "args": {
       "restart_policy": {
