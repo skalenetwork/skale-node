@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "1.47.2-develop.0",
+    "version": "2.0.0-rc-empty-block-interval-sec-custom-build",
     "config_options": {
         "rotateAfterBlock": 128,
         "snapshotIntervalMs": 86400
@@ -36,7 +36,7 @@
   },
   "ima": {
     "name": "skalenetwork/ima",
-    "version": "1.0.0-develop.46",
+    "version": "test-sgx.10",
     "custom_args": {},
     "args": {
       "restart_policy": {
