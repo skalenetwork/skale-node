@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "1.47.2-develop.2",
+    "version": "2.0.0-develop.0",
     "config_options": {
         "rotateAfterBlock": 128,
         "snapshotIntervalSec": 86400
