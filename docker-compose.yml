@@ -141,7 +141,7 @@ services:
   mysql:
     <<: *skale_base
     container_name: skale_mysql
-    image: mysql/mysql-server:5.7
+    image: mysql/mysql-server:5.7.30
     network_mode: host
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
