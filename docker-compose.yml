@@ -33,7 +33,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-develop.14
+    image: skalenetwork/admin:1.1.0-develop.15
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -73,7 +73,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-develop.14
+    image: skalenetwork/admin:1.1.0-develop.15
     network_mode: host
     tty: true
     cap_add:
@@ -114,7 +114,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-develop.14
+    image: skalenetwork/admin:1.1.0-develop.15
     network_mode: host
     tty: true
     environment:
@@ -176,7 +176,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:1.1.0-beta.1
+    image: skalenetwork/bounty-agent:1.1.0-stable.0
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
