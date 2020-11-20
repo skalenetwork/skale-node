@@ -136,7 +136,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
-      - ${SKALE_DIR}/config:/config:ro
+      - ${SKALE_DIR}/config:/config
 
   mysql:
     <<: *skale_base
