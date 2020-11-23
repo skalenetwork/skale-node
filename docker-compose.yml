@@ -132,11 +132,11 @@ services:
     tty: true
     environment:
       - REDIS_REPLICATION_MODE=master
-    command: "redis-server /config/redis.conf"
+    command: "redis-server /data/redis.conf"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
-      - ${SKALE_DIR}/config:/config
+      - ${SKALE_DIR}/config/redis.conf:/data/redis.conf
 
   mysql:
     <<: *skale_base
