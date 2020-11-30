@@ -57,6 +57,7 @@ services:
       BACKUP_RUN: ${BACKUP_RUN}
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       MAX_ALLOWED_LOG_TIME_DIFF: 600
     command: "python3 admin.py"
     volumes:
@@ -100,6 +101,7 @@ services:
       BACKUP_RUN: ${BACKUP_RUN}
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
     command: "gunicorn app:app -c gunicorn.conf.py"
 
     ports:
@@ -185,6 +187,8 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       DB_PORT: ${DB_PORT}
+      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
