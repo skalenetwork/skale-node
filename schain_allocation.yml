@@ -15,12 +15,12 @@ mainnet:
     test4: 4294967296
     test: 4294967296
     small: 4294967296
-    medium: 68719476736
+    medium: 17179869184
     large: 549755813888
 testnet:
   storage_limit:
     test4: 655360000
     test: 655360000
     small: 655360000
-    medium: 10737418240
+    medium: 2684354560
     large: 85899345920
