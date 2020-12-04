@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:1.0.0-stable.0
+    image: skalenetwork/transaction-manager:1.0.0-develop.8
     network_mode: host
     tty: true
     environment:
@@ -33,7 +33,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-develop.6
+    image: skalenetwork/admin:1.1.0-develop.21
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -57,6 +57,7 @@ services:
       BACKUP_RUN: ${BACKUP_RUN}
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       MAX_ALLOWED_LOG_TIME_DIFF: 600
     command: "python3 admin.py"
     volumes:
@@ -73,9 +74,12 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-develop.6
+    image: skalenetwork/admin:1.1.0-develop.21
     network_mode: host
     tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     environment:
       TM_URL: http://127.0.0.1:3008
       SGX_SERVER_URL: ${SGX_SERVER_URL}
@@ -97,6 +101,7 @@ services:
       BACKUP_RUN: ${BACKUP_RUN}
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
     command: "gunicorn app:app -c gunicorn.conf.py"
 
     ports:
@@ -111,7 +116,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-develop.6
+    image: skalenetwork/admin:1.1.0-develop.21
     network_mode: host
     tty: true
     environment:
@@ -129,16 +134,16 @@ services:
     tty: true
     environment:
       - REDIS_REPLICATION_MODE=master
-    command: "redis-server /config/redis.conf"
+    command: "redis-server /data/redis.conf"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
-      - ${SKALE_DIR}/config:/config:ro
+      - ${SKALE_DIR}/config/redis.conf:/data/redis.conf
 
   mysql:
     <<: *skale_base
     container_name: skale_mysql
-    image: mysql/mysql-server:5.7
+    image: mysql/mysql-server:5.7.30
     network_mode: host
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -173,7 +178,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:1.0.0-stable.0
+    image: skalenetwork/bounty-agent:1.1.0-stable.0
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -182,6 +187,9 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       DB_PORT: ${DB_PORT}
+      DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
+      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
