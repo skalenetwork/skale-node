@@ -40,7 +40,7 @@
     "custom_args": {},
     "args": {
       "restart_policy": {
-        "MaximumRetryCount": 10,
+        "MaximumRetryCount": 100,
         "Name": "on-failure"
       },
       "network": "host"
