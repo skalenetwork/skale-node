@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.2.0-develop.0",
+    "version": "3.2.1-develop.0",
     "config_options": {
         "rotateAfterBlock": 128,
         "snapshotIntervalSec": 86400
@@ -36,7 +36,7 @@
   },
   "ima": {
     "name": "skalenetwork/ima",
-    "version": "1.0.0-develop.69",
+    "version": "1.0.0-develop.72",
     "custom_args": {},
     "args": {
       "restart_policy": {
