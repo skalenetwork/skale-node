@@ -7,7 +7,7 @@
         "bind_ip": "0.0.0.0",
         "log_level": "info",
         "log_level_config": "info",
-        "rotate_after_block": 128
+        "rotate_after_block": 100000
     },
     "cache_options": {
         "small": {
@@ -53,6 +53,6 @@
     },
     "schain": {
         "snapshot_interval_sec": 300,
-        "empty_block_interval_ms": 1
+        "empty_block_interval_ms": 5
     }
 }
