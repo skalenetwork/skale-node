@@ -199,7 +199,7 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:1.0.0-stable.0
+    image: skalenetwork/watchdog:test-latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
