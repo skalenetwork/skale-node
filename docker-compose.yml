@@ -206,7 +206,7 @@ services:
       FLASK_DEBUG_MODE: "False"
 
   nginx:
-  <<: *skale_base
+    <<: *skale_base
     image: nginx:1.13.7
     container_name: skale_nginx
     depends_on:
