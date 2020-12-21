@@ -199,9 +199,8 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:1.0.0-stable.0
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+    image: skalenetwork/watchdog:1.1.0-develop.0
+    network_mode: host
     environment:
       FLASK_APP_PORT: 3010
       FLASK_APP_HOST: "127.0.0.1"
@@ -211,6 +210,7 @@ services:
     <<: *skale_base
     image: nginx:1.13.7
     container_name: skale_nginx
+    network_mode: host
     depends_on:
       - watchdog
     volumes:
