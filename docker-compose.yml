@@ -208,7 +208,7 @@ services:
 
   nginx:
     <<: *skale_base
-    image: nginx:latest
+    image: nginx:1.19.6
     network_mode: host
     container_name: skale_nginx
     depends_on:
