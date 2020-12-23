@@ -36,7 +36,7 @@
   },
   "ima": {
     "name": "skalenetwork/ima",
-    "version": "1.0.0-develop.99",
+    "version": "1.0.0-develop.101",
     "custom_args": {},
     "args": {
       "restart_policy": {
