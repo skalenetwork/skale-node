@@ -53,6 +53,7 @@
     },
     "schain": {
         "snapshot_interval_sec": 300,
-        "empty_block_interval_ms": 5
+        "empty_block_interval_ms": 5,
+        "free_contract_deployment": true
     }
 }
