@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:1.0.0-develop.8
+    image: skalenetwork/transaction-manager:1.1.0-beta.1
     network_mode: host
     tty: true
     environment:
@@ -33,7 +33,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-develop.21
+    image: skalenetwork/admin:1.1.0-beta.6
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -57,6 +57,7 @@ services:
       BACKUP_RUN: ${BACKUP_RUN}
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       MAX_ALLOWED_LOG_TIME_DIFF: 600
     command: "python3 admin.py"
     volumes:
@@ -73,7 +74,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-develop.21
+    image: skalenetwork/admin:1.1.0-beta.6
     network_mode: host
     tty: true
     cap_add:
@@ -100,6 +101,7 @@ services:
       BACKUP_RUN: ${BACKUP_RUN}
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
     command: "gunicorn app:app -c gunicorn.conf.py"
 
     ports:
@@ -114,7 +116,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-develop.21
+    image: skalenetwork/admin:1.1.0-beta.6
     network_mode: host
     tty: true
     environment:
@@ -176,7 +178,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:1.1.0-stable.0
+    image: skalenetwork/bounty-agent:1.1.1-beta.0
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -185,6 +187,9 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       DB_PORT: ${DB_PORT}
+      DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
+      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
@@ -194,9 +199,8 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:1.0.0-stable.0
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+    image: skalenetwork/watchdog:1.1.2-beta.0
+    network_mode: host
     environment:
       FLASK_APP_PORT: 3010
       FLASK_APP_HOST: "127.0.0.1"
@@ -204,8 +208,9 @@ services:
 
   nginx:
     <<: *skale_base
-    image: nginx:1.13.7
+    image: nginx:1.19.6
     container_name: skale_nginx
+    network_mode: host
     depends_on:
       - watchdog
     volumes:
