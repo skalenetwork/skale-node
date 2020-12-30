@@ -1,0 +1,26 @@
+schain_proportions:
+  cpu:
+    skaled: 0.7
+    ima: 0.3
+  mem:
+    skaled: 0.7
+    ima: 0.3
+  volume:
+    max_consensus_storage_bytes: 0.3
+    max_skaled_leveldb_storage_bytes: 0.3
+    max_file_storage_bytes: 0.3
+    max_reserved_storage_bytes: 0.1
+mainnet:
+  storage_limit:
+    test4: 4294967296
+    test: 4294967296
+    small: 4294967296
+    medium: 17179869184
+    large: 549755813888
+testnet:
+  storage_limit:
+    test4: 655360000
+    test: 655360000
+    small: 655360000
+    medium: 2684354560
+    large: 85899345920
