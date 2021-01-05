@@ -7,7 +7,7 @@
         "bind_ip": "0.0.0.0",
         "log_level": "info",
         "log_level_config": "info",
-        "rotate_after_block": 100000
+        "rotate_after_block": 128
     },
     "cache_options": {
         "small": {
@@ -55,5 +55,8 @@
         "snapshot_interval_sec": 300,
         "empty_block_interval_ms": 5,
         "free_contract_deployment": true
+    },
+    "schain_cmd": {
+        "logs_verbosity": 2
     }
 }

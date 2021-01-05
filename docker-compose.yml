@@ -1,4 +1,4 @@
-version: "3.4"
+version: '3.4'
 
 services:
   base: &skale_base
@@ -26,6 +26,8 @@ services:
       FLASK_APP_HOST: "127.0.0.1"
       FLASK_DEBUG_MODE: "False"
       SKALE_DIR_HOST: ${SKALE_DIR}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
@@ -178,7 +180,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:1.1.1-beta.0
+    image: skalenetwork/bounty-agent:1.1.0-beta.0
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -199,7 +201,7 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:1.1.2-develop.1
+    image: skalenetwork/watchdog:1.1.0-develop.0
     network_mode: host
     environment:
       FLASK_APP_PORT: 3010
@@ -209,8 +211,8 @@ services:
   nginx:
     <<: *skale_base
     image: nginx:1.19.6
-    network_mode: host
     container_name: skale_nginx
+    network_mode: host
     depends_on:
       - watchdog
     volumes:
@@ -242,10 +244,10 @@ services:
       - /sys:/host/sys:ro
       - /:/rootfs:ro
     command:
-      - "--path.procfs=/host/proc"
-      - "--path.rootfs=/rootfs"
-      - "--path.sysfs=/host/sys"
-      - "--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)"
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
     network_mode: host
 
   filebeat:

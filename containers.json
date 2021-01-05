@@ -2,10 +2,6 @@
   "schain": {
     "name": "skalenetwork/schain",
     "version": "3.2.3-latest-consensus",
-    "config_options": {
-        "rotateAfterBlock": 128,
-        "snapshotIntervalSec": 86400
-    },
     "custom_args": {
       "ulimits_list": [
         {
@@ -36,11 +32,11 @@
   },
   "ima": {
     "name": "skalenetwork/ima",
-    "version": "1.0.0-logs.2",
+    "version": "test-sgx.10",
     "custom_args": {},
     "args": {
       "restart_policy": {
-        "MaximumRetryCount": 100,
+        "MaximumRetryCount": 10,
         "Name": "on-failure"
       },
       "network": "host"
