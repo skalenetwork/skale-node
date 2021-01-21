@@ -28,6 +28,7 @@ services:
       SKALE_DIR_HOST: ${SKALE_DIR}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      STATE_FILENAME: 'tm-last-block'
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
@@ -61,6 +62,7 @@ services:
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       MAX_ALLOWED_LOG_TIME_DIFF: 600
+      STATE_FILENAME: 'admin-last-block'
     command: "python3 admin.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -104,6 +106,7 @@ services:
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      STATE_FILENAME: 'api-last-block'
     command: "gunicorn app:app -c gunicorn.conf.py"
 
     ports:
@@ -125,6 +128,8 @@ services:
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
     command: "celery -A tools.notifications.tasks worker --loglevel=info"
+    STATE_FILENAME: 'celery-last-block'
+
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
