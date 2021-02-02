@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:1.1.0-beta.1
+    image: skalenetwork/transaction-manager:1.1.0-beta.4
     network_mode: host
     tty: true
     environment:
@@ -34,15 +34,14 @@ services:
       LONG_TIMEOUT: ${LONG_TIMEOUT} 
       MAX_RETRY_ITERATIONS: ${MAX_RETRY_ITERATIONS} 
       MAX_GAS_PRICE_COEFF: ${MAX_GAS_PRICE_COEFF} 
-
+      STATE_FILENAME: 'tm-last-block'
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-develop.8
+    image: skalenetwork/admin:1.1.0-beta.15
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -68,6 +67,7 @@ services:
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       MAX_ALLOWED_LOG_TIME_DIFF: 600
+      STATE_FILENAME: 'admin-last-block'
     command: "python3 admin.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -83,7 +83,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-develop.8
+    image: skalenetwork/admin:1.1.0-beta.15
     network_mode: host
     tty: true
     cap_add:
@@ -111,6 +111,7 @@ services:
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      STATE_FILENAME: 'api-last-block'
     command: "gunicorn app:app -c gunicorn.conf.py"
 
     ports:
@@ -125,13 +126,15 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-develop.8
+    image: skalenetwork/admin:1.1.0-beta.15
     network_mode: host
     tty: true
     environment:
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
     command: "celery -A tools.notifications.tasks worker --loglevel=info"
+    STATE_FILENAME: 'celery-last-block'
+
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
@@ -187,7 +190,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:1.1.0-beta.0
+    image: skalenetwork/bounty-agent:1.1.1-beta.0
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -208,7 +211,7 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:1.1.0-develop.0
+    image: skalenetwork/watchdog:1.1.2-beta.0
     network_mode: host
     environment:
       FLASK_APP_PORT: 3010
