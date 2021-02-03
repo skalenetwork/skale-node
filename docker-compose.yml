@@ -35,7 +35,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-beta.20
+    image: skalenetwork/admin:1.1.0-beta.22
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -76,7 +76,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-beta.20
+    image: skalenetwork/admin:1.1.0-beta.22
     network_mode: host
     tty: true
     cap_add:
@@ -118,7 +118,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-beta.20
+    image: skalenetwork/admin:1.1.0-beta.22
     network_mode: host
     tty: true
     environment:
@@ -201,7 +201,7 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:1.1.3-develop.0
+    image: skalenetwork/watchdog:1.1.3-beta.0
     network_mode: host
     environment:
       FLASK_APP_PORT: 3010
