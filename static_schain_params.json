@@ -57,6 +57,6 @@
         "free_contract_deployment": true
     },
     "schain_cmd": {
-        "logs_verbosity": 2
+        "logs_verbosity": 4
     }
 }
