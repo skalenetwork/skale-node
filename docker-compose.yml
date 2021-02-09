@@ -41,7 +41,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-beta.15
+    image: skalenetwork/admin:1.1.0-beta.10
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -83,7 +83,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-beta.15
+    image: skalenetwork/admin:1.1.0-beta.10
     network_mode: host
     tty: true
     cap_add:
@@ -114,8 +114,6 @@ services:
       STATE_FILENAME: 'api-last-block'
     command: "gunicorn app:app -c gunicorn.conf.py"
 
-    ports:
-      - 3007:3007
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}:/skale_vol
@@ -126,7 +124,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-beta.15
+    image: skalenetwork/admin:1.1.0-beta.10
     network_mode: host
     tty: true
     environment:
@@ -166,8 +164,6 @@ services:
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: "db_skale"
-    ports:
-      - ${DB_PORT}:3306
 
   sla:
     <<: *skale_base
@@ -211,7 +207,7 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:1.1.2-beta.0
+    image: skalenetwork/watchdog:1.1.3-beta.0
     network_mode: host
     environment:
       FLASK_APP_PORT: 3010
@@ -227,8 +223,6 @@ services:
       - watchdog
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
-    ports:
-      - 3009:3009
 
   advisor:
     <<: *skale_base
@@ -242,8 +236,6 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
-    ports:
-      - "8080:8080"
 
   node-exporter:
     <<: *skale_base
