@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.5.0-plus-exit-and-sanitize",
+    "version": "3.5.0-develop.0",
     "custom_args": {
       "ulimits_list": [
         {
