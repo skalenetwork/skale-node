@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.5.1-plus-mem-fix",
+    "version": "3.5.1-plus-slice-fix",
     "custom_args": {
       "ulimits_list": [
         {
