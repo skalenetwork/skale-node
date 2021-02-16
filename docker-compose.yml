@@ -11,6 +11,7 @@ services:
       options:
         max-file: "5"
         max-size: "10m"
+
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
@@ -28,6 +29,8 @@ services:
       SKALE_DIR_HOST: ${SKALE_DIR}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      MAX_GAS_PRICE_WEI : ${MAX_GAS_PRICE_WEI}
+      DEFAULT_TIMEOUT: ${DEFAULT_TIMEOUT}
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
@@ -105,7 +108,6 @@ services:
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
     command: "gunicorn app:app -c gunicorn.conf.py"
-
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}:/skale_vol
@@ -123,13 +125,14 @@ services:
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
     command: "celery -A tools.notifications.tasks worker --loglevel=info"
+
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
   redis:
     <<: *skale_base
     container_name: redis
-    image: "redis:6.0-alpine"
+    image: "redis:6.0.10-alpine"
     network_mode: host
     tty: true
     environment:
