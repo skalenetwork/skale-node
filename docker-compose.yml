@@ -158,24 +158,6 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: "db_skale"
 
-  sla:
-    <<: *skale_base
-    container_name: skale_sla
-    image: skalenetwork/sla-agent:1.0.2-beta.1
-    network_mode: host
-    environment:
-      TM_URL: http://127.0.0.1:3008
-      ENDPOINT: ${ENDPOINT}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      DB_PORT: ${DB_PORT}
-    volumes:
-      - ${SKALE_DIR}:/skale_vol
-      - ${SKALE_DIR}/node_data:/skale_node_data
-    depends_on:
-      - mysql
-
   bounty:
     <<: *skale_base
     container_name: skale_bounty
