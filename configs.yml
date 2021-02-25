@@ -5,9 +5,9 @@ mainnet:
 testnet:
   schain:
     disk_size_bytes: 200000000000
-qa:
+qanet:
   schain:
     disk_size_bytes: 200000000000
-local:
+devnet:
   schain:
     disk_size_bytes: 80000000000
