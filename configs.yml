@@ -1,0 +1,13 @@
+common:
+mainnet:
+  schain:
+    disk_size_bytes: 2000000000000
+testnet:
+  schain:
+    disk_size_bytes: 200000000000
+qa:
+  schain:
+    disk_size_bytes: 200000000000
+local:
+  schain:
+    disk_size_bytes: 80000000000
