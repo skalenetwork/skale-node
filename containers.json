@@ -26,7 +26,8 @@
       "network": "host",
       "cap_add": [
         "SYS_PTRACE",
-        "SYS_ADMIN"
+        "SYS_ADMIN",
+        "SYS_NICE"
       ]
     }
   },
