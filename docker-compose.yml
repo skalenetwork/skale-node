@@ -238,4 +238,5 @@ services:
     volumes:
       - ${SKALE_DIR}/node_data/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
       - /var/lib/docker:/var/lib/docker:ro
+      - /var/log/docker-lvmpy:/var/log/docker-lvmpy:ro
       - /var/run/docker.sock:/var/run/docker.sock
