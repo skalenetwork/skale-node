@@ -1,7 +1,7 @@
 {
   "schain": {
-    "name": "skalenetwork/schain",
-    "version": "3.5.4-develop.0",
+    "name": "skalenetwork/skaled-emulator:latest",
+    "version": "latest",
     "custom_args": {
       "ulimits_list": [
         {
