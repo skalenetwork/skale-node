@@ -1,0 +1,67 @@
+mainnet:
+  server:
+    cpu_total: 8
+    cpu_physical: 8
+    memory: 32000000000
+    swap: 16000000000
+    disk: 2000000000000
+
+  packages:
+    docker: 20.10
+    docker-compose: 1.27.4
+    iptables-persistent: 1.1.3
+    lvm2: 2.02.175
+    btrfs-progs: 4.15.1
+    lsof: 4.89
+    psmisc: 23.1
+
+testnet:
+  server:
+    cpu_total: 8
+    cpu_physical: 8
+    memory: 32000000000
+    swap: 16000000000
+    disk: 200000000000
+
+  packages:
+    docker: 20.10
+    docker-compose: 1.27.4
+    iptables-persistent: 1.1.3
+    lvm2: 2.02.175
+    btrfs-progs: 4.15.1
+    lsof: 4.89
+    psmisc: 23.1
+
+qanet:
+  server:
+    cpu_total: 4
+    cpu_physical: 4
+    memory: 32000000000
+    swap: 16000000000
+    disk: 200000000000
+
+  packages:
+    docker: 20.10
+    docker-compose: 1.27.4
+    iptables-persistent: 1.1.3
+    lvm2: 2.02.175
+    btrfs-progs: 4.15.1
+    lsof: 4.89
+    psmisc: 23.1
+
+devnet:
+  server:
+    cpu_total: 1
+    cpu_physical: 1
+    memory: 2000000000
+    swap: 2000000000
+    disk: 80000000000
+
+  packages:
+    docker: 0.0.0
+    docker-compose: 1.27.4
+    iptables-persistent: 0.0.0
+    lvm2: 0.0.0
+    btrfs-progs: 4.15.1
+    lsof: 0.0.0
+    psmisc: 0.0.0
