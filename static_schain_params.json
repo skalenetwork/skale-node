@@ -7,7 +7,7 @@
         "bind_ip": "0.0.0.0",
         "log_level": "info",
         "log_level_config": "info",
-        "rotate_after_block": 64
+        "rotate_after_block": 1002400
     },
     "cache_options": {
         "small": {
