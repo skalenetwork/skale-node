@@ -7,7 +7,7 @@
         "bind_ip": "0.0.0.0",
         "log_level": "info",
         "log_level_config": "info",
-        "rotate_after_block": 10240
+        "rotate_after_block": 1002400
     },
     "cache_options": {
         "small": {
@@ -52,12 +52,12 @@
         }
     },
     "schain": {
-        "snapshot_interval_sec": 300,
-        "empty_block_interval_ms": 100,
+        "snapshot_interval_sec": 86400,
+        "empty_block_interval_ms": 1,
         "free_contract_deployment": true
     },
     "schain_cmd": [
-        "-v 9",
+        "-v 3",
         "--web3-trace",
         "--enable-debug-behavior-apis",
         "--aa no"
