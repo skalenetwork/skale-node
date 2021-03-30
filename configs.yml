@@ -1,13 +1,29 @@
 common:
-mainnet:
   schain:
-    disk_size_bytes: 2000000000000
-testnet:
-  schain:
-    disk_size_bytes: 200000000000
-qanet:
-  schain:
-    disk_size_bytes: 200000000000
-devnet:
-  schain:
-    disk_size_bytes: 80000000000
+    cpu:
+      skaled: 0.7
+      ima: 0.3
+    mem:
+      skaled: 0.7
+      ima: 0.3
+    volume:
+      consensus_storage_part: 0.3
+      skaled_leveldb_storage_part: 0.3
+      file_storage_part: 0.3
+      reserved_storage_part: 0.1
+    leveldb_storage:
+      evm_storage_part: 0.6
+      logs_storage_part: 0.4
+envs:
+  mainnet:
+    server:
+      disk_size_bytes: 2000000000000
+  testnet:
+    server:
+      disk_size_bytes: 200000000000
+  qanet:
+    server:
+      disk_size_bytes: 200000000000
+  devnet:
+    server:
+      disk_size_bytes: 80000000000

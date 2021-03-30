@@ -1,26 +1,199 @@
-schain_proportions:
-  cpu:
-    skaled: 0.7
-    ima: 0.3
-  mem:
-    skaled: 0.7
-    ima: 0.3
+# DO NOT MODIFY THIS FILE MANUALLY!
+# Use generate_schain_allocation.py script from helper-scripts repo.
+
+devnet:
+  disk:
+    large: 75999936512
+    medium: 2374998016
+    small: 593749504
+    test: 2374998016
+    test4: 2374998016
+  leveldb:
+    large:
+      evm_storage_part: 13679988571
+      logs_storage_part: 9119992381
+    medium:
+      evm_storage_part: 427499642
+      logs_storage_part: 284999761
+    small:
+      evm_storage_part: 106874910
+      logs_storage_part: 71249940
+    test:
+      evm_storage_part: 427499642
+      logs_storage_part: 284999761
+    test4:
+      evm_storage_part: 427499642
+      logs_storage_part: 284999761
   volume:
-    max_consensus_storage_bytes: 0.3
-    max_skaled_leveldb_storage_bytes: 0.3
-    max_file_storage_bytes: 0.3
-    max_reserved_storage_bytes: 0.1
+    large:
+      consensus_storage_part: 22799980953
+      file_storage_part: 22799980953
+      reserved_storage_part: 7599993651
+      skaled_leveldb_storage_part: 22799980953
+    medium:
+      consensus_storage_part: 712499404
+      file_storage_part: 712499404
+      reserved_storage_part: 237499801
+      skaled_leveldb_storage_part: 712499404
+    small:
+      consensus_storage_part: 178124851
+      file_storage_part: 178124851
+      reserved_storage_part: 59374950
+      skaled_leveldb_storage_part: 178124851
+    test:
+      consensus_storage_part: 712499404
+      file_storage_part: 712499404
+      reserved_storage_part: 237499801
+      skaled_leveldb_storage_part: 712499404
+    test4:
+      consensus_storage_part: 712499404
+      file_storage_part: 712499404
+      reserved_storage_part: 237499801
+      skaled_leveldb_storage_part: 712499404
 mainnet:
-  storage_limit:
-    test4: 13386339319
-    test: 13386339319
-    small: 3337189588
-    medium: 13386339319
-    large: 428422987776
+  disk:
+    large: 1899999985664
+    medium: 59374999552
+    small: 14843749888
+    test: 59374999552
+    test4: 59374999552
+  leveldb:
+    large:
+      evm_storage_part: 341999997419
+      logs_storage_part: 227999998279
+    medium:
+      evm_storage_part: 10687499919
+      logs_storage_part: 7124999946
+    small:
+      evm_storage_part: 2671874979
+      logs_storage_part: 1781249986
+    test:
+      evm_storage_part: 10687499919
+      logs_storage_part: 7124999946
+    test4:
+      evm_storage_part: 10687499919
+      logs_storage_part: 7124999946
+  volume:
+    large:
+      consensus_storage_part: 569999995699
+      file_storage_part: 569999995699
+      reserved_storage_part: 189999998566
+      skaled_leveldb_storage_part: 569999995699
+    medium:
+      consensus_storage_part: 17812499865
+      file_storage_part: 17812499865
+      reserved_storage_part: 5937499955
+      skaled_leveldb_storage_part: 17812499865
+    small:
+      consensus_storage_part: 4453124966
+      file_storage_part: 4453124966
+      reserved_storage_part: 1484374988
+      skaled_leveldb_storage_part: 4453124966
+    test:
+      consensus_storage_part: 17812499865
+      file_storage_part: 17812499865
+      reserved_storage_part: 5937499955
+      skaled_leveldb_storage_part: 17812499865
+    test4:
+      consensus_storage_part: 17812499865
+      file_storage_part: 17812499865
+      reserved_storage_part: 5937499955
+      skaled_leveldb_storage_part: 17812499865
+qanet:
+  disk:
+    large: 189999939584
+    medium: 5937498112
+    small: 1484374528
+    test: 5937498112
+    test4: 5937498112
+  leveldb:
+    large:
+      evm_storage_part: 34199989125
+      logs_storage_part: 22799992750
+    medium:
+      evm_storage_part: 1068749659
+      logs_storage_part: 712499773
+    small:
+      evm_storage_part: 267187414
+      logs_storage_part: 178124943
+    test:
+      evm_storage_part: 1068749659
+      logs_storage_part: 712499773
+    test4:
+      evm_storage_part: 1068749659
+      logs_storage_part: 712499773
+  volume:
+    large:
+      consensus_storage_part: 56999981875
+      file_storage_part: 56999981875
+      reserved_storage_part: 18999993958
+      skaled_leveldb_storage_part: 56999981875
+    medium:
+      consensus_storage_part: 1781249433
+      file_storage_part: 1781249433
+      reserved_storage_part: 593749811
+      skaled_leveldb_storage_part: 1781249433
+    small:
+      consensus_storage_part: 445312358
+      file_storage_part: 445312358
+      reserved_storage_part: 148437452
+      skaled_leveldb_storage_part: 445312358
+    test:
+      consensus_storage_part: 1781249433
+      file_storage_part: 1781249433
+      reserved_storage_part: 593749811
+      skaled_leveldb_storage_part: 1781249433
+    test4:
+      consensus_storage_part: 1781249433
+      file_storage_part: 1781249433
+      reserved_storage_part: 593749811
+      skaled_leveldb_storage_part: 1781249433
 testnet:
-  storage_limit:
-    test4: 1338633931
-    test: 1338633931
-    small: 333718958
-    medium: 1338633931
-    large: 42842298777
+  disk:
+    large: 189999939584
+    medium: 5937498112
+    small: 1484374528
+    test: 5937498112
+    test4: 5937498112
+  leveldb:
+    large:
+      evm_storage_part: 34199989125
+      logs_storage_part: 22799992750
+    medium:
+      evm_storage_part: 1068749659
+      logs_storage_part: 712499773
+    small:
+      evm_storage_part: 267187414
+      logs_storage_part: 178124943
+    test:
+      evm_storage_part: 1068749659
+      logs_storage_part: 712499773
+    test4:
+      evm_storage_part: 1068749659
+      logs_storage_part: 712499773
+  volume:
+    large:
+      consensus_storage_part: 56999981875
+      file_storage_part: 56999981875
+      reserved_storage_part: 18999993958
+      skaled_leveldb_storage_part: 56999981875
+    medium:
+      consensus_storage_part: 1781249433
+      file_storage_part: 1781249433
+      reserved_storage_part: 593749811
+      skaled_leveldb_storage_part: 1781249433
+    small:
+      consensus_storage_part: 445312358
+      file_storage_part: 445312358
+      reserved_storage_part: 148437452
+      skaled_leveldb_storage_part: 445312358
+    test:
+      consensus_storage_part: 1781249433
+      file_storage_part: 1781249433
+      reserved_storage_part: 593749811
+      skaled_leveldb_storage_part: 1781249433
+    test4:
+      consensus_storage_part: 1781249433
+      file_storage_part: 1781249433
+      reserved_storage_part: 593749811
+      skaled_leveldb_storage_part: 1781249433
