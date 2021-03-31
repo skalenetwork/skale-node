@@ -15,7 +15,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:1.1.0-beta.9
+    image: skalenetwork/transaction-manager:1.1.0-beta.10
     network_mode: host
     tty: true
     environment:
@@ -183,7 +183,7 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:1.1.3-beta.2
+    image: skalenetwork/watchdog:1.1.3-beta.3
     network_mode: host
     environment:
       FLASK_APP_PORT: 3010
