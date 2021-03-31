@@ -64,6 +64,7 @@ services:
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       MAX_ALLOWED_LOG_TIME_DIFF: 600
+      DISABLE_IMA: ${DISABLE_IMA}
     command: "python3 admin.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
