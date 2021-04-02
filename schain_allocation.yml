@@ -12,11 +12,11 @@ schain_proportions:
     max_reserved_storage_bytes: 0.1
 mainnet:
   storage_limit:
-    test4: 13386339319
-    test: 13386339319
-    small: 3337189588
-    medium: 13386339319
-    large: 428422987776
+    test4: 1068749659
+    test: 1068749659
+    small: 267187414
+    medium: 1068749659
+    large: 34199989125
 testnet:
   storage_limit:
     test4: 1338633931
