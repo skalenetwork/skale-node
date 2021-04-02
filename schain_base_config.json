@@ -127,7 +127,8 @@
 					"base": 15,
 					"word": 0
 				},
-				"startingBlock": "0x0"
+				"startingBlock": "0x0",
+				"restrictAccess": ["69362535ec535F0643cBf62D16aDeDCAf32Ee6F7"]
 			}
 		},
 		"000000000000000000000000000000000000000C": {
@@ -137,7 +138,8 @@
 					"base": 15,
 					"word": 0
 				},
-				"startingBlock": "0x0"
+				"startingBlock": "0x0",
+				"restrictAccess": ["69362535ec535F0643cBf62D16aDeDCAf32Ee6F7"]
 			}
 		},
 		"000000000000000000000000000000000000000D": {
@@ -157,7 +159,8 @@
 					"base": 15,
 					"word": 0
 				},
-				"startingBlock": "0x0"
+				"startingBlock": "0x0",
+				"restrictAccess": ["69362535ec535F0643cBf62D16aDeDCAf32Ee6F7"]
 			}
 		},
 		"000000000000000000000000000000000000000F": {
@@ -167,7 +170,8 @@
 					"base": 15,
 					"word": 0
 				},
-				"startingBlock": "0x0"
+				"startingBlock": "0x0",
+				"restrictAccess": ["69362535ec535F0643cBf62D16aDeDCAf32Ee6F7"]
 			}
 		},
 		"0000000000000000000000000000000000000010": {
@@ -177,7 +181,8 @@
 					"base": 15,
 					"word": 0
 				},
-				"startingBlock": "0x0"
+				"startingBlock": "0x0",
+				"restrictAccess": ["69362535ec535F0643cBf62D16aDeDCAf32Ee6F7"]
 			}
 		},
 		"0000000000000000000000000000000000000011": {
@@ -187,7 +192,8 @@
 					"base": 15,
 					"word": 0
 				},
-				"startingBlock": "0x0"
+				"startingBlock": "0x0",
+				"restrictAccess": ["69362535ec535F0643cBf62D16aDeDCAf32Ee6F7"]
 			}
 		},
 		"0000000000000000000000000000000000000012": {
