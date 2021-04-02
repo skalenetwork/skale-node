@@ -15,7 +15,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:1.1.0-beta.9
+    image: skalenetwork/transaction-manager:1.1.0-beta.10
     network_mode: host
     tty: true
     environment:
@@ -38,7 +38,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-beta.40
+    image: skalenetwork/admin:1.1.0-beta.43
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -64,6 +64,7 @@ services:
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       MAX_ALLOWED_LOG_TIME_DIFF: 600
+      DISABLE_IMA: ${DISABLE_IMA}
     command: "python3 admin.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -79,7 +80,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-beta.40
+    image: skalenetwork/admin:1.1.0-beta.43
     network_mode: host
     tty: true
     cap_add:
@@ -118,7 +119,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-beta.40
+    image: skalenetwork/admin:1.1.0-beta.43
     network_mode: host
     tty: true
     environment:
