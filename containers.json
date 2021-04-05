@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.5.12-eth-global",
+    "version": "3.5.12-eth-global-beta.1",
     "custom_args": {
       "ulimits_list": [
         {
