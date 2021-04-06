@@ -1,0 +1,212 @@
+{
+  "0000000000000000000000000000000000000001": {
+    "precompiled": {
+      "name": "ecrecover",
+      "linear": {
+        "base": 3000,
+        "word": 0
+      }
+    }
+  },
+  "0000000000000000000000000000000000000002": {
+    "precompiled": {
+      "name": "sha256",
+      "linear": {
+        "base": 60,
+        "word": 12
+      }
+    }
+  },
+  "0000000000000000000000000000000000000003": {
+    "precompiled": {
+      "name": "ripemd160",
+      "linear": {
+        "base": 600,
+        "word": 120
+      }
+    }
+  },
+  "0000000000000000000000000000000000000004": {
+    "precompiled": {
+      "name": "identity",
+      "linear": {
+        "base": 15,
+        "word": 3
+      }
+    }
+  },
+  "0000000000000000000000000000000000000005": {
+    "precompiled": {
+      "name": "modexp"
+    }
+  },
+  "0000000000000000000000000000000000000006": {
+    "precompiled": {
+      "name": "alt_bn128_G1_add",
+      "linear": {
+        "base": 500,
+        "word": 0
+      }
+    }
+  },
+  "0000000000000000000000000000000000000007": {
+    "precompiled": {
+      "name": "alt_bn128_G1_mul",
+      "linear": {
+        "base": 40000,
+        "word": 0
+      }
+    }
+  },
+  "0000000000000000000000000000000000000008": {
+    "precompiled": {
+      "name": "alt_bn128_pairing_product"
+    }
+  },
+  "000000000000000000000000000000000000000A": {
+    "precompiled": {
+      "name": "readChunk",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
+  },
+  "000000000000000000000000000000000000000B": {
+    "precompiled": {
+      "name": "createFile",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0",
+      "restrictAccess": true
+    }
+  },
+  "000000000000000000000000000000000000000C": {
+    "precompiled": {
+      "name": "uploadChunk",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0",
+      "restrictAccess": true
+    }
+  },
+  "000000000000000000000000000000000000000D": {
+    "precompiled": {
+      "name": "getFileSize",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
+  },
+  "000000000000000000000000000000000000000E": {
+    "precompiled": {
+      "name": "deleteFile",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0",
+      "restrictAccess": true
+    }
+  },
+  "000000000000000000000000000000000000000F": {
+    "precompiled": {
+      "name": "createDirectory",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0",
+      "restrictAccess": true
+    }
+  },
+  "0000000000000000000000000000000000000010": {
+    "precompiled": {
+      "name": "deleteDirectory",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0",
+      "restrictAccess": true
+    }
+  },
+  "0000000000000000000000000000000000000011": {
+    "precompiled": {
+      "name": "calculateFileHash",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0",
+      "restrictAccess": true
+    }
+  },
+  "0000000000000000000000000000000000000012": {
+    "precompiled": {
+      "name": "logTextMessage",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
+  },
+  "0000000000000000000000000000000000000013": {
+    "precompiled": {
+      "name": "getConfigVariableUint256",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
+  },
+  "0000000000000000000000000000000000000014": {
+    "precompiled": {
+      "name": "getConfigVariableAddress",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
+  },
+  "0000000000000000000000000000000000000015": {
+    "precompiled": {
+      "name": "getConfigVariableString",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
+  },
+  "0000000000000000000000000000000000000016": {
+    "precompiled": {
+      "name": "fnReserved0x16",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
+  },
+  "0000000000000000000000000000000000000017": {
+    "precompiled": {
+      "name": "getConfigPermissionFlag",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
+  }
+}
