@@ -24,6 +24,12 @@ devnet:
     test4:
       evm_storage_part: 427499642
       logs_storage_part: 284999761
+  rotate_after_block:
+    large: 1310721
+    medium: 40960
+    small: 10240
+    test: 40960
+    test4: 40960
   volume:
     large:
       max_consensus_storage_bytes: 22799980953
@@ -73,6 +79,12 @@ mainnet:
     test4:
       evm_storage_part: 10687499919
       logs_storage_part: 7124999946
+  rotate_after_block:
+    large: 32768030
+    medium: 1024000
+    small: 256000
+    test: 1024000
+    test4: 1024000
   volume:
     large:
       max_consensus_storage_bytes: 569999995699
@@ -122,6 +134,12 @@ qanet:
     test4:
       evm_storage_part: 1068749659
       logs_storage_part: 712499773
+  rotate_after_block:
+    large: 3276803
+    medium: 102400
+    small: 25600
+    test: 102400
+    test4: 102400
   volume:
     large:
       max_consensus_storage_bytes: 56999981875
@@ -171,6 +189,12 @@ testnet:
     test4:
       evm_storage_part: 1068749659
       logs_storage_part: 712499773
+  rotate_after_block:
+    large: 3276803
+    medium: 102400
+    small: 25600
+    test: 102400
+    test4: 102400
   volume:
     large:
       max_consensus_storage_bytes: 56999981875

@@ -6,8 +6,7 @@
     "current_node_info": {
         "bind_ip": "0.0.0.0",
         "log_level": "info",
-        "log_level_config": "info",
-        "rotate_after_block": 102400
+        "log_level_config": "info"
     },
     "cache_options": {
         "small": {
