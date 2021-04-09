@@ -59,6 +59,7 @@
         "-v 3",
         "--web3-trace",
         "--enable-debug-behavior-apis",
-        "--aa no"
+        "--aa no",
+        "--ws-log=detailed"
     ]
 }
