@@ -3,6 +3,11 @@ filebeat.inputs:
   paths:
     - '/var/lib/docker/containers/*/*.log'
 
+- type: log
+  enabled: true
+  paths:
+    - '/var/log/docker-lvmpy/lvmpy.log'
+
 processors:
 - add_host_metadata:
 #    netinfo.enabled: false
