@@ -15,7 +15,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:1.1.0-beta.9
+    image: skalenetwork/transaction-manager:1.1.0-beta.11
     network_mode: host
     tty: true
     environment:
@@ -38,7 +38,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-beta.39
+    image: skalenetwork/admin:1.1.0-beta.47
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -64,6 +64,8 @@ services:
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       MAX_ALLOWED_LOG_TIME_DIFF: 600
+      DISABLE_IMA: ${DISABLE_IMA}
+      ENV_TYPE: ${ENV_TYPE}
     command: "python3 admin.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -79,7 +81,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-beta.39
+    image: skalenetwork/admin:1.1.0-beta.47
     network_mode: host
     tty: true
     cap_add:
@@ -107,6 +109,7 @@ services:
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      ENV_TYPE: ${ENV_TYPE}
     command: "gunicorn app:app -c gunicorn.conf.py"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -118,7 +121,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-beta.39
+    image: skalenetwork/admin:1.1.0-beta.47
     network_mode: host
     tty: true
     environment:
