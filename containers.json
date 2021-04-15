@@ -1,11 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "1.46-stable.0",
-    "config_options": {
-        "rotateAfterBlock": 128,
-        "snapshotIntervalMs": 86400
-    },
+    "version": "3.5.12-stable.1",
     "custom_args": {
       "ulimits_list": [
         {
@@ -24,19 +20,20 @@
         "seccomp=unconfined"
       ],
       "restart_policy": {
-        "MaximumRetryCount": 10,
+        "MaximumRetryCount": 3,
         "Name": "on-failure"
       },
       "network": "host",
       "cap_add": [
         "SYS_PTRACE",
-        "SYS_ADMIN"
+        "SYS_ADMIN",
+        "SYS_NICE"
       ]
     }
   },
   "ima": {
     "name": "skalenetwork/ima",
-    "version": "1.0.0-develop.45",
+    "version": "1.0.0-develop.148",
     "custom_args": {},
     "args": {
       "restart_policy": {
