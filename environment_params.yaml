@@ -22,7 +22,7 @@ envs:
       cpu_physical: 8
       memory: 32000000000
       swap: 16000000000
-      disk: 2000000000000
+      disk: 1900000000000
 
     packages:
       docker: 20.10
