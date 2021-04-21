@@ -83,3 +83,7 @@ envs:
       btrfs-progs: 4.15.1
       lsof: 0.0.0
       psmisc: 0.0.0
+
+    docker:
+      docker-api: 0.0.0
+      docker-engine: 0.0.0
