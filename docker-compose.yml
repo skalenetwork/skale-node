@@ -200,8 +200,9 @@ services:
     depends_on:
       - watchdog
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - ${FILESTORAGE_MAPPING}:/filestorage
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ${FILESTORAGE_MAPPING}:/filestorage:ro
+      - ${SCHAINS_MNT_DIR}:${SCHAINS_MNT_DIR}:ro
 
   advisor:
     <<: *skale_base
