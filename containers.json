@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "OlehAddImaMonitoringPort",
+    "version": "3.6.1-develop.6",
     "custom_args": {
       "ulimits_list": [
         {
