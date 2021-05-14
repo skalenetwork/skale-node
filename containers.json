@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "zmq-fix--on-beta.2",
+    "version": "OlehAddImaMonitoringPort",
     "custom_args": {
       "ulimits_list": [
         {
