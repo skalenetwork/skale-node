@@ -18,7 +18,7 @@ common:
 envs:
   mainnet:
     server:
-      disk_size_bytes: 2000000000000
+      disk_size_bytes: 1900000000000
   testnet:
     server:
       disk_size_bytes: 200000000000
