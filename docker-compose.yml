@@ -51,10 +51,6 @@ services:
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       IMA_ENDPOINT: ${IMA_ENDPOINT}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      DB_PORT: ${DB_PORT}
       SKALE_DIR_HOST: ${SKALE_DIR}
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
@@ -93,10 +89,6 @@ services:
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       IMA_ENDPOINT: ${IMA_ENDPOINT}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      DB_PORT: ${DB_PORT}
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
       FLASK_APP_PORT: 3007
       FLASK_APP_HOST: "127.0.0.1"
@@ -115,8 +107,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-    depends_on:
-      - mysql
 
   celery:
     <<: *skale_base
@@ -146,21 +136,6 @@ services:
       - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
       - ${SKALE_DIR}/config/redis.conf:/data/redis.conf
 
-  mysql:
-    <<: *skale_base
-    container_name: skale_mysql
-    image: mysql/mysql-server:5.7.30
-    network_mode: host
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ${SKALE_DIR}/node_data/mysql-data:/var/lib/mysql
-      - ${SKALE_DIR}/node_data/.mysql-backup:/mysql-backup
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: "db_skale"
-
   bounty:
     <<: *skale_base
     container_name: skale_bounty
@@ -169,18 +144,12 @@ services:
     environment:
       TM_URL: http://127.0.0.1:3008
       ENDPOINT: ${ENDPOINT}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      DB_PORT: ${DB_PORT}
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-    depends_on:
-      - mysql
 
   watchdog:
     <<: *skale_base
