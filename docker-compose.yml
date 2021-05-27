@@ -170,7 +170,6 @@ services:
       - watchdog
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./ssl.conf:/etc/nginx/conf.d/ssl.conf:ro
       - ${SKALE_DIR}/node_data/ssl:/ssl:ro
       - ${FILESTORAGE_MAPPING}:/filestorage:ro
       - type: bind
