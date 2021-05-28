@@ -6,14 +6,14 @@ common:
     mem:
       skaled: 0.7
       ima: 0.3
-    volume:
+    volume_limits:
       max_consensus_storage_bytes: 0.3
       max_skaled_leveldb_storage_bytes: 0.3
       max_file_storage_bytes: 0.3
       max_reserved_storage_bytes: 0.1
-    leveldb_storage:
-      evm_storage_part: 0.6
-      logs_storage_part: 0.4
+    leveldb_limits:
+      contract_storage: 0.6
+      db_storage: 0.4
     base_rotate_after_block_divider: 61035.1
 envs:
   mainnet:
