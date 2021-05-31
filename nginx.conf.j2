@@ -1,9 +1,17 @@
 limit_req_zone $binary_remote_addr zone=one:10m rate=7r/s;
 
 server {
+    listen 3009;
+
+    {% if ssl %}
+    listen 311 ssl;
+    ssl_certificate     /ssl/ssl_cert;
+    ssl_certificate_key /ssl/ssl_key;
+    {% endif %}
+
     error_log /var/log/nginx/error.log warn;
     client_max_body_size 20m;
-    listen 3009;
+
     server_name localhost;
     limit_req zone=one burst=10;
 
@@ -17,7 +25,7 @@ server {
     listen 80;
 
     {% if ssl %}
-    listen 443 default_server ssl;
+    listen 443 ssl;
     ssl_certificate     /ssl/ssl_cert;
     ssl_certificate_key /ssl/ssl_key;
     {% endif %}
