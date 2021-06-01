@@ -15,7 +15,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:1.1.0-stable.0
+    image: skalenetwork/transaction-manager:1.1.0-develop.13
     network_mode: host
     tty: true
     environment:
@@ -38,7 +38,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:2.0.0-develop.32
+    image: skalenetwork/admin:2.0.0-develop.33
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -77,7 +77,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:2.0.0-develop.32
+    image: skalenetwork/admin:2.0.0-develop.33
     network_mode: host
     tty: true
     cap_add:
@@ -111,7 +111,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:2.0.0-develop.32
+    image: skalenetwork/admin:2.0.0-develop.33
     network_mode: host
     tty: true
     environment:
@@ -170,6 +170,7 @@ services:
       - watchdog
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ${SKALE_DIR}/node_data/ssl:/ssl:ro
       - ${FILESTORAGE_MAPPING}:/filestorage:ro
       - type: bind
         bind:
