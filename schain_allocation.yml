@@ -30,12 +30,7 @@ devnet:
     small: 10240
     test: 40960
     test4: 40960
-  shared_space:
-    large: 3799990272
-    medium: 118749696
-    small: 29687424
-    test: 118749696
-    test4: 118749696
+  shared_space: 3799990272
   volume_limits:
     large:
       max_consensus_storage_bytes: 22799980953
@@ -91,12 +86,7 @@ mainnet:
     small: 243200
     test: 972800
     test4: 972800
-  shared_space:
-    large: 90249940172
-    medium: 2820310630
-    small: 705077657
-    test: 2820310630
-    test4: 2820310630
+  shared_space: 90249940172
   volume_limits:
     large:
       max_consensus_storage_bytes: 541499994931
@@ -152,12 +142,7 @@ qanet:
     small: 25600
     test: 102400
     test4: 102400
-  shared_space:
-    large: 9499944550
-    medium: 296873267
-    small: 74218316
-    test: 296873267
-    test4: 296873267
+  shared_space: 9499944550
   volume_limits:
     large:
       max_consensus_storage_bytes: 56999981875
@@ -213,12 +198,7 @@ testnet:
     small: 25600
     test: 102400
     test4: 102400
-  shared_space:
-    large: 9499944550
-    medium: 296873267
-    small: 74218316
-    test: 296873267
-    test4: 296873267
+  shared_space: 9499944550
   volume_limits:
     large:
       max_consensus_storage_bytes: 56999981875
