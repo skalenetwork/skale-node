@@ -105,6 +105,7 @@ services:
     environment:
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
+      SKALE_DIR_HOST: ${SKALE_DIR}
     command: "celery -A tools.notifications.tasks worker --loglevel=info"
 
     volumes:
