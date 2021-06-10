@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.7.1-develop.4",
+    "version": "3.7.1-develop.7",
     "custom_args": {
       "ulimits_list": [
         {
@@ -33,7 +33,7 @@
   },
   "ima": {
     "name": "skalenetwork/ima",
-    "version": "1.0.0-develop.193",
+    "version": "1.0.0-develop.208",
     "custom_args": {},
     "args": {
       "restart_policy": {

@@ -15,22 +15,12 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:1.1.0-beta.11
+    image: skalenetwork/transaction-manager:2.0.1-develop.0
     network_mode: host
     tty: true
     environment:
-      SGX_SERVER_URL: ${SGX_SERVER_URL}
-      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
+      SGX_URL: ${SGX_SERVER_URL}
       ENDPOINT: ${ENDPOINT}
-      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY} # todo: use different flask secret key!
-      FLASK_APP_PORT: 3008
-      FLASK_APP_HOST: "127.0.0.1"
-      FLASK_DEBUG_MODE: "False"
-      SKALE_DIR_HOST: ${SKALE_DIR}
-      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
-      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
-      MAX_GAS_PRICE_WEI : ${MAX_GAS_PRICE_WEI}
-      DEFAULT_TIMEOUT: ${DEFAULT_TIMEOUT}
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
@@ -38,7 +28,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:2.0.0-develop.32
+    image: skalenetwork/admin:2.0.1-develop.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -46,7 +36,6 @@ services:
       - NET_ADMIN
       - NET_RAW
     environment:
-      TM_URL: http://127.0.0.1:3008
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
@@ -77,14 +66,13 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:2.0.0-develop.32
+    image: skalenetwork/admin:2.0.1-develop.0
     network_mode: host
     tty: true
     cap_add:
       - NET_ADMIN
       - NET_RAW
     environment:
-      TM_URL: http://127.0.0.1:3008
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
@@ -111,7 +99,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:2.0.0-develop.32
+    image: skalenetwork/admin:2.0.1-develop.0
     network_mode: host
     tty: true
     environment:
@@ -139,10 +127,11 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:1.1.1-beta.5
+    image: skalenetwork/bounty-agent:2.0.1-develop.0
     network_mode: host
     environment:
-      TM_URL: http://127.0.0.1:3008
+      SGX_SERVER_URL: ${SGX_SERVER_URL}
+      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
