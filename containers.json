@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.7.3-develop.1",
+    "version": "olehImaMessageVerificationTest",
     "custom_args": {
       "ulimits_list": [
         {
