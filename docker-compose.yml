@@ -66,7 +66,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:2.0.1-develop.0
+    image: skalenetwork/admin:2.0.1-develop.1
     network_mode: host
     tty: true
     cap_add:
@@ -99,12 +99,13 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:2.0.1-develop.0
+    image: skalenetwork/admin:2.0.1-develop.1
     network_mode: host
     tty: true
     environment:
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
+      SKALE_DIR_HOST: ${SKALE_DIR}
     command: "celery -A tools.notifications.tasks worker --loglevel=info"
 
     volumes:
