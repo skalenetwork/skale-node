@@ -28,7 +28,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:2.0.1-develop.1
+    image: skalenetwork/admin:2.0.1-develop.2
     cpu_shares: 192
     network_mode: host
     tty: true
