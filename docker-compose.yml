@@ -147,7 +147,7 @@ services:
     image: skalenetwork/watchdog:test-latest
     network_mode: host
     volumes:
-      - ${SKALE_DIR}:/skale_vol    
+      - ${SKALE_DIR}/node_data:/skale_node_data    
     environment:
       FLASK_APP_PORT: 3010
       FLASK_APP_HOST: "127.0.0.1"
