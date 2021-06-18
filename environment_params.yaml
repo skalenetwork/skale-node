@@ -20,7 +20,7 @@ envs:
   mainnet:
     server:
       cpu_total: 8
-      cpu_physical: 8
+      cpu_physical: 1
       memory: 32000000000
       swap: 16000000000
       disk: 1900000000000
@@ -40,7 +40,7 @@ envs:
   testnet:
     server:
       cpu_total: 8
-      cpu_physical: 8
+      cpu_physical: 1
       memory: 32000000000
       swap: 16000000000
       disk: 200000000000
@@ -59,8 +59,8 @@ envs:
 
   qanet:
     server:
-      cpu_total: 4
-      cpu_physical: 4
+      cpu_total: 8
+      cpu_physical: 1
       memory: 32000000000
       swap: 16000000000
       disk: 200000000000
