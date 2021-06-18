@@ -15,7 +15,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:1.1.0-stable.0
+    image: skalenetwork/transaction-manager:1.1.0-stable.1
     network_mode: host
     tty: true
     environment:
@@ -39,7 +39,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-stable.1
+    image: skalenetwork/admin:1.1.0-stable.2
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -83,7 +83,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-stable.1
+    image: skalenetwork/admin:1.1.0-stable.2
     network_mode: host
     tty: true
     cap_add:
@@ -124,7 +124,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-stable.1
+    image: skalenetwork/admin:1.1.0-stable.2
     network_mode: host
     tty: true
     environment:
@@ -168,7 +168,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:1.1.1-stable.0
+    image: skalenetwork/bounty-agent:1.1.1-stable.1
     network_mode: host
     environment:
       TM_URL: http://127.0.0.1:3008
@@ -190,7 +190,7 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:1.1.3-stable.0
+    image: skalenetwork/watchdog:1.1.3-stable.1
     network_mode: host
     environment:
       ALLOWED_TS_DIFF: 300
