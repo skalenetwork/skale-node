@@ -21,6 +21,7 @@ services:
     environment:
       SGX_URL: ${SGX_SERVER_URL}
       ENDPOINT: ${ENDPOINT}
+      DISABLE_GAS_ESTIMATION: 'True'
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
