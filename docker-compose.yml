@@ -159,7 +159,7 @@ services:
     depends_on:
       - watchdog
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ${SKALE_DIR}/node_data/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ${SKALE_DIR}/node_data/ssl:/ssl:ro
       - ${FILESTORAGE_MAPPING}:/filestorage:ro
       - type: bind
