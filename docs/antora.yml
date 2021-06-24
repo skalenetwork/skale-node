@@ -2,3 +2,5 @@ name: network
 title: Network
 version: v1.7.x
 prerelease: Testnet
+nav:
+  - modules/ROOT/nav.adoc
