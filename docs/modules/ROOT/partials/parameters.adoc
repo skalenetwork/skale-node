@@ -1,4 +1,5 @@
 = Validator Parameters
+:network: Testnet
 
 :machine: A Linux x86_64 machine
 :linux-distro: Ubuntu 18.04

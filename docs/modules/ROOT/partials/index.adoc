@@ -1,4 +1,4 @@
-= SKALE Mainnet Versions
+= SKALE {Network} Versions
 include::parameters.adoc[]
 
 You can find the compatible versions in this page. Set up requires only Validator-Cli, Node-Cli and SGX versions.
