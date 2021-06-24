@@ -1,0 +1,91 @@
+= Denali Mainnet Soft Upgrade
+include::parameters.adoc[]
+
+For SKALE Validator CLI initialization use SKALE Manager ABI:
+
+`{MANAGER_CONTRACTS_ABI_URL}`
+
+== Update validator-cli
+
+=== Download new Validator CLI binary
+
+Make sure `VERSION_NUM` is `{validator-cli}`
+
+**Terminal Command:**
+
+```shell
+VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/validator-cli/releases/download/$VERSION_NUM/sk-val-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/sk-val"
+```
+
+=== Apply executable permissions to the binary
+
+**Terminal Command:**
+
+```shell
+chmod +x /usr/local/bin/sk-val
+```
+
+== Install SKALE Node CLI
+
+=== Download the SKALE Node CLI binary
+
+Make sure `VERSION_NUM` is `{node-cli}`
+
+**Terminal Command:**
+
+```shell
+VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/skale-node-cli/releases/download/$VERSION_NUM/skale-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/skale"
+
+```
+
+=== Make the SKALE Node CLI binary executable
+
+**Terminal Command:**
+
+```shell
+sudo chmod +x /usr/local/bin/skale
+```
+
+== Update node using skale node update
+
+=== Change directory
+
+```shell
+cd  ~ && vi .env
+```
+
+=== Update .env
+
+Make sure the following options are set
+
+[source, subs="attributes"]
+----
+MONITORING_CONTAINERS={MONITORING_CONTAINERS}
+DOCKER_LVMPY_STREAM={DOCKER_LVMPY_STREAM}
+MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
+IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+FILEBEAT_HOST={FILEBEAT_HOST}
+DISABLE_IMA={DISABLE_IMA}
+ENV_TYPE={ENV_TYPE}
+----
+
+=== Perform update
+
+Run skale node update:
+
+```shell
+skale node update .env
+```
+
+=== Check your SSL certificate
+
+Certificate file should be in `PEM` format and contain full certificate chain
+
+==== Run skale ssl check to make sure your ssl certificate is valid
+
+```shell
+skale ssl check
+```
+
+More info: https://github.com/skalenetwork/node-cli/tree/beta#check-ssl-certificate 
