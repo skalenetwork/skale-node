@@ -144,8 +144,8 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:2.0.0-develop.2
-    network_mode: host  
+    image: skalenetwork/watchdog:2.0.0-develop.3
+    network_mode: host
     environment:
       FLASK_APP_PORT: 3010
       FLASK_APP_HOST: "127.0.0.1"
