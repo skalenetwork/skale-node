@@ -15,7 +15,7 @@ common:
       contract_storage: 0.6
       db_storage: 0.4
     base_rotate_after_block_divider: 61035.1
-    shared_space_coefficient: 0.95
+    shared_space_coefficient: 1
 envs:
   mainnet:
     server:
