@@ -9,9 +9,9 @@ server {
     ssl_certificate_key /ssl/ssl_key;
     {% endif %}
 
-    proxy_read_timeout 500;
-    proxy_connect_timeout 500;
-    proxy_send_timeout 500;
+    proxy_read_timeout 500s;
+    proxy_connect_timeout 500s;
+    proxy_send_timeout 500s;
 
     error_log /var/log/nginx/error.log warn;
     client_max_body_size 20m;
@@ -21,6 +21,8 @@ server {
 
     location / {
         include uwsgi_params;
+        uwsgi_read_timeout 500s;
+        uwsgi_socket_keepalive on;
         uwsgi_pass 127.0.0.1:3010;
     }
 }
