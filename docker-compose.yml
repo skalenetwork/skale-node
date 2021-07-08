@@ -113,7 +113,7 @@ services:
 
   redis:
     <<: *skale_base
-    container_name: redis
+    container_name: skale_redis
     image: "redis:6.0.10-alpine"
     network_mode: host
     tty: true
