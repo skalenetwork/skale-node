@@ -1,11 +1,11 @@
 common:
   schain:
     cpu:
-      skaled: 0.7
-      ima: 0.3
+      skaled: 0.8
+      ima: 0.2
     mem:
-      skaled: 0.7
-      ima: 0.3
+      skaled: 0.8
+      ima: 0.2
     volume_limits:
       max_consensus_storage_bytes: 0.3
       max_skaled_leveldb_storage_bytes: 0.3
