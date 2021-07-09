@@ -20,7 +20,6 @@ Directories created with the installation script:
     │   │   ├── containers.json         # Additional containers running on the node
     │   │   ├── proxy.json              # Proxy configuration file used by IMA  
     │   │   ├── docker-compose.yml      # Config that is applied to each container and exposed ports for base container
-    │   │   ├── init.sql                # Used by MySQL to create tables for storing bounty data
     │   │   ├── schain_base_config.json # Static part of SKALE chain config file. Generated dynamic part 
     │   │   │                             including all ip addresses and ports will be added to this base config. 
     │   │   │                             Precompiled smart contracts are stored here as well.
@@ -39,7 +38,6 @@ Directories created with the installation script:
 The following base containers will be created during installation for each node.
 
     Admin    # Manages all operations in the SKALE node
-    MySQL    # Stores bounty, node downtime and latency data  
     Bounty   # Bounty collector for getting rewards for validator node
 
 Following containers will be created dynamically. These will be created when the registered node is 
