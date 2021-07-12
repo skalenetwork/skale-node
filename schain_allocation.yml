@@ -3,221 +3,225 @@
 
 devnet:
   disk:
-    large: 75999936512
-    medium: 2374998016
-    small: 593749504
-    test: 2374998016
-    test4: 2374998016
-  leveldb:
+    large: 71039975424
+    medium: 8879996928
+    small: 554999808
+    test: 8879996928
+    test4: 8879996928
+  leveldb_limits:
     large:
-      evm_storage_part: 13679988571
-      logs_storage_part: 9119992381
+      contract_storage: 12787195576
+      db_storage: 8524797050
     medium:
-      evm_storage_part: 427499642
-      logs_storage_part: 284999761
+      contract_storage: 1598399446
+      db_storage: 1065599631
     small:
-      evm_storage_part: 106874910
-      logs_storage_part: 71249940
+      contract_storage: 99899965
+      db_storage: 66599976
     test:
-      evm_storage_part: 427499642
-      logs_storage_part: 284999761
+      contract_storage: 1598399446
+      db_storage: 1065599631
     test4:
-      evm_storage_part: 427499642
-      logs_storage_part: 284999761
+      contract_storage: 1598399446
+      db_storage: 1065599631
   rotate_after_block:
     large: 1310721
-    medium: 40960
+    medium: 163840
     small: 10240
-    test: 40960
-    test4: 40960
-  volume:
+    test: 163840
+    test4: 163840
+  shared_space: 8959950848
+  volume_limits:
     large:
-      max_consensus_storage_bytes: 22799980953
-      max_file_storage_bytes: 22799980953
-      max_reserved_storage_bytes: 7599993651
-      max_skaled_leveldb_storage_bytes: 22799980953
+      max_consensus_storage_bytes: 21311992627
+      max_file_storage_bytes: 21311992627
+      max_reserved_storage_bytes: 7103997542
+      max_skaled_leveldb_storage_bytes: 21311992627
     medium:
-      max_consensus_storage_bytes: 712499404
-      max_file_storage_bytes: 712499404
-      max_reserved_storage_bytes: 237499801
-      max_skaled_leveldb_storage_bytes: 712499404
+      max_consensus_storage_bytes: 2663999078
+      max_file_storage_bytes: 2663999078
+      max_reserved_storage_bytes: 887999692
+      max_skaled_leveldb_storage_bytes: 2663999078
     small:
-      max_consensus_storage_bytes: 178124851
-      max_file_storage_bytes: 178124851
-      max_reserved_storage_bytes: 59374950
-      max_skaled_leveldb_storage_bytes: 178124851
+      max_consensus_storage_bytes: 166499942
+      max_file_storage_bytes: 166499942
+      max_reserved_storage_bytes: 55499980
+      max_skaled_leveldb_storage_bytes: 166499942
     test:
-      max_consensus_storage_bytes: 712499404
-      max_file_storage_bytes: 712499404
-      max_reserved_storage_bytes: 237499801
-      max_skaled_leveldb_storage_bytes: 712499404
+      max_consensus_storage_bytes: 2663999078
+      max_file_storage_bytes: 2663999078
+      max_reserved_storage_bytes: 887999692
+      max_skaled_leveldb_storage_bytes: 2663999078
     test4:
-      max_consensus_storage_bytes: 712499404
-      max_file_storage_bytes: 712499404
-      max_reserved_storage_bytes: 237499801
-      max_skaled_leveldb_storage_bytes: 712499404
+      max_consensus_storage_bytes: 2663999078
+      max_file_storage_bytes: 2663999078
+      max_reserved_storage_bytes: 887999692
+      max_skaled_leveldb_storage_bytes: 2663999078
 mainnet:
   disk:
-    large: 1804999983104
-    medium: 56406249472
-    small: 14101562368
-    test: 56406249472
-    test4: 56406249472
-  leveldb:
+    large: 1687199940608
+    medium: 210899992576
+    small: 13181249536
+    test: 210899992576
+    test4: 210899992576
+  leveldb_limits:
     large:
-      evm_storage_part: 324899996958
-      logs_storage_part: 216599997972
+      contract_storage: 303695989309
+      db_storage: 202463992872
     medium:
-      evm_storage_part: 10153124904
-      logs_storage_part: 6768749936
+      contract_storage: 37961998663
+      db_storage: 25307999108
     small:
-      evm_storage_part: 2538281226
-      logs_storage_part: 1692187484
+      contract_storage: 2372624916
+      db_storage: 1581749944
     test:
-      evm_storage_part: 10153124904
-      logs_storage_part: 6768749936
+      contract_storage: 37961998663
+      db_storage: 25307999108
     test4:
-      evm_storage_part: 10153124904
-      logs_storage_part: 6768749936
+      contract_storage: 37961998663
+      db_storage: 25307999108
   rotate_after_block:
     large: 31129628
-    medium: 972800
+    medium: 3891203
     small: 243200
-    test: 972800
-    test4: 972800
-  volume:
+    test: 3891203
+    test4: 3891203
+  shared_space: 212799979520
+  volume_limits:
     large:
-      max_consensus_storage_bytes: 541499994931
-      max_file_storage_bytes: 541499994931
-      max_reserved_storage_bytes: 180499998310
-      max_skaled_leveldb_storage_bytes: 541499994931
+      max_consensus_storage_bytes: 506159982182
+      max_file_storage_bytes: 506159982182
+      max_reserved_storage_bytes: 168719994060
+      max_skaled_leveldb_storage_bytes: 506159982182
     medium:
-      max_consensus_storage_bytes: 16921874841
-      max_file_storage_bytes: 16921874841
-      max_reserved_storage_bytes: 5640624947
-      max_skaled_leveldb_storage_bytes: 16921874841
+      max_consensus_storage_bytes: 63269997772
+      max_file_storage_bytes: 63269997772
+      max_reserved_storage_bytes: 21089999257
+      max_skaled_leveldb_storage_bytes: 63269997772
     small:
-      max_consensus_storage_bytes: 4230468710
-      max_file_storage_bytes: 4230468710
-      max_reserved_storage_bytes: 1410156236
-      max_skaled_leveldb_storage_bytes: 4230468710
+      max_consensus_storage_bytes: 3954374860
+      max_file_storage_bytes: 3954374860
+      max_reserved_storage_bytes: 1318124953
+      max_skaled_leveldb_storage_bytes: 3954374860
     test:
-      max_consensus_storage_bytes: 16921874841
-      max_file_storage_bytes: 16921874841
-      max_reserved_storage_bytes: 5640624947
-      max_skaled_leveldb_storage_bytes: 16921874841
+      max_consensus_storage_bytes: 63269997772
+      max_file_storage_bytes: 63269997772
+      max_reserved_storage_bytes: 21089999257
+      max_skaled_leveldb_storage_bytes: 63269997772
     test4:
-      max_consensus_storage_bytes: 16921874841
-      max_file_storage_bytes: 16921874841
-      max_reserved_storage_bytes: 5640624947
-      max_skaled_leveldb_storage_bytes: 16921874841
+      max_consensus_storage_bytes: 63269997772
+      max_file_storage_bytes: 63269997772
+      max_reserved_storage_bytes: 21089999257
+      max_skaled_leveldb_storage_bytes: 63269997772
 qanet:
   disk:
-    large: 189999939584
-    medium: 5937498112
-    small: 1484374528
-    test: 5937498112
-    test4: 5937498112
-  leveldb:
+    large: 177599938560
+    medium: 22199992320
+    small: 1387499520
+    test: 22199992320
+    test4: 22199992320
+  leveldb_limits:
     large:
-      evm_storage_part: 34199989125
-      logs_storage_part: 22799992750
+      contract_storage: 31967988940
+      db_storage: 21311992627
     medium:
-      evm_storage_part: 1068749659
-      logs_storage_part: 712499773
+      contract_storage: 3995998617
+      db_storage: 2663999078
     small:
-      evm_storage_part: 267187414
-      logs_storage_part: 178124943
+      contract_storage: 249749913
+      db_storage: 166499942
     test:
-      evm_storage_part: 1068749659
-      logs_storage_part: 712499773
+      contract_storage: 3995998617
+      db_storage: 2663999078
     test4:
-      evm_storage_part: 1068749659
-      logs_storage_part: 712499773
+      contract_storage: 3995998617
+      db_storage: 2663999078
   rotate_after_block:
     large: 3276803
-    medium: 102400
+    medium: 409600
     small: 25600
-    test: 102400
-    test4: 102400
-  volume:
+    test: 409600
+    test4: 409600
+  shared_space: 22399942656
+  volume_limits:
     large:
-      max_consensus_storage_bytes: 56999981875
-      max_file_storage_bytes: 56999981875
-      max_reserved_storage_bytes: 18999993958
-      max_skaled_leveldb_storage_bytes: 56999981875
+      max_consensus_storage_bytes: 53279981568
+      max_file_storage_bytes: 53279981568
+      max_reserved_storage_bytes: 17759993856
+      max_skaled_leveldb_storage_bytes: 53279981568
     medium:
-      max_consensus_storage_bytes: 1781249433
-      max_file_storage_bytes: 1781249433
-      max_reserved_storage_bytes: 593749811
-      max_skaled_leveldb_storage_bytes: 1781249433
+      max_consensus_storage_bytes: 6659997696
+      max_file_storage_bytes: 6659997696
+      max_reserved_storage_bytes: 2219999232
+      max_skaled_leveldb_storage_bytes: 6659997696
     small:
-      max_consensus_storage_bytes: 445312358
-      max_file_storage_bytes: 445312358
-      max_reserved_storage_bytes: 148437452
-      max_skaled_leveldb_storage_bytes: 445312358
+      max_consensus_storage_bytes: 416249856
+      max_file_storage_bytes: 416249856
+      max_reserved_storage_bytes: 138749952
+      max_skaled_leveldb_storage_bytes: 416249856
     test:
-      max_consensus_storage_bytes: 1781249433
-      max_file_storage_bytes: 1781249433
-      max_reserved_storage_bytes: 593749811
-      max_skaled_leveldb_storage_bytes: 1781249433
+      max_consensus_storage_bytes: 6659997696
+      max_file_storage_bytes: 6659997696
+      max_reserved_storage_bytes: 2219999232
+      max_skaled_leveldb_storage_bytes: 6659997696
     test4:
-      max_consensus_storage_bytes: 1781249433
-      max_file_storage_bytes: 1781249433
-      max_reserved_storage_bytes: 593749811
-      max_skaled_leveldb_storage_bytes: 1781249433
+      max_consensus_storage_bytes: 6659997696
+      max_file_storage_bytes: 6659997696
+      max_reserved_storage_bytes: 2219999232
+      max_skaled_leveldb_storage_bytes: 6659997696
 testnet:
   disk:
-    large: 189999939584
-    medium: 5937498112
-    small: 1484374528
-    test: 5937498112
-    test4: 5937498112
-  leveldb:
+    large: 177599938560
+    medium: 22199992320
+    small: 1387499520
+    test: 22199992320
+    test4: 22199992320
+  leveldb_limits:
     large:
-      evm_storage_part: 34199989125
-      logs_storage_part: 22799992750
+      contract_storage: 31967988940
+      db_storage: 21311992627
     medium:
-      evm_storage_part: 1068749659
-      logs_storage_part: 712499773
+      contract_storage: 3995998617
+      db_storage: 2663999078
     small:
-      evm_storage_part: 267187414
-      logs_storage_part: 178124943
+      contract_storage: 249749913
+      db_storage: 166499942
     test:
-      evm_storage_part: 1068749659
-      logs_storage_part: 712499773
+      contract_storage: 3995998617
+      db_storage: 2663999078
     test4:
-      evm_storage_part: 1068749659
-      logs_storage_part: 712499773
+      contract_storage: 3995998617
+      db_storage: 2663999078
   rotate_after_block:
     large: 3276803
-    medium: 102400
+    medium: 409600
     small: 25600
-    test: 102400
-    test4: 102400
-  volume:
+    test: 409600
+    test4: 409600
+  shared_space: 22399942656
+  volume_limits:
     large:
-      max_consensus_storage_bytes: 56999981875
-      max_file_storage_bytes: 56999981875
-      max_reserved_storage_bytes: 18999993958
-      max_skaled_leveldb_storage_bytes: 56999981875
+      max_consensus_storage_bytes: 53279981568
+      max_file_storage_bytes: 53279981568
+      max_reserved_storage_bytes: 17759993856
+      max_skaled_leveldb_storage_bytes: 53279981568
     medium:
-      max_consensus_storage_bytes: 1781249433
-      max_file_storage_bytes: 1781249433
-      max_reserved_storage_bytes: 593749811
-      max_skaled_leveldb_storage_bytes: 1781249433
+      max_consensus_storage_bytes: 6659997696
+      max_file_storage_bytes: 6659997696
+      max_reserved_storage_bytes: 2219999232
+      max_skaled_leveldb_storage_bytes: 6659997696
     small:
-      max_consensus_storage_bytes: 445312358
-      max_file_storage_bytes: 445312358
-      max_reserved_storage_bytes: 148437452
-      max_skaled_leveldb_storage_bytes: 445312358
+      max_consensus_storage_bytes: 416249856
+      max_file_storage_bytes: 416249856
+      max_reserved_storage_bytes: 138749952
+      max_skaled_leveldb_storage_bytes: 416249856
     test:
-      max_consensus_storage_bytes: 1781249433
-      max_file_storage_bytes: 1781249433
-      max_reserved_storage_bytes: 593749811
-      max_skaled_leveldb_storage_bytes: 1781249433
+      max_consensus_storage_bytes: 6659997696
+      max_file_storage_bytes: 6659997696
+      max_reserved_storage_bytes: 2219999232
+      max_skaled_leveldb_storage_bytes: 6659997696
     test4:
-      max_consensus_storage_bytes: 1781249433
-      max_file_storage_bytes: 1781249433
-      max_reserved_storage_bytes: 593749811
-      max_skaled_leveldb_storage_bytes: 1781249433
+      max_consensus_storage_bytes: 6659997696
+      max_file_storage_bytes: 6659997696
+      max_reserved_storage_bytes: 2219999232
+      max_skaled_leveldb_storage_bytes: 6659997696

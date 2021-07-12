@@ -15,22 +15,12 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:1.1.0-beta.16
+    image: skalenetwork/transaction-manager:2.0.1-beta.0
     network_mode: host
     tty: true
     environment:
-      SGX_SERVER_URL: ${SGX_SERVER_URL}
-      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
+      SGX_URL: ${SGX_SERVER_URL}
       ENDPOINT: ${ENDPOINT}
-      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY} # todo: use different flask secret key!
-      FLASK_APP_PORT: 3008
-      FLASK_APP_HOST: "127.0.0.1"
-      FLASK_DEBUG_MODE: "False"
-      SKALE_DIR_HOST: ${SKALE_DIR}
-      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
-      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
-      MAX_GAS_PRICE_WEI : ${MAX_GAS_PRICE_WEI}
-      DEFAULT_TIMEOUT: ${DEFAULT_TIMEOUT}
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
@@ -38,7 +28,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:1.1.0-beta.57
+    image: skalenetwork/admin:2.0.1-beta.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -46,15 +36,10 @@ services:
       - NET_ADMIN
       - NET_RAW
     environment:
-      TM_URL: http://127.0.0.1:3008
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       IMA_ENDPOINT: ${IMA_ENDPOINT}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      DB_PORT: ${DB_PORT}
       SKALE_DIR_HOST: ${SKALE_DIR}
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
@@ -81,22 +66,17 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:1.1.0-beta.57
+    image: skalenetwork/admin:2.0.1-beta.0
     network_mode: host
     tty: true
     cap_add:
       - NET_ADMIN
       - NET_RAW
     environment:
-      TM_URL: http://127.0.0.1:3008
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       IMA_ENDPOINT: ${IMA_ENDPOINT}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      DB_PORT: ${DB_PORT}
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
       FLASK_APP_PORT: 3007
       FLASK_APP_HOST: "127.0.0.1"
@@ -115,18 +95,17 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-    depends_on:
-      - mysql
 
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:1.1.0-beta.57
+    image: skalenetwork/admin:2.0.1-beta.0
     network_mode: host
     tty: true
     environment:
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
+      SKALE_DIR_HOST: ${SKALE_DIR}
     command: "celery -A tools.notifications.tasks worker --loglevel=info"
 
     volumes:
@@ -134,7 +113,7 @@ services:
 
   redis:
     <<: *skale_base
-    container_name: redis
+    container_name: skale_redis
     image: "redis:6.0.10-alpine"
     network_mode: host
     tty: true
@@ -146,46 +125,26 @@ services:
       - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
       - ${SKALE_DIR}/config/redis.conf:/data/redis.conf
 
-  mysql:
-    <<: *skale_base
-    container_name: skale_mysql
-    image: mysql/mysql-server:5.7.30
-    network_mode: host
-    volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ${SKALE_DIR}/node_data/mysql-data:/var/lib/mysql
-      - ${SKALE_DIR}/node_data/.mysql-backup:/mysql-backup
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: "db_skale"
-
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:1.1.1-beta.8
+    image: skalenetwork/bounty-agent:2.0.1-beta.0
     network_mode: host
     environment:
-      TM_URL: http://127.0.0.1:3008
+      SGX_SERVER_URL: ${SGX_SERVER_URL}
+      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
-      DB_USER: ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
-      DB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
-      DB_PORT: ${DB_PORT}
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-    depends_on:
-      - mysql
 
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:1.1.3-beta.9
+    image: skalenetwork/watchdog:2.0.0-beta.0
     network_mode: host
     environment:
       FLASK_APP_PORT: 3010
@@ -200,7 +159,15 @@ services:
     depends_on:
       - watchdog
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ${SKALE_DIR}/node_data/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ${SKALE_DIR}/node_data/ssl:/ssl:ro
+      - ${FILESTORAGE_MAPPING}:/filestorage:ro
+      - type: bind
+        bind:
+          propagation: slave
+        source: ${SCHAINS_MNT_DIR}
+        target: ${SCHAINS_MNT_DIR}
+        read_only: true
 
   advisor:
     <<: *skale_base
