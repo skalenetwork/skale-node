@@ -6,6 +6,7 @@ services:
     restart: unless-stopped
     labels:
       com.skale.prefix: "node"
+    cpu_shares: 128
     logging:
       driver: "json-file"
       options:
