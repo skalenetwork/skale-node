@@ -1,9 +1,20 @@
 = Denali Mainnet Soft Upgrade
 include::parameters.adoc[]
+:sectnumlevels: 1
 
 For SKALE Validator CLI initialization use SKALE Manager ABI:
 
 `{MANAGER_CONTRACTS_ABI_URL}`
+
+== Update sgx
+
+Upgrade sgx wallet to `skalenetwork/sgxwallet_release:1.77.0-stable.0`.
+
+Make sure to have `skalenetwork/sgxwallet_release:1.77.0-stable.0` in the docker-compose.yml. Make sure `1031` port is exposed in docker-compose.yml (git pull in `sgxwallet` repo directory) and `-b` option is set.
+
+Note: node machine should be able to access `1031` sgx port.
+
+https://github.com/skalenetwork/sgxwallet/blob/develop/docs/run-in-hardware-mode.md#start-stop-and-upgrade-sgxwallet-containers[See SGXWallet Upgrade Guide].
 
 == Update validator-cli
 
@@ -24,6 +35,12 @@ VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalene
 ```shell
 chmod +x /usr/local/bin/sk-val
 ```
+
+== Verify Ports 80 and 443
+
+Make sure 80 and 443 ports are opened by external software
+
+Please make sure traffic to 80 and 443 ports is allowed by external software. Do not modify anything if you're using ufw or iptables to configure firewall.
 
 == Install SKALE Node CLI
 
@@ -78,11 +95,11 @@ Run skale node update:
 skale node update .env
 ```
 
-=== Check your SSL certificate
+== Check your SSL certificate
 
 Certificate file should be in `PEM` format and contain full certificate chain
 
-==== Run skale ssl check to make sure your ssl certificate is valid
+=== Run skale ssl check to make sure your ssl certificate is valid
 
 ```shell
 skale ssl check

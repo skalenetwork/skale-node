@@ -1,10 +1,10 @@
 = Validator Parameters
-:network: Testnet
+:network: Denali v2
 
 :machine: A Linux x86_64 machine
 :linux-distro: Ubuntu 18.04
 :physical-cores: 8 physical cores
-:port-range: Ports 3009, 8080, 443, 9100, and 10000–18192, and ICMP IPv4 should not be closed by external firewall
+:port-range: Ports 80, 443, 3009, 8080, 9100, and 10000–18192, and ICMP IPv4 should not be closed by external firewall
 :root-size: 100GB root storage
 :attached-size: 2TB attached storage
 :ram-size: 32GB RAM
@@ -14,38 +14,38 @@
 :sgx-linux-distro: Ubuntu 18.04 (Ubuntu > 18.04 not yet supported)
 :sgx-ram-size: At least 8 GB
 :sgx-swap-size: Swap size equals to half of RAM size
-:sgx-port-range: Ports 1026–1029 open only to SKALE Nodes, not public
+:sgx-port-range: Ports 1026–1031 open only to SKALE Nodes, not public
 
 
 
 // base software
 :docker-compose-version: 1.27.4
 :packages: iptables-persistent, btrfs-progs, lsof, lvm2, psmisc, and apt
-:geth-version: 1.10.2
+:geth-version: 1.10.5
 :docker-config: live-restore enabled https://docs.docker.com/config/containers/live-restore/[docker docs]
 
 // skale software
-:node-cli: https://github.com/skalenetwork/node-cli/releases/download/1.1.1/skale-1.1.1-Linux-x86_64[1.1.1]
-:validator-cli: https://github.com/skalenetwork/node-cli/releases/download/1.1.1/skale-1.2.1-Linux-x86_64[1.2.1]
+:node-cli: https://github.com/skalenetwork/node-cli/releases/download/2.0.1/skale-2.0.1-Linux-x86_64[2.0.1]
+:validator-cli: https://github.com/skalenetwork/node-cli/releases/download/1.3.0/skale-1.3.0-Linux-x86_64[1.3.0]
 :sgxwallet: https://github.com/skalenetwork/sgxwallet/releases/tag/1.70.0-stable.0[1.70.0-stable.0]
-:sgxwallet-container: skalenetwork/sgxwallet_release:1.70.0-stable.0
-:skale-node: https://github.com/skalenetwork/skale-node/releases/tag/1.2.3[1.2.3]
-:skaled: https://github.com/skalenetwork/skaled/releases/tag/3.5.14-stable.0[3.5.14-stable.0]
-:docker-lvmpy: https://github.com/skalenetwork/docker-lvmpy/releases/tag/1.0.1-stable.2[1.0.1-stable.2]
-:transaction-manager: https://github.com/skalenetwork/transaction-manager/releases/tag/1.1.0-stable.1[1.1.0-stable.1]
-:skale-admin: https://github.com/skalenetwork/skale-admin/releases/tag/1.1.0-stable.2[1.1.0-stable.2]
-:bounty-agent: https://github.com/skalenetwork/bounty-agent/releases/tag/1.1.1-stable.1[1.1.1-stable.1]
-:skale-watchdog: https://github.com/skalenetwork/skale-watchdog/releases/tag/1.1.3-stable.1[1.1.3-stable.1]
+:sgxwallet-container: skalenetwork/sgxwallet_release:1.77.0-stable.0
+:skale-node: https://github.com/skalenetwork/skale-node/releases/tag/2.0.0[2.0.0]
+:skaled: https://github.com/skalenetwork/skaled/releases/tag/3.7.3-stable.0[3.7.3-stable.0]
+:docker-lvmpy: https://github.com/skalenetwork/docker-lvmpy/releases/tag/1.0.1-stable.3[1.0.1-stable.3]
+:transaction-manager: https://github.com/skalenetwork/transaction-manager/releases/tag/2.0.1[2.0.1]
+:skale-admin: https://github.com/skalenetwork/skale-admin/releases/tag/2.0.1[2.0.1]
+:bounty-agent: https://github.com/skalenetwork/bounty-agent/releases/tag/2.0.1-stable.0[2.0.1-stable.0]
+:skale-watchdog: https://github.com/skalenetwork/skale-watchdog/releases/tag/2.0.0-stable.0[2.0.0-stable.0]
 
 // environment variables
 :MONITORING_CONTAINERS: True
-:DOCKER_LVMPY_STREAM: 1.0.1-stable.2
+:DOCKER_LVMPY_STREAM: 1.0.1-stable.3
 
 :MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/skale-manager/1.8.1/skale-manager-1.8.1-mainnet-abi.json
-:IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/IMA/1.0.0/abi.json
-:CONTAINER_CONFIGS_STREAM: 1.2.3
+:IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/IMA/1.0.0/IMA-1.0.0-mainnet-abi.json
+:CONTAINER_CONFIGS_STREAM: 2.0.0
 :FILEBEAT_HOST: filebeat.mainnet.skalenodes.com:5000
-:DISABLE_IMA: True
+:DISABLE_IMA: False
 :ENV_TYPE: mainnet
 :by-validator: [By Validator]
 :SGX_SERVER_URL: [By validator, setup SGX wallet first]

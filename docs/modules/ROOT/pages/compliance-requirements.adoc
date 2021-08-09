@@ -7,9 +7,11 @@ The following document outlines compliance requirements for SKALE Network nodes.
 
 The following compliance requirements are required to ensure all nodes meet a standard of performance. 
 
-:warning: Failure to meet ANY ONE of the following Denali compliance requirements will result in a node being marked “Out of Compliance” by the NODE Foundation and the node may be forced to forfeit monthly bounties if it is unable to return to "In Compliance" by the time the monthly `getBounty` is called. 
+[WARNING]
+Failure to meet ANY ONE of the following Denali compliance requirements will result in a node being marked “Out of Compliance” by the NODE Foundation and the node may be forced to forfeit monthly bounties if it is unable to return to "In Compliance" by the time the monthly `getBounty` is called. 
 
-:note: Compliance requirements may be reviewed and modified at any given time.
+[NOTE]
+Compliance requirements may be reviewed and modified at any given time.
 
 == General Check
 

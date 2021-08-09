@@ -1,6 +1,9 @@
 = Validator and Node Setup
 include::parameters.adoc[]
 
+[IMPORTANT]
+Setup instructions here may be out-of-date.
+
 This page is the step by step guide that shows how to run a validator node in the SKALE Network.
 
 == Step 1. Register Validator with SKALE Validator CLI
@@ -245,7 +248,7 @@ Clone SGX Wallet Repository to your SGX compatible Server:
 ```shell
 git clone https://github.com/skalenetwork/sgxwallet/
 cd sgxwallet
-git checkout tags/1.58.5-stable.1
+git checkout tags/ADD_VERSION_TAG
 ```
 
 ==== 2.2 - Enable SGX

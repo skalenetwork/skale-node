@@ -29,7 +29,11 @@ The rest of the versions were provided for docker containers and correspondent t
 
 **Important notes:**  
 
+. Make sure `DISABLE_IMA` .env option set to `False`.
+
 . {port-range}. If you're using `ufw` or `iptables` for configuring your own rules, please, do not open any of this ports.
+
+. Node should be able to access 1031 SGX port.
 
 . Make sure that other network nodes receives packets from your node with source IP address that is equal to IP address that you provided during node registration (it can be found in `skale node info` output).
 
