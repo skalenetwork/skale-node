@@ -1,5 +1,6 @@
 = Denali Mainnet Soft Upgrade
 include::parameters.adoc[]
+:sectnums:
 :sectnumlevels: 1
 
 For SKALE Validator CLI initialization use SKALE Manager ABI:
