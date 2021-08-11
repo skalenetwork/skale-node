@@ -34,7 +34,12 @@
   "ima": {
     "name": "skalenetwork/ima",
     "version": "1.0.0-develop.259",
-    "custom_args": {},
+    "custom_args": {
+      "logs": {
+        "max-size": "250m",
+        "max-file": "5"
+      }
+    },
     "args": {
       "restart_policy": {
         "MaximumRetryCount": 10,
