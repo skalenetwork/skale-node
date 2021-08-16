@@ -12,7 +12,7 @@ processors:
 - add_host_metadata:
 #    netinfo.enabled: false
 - add_docker_metadata:
-    host: "unix:///var/run/docker.sock"
+    host: "unix:///var/run/skale/docker.sock"
 - add_fields:
     fields:
       id: {{ id }}
