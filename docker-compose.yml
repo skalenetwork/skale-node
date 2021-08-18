@@ -53,7 +53,7 @@ services:
       ENV_TYPE: ${ENV_TYPE}
     command: "python3 admin.py"
     volumes:
-      - /var/run/skale:/var/run/skale:ro
+      - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
     healthcheck:
@@ -92,7 +92,7 @@ services:
       ENV_TYPE: ${ENV_TYPE}
     command: "gunicorn app:app -c gunicorn.conf.py"
     volumes:
-      - /var/run/skale:/var/run/skale:ro
+      - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
 
@@ -109,7 +109,7 @@ services:
     command: "celery -A tools.notifications.tasks worker --loglevel=info"
 
     volumes:
-      - /var/run/skale:/var/run/skale:ro
+      - /var/run/skale:/var/run/skale
 
   redis:
     <<: *skale_base
@@ -176,7 +176,7 @@ services:
     network_mode: host
     volumes:
       - /:/rootfs:ro
-      - /var/run:/var/run:ro
+      - /var/run:/var/run
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
@@ -208,4 +208,4 @@ services:
       - ${SKALE_DIR}/node_data/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
       - /var/lib/docker:/var/lib/docker:ro
       - /var/log/docker-lvmpy:/var/log/docker-lvmpy:ro
-      - /var/run/skale:/var/run/skale:ro
+      - /var/run/skale:/var/run/skale
