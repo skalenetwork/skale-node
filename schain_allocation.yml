@@ -10,20 +10,20 @@ devnet:
     test4: 8879996928
   leveldb_limits:
     large:
-      contract_storage: 12787195576
-      db_storage: 8524797050
+      contract_storage: 6393597787
+      db_storage: 4262398525
     medium:
-      contract_storage: 1598399446
-      db_storage: 1065599631
+      contract_storage: 799199723
+      db_storage: 532799815
     small:
-      contract_storage: 99899965
-      db_storage: 66599976
+      contract_storage: 49949982
+      db_storage: 33299988
     test:
-      contract_storage: 1598399446
-      db_storage: 1065599631
+      contract_storage: 799199723
+      db_storage: 532799815
     test4:
-      contract_storage: 1598399446
-      db_storage: 1065599631
+      contract_storage: 799199723
+      db_storage: 532799815
   rotate_after_block:
     large: 1310721
     medium: 163840
@@ -36,27 +36,27 @@ devnet:
       max_consensus_storage_bytes: 21311992627
       max_file_storage_bytes: 21311992627
       max_reserved_storage_bytes: 7103997542
-      max_skaled_leveldb_storage_bytes: 21311992627
+      max_skaled_leveldb_storage_bytes: 10655996313
     medium:
       max_consensus_storage_bytes: 2663999078
       max_file_storage_bytes: 2663999078
       max_reserved_storage_bytes: 887999692
-      max_skaled_leveldb_storage_bytes: 2663999078
+      max_skaled_leveldb_storage_bytes: 1331999539
     small:
       max_consensus_storage_bytes: 166499942
       max_file_storage_bytes: 166499942
       max_reserved_storage_bytes: 55499980
-      max_skaled_leveldb_storage_bytes: 166499942
+      max_skaled_leveldb_storage_bytes: 83249971
     test:
       max_consensus_storage_bytes: 2663999078
       max_file_storage_bytes: 2663999078
       max_reserved_storage_bytes: 887999692
-      max_skaled_leveldb_storage_bytes: 2663999078
+      max_skaled_leveldb_storage_bytes: 1331999539
     test4:
       max_consensus_storage_bytes: 2663999078
       max_file_storage_bytes: 2663999078
       max_reserved_storage_bytes: 887999692
-      max_skaled_leveldb_storage_bytes: 2663999078
+      max_skaled_leveldb_storage_bytes: 1331999539
 mainnet:
   disk:
     large: 1687199940608
@@ -66,20 +66,20 @@ mainnet:
     test4: 210899992576
   leveldb_limits:
     large:
-      contract_storage: 303695989309
-      db_storage: 202463992872
+      contract_storage: 151847994654
+      db_storage: 101231996436
     medium:
-      contract_storage: 37961998663
-      db_storage: 25307999108
+      contract_storage: 18980999331
+      db_storage: 12653999554
     small:
-      contract_storage: 2372624916
-      db_storage: 1581749944
+      contract_storage: 1186312458
+      db_storage: 790874972
     test:
-      contract_storage: 37961998663
-      db_storage: 25307999108
+      contract_storage: 18980999331
+      db_storage: 12653999554
     test4:
-      contract_storage: 37961998663
-      db_storage: 25307999108
+      contract_storage: 18980999331
+      db_storage: 12653999554
   rotate_after_block:
     large: 31129628
     medium: 3891203
@@ -92,27 +92,27 @@ mainnet:
       max_consensus_storage_bytes: 506159982182
       max_file_storage_bytes: 506159982182
       max_reserved_storage_bytes: 168719994060
-      max_skaled_leveldb_storage_bytes: 506159982182
+      max_skaled_leveldb_storage_bytes: 253079991091
     medium:
       max_consensus_storage_bytes: 63269997772
       max_file_storage_bytes: 63269997772
       max_reserved_storage_bytes: 21089999257
-      max_skaled_leveldb_storage_bytes: 63269997772
+      max_skaled_leveldb_storage_bytes: 31634998886
     small:
       max_consensus_storage_bytes: 3954374860
       max_file_storage_bytes: 3954374860
       max_reserved_storage_bytes: 1318124953
-      max_skaled_leveldb_storage_bytes: 3954374860
+      max_skaled_leveldb_storage_bytes: 1977187430
     test:
       max_consensus_storage_bytes: 63269997772
       max_file_storage_bytes: 63269997772
       max_reserved_storage_bytes: 21089999257
-      max_skaled_leveldb_storage_bytes: 63269997772
+      max_skaled_leveldb_storage_bytes: 31634998886
     test4:
       max_consensus_storage_bytes: 63269997772
       max_file_storage_bytes: 63269997772
       max_reserved_storage_bytes: 21089999257
-      max_skaled_leveldb_storage_bytes: 63269997772
+      max_skaled_leveldb_storage_bytes: 31634998886
 qanet:
   disk:
     large: 177599938560
@@ -122,20 +122,20 @@ qanet:
     test4: 22199992320
   leveldb_limits:
     large:
-      contract_storage: 31967988940
-      db_storage: 21311992627
+      contract_storage: 15983994470
+      db_storage: 10655996313
     medium:
-      contract_storage: 3995998617
-      db_storage: 2663999078
+      contract_storage: 1997999308
+      db_storage: 1331999539
     small:
-      contract_storage: 249749913
-      db_storage: 166499942
+      contract_storage: 124874956
+      db_storage: 83249971
     test:
-      contract_storage: 3995998617
-      db_storage: 2663999078
+      contract_storage: 1997999308
+      db_storage: 1331999539
     test4:
-      contract_storage: 3995998617
-      db_storage: 2663999078
+      contract_storage: 1997999308
+      db_storage: 1331999539
   rotate_after_block:
     large: 3276803
     medium: 409600
@@ -148,27 +148,27 @@ qanet:
       max_consensus_storage_bytes: 53279981568
       max_file_storage_bytes: 53279981568
       max_reserved_storage_bytes: 17759993856
-      max_skaled_leveldb_storage_bytes: 53279981568
+      max_skaled_leveldb_storage_bytes: 26639990784
     medium:
       max_consensus_storage_bytes: 6659997696
       max_file_storage_bytes: 6659997696
       max_reserved_storage_bytes: 2219999232
-      max_skaled_leveldb_storage_bytes: 6659997696
+      max_skaled_leveldb_storage_bytes: 3329998848
     small:
       max_consensus_storage_bytes: 416249856
       max_file_storage_bytes: 416249856
       max_reserved_storage_bytes: 138749952
-      max_skaled_leveldb_storage_bytes: 416249856
+      max_skaled_leveldb_storage_bytes: 208124928
     test:
       max_consensus_storage_bytes: 6659997696
       max_file_storage_bytes: 6659997696
       max_reserved_storage_bytes: 2219999232
-      max_skaled_leveldb_storage_bytes: 6659997696
+      max_skaled_leveldb_storage_bytes: 3329998848
     test4:
       max_consensus_storage_bytes: 6659997696
       max_file_storage_bytes: 6659997696
       max_reserved_storage_bytes: 2219999232
-      max_skaled_leveldb_storage_bytes: 6659997696
+      max_skaled_leveldb_storage_bytes: 3329998848
 testnet:
   disk:
     large: 177599938560
@@ -178,20 +178,20 @@ testnet:
     test4: 22199992320
   leveldb_limits:
     large:
-      contract_storage: 31967988940
-      db_storage: 21311992627
+      contract_storage: 15983994470
+      db_storage: 10655996313
     medium:
-      contract_storage: 3995998617
-      db_storage: 2663999078
+      contract_storage: 1997999308
+      db_storage: 1331999539
     small:
-      contract_storage: 249749913
-      db_storage: 166499942
+      contract_storage: 124874956
+      db_storage: 83249971
     test:
-      contract_storage: 3995998617
-      db_storage: 2663999078
+      contract_storage: 1997999308
+      db_storage: 1331999539
     test4:
-      contract_storage: 3995998617
-      db_storage: 2663999078
+      contract_storage: 1997999308
+      db_storage: 1331999539
   rotate_after_block:
     large: 3276803
     medium: 409600
@@ -204,24 +204,24 @@ testnet:
       max_consensus_storage_bytes: 53279981568
       max_file_storage_bytes: 53279981568
       max_reserved_storage_bytes: 17759993856
-      max_skaled_leveldb_storage_bytes: 53279981568
+      max_skaled_leveldb_storage_bytes: 26639990784
     medium:
       max_consensus_storage_bytes: 6659997696
       max_file_storage_bytes: 6659997696
       max_reserved_storage_bytes: 2219999232
-      max_skaled_leveldb_storage_bytes: 6659997696
+      max_skaled_leveldb_storage_bytes: 3329998848
     small:
       max_consensus_storage_bytes: 416249856
       max_file_storage_bytes: 416249856
       max_reserved_storage_bytes: 138749952
-      max_skaled_leveldb_storage_bytes: 416249856
+      max_skaled_leveldb_storage_bytes: 208124928
     test:
       max_consensus_storage_bytes: 6659997696
       max_file_storage_bytes: 6659997696
       max_reserved_storage_bytes: 2219999232
-      max_skaled_leveldb_storage_bytes: 6659997696
+      max_skaled_leveldb_storage_bytes: 3329998848
     test4:
       max_consensus_storage_bytes: 6659997696
       max_file_storage_bytes: 6659997696
       max_reserved_storage_bytes: 2219999232
-      max_skaled_leveldb_storage_bytes: 6659997696
+      max_skaled_leveldb_storage_bytes: 3329998848
