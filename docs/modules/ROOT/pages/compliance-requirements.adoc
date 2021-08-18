@@ -35,7 +35,11 @@ Node operators can use this general PASS/FAIL check to confirm whether a node me
 
 Test: `http://YOUR_SKALE_NODE_IP:3009/status/hardware`
 
-Example response: `{"data": {"cpu_total_cores": 8, "cpu_physical_cores": 8, "memory": 33675792384, "swap": 67350032384, "system_release": "Linux-5.4.0-1045-aws", "uname_version": "#47~18.04.1-Ubuntu SMP Tue Apr 13 15:58:14 UTC 2021", "attached_storage_size": 214748364800}, "error": null}`
+Example response: 
+
+```json
+{"data": {"cpu_total_cores": 8, "cpu_physical_cores": 8, "memory": 33675792384, "swap": 67350032384, "system_release": "Linux-5.4.0-1045-aws", "uname_version": "#47~18.04.1-Ubuntu SMP Tue Apr 13 15:58:14 UTC 2021", "attached_storage_size": 214748364800}, "error": null}
+```
 
 == Networking
 
@@ -67,7 +71,9 @@ Example Response:  `{"data": {"block_number": 8728517, "syncing": false, "truste
 
 == Software
 
-Latest Mainnet software versions defined here: https://github.com/skalenetwork/skale-network/tree/master/releases
+Latest Mainnet software versions are defined here: 
+* xref:index.adoc#_mainnet_versions_for_set_up[Mainnet Versions]
+* https://github.com/skalenetwork/skale-network/tree/master/releases
 
 * Node software versions must be updated to the latest Denali requirements
 * SGXWallet software versions must be updated to the latest Denali requirements
