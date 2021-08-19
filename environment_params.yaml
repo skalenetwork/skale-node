@@ -13,7 +13,7 @@ common:
       max_reserved_storage_bytes: 0.1
     leveldb_limits:
       contract_storage: 0.6
-      db_storage: 0.4
+      db_storage: 0.2 # leveldb may use x2 storage, so 0.4 divided by 2, actually using 0.4
     base_rotate_after_block_divider: 61035.1
     shared_space_coefficient: 1
 envs:
