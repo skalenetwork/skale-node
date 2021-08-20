@@ -11,19 +11,19 @@ devnet:
   leveldb_limits:
     large:
       contract_storage: 12787195576
-      db_storage: 8524797050
+      db_storage: 4262398525
     medium:
       contract_storage: 1598399446
-      db_storage: 1065599631
+      db_storage: 532799815
     small:
       contract_storage: 99899965
-      db_storage: 66599976
+      db_storage: 33299988
     test:
       contract_storage: 1598399446
-      db_storage: 1065599631
+      db_storage: 532799815
     test4:
       contract_storage: 1598399446
-      db_storage: 1065599631
+      db_storage: 532799815
   rotate_after_block:
     large: 1310721
     medium: 163840
@@ -67,19 +67,19 @@ mainnet:
   leveldb_limits:
     large:
       contract_storage: 303695989309
-      db_storage: 202463992872
+      db_storage: 101231996436
     medium:
       contract_storage: 37961998663
-      db_storage: 25307999108
+      db_storage: 12653999554
     small:
       contract_storage: 2372624916
-      db_storage: 1581749944
+      db_storage: 790874972
     test:
       contract_storage: 37961998663
-      db_storage: 25307999108
+      db_storage: 12653999554
     test4:
       contract_storage: 37961998663
-      db_storage: 25307999108
+      db_storage: 12653999554
   rotate_after_block:
     large: 31129628
     medium: 3891203
@@ -123,19 +123,19 @@ qanet:
   leveldb_limits:
     large:
       contract_storage: 31967988940
-      db_storage: 21311992627
+      db_storage: 10655996313
     medium:
       contract_storage: 3995998617
-      db_storage: 2663999078
+      db_storage: 1331999539
     small:
       contract_storage: 249749913
-      db_storage: 166499942
+      db_storage: 83249971
     test:
       contract_storage: 3995998617
-      db_storage: 2663999078
+      db_storage: 1331999539
     test4:
       contract_storage: 3995998617
-      db_storage: 2663999078
+      db_storage: 1331999539
   rotate_after_block:
     large: 3276803
     medium: 409600
@@ -179,19 +179,19 @@ testnet:
   leveldb_limits:
     large:
       contract_storage: 31967988940
-      db_storage: 21311992627
+      db_storage: 10655996313
     medium:
       contract_storage: 3995998617
-      db_storage: 2663999078
+      db_storage: 1331999539
     small:
       contract_storage: 249749913
-      db_storage: 166499942
+      db_storage: 83249971
     test:
       contract_storage: 3995998617
-      db_storage: 2663999078
+      db_storage: 1331999539
     test4:
       contract_storage: 3995998617
-      db_storage: 2663999078
+      db_storage: 1331999539
   rotate_after_block:
     large: 3276803
     medium: 409600
