@@ -35,7 +35,7 @@ The rest of the versions were provided for docker containers and correspondent t
 
 . Please, don't forget to check your SSL certificate using `skale ssl check` command.
 
-== Mainnet Versions for Set up
+== {Network} Versions for Set up
 
 [cols="2,5a"]
 |===
@@ -71,7 +71,7 @@ The rest of the versions were provided for docker containers and correspondent t
 
 |===
 
-=== Mainnet Environment Variables to set
+=== {Network} Environment Variables to set
 
 [source, subs="attributes"]
 ----
@@ -94,4 +94,4 @@ ENDPOINT=[{by-validator}, GETH NODE ENDPOINT]
 ```
 ----
 
-Soft update steps are described in Mainnet Soft Update section
+Soft update steps are described in {Network} Soft Update section

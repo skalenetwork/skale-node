@@ -1,4 +1,4 @@
-= Denali Mainnet Soft Upgrade
+= Denali {Network} Soft Upgrade
 include::parameters.adoc[]
 
 For SKALE Validator CLI initialization use SKALE Manager ABI:
