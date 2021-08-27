@@ -554,7 +554,7 @@ SKALE balance: 0 SKALE
 **Terminal Command:**
 
 ```shell
-skale sgx info
+skale health sgx
 
 ```
 
