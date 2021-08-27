@@ -412,7 +412,7 @@ echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo deb
 sudo apt install iptables-persistent -y
 ```
 
-* You will need SSL certificates for each node. xref::validators:node-ssl-setup.adoc[See the Node SSL instructions].
+* You will need SSL certificates for each node. xref:node-cli::node-ssl-setup.adoc[See the Node SSL instructions].
 * You should run skale commands using sudo.
 * You should carefully control any automatic updates. In general avoid updates to the Linux kernel, docker, docker-compose, btrfs-progs. And take care when updating lvm2, iptables, iptables-persistent, and python. Please see the [FAQ - Node update procedure for more information](/validators/faq.adoc#node-update-procedure).
 
@@ -716,7 +716,7 @@ For Testnet Only, please ask Core team to skip time to update delegation status
 
 == Step 4: Setup SSL Certificates
 
-Here is an overview of the process to setup SSL certificates. For more details, please see xref::node-cli:node-ssl-setup.adoc[Node SSL docs].
+Here is an overview of the process to setup SSL certificates. For more details, please see xref:node-cli::node-ssl-setup.adoc[Node SSL docs].
 
 === 4.1: Setup IP redirects
 
