@@ -21,7 +21,7 @@
 // base software
 :docker-compose-version: 1.27.4
 :packages: iptables-persistent, btrfs-progs, lsof, lvm2, psmisc, and apt
-:geth-version: 1.10.5
+:geth-version: 1.10.8
 :docker-config: live-restore enabled https://docs.docker.com/config/containers/live-restore/[docker docs]
 
 // skale software
