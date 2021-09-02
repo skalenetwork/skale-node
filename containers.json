@@ -20,8 +20,8 @@
         "seccomp=unconfined"
       ],
       "restart_policy": {
-        "MaximumRetryCount": 3,
-        "Name": "on-failure"
+        "MaximumRetryCount": 0,
+        "Name": "no"
       },
       "network": "host",
       "cap_add": [
