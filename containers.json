@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.7.3-beta.0",
+    "version": "3.7.5-beta.4",
     "custom_args": {
       "ulimits_list": [
         {
@@ -20,8 +20,8 @@
         "seccomp=unconfined"
       ],
       "restart_policy": {
-        "MaximumRetryCount": 3,
-        "Name": "on-failure"
+        "MaximumRetryCount": 0,
+        "Name": "no"
       },
       "network": "host",
       "cap_add": [
@@ -33,8 +33,13 @@
   },
   "ima": {
     "name": "skalenetwork/ima",
-    "version": "1.0.0-beta.4",
-    "custom_args": {},
+    "version": "1.0.0-beta.11",
+    "custom_args": {
+      "logs": {
+        "max-size": "250m",
+        "max-file": "5"
+      }
+    },
     "args": {
       "restart_policy": {
         "MaximumRetryCount": 10,
