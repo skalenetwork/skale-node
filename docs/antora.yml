@@ -1,5 +1,6 @@
 name: network
-title: Fuji Testnet
+title: Network
 version: v2.0.1
+prerelease: Testnet
 nav:
   - modules/ROOT/nav.adoc
