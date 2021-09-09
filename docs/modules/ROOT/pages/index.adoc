@@ -1,0 +1,87 @@
+= SKALE {Network} Versions
+include::parameters.adoc[]
+
+You can find the compatible versions in this page. Set up requires only Validator-Cli, Node-Cli and SGX versions.
+
+The rest of the versions were provided for docker containers and correspondent tags in their individual code repositories.
+
+== Prerequisites
+
+=== Node machine
+* {machine}
+* {port-range}
+* {linux-distro}
+* {root-size}
+* {attached-size}
+* {physical-cores}
+* {ram-size}
+* {swap-size}
+* docker
+* docker-compose -> `{docker-compose-version}`
+* {packages}
+* {docker-config}
+
+=== SGX Server
+* SGX-enabled Intel processor
+
+=== Geth Node
+* geth node with `{geth-version}` version
+
+== Versions for Set up
+
+[cols="2,5a"]
+|===
+|**Node CLI**
+|{node-cli}
+
+|**Validator CLI**
+|{validator-cli}
+
+|**SGX Wallet**
+|{sgxwallet} container: {sgxwallet-container}
+
+|**Skale node**
+|{skale-node}
+
+|**Skaled**
+|{skaled}
+
+|**Docker lvmpy**
+|{docker-lvmpy}
+
+|**Transaction manager**
+|{transaction-manager}
+
+|**Skale admin**
+|{skale-admin}
+
+|**Bounty agent**
+|{bounty-agent}
+
+|**Skale watchdog**
+|{skale-watchdog}
+
+|===
+
+=== Environment Variables to set
+
+[source, subs="attributes"]
+----
+MONITORING_CONTAINERS={MONITORING_CONTAINERS}
+DOCKER_LVMPY_STREAM={DOCKER_LVMPY_STREAM}
+MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
+IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+FILEBEAT_HOST={FILEBEAT_HOST}
+DISABLE_IMA={DISABLE_IMA}
+ENV_TYPE={ENV_TYPE}
+SGX_SERVER_URL=[{by-validator}, setup SGX wallet first]
+DISK_MOUNTPOINT=[{by-validator}, your attached storage /dev/sda or /dev/xvdd (this is an example. You just need to use your 2TB block volume mount point)]
+DB_PORT={by-validator}
+DB_ROOT_PASSWORD={by-validator}
+DB_PASSWORD={by-validator}
+DB_USER={by-validator}
+IMA_ENDPOINT=[{by-validator}, GETH NODE ENDPOINT ]
+ENDPOINT=[{by-validator}, GETH NODE ENDPOINT]
+```
+----
