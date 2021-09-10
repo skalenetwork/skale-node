@@ -5,11 +5,11 @@ include::parameters.adoc[]
 
 
 [NOTE]
-From the `2.0.1` SKALE node release docker is listening on additional socket which will be located in `/var/run/skale/docker.sock`. 
-To achieve this `node-cli` `2.0.1-beta.3` new socket path will be added to `daemon.json` config. In addition service configuration for docker daemon will be changed to ensure that `/var/run/skale` is created.
+From the `2.0.1` SKALE node release docker is listening on additional socket which is located in `/var/run/skale/docker.sock`. 
+To achieve it new socket path will be added to `daemon.json` config during update. In addition service configuration for docker daemon will be changed to ensure that `/var/run/skale` is created.
 
 [WARNING]
-If a validator has custom docker daemon service config, update may lead to unexpected behavior. In this case it's better to ask for the assistance from the team.
+If a validator has custom docker daemon service configuration (systemd unit file), update may lead to unexpected behavior. In this case it's better to ask for the assistance from the core team.
 
 [NOTE]
 Please, don't forget to run `skale node check` as a last step.
@@ -50,14 +50,8 @@ Make sure the following options are set
 
 [source, subs="attributes"]
 ----
-MONITORING_CONTAINERS={MONITORING_CONTAINERS}
-DOCKER_LVMPY_STREAM={DOCKER_LVMPY_STREAM}
-MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
-IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
 CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
-FILEBEAT_HOST={FILEBEAT_HOST}
 DISABLE_IMA={DISABLE_IMA}
-ENV_TYPE={ENV_TYPE}
 ----
 
 === Perform update
