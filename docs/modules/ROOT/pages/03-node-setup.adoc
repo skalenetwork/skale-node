@@ -136,7 +136,7 @@ Set your own values for  **DB_PASSWORD**, **DB_ROOT_PASSWORD**, **DB_USER**.
 ```shell
 TG_API_KEY - Telegram API key
 TG_CHAT_ID - Telegram chat ID
-MONITORING_CONTAINERS - True/False will enable monitoring containers (filebeat, cadvisor, prometheus)
+MONITORING_CONTAINERS - True/False will enable monitoring containers (cadvisor, prometheus)
                         Required for TestNets
 ```
 
