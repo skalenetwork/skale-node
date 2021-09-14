@@ -28,25 +28,24 @@
 :validator-cli: https://github.com/skalenetwork/node-cli/releases/download/1.3.0/skale-1.3.0-Linux-x86_64[1.3.0]
 :sgxwallet: https://github.com/skalenetwork/sgxwallet/releases/tag/1.77.0-stable.0[1.77.0-stable.0]
 :sgxwallet-container: skalenetwork/sgxwallet_release:1.77.0-stable.0
-:skale-node: https://github.com/skalenetwork/skale-node/releases/tag/2.0.1-testnet.0[2.0.1-testnet.0]
+:skale-node: https://github.com/skalenetwork/skale-node/releases/tag/2.0.1-testnet.0[2.0.1-testnet.1]
 :skaled: https://github.com/skalenetwork/skaled/releases/tag/3.7.5-beta.4[3.7.5-beta.4]
 :ima: https://github.com/skalenetwork/IMA/releases/tag/1.0.0-beta.11[1.0.0-beta.11]
 :docker-lvmpy: https://github.com/skalenetwork/docker-lvmpy/releases/tag/1.0.1-stable.3[1.0.1-stable.3]
 :transaction-manager: https://github.com/skalenetwork/transaction-manager/releases/tag/2.0.1-beta.4[2.0.1-beta.4]
-:skale-admin: https://github.com/skalenetwork/skale-admin/releases/tag/2.0.1-beta.6[2.0.1-beta.6]
+:skale-admin: https://github.com/skalenetwork/skale-admin/releases/tag/2.0.1-beta.6[2.0.1-beta.7]
 :bounty-agent: https://github.com/skalenetwork/bounty-agent/releases/tag/2.0.1-beta.1[2.0.1-beta.1]
 :skale-watchdog: https://github.com/skalenetwork/skale-watchdog/releases/tag/2.0.0-beta.2[2.0.0-beta.2]
 
 // environment variables
-:DOCKER_LVMPY_STREAM: {docker-lvmpy}
-:MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/skale-manager/1.8.1/skale-manager-1.8.1-mainnet-abi.json
+:DOCKER_LVMPY_STREAM: 1.0.1-stable.3
 :MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/rinkeby/skale-manager/1.8.1/skale-manager-1.8.1-beta.1-rinkeby-abi.json
-:IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/rinkeby/skale-manager/1.8.1/skale-manager-1.8.1-beta.1-rinkeby-abi.json
-:CONTAINER_CONFIGS_STREAM: {skale-node}
+:IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/rinkeby/IMA/1.0.0-beta.4/abi.json
+:CONTAINER_CONFIGS_STREAM: 2.0.1-testnet.1
 :FILEBEAT_HOST: filebeat.testnet.skalenodes.com:5001
 :DISABLE_IMA: False
 :ENV_TYPE: testnet
-:MONITORING_CONTAINERS: [By validator]
+:MONITORING_CONTAINERS: True
 :by-validator: [By Validator]
 :SGX_SERVER_URL: [By validator, setup SGX wallet first]
 :DISK_MOUNTPOINT: [By validator, your attached storage /dev/sda or /dev/xvdd (this is an example. You just need to use your 2TB block volume mount point)]
