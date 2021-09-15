@@ -51,6 +51,7 @@ Make sure the following options are set
 [source, subs="attributes"]
 ----
 CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
 DISABLE_IMA={DISABLE_IMA}
 ----
 
