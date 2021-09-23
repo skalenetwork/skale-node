@@ -1,47 +1,21 @@
-= Denali Mainnet Soft Upgrade
+= Denali IMA Hotfix Soft Upgrade
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
 
-For SKALE Validator CLI initialization use SKALE Manager ABI:
+[WARNING]
+Be sure to follow specific upgrade schedule assigned to your node(s). Follow guidance from the core team.
 
-`{MANAGER_CONTRACTS_ABI_URL}`
+[NOTE]
+From the `2.0.1` SKALE node release docker is listening on additional socket which is located in `/var/run/skale/docker.sock`. 
+To achieve it new socket path will be added to `daemon.json` config during update. In addition service configuration for docker daemon will be changed to ensure that `/var/run/skale` is created.
 
-== Update sgx
+[WARNING]
+If a validator has custom docker daemon service configuration (systemd unit file), update may lead to unexpected behavior. In this case it's better to ask for the assistance from the core team.
 
-Upgrade sgx wallet to `skalenetwork/sgxwallet_release:1.77.0-stable.0`.
+[NOTE]
+Please, don't forget to run `skale node check` as a last step.
 
-Make sure to have `skalenetwork/sgxwallet_release:1.77.0-stable.0` in the docker-compose.yml. Make sure `1031` port is exposed in docker-compose.yml (git pull in `sgxwallet` repo directory) and `-b` option is set.
-
-Note: node machine should be able to access `1031` sgx port.
-
-https://github.com/skalenetwork/sgxwallet/blob/develop/docs/run-in-hardware-mode.md#start-stop-and-upgrade-sgxwallet-containers[See SGXWallet Upgrade Guide].
-
-== Update validator-cli
-
-=== Download new Validator CLI binary
-
-Make sure `VERSION_NUM` is `{validator-cli}`
-
-**Terminal Command:**
-
-```shell
-VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/validator-cli/releases/download/$VERSION_NUM/sk-val-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/sk-val"
-```
-
-=== Apply executable permissions to the binary
-
-**Terminal Command:**
-
-```shell
-chmod +x /usr/local/bin/sk-val
-```
-
-== Verify Ports 80 and 443
-
-Make sure 80 and 443 ports are opened by external software
-
-Please make sure traffic to 80 and 443 ports is allowed by external software. Do not modify anything if you're using ufw or iptables to configure firewall.
 
 == Install SKALE Node CLI
 
@@ -57,8 +31,8 @@ VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalene
 ```
 
 === Make the SKALE Node CLI binary executable
-
 **Terminal Command:**
+
 
 ```shell
 sudo chmod +x /usr/local/bin/skale
@@ -78,14 +52,9 @@ Make sure the following options are set
 
 [source, subs="attributes"]
 ----
-MONITORING_CONTAINERS={MONITORING_CONTAINERS}
-DOCKER_LVMPY_STREAM={DOCKER_LVMPY_STREAM}
-MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
-IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
 CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
-FILEBEAT_HOST={FILEBEAT_HOST}
+IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
 DISABLE_IMA={DISABLE_IMA}
-ENV_TYPE={ENV_TYPE}
 ----
 
 === Perform update
@@ -96,14 +65,8 @@ Run skale node update:
 skale node update .env
 ```
 
-== Check your SSL certificate
-
-Certificate file should be in `PEM` format and contain full certificate chain
-
-=== Run skale ssl check to make sure your ssl certificate is valid
+== Run skale node check to make sure your node is configured properly
 
 ```shell
-skale ssl check
+skale node check -n testnet
 ```
-
-More info: https://github.com/skalenetwork/node-cli/tree/beta#check-ssl-certificate 
