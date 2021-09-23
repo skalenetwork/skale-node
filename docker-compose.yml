@@ -16,7 +16,11 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
+<<<<<<< HEAD
     image: skalenetwork/transaction-manager:2.0.2
+=======
+    image: skalenetwork/transaction-manager:2.0.1
+>>>>>>> 7b40fd2f60a9194c79b650460baff5a9c66491bb
     network_mode: host
     tty: true
     environment:
@@ -29,7 +33,11 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
+<<<<<<< HEAD
     image: skalenetwork/admin:2.0.2
+=======
+    image: skalenetwork/admin:2.0.1
+>>>>>>> 7b40fd2f60a9194c79b650460baff5a9c66491bb
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -52,6 +60,7 @@ services:
       MAX_ALLOWED_LOG_TIME_DIFF: 600
       DISABLE_IMA: ${DISABLE_IMA}
       ENV_TYPE: ${ENV_TYPE}
+      ALLOWED_TS_DIFF: 300
     command: "python3 admin.py"
     volumes:
       - /var/run/skale:/var/run/skale
@@ -67,7 +76,11 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
+<<<<<<< HEAD
     image: skalenetwork/admin:2.0.2
+=======
+    image: skalenetwork/admin:2.0.1
+>>>>>>> 7b40fd2f60a9194c79b650460baff5a9c66491bb
     network_mode: host
     tty: true
     cap_add:
@@ -91,6 +104,7 @@ services:
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       ENV_TYPE: ${ENV_TYPE}
+      ALLOWED_TS_DIFF: 300
     command: "gunicorn app:app -c gunicorn.conf.py"
     volumes:
       - /var/run/skale:/var/run/skale
@@ -137,6 +151,7 @@ services:
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      ALLOWED_TS_DIFF: 300
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
@@ -147,6 +162,7 @@ services:
     image: skalenetwork/watchdog:2.0.2-stable.0
     network_mode: host
     environment:
+      ALLOWED_TS_DIFF: 300
       FLASK_APP_PORT: 3010
       FLASK_APP_HOST: "127.0.0.1"
       FLASK_DEBUG_MODE: "False"
