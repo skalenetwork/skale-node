@@ -7,8 +7,8 @@ include::parameters.adoc[]
 Be sure to follow specific upgrade schedule assigned to your node(s). Follow guidance from the core team.
 
 [NOTE]
-From the `2.0.2` SKALE node release docker is listening on additional socket which is located in `/var/run/skale/docker.sock`. 
-To achieve it new socket path will be added to `daemon.json` config during update. In addition service configuration for docker daemon will be changed to ensure that `/var/run/skale` is created.
+With the 2.0.2 version, please note that the SKALE node docker now listens on an additional socket which is located in /var/run/skale/docker.sock.
+A new socket path will be added to daemon.json config during update. In addition, the service configuration for docker daemon will be changed to ensure that /var/run/skale is created.
 
 [WARNING]
 If a validator has custom docker daemon service configuration (systemd unit file), update may lead to unexpected behavior. In this case it's better to ask for the assistance from the core team.
