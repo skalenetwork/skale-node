@@ -1,4 +1,4 @@
-= Denali IMA Hotfix Soft Upgrade
+= Denali Mainnet IMA Hotfix Soft Upgrade
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
