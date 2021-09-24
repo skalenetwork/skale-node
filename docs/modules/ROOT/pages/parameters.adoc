@@ -42,7 +42,7 @@
 :DOCKER_LVMPY_STREAM: 1.0.1-stable.3
 
 :MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/skale-manager/1.8.1/skale-manager-1.8.1-mainnet-abi.json
-:IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/IMA/1.0.0/IMA-1.0.0-mainnet-abi.json
+:IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/IMA/1.0.0-stable.1/abi.json
 :CONTAINER_CONFIGS_STREAM: 2.0.2
 :FILEBEAT_HOST: filebeat.mainnet.skalenodes.com:5000
 :DISABLE_IMA: False
