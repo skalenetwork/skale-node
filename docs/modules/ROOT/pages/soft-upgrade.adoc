@@ -11,7 +11,7 @@ With the 2.0.2 version, please note that the SKALE node docker now listens on an
 A new socket path will be added to daemon.json config during update. In addition, the service configuration for docker daemon will be changed to ensure that /var/run/skale is created.
 
 [WARNING]
-If a validator has custom docker daemon service configuration (systemd unit file), update may lead to unexpected behavior. In this case it's better to ask for the assistance from the core team.
+If a node has custom docker daemon service configuration (systemd unit file), update may lead to unexpected behavior. In this case it's better to ask for the assistance from the core team.
 
 [NOTE]
 Please, don't forget to run `skale node check` as a last step.

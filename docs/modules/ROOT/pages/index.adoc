@@ -79,7 +79,6 @@ The rest of the versions were provided for docker containers and correspondent t
 
 [source, subs="attributes"]
 ----
-MONITORING_CONTAINERS={MONITORING_CONTAINERS}
 DOCKER_LVMPY_STREAM={DOCKER_LVMPY_STREAM}
 MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
 IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}

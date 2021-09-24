@@ -38,7 +38,6 @@
 :skale-watchdog: https://github.com/skalenetwork/skale-watchdog/releases/tag/2.0.2-stable.0[2.0.2-stable.0]
 
 // environment variables
-:MONITORING_CONTAINERS: True
 :DOCKER_LVMPY_STREAM: 1.0.1-stable.3
 
 :MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/skale-manager/1.8.1/skale-manager-1.8.1-mainnet-abi.json
