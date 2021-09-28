@@ -332,6 +332,7 @@ services:
       - "1027:1027"
       - "1028:1028"
       - "1029:1029"
+      - "1031:1031"
     devices:
       - "/dev/isgx"
       - "/dev/sg0"
@@ -344,10 +345,12 @@ services:
         max-size: "10m"
         max-file: "4"
     restart: unless-stopped
-    command: -s -y -V
+    command: -s -y -V -e
     healthcheck:
-      test: ["CMD", "ls", "/dev/isgx", "/dev/"]
+      test: ["CMD", "ls", "/dev/isgx", "/dev/sg0"]
 ```
+
+Be sure that your healthcheck references the correct device ports, which may or may not be "/dev/isgx" or "/dev/sg0". Be sure this matches your particular machine.
 
 **Start SGX Wallet Containers**
 To run the server as a daemon:
