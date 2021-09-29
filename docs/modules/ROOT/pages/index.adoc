@@ -5,6 +5,9 @@ You can find the compatible versions in this page. Set up requires only Validato
 
 The rest of the versions were provided for docker containers and correspondent tags in their individual code repositories.
 
+[WARNING]
+Right now versions are backwards *incompatible*. So *do not* downgrade the node unless it was explicitly requested by the core team.
+
 == Prerequisites
 
 === Node machine
@@ -33,7 +36,7 @@ The rest of the versions were provided for docker containers and correspondent t
 
 . {port-range}. If you're using `ufw` or `iptables` for configuring your own rules, please, do not open any of this ports.
 
-. Node should be able to access 1031 SGX port.
+. Nodes should be able to access {sgx-port-range} SGX ports.
 
 . Make sure that other network nodes receives packets from your node with source IP address that is equal to IP address that you provided during node registration (it can be found in `skale node info` output).
 
