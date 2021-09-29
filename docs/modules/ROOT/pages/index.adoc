@@ -5,6 +5,9 @@ You can find the compatible versions in this page. Set up requires only Validato
 
 The rest of the versions were provided for docker containers and correspondent tags in their individual code repositories.
 
+[WARNING]
+Right now versions are backwards *incompatible*. So *do not* downgrade the node unless it was explicitly requested by the core team.
+
 == Prerequisites
 
 === Node machine
