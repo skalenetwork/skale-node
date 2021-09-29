@@ -2,4 +2,3 @@
 * xref:setup-process.adoc[Setup Process]
 * xref:soft-upgrade.adoc[Soft Upgrade]
 * xref:compliance-requirements.adoc[Compliance Requirements]
-* xref:ima-hotfix-upgrade.adoc[IMA hotfix upgrade steps]
