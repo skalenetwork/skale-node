@@ -1,0 +1,56 @@
+= {Network} SGX Upgrade
+include::parameters.adoc[]
+:sectnums:
+:sectnumlevels: 1
+
+
+== SGX upgrade procedure
+
+=== Switch to run_sgx directory
+**Terminal Command:**
+
+```shell
+cd run_sgx
+```
+
+=== Stop sgx server
+**Terminal Command:**
+
+```shell
+docker-compose stop
+```
+
+=== Update sgxwallet container version
+
+In `docker-compose.yml` change `image` field to `{sgxwallet-container}`
+
+Double check that your `docker-compose.yml` file begins and includes the ports listed here:
+
+[source, subs="attributes"]
+----
+version: '3'
+services:
+  sgxwallet:
+    image: {sgxwallet-container}
+    ports:
+      - "1026:1026"
+      - "1027:1027"
+      - "1028:1028"
+      - "1029:1029"
+      - "1031:1031"
+[...rest of yml omitted...]
+----
+
+=== Pull new image
+**Terminal Command:**
+
+```shell
+docker-compose pull
+```
+
+=== Recreate sgxwallet container
+**Terminal Command:**
+
+```shell
+docker-compose up -d
+```
