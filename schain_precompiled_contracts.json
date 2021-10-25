@@ -208,5 +208,15 @@
       },
       "startingBlock": "0x0"
     }
+  },
+  "0000000000000000000000000000000000000018": {
+    "precompiled": {
+      "name": "getBlockRandom",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
   }
 }
