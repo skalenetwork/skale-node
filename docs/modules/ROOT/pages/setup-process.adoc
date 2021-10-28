@@ -367,6 +367,8 @@ Be sure to store this key in a safe place, then go into a docker container and s
 docker exec -it <SGX_CONTAINER_NAME> bash && apt-get install secure-delete && srm -vz backup_key.txt
 ```
 
+**Master-Slave replication is recommended to support the SGXWallet backup strategy.**
+
 === STOP SGX Wallet Containers (for back up purposes)
 
 ```shell
