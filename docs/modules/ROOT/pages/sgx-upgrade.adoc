@@ -38,8 +38,18 @@ services:
       - "1028:1028"
       - "1029:1029"
       - "1031:1031"
+    volumes:
+      - ./sgx_data:/usr/src/sdk/sgx_data
+      -  /dev/urandom:/dev/random
+    command: -s -y -d -b
 [...rest of yml omitted...]
 ----
+
+[IMPORTANT]
+Make sure `command` attribute contains `-b` option and your backup key is placed in `sgx_data/sgxwallet_backup_key.txt` file. 
+
+[NOTE]
+`1030` port is not used anymore.
 
 === Pull new image
 **Terminal Command:**
