@@ -38,8 +38,15 @@ services:
       - "1028:1028"
       - "1029:1029"
       - "1031:1031"
+    command: -s -y -d -b
 [...rest of yml omitted...]
 ----
+
+[WARNING]
+Make sure `command` attribute contains `-b` option.
+
+[NOTE]
+`1030` port is not used anymore.
 
 === Pull new image
 **Terminal Command:**
