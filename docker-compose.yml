@@ -52,6 +52,7 @@ services:
       MAX_ALLOWED_LOG_TIME_DIFF: 600
       DISABLE_IMA: ${DISABLE_IMA}
       ENV_TYPE: ${ENV_TYPE}
+      DISK_MOUNTPOINT: ${DISK_MOUNTPOINT}
     command: "python3 admin.py"
     volumes:
       - /var/run/skale:/var/run/skale
@@ -91,6 +92,7 @@ services:
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       ENV_TYPE: ${ENV_TYPE}
+      DISK_MOUNTPOINT: ${DISK_MOUNTPOINT}
     command: "gunicorn app:app -c gunicorn.conf.py"
     volumes:
       - /var/run/skale:/var/run/skale
