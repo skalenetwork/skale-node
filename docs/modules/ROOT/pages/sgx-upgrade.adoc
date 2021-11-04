@@ -22,6 +22,8 @@ docker-compose stop
 
 === Update sgxwallet container version
 
+First pull new sgxwallet container: `docker pull {sgxwallet-container}`
+
 In `docker-compose.yml` change `image` field to `{sgxwallet-container}`
 
 Double check that your `docker-compose.yml` file begins and includes the ports listed here:
