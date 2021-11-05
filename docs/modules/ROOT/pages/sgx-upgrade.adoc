@@ -22,6 +22,8 @@ docker-compose stop
 
 === Update sgxwallet container version
 
+First pull new sgxwallet container: `docker pull {sgxwallet-container}`
+
 In `docker-compose.yml` change `image` field to `{sgxwallet-container}`
 
 Double check that your `docker-compose.yml` file begins and includes the ports listed here:
@@ -50,13 +52,6 @@ Make sure `command` attribute contains `-b` option and your backup key is placed
 
 [NOTE]
 `1030` port is not used anymore.
-
-=== Pull new image
-**Terminal Command:**
-
-```shell
-docker-compose pull
-```
 
 === Recreate sgxwallet container
 **Terminal Command:**
