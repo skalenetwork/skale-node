@@ -4,16 +4,14 @@ include::parameters.adoc[]
 :sectnumlevels: 1
 
 
-== SGX upgrade procedure
-
-=== Switch to run_sgx directory
+== Switch to run_sgx directory
 **Terminal Command:**
 
 ```shell
 cd run_sgx
 ```
 
-=== Pull new sgxwallet image
+== Pull new sgxwallet image
 
 **Terminal Command:**
 
@@ -22,14 +20,14 @@ cd run_sgx
 docker pull {sgxwallet-container}
 ----
 
-=== Stop SGX server
+== Stop SGX server
 **Terminal Command:**
 
 ```shell
 docker-compose stop
 ```
 
-=== Update sgxwallet version in docker-compose.yml
+== Update sgxwallet version in docker-compose.yml
 
 In `docker-compose.yml` change `image` field to `{sgxwallet-container}`
 
@@ -60,7 +58,7 @@ Make sure `command` attribute contains `-b` option and your backup key is placed
 [NOTE]
 `1030` port is not used anymore.
 
-=== Recreate sgxwallet container
+== Recreate sgxwallet container
 **Terminal Command:**
 
 ```shell
