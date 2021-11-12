@@ -1,0 +1,68 @@
+= {Network} SGX Hotfix Upgrade
+include::parameters.adoc[]
+:sectnums:
+:sectnumlevels: 1
+
+[WARNING]
+This hotfix upgrade is targeted for specific nodes. Run it only by the core team request.
+
+== Switch to run_sgx directory
+**Terminal Command:**
+
+```shell
+cd run_sgx
+```
+
+== Pull new sgxwallet image
+
+**Terminal Command:**
+
+[source, shell, subs="attributes"]
+----
+docker pull {sgxwallet-hotfix-container}
+----
+
+== Stop SGX server
+**Terminal Command:**
+
+```shell
+docker-compose stop
+```
+
+== Update sgxwallet version in docker-compose.yml
+
+In `docker-compose.yml` change `image` field to `{sgxwallet-hotfix-container}`
+
+Double check that your `docker-compose.yml` file begins and includes the ports listed here:
+
+[source, subs="attributes"]
+----
+version: '3'
+services:
+  sgxwallet:
+    image: {sgxwallet-hotfix-container}
+    ports:
+      - "1026:1026"
+      - "1027:1027"
+      - "1028:1028"
+      - "1029:1029"
+      - "1031:1031"
+    volumes:
+      - ./sgx_data:/usr/src/sdk/sgx_data
+      -  /dev/urandom:/dev/random
+    command: -s -y -d -b
+[...rest of yml omitted...]
+----
+
+[IMPORTANT]
+Make sure `command` attribute contains `-b` option and your backup key is placed in `sgx_data/sgxwallet_backup_key.txt` file.
+
+[NOTE]
+`1030` port is not used anymore.
+
+== Recreate sgxwallet container
+**Terminal Command:**
+
+```shell
+docker-compose up -d
+```
