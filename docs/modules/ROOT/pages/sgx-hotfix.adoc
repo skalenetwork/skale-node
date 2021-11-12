@@ -4,7 +4,7 @@ include::parameters.adoc[]
 :sectnumlevels: 1
 
 [WARNING]
-This hotfix upgrade is targeted for specific nodes. Run it only by the core team request. 
+This hotfix upgrade is targeted for specific nodes. Run it only by the core team request.
 
 == Switch to run_sgx directory
 **Terminal Command:**
@@ -55,7 +55,7 @@ services:
 ----
 
 [IMPORTANT]
-Make sure `command` attribute contains `-b` option and your backup key is placed in `sgx_data/sgxwallet_backup_key.txt` file. 
+Make sure `command` attribute contains `-b` option and your backup key is placed in `sgx_data/sgxwallet_backup_key.txt` file.
 
 [NOTE]
 `1030` port is not used anymore.
