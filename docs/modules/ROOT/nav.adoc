@@ -2,3 +2,4 @@
 * xref:setup-process.adoc[Setup Process]
 * xref:soft-upgrade.adoc[Soft Upgrade]
 * xref:sgx-upgrade.adoc[SGX Upgrade]
+* xref:sgx-hotfix.adoc[SGX Hotfix]
