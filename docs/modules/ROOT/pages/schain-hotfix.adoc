@@ -1,4 +1,4 @@
-= {Network} Schain Hotfix Upgrade
+= {Network} SKALED Hotfix Upgrade
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
