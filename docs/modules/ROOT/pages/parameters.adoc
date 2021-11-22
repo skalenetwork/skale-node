@@ -30,7 +30,7 @@
 :sgxwallet-container: skalenetwork/sgxwallet_release:1.77.1-stable.2
 :sgxwallet: https://github.com/skalenetwork/sgxwallet/releases/tag/1.77.1-stable.3[1.77.1-stable.3]
 :sgxwallet-hotfix-container: skalenetwork/sgxwallet_release:1.77.1-stable.3
-:skale-node: https://github.com/skalenetwork/skale-node/releases/tag/2.0.1-testnet.1[2.0.1-testnet.1]
+:skale-node: https://github.com/skalenetwork/skale-node/releases/tag/2.0.3-testnet.0[2.0.3-testnet.0]
 :skaled: https://github.com/skalenetwork/skaled/releases/tag/3.7.5-beta.4[3.7.5-beta.4]
 :ima: https://github.com/skalenetwork/IMA/releases/tag/1.0.0-beta.13[1.0.0-beta.13]
 :docker-lvmpy: https://github.com/skalenetwork/docker-lvmpy/releases/tag/1.0.1-stable.3[1.0.1-stable.3]
@@ -43,7 +43,7 @@
 :DOCKER_LVMPY_STREAM: 1.0.1-stable.3
 :MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/rinkeby/skale-manager/1.8.1/skale-manager-1.8.1-beta.1-rinkeby-abi.json
 :IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/rinkeby/IMA/1.0.0-beta.13/abi.json
-:CONTAINER_CONFIGS_STREAM: 2.0.1-testnet.1
+:CONTAINER_CONFIGS_STREAM: 2.0.3-testnet.0 
 :FILEBEAT_HOST: filebeat.testnet.skalenodes.com:5001
 :DISABLE_IMA: False
 :ENV_TYPE: testnet
