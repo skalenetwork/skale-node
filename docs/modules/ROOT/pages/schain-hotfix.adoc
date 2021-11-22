@@ -1,0 +1,24 @@
+= {Network} SKALED Hotfix Upgrade
+include::parameters.adoc[]
+:sectnums:
+:sectnumlevels: 1
+
+== Change .env file
+
+Change `CONTAINER_CONFIGS_STREAM` to the {skale-node} hotfix release
+
+[source, shell, subs="attributes"]
+----
+...
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+...
+----
+
+== Update nodes
+
+**Terminal Command:**
+
+[source, shell]
+----
+skale node update .env
+----
