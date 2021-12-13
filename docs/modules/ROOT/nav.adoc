@@ -1,6 +1,4 @@
 * xref:index.adoc[Overview]
 * xref:setup-process.adoc[Setup Process]
-* xref:soft-upgrade.adoc[Soft Upgrade]
 * xref:compliance-requirements.adoc[Compliance Requirements]
-* xref:sgx-upgrade.adoc[SGX Upgrade]
-* xref:sgx-hotfix.adoc[SGX Hotfix]
+* xref:schain-hotfix.adoc[SKALED Hotfix]
