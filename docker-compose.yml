@@ -16,7 +16,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:2.0.1-beta.2
+    image: skalenetwork/transaction-manager:2.0.1-develop.12
     network_mode: host
     tty: true
     environment:
@@ -29,7 +29,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:2.0.1-beta.0
+    image: skalenetwork/admin:2.2.0-develop.3
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -67,7 +67,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:2.0.1-beta.0
+    image: skalenetwork/admin:2.2.0-develop.3
     network_mode: host
     tty: true
     cap_add:
@@ -100,7 +100,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:2.0.1-beta.0
+    image: skalenetwork/admin:2.2.0-develop.3
     network_mode: host
     tty: true
     environment:
@@ -177,7 +177,7 @@ services:
     network_mode: host
     volumes:
       - /:/rootfs:ro
-      - /var/run:/var/run
+      - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
