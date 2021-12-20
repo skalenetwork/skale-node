@@ -63,6 +63,9 @@
         "-v 3",
         "--web3-trace",
         "--enable-debug-behavior-apis",
+        "--enable-personal-apis",
+        "--enable-admin-apis",
+        "--enable-performance-tracker-apis",
         "--aa no"
     ]
 }
