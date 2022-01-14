@@ -218,16 +218,5 @@
       },
       "startingBlock": "0x0"
     }
-  },
-  "0000000000000000000000000000000000000019": {
-    "precompiled": {
-      "name": "addBalance",
-      "linear": {
-        "base": 15,
-        "word": 0
-      },
-      "startingBlock": "0x0",
-      "restrictAccess": ["schainOwner"]
-    }
   }
 }
