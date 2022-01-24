@@ -16,7 +16,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:2.0.1-develop.12
+    image: skalenetwork/transaction-manager:2.0.1-develop.13
     network_mode: host
     tty: true
     environment:
@@ -29,7 +29,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:2.2.0-develop.3
+    image: skalenetwork/admin:2.3.0-develop.10
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -67,7 +67,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:2.2.0-develop.3
+    image: skalenetwork/admin:2.3.0-develop.10
     network_mode: host
     tty: true
     cap_add:
@@ -100,7 +100,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:2.2.0-develop.3
+    image: skalenetwork/admin:2.3.0-develop.10
     network_mode: host
     tty: true
     environment:
@@ -144,7 +144,7 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:2.0.0-beta.1
+    image: skalenetwork/watchdog:2.0.0-develop.7
     network_mode: host
     environment:
       FLASK_APP_PORT: 3010
