@@ -45,7 +45,7 @@ SKALE Validator CLI is the validator client interface for registering a new vali
 * Link all validator node addresses to a validator wallet address
 * Request or cancel a delegation
 
-xref:validator-cli::overview.adoc[See the SKALE Validator CLI documentation ].
+xref:validator-cli::index.adoc[See the SKALE Validator CLI documentation ].
 
 This document contains instructions on how to get started with the SKALE Validator CLI.
 
@@ -146,4 +146,7 @@ Optional arguments:
 
 === Make sure that your validator is added to the whitelist
 
+To ensure that your validator is added to whitelist contact SKALE team.
+
+[NOTE]
 This is a temporary process, which will be removed as the community matures.

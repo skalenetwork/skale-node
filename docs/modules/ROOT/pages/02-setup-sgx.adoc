@@ -3,39 +3,45 @@
 [NOTE]
 Due date: 23rd of each month
 
-=== 
-
-=== Ensure ports 
-
-=== Clone SGX Wallet Version
-
-=== Update docker-compose.yaml
-
-=== Spin up docker containers for SGXWallet
-
-=== Securely save generated backup key
-
-=== Delete backup key from container
-
-Sgxwallet runs as a network server and supports up to 5 SKALE nodes. Clients connect to the server, authenticate to it using TLS 1.0 protocol with client certificates, and then issue requests to the server to generate crypto keys and perform cryptographic operations. The keys are generated inside the secure SGX enclave and never leave the enclave unencrypted.
-
-To be able to set up an SGX Wallet, validators are required to have SGX compatible servers. Before installing SGX Wallet, validators must make sure that SGX is enabled in the server.
+=== Overview
 
 **SGX is a secure storage for BLS private key shares, which are used in consensus to sign new blocks. SGX is also used for private key shares.**
 
 **SKALE DKG uses Intel® SGX server to store account and BLS keys and all the data related to DKG process and it also uses the random number generator provided by Intel® SGX. For more information, please check** [**here.**](/technology/skale-dkg)
 
-The server provides an initial registration service to issue client certificates to the clients. The administrator manually approves each registration
+Clients connect to the server, authenticate to it using TLS 1.0 protocol with client certificates, and then issue requests to the server to generate crypto keys and perform cryptographic operations. The keys are generated inside the secure SGX enclave and never leave the enclave unencrypted.
 
-=== **Prerequisites**
+=== Configure server
+
+To be able to set up an SGX Wallet, validators are required to have SGX compatible servers. Before installing SGX Wallet, validators must make sure that SGX is enabled in the server.
+
+=== **Server requirements**
 
 -   {sgx-linux-distro}
 -   SGX-enabled Intel processor
 -   {sgx-ram-size}
 -   {sgx-swap-size}
--   {sgx-port-range}
 
-**Terminal Commands:**
+=== Configure network
+
+SKALE will have two types of SGX operations:
+
+-   **Local (Secure)**: Wallet running on the same server as sub-node.
+-   **Network**: Sub-node talks to SGX wallet over the SKALE Network. The validator is responsible for securing the connection. If validator is planning to have a separate SGX compatible node than the Blockchain node, SGX Wallet node doesn't have to have the same hardware requirements as the sub-node. SGXWallet doesn't require a lot of computational power. After setting up the Network SGX node, enable SSL certification before adding the url to configuration in SKALE Node Set up.
+
+The second option is *strongly recommended* since local sgx can affect chains performance. 
+
+[IMPORTANT]
+For Network SGX it's required to setup VPN between nodes and SGX server. {sgx-port-range} ports should be accessible by nodes.
+
+[NOTE]
+SGXWallet can support up to *5* SKALE nodes. 
+
+=== Install and configure packages 
+
+Before running SGXWallet install the following packages
+
+**Install general tools:**
 
 ```shell
 sudo apt-get install -y build-essential make cmake gcc g++ yasm  python libprotobuf10 flex bison automake libtool texinfo libgcrypt20-dev libgnutls28-dev
@@ -71,12 +77,6 @@ sudo apt-get install -y libelf-dev cpuid
 cpuid | grep SGX:
 ```
 
-**Output**
-
-```shell
-SGX: Software Guard Extensions supported = true
-```
-
 [IMPORTANT]
 ==== 
 After installing docker make sure that `live-restore` option
@@ -103,9 +103,13 @@ Unattended-Upgrade::Package-Blacklist {
 };
 ```
 
-* * *
+**Output**
 
-=== Set Up SGX Wallet
+```shell
+SGX: Software Guard Extensions supported = true
+```
+
+=== Clone SGX Wallet Version
 
 ==== Clone SGX Wallet Repository
 
@@ -172,9 +176,9 @@ save your BIOS settings and exit BIOS.
 Enable "software-controlled" SGX
 Software-controlled means that SGX needs to be enabled by running a utility.
 
-==== Start SGX
+=== Update docker-compose.yaml
 
-Production Mode
+Open run_sgx directory
 
 ```shell
 cd sgxwallet/run_sgx;
@@ -215,6 +219,10 @@ services:
       test: ["CMD", "ls", "/dev/isgx", "/dev/"]
 ```
 
+
+
+=== Spin up SGXWallet container
+
 **Start SGX Wallet Containers**
 To run the server as a daemon:
 
@@ -222,10 +230,13 @@ To run the server as a daemon:
 sudo docker-compose up -d
 ```
 
+=== Securely save generated backup key
+
 The backup key is automatically stored in sgx_data directory of SGX Wallet.
 
 The filename of the key is sgx_wallet_backup_key.txt, and is generated the first time the SGX wallet is started.
 
+[IMPORTANT]
 **This key must be securely recorded and stored.**
 Be sure to store this key in a safe place, then go into a docker container and securely remove it with the following command:
 
@@ -233,12 +244,5 @@ Be sure to store this key in a safe place, then go into a docker container and s
 docker exec -it <SGX_CONTAINER_NAME> bash && apt-get install secure-delete && srm -vz backup_key.txt
 ```
 
-=== STOP SGX Wallet Containers (for back up purposes)
-
-```shell
-cd sgxwallet/run_sgx
-sudo docker-compose stop
-```
-
-[IMPORTANT]
+[NOTE]
 You should enable SSL/TLS for your SGX node. Make sure you finalize this before you move on to your next step.
