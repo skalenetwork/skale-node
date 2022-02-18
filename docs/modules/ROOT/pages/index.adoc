@@ -1,6 +1,8 @@
 = SKALE {Network} Versions
 include::parameters.adoc[]
 
+image::https://img.shields.io/discord/534485763354787851.svg[link="https://discord.gg/vvUtWJB"]
+
 You can find the compatible versions in this page. Set up requires only Validator-Cli, Node-Cli and SGX versions.
 
 The rest of the versions were provided for docker containers and correspondent tags in their individual code repositories.
@@ -88,7 +90,7 @@ DB_PORT={by-validator}
 DB_ROOT_PASSWORD={by-validator}
 DB_USER={by-validator}
 DISABLE_IMA={DISABLE_IMA}
-DISK_MOUNTPOINT=[{by-validator}, your attached storage /dev/sda or /dev/xvdd (this is an example. You just need to use your 2TB block volume mount point)]
+DISK_MOUNTPOINT=[{by-validator}, your attached storage /dev/sda or /dev/xvdd (this is an example. You just need to use your 2TB block device)]
 DOCKER_LVMPY_STREAM={DOCKER_LVMPY_STREAM}
 ENDPOINT=[{by-validator}, GETH NODE ENDPOINT]
 ENV_TYPE={ENV_TYPE}
@@ -100,5 +102,3 @@ MONITORING_CONTAINERS={MONITORING_CONTAINERS}
 SGX_SERVER_URL=[{by-validator}, setup SGX wallet first]
 ```
 ----
-
-Soft update steps are described in Mainnet Soft Update section

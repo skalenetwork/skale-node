@@ -13,9 +13,9 @@ Clients connect to the server, authenticate to it using TLS 1.0 protocol with cl
 
 === Configure server
 
-To be able to set up an SGX Wallet, validators are required to have SGX compatible servers. Before installing SGX Wallet, validators must make sure that SGX is enabled in the server.
+To be able to set up an SGXWallet, validators are required to have SGX compatible servers. Before installing SGXWallet, validators must make sure that SGX is enabled in the server.
 
-=== **Server requirements**
+==== **Server requirements**
 
 -   {sgx-linux-distro}
 -   SGX-enabled Intel processor
@@ -26,16 +26,16 @@ To be able to set up an SGX Wallet, validators are required to have SGX compatib
 
 SKALE will have two types of SGX operations:
 
--   **Local (Secure)**: Wallet running on the same server as sub-node.
--   **Network**: Sub-node talks to SGX wallet over the SKALE Network. The validator is responsible for securing the connection. If validator is planning to have a separate SGX compatible node than the Blockchain node, SGX Wallet node doesn't have to have the same hardware requirements as the sub-node. SGXWallet doesn't require a lot of computational power. After setting up the Network SGX node, enable SSL certification before adding the url to configuration in SKALE Node Set up.
+-   **Local (Secure)**: Wallet running on the same server as SKALE node.
+-   **Network**: Node talks to SGXWallet over the SKALE Network. The validator is responsible for securing the connection. If validator is planning to have a separate SGX compatible server than the Blockchain node, the server doesn't have to have the same hardware requirements as the node. SGXWallet doesn't require a lot of computational power.
 
-The second option is *strongly recommended* since local sgx can affect chains performance. 
+The second option is *strongly recommended* since local wallet may affect chains performance. 
 
 [IMPORTANT]
 For Network SGX it's required to setup VPN between nodes and SGX server. {sgx-port-range} ports should be accessible by nodes.
 
 [NOTE]
-SGXWallet can support up to *5* SKALE nodes. 
+SGXWallet can support up to *5* SKALE nodes. If you have more, you should setup additional server.
 
 === Install and configure packages 
 
@@ -109,9 +109,9 @@ Unattended-Upgrade::Package-Blacklist {
 SGX: Software Guard Extensions supported = true
 ```
 
-=== Clone SGX Wallet Version
+=== Download SGXWallet source code
 
-==== Clone SGX Wallet Repository
+==== Clone SGXWallet Repository
 
 Clone SGX Wallet Repository to your SGX compatible Server:
 
@@ -232,7 +232,7 @@ sudo docker-compose up -d
 
 === Securely save generated backup key
 
-The backup key is automatically stored in sgx_data directory of SGX Wallet.
+The backup key is automatically stored in *sgx_data* directory.
 
 The filename of the key is sgx_wallet_backup_key.txt, and is generated the first time the SGX wallet is started.
 
@@ -246,3 +246,8 @@ docker exec -it <SGX_CONTAINER_NAME> bash && apt-get install secure-delete && sr
 
 [NOTE]
 You should enable SSL/TLS for your SGX node. Make sure you finalize this before you move on to your next step.
+
+
+=== Backup sgx data
+
+It's strongly recommended to backup sgx data regularly. The guide can be found https://github.com/skalenetwork/sgxwallet/blob/stable/docs/backup-procedure.md[here]

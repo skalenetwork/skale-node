@@ -1,8 +1,6 @@
 = Validator and Node Setup
 include::parameters.adoc[]
 
-[IMPORTANT]
-Setup instructions here may be out-of-date.
 
 This page is the step by step guide that shows how to run a validator node in the SKALE Network.
 

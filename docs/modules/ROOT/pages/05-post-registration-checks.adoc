@@ -7,5 +7,5 @@
 - [ ] Ensure node wallets have sufficient ETH
 - [ ] Accept delegations for the next month
 - [ ] Check telegram notifications (if you enabled them)
-- [ ] Check watchdog regularly
+- [ ] Use xref:skale-watchdog::index.adoc[watchdog] to monitor node status.
 - [ ] Get support from the SKALE validator community

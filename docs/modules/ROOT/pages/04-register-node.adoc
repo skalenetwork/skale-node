@@ -2,28 +2,23 @@
 
 === Register Node with Node CLI
 
-Note: Before proceeding, you will need to have at least  **1 ETH**. Also amount of delegated skale tokens need to be more or equal to minimum staking amount. Otherwise you won't be able to register with the SKALE Testnet.
-
 [IMPORTANT]
-The node must have SSL certificates!
+Before proceeding, you will need to have at least  **1 ETH**. Also amount of delegated skale tokens need to be more or equal to minimum staking amount.
 
 To register with the network, you will need to provide the following:
 
-.  Node name
-.  Machine public IP
-.  Port - beginning of the port range that will be used for skale schains (10000 recommended)
-.  Domain name
-
-**Terminal Command:**
+-  Node name
+-  Machine public IP
+-  Domain name
 
 ```shell
-skale node register --name [NODE_NAME] --ip [NODE_IP] --port [PORT] --domain [DOMAIN_NAME]
+sudo skale node register --name [NODE_NAME] --ip [NODE_IP] --domain [DOMAIN_NAME]
 
 ```
 
 Optional arguments:
 
--   `--gas-price` - Gas price value in Gwei for transaction (if not specified doubled average network value will be used)
+-   `--port` - beginning of the port range that will be used for skale schains (`10000` by default)
 
 **Output:**
 
@@ -35,10 +30,8 @@ Node registered in SKALE manager. For more info run: skale node info
 
 You can check the status of your node, and ensure that it's properly registered with the SKALE Network.
 
-**Terminal Command:**
-
 ```shell
-skale node info
+sudo skale node info
 ```
 
 **Output:**

@@ -50,7 +50,7 @@ xref:validator-cli::index.adoc[See the SKALE Validator CLI documentation ].
 This document contains instructions on how to get started with the SKALE Validator CLI.
 
 [NOTE]
-Validator CLI doesn't have to be installed in the same server as the node-cli! This can be set up on Mac or Linux. This does not need to be included in every node. Setting up once per validator organization is sufficient.
+Validator CLI doesn't have to be installed in the same server as the node-cli. This can be set up on Mac or Linux. This does not need to be included in every node. Setting up once per validator organization is sufficient.
 
 ==== Install SKALE Validator CLI
 
@@ -58,23 +58,17 @@ Validator CLI doesn't have to be installed in the same server as the node-cli! T
 
 `VERSION_NUM` is a version identifier
 
-**Terminal Command:**
-
 ```shell
 VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/validator-cli/releases/download/$VERSION_NUM/sk-val-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/sk-val"
 ```
 
 ===== Apply executable permissions to the binary
 
-**Terminal Command:**
-
 ```shell
 chmod +x /usr/local/bin/sk-val
 ```
 
 ===== Set SKALE Manager contracts info and set the endpoint
-
-**Terminal Command:**
 
 ```shell
 sk-val init -e [ENDPOINT] -c [ABI] --wallet [software/ledger]
@@ -96,8 +90,6 @@ If you want to use software wallet you need to save private key into a file.
 
 Replace `[YOUR PRIVATE KEY]` with your wallet private key
 
-**Terminal Command:**
-
 ```shell
 echo [YOUR PRIVATE KEY] > ./pk.txt
 ```
@@ -105,8 +97,6 @@ echo [YOUR PRIVATE KEY] > ./pk.txt
 ===== Ledger  wallet
 
 If you want to use ledger you should install ETH ledger application and  initialize device with `setup-ledger` command.
-
-**Terminal Command:**
 
 ```shell
 sk-val wallet setup-ledger --address-index [ADDRESS_INDEX] --keys-type [KEYS_TYPE]
@@ -118,17 +108,15 @@ Required arguments:
 -   `--keys-type` - Type of the Ledger keys (live or legacy)
 
 [IMPORTANT]
-Make sure you enabled contracts data sending on ETH application. Otherwise transactions won't work
+Make sure you enabled blind signing on ETH application settings. Otherwise transactions won't work
 
 ==== Register as a new SKALE validator
 
 [WARNING]
-DON'T REGISTER A NEW VALIDATOR IF YOU ALREADY HAVE ONE! check : `sk-val validator ls`. For additional node set up, please go to Step 3.5.
-
-**Terminal Command:**
+DON'T REGISTER A NEW VALIDATOR IF YOU ALREADY HAVE ONE! check : `sk-val validator ls`. For additional node set up, please go to Step 3.
 
 ```shell
-sk-val validator register -n [NAME] -d [DESCRIPTION] -c [COMMISSION_RATE] --min-delegation [MIN_DELEGATION] --pk-file ./pk.txt
+sk-val validator register -n [NAME] -d [DESCRIPTION] -c [COMMISSION_RATE] --min-delegation [MIN_DELEGATION] 
 ```
 
 Required arguments:
@@ -144,9 +132,9 @@ Optional arguments:
 -   `--gas-price` - Gas price value in Gwei for transaction (if not specified doubled average network value will be used)
 -   `--yes` - Confirmation flag
 
-=== Make sure that your validator is added to the whitelist
+=== Make sure that your validator is added to the trusted list
 
-To ensure that your validator is added to whitelist contact SKALE team.
+To ensure that your validator is added to trusted contact SKALE team.
 
 [NOTE]
 This is a temporary process, which will be removed as the community matures.

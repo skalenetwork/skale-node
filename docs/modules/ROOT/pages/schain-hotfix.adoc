@@ -16,8 +16,6 @@ CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
 
 == Update nodes
 
-**Terminal Command:**
-
 [source, shell]
 ----
 skale node update .env

@@ -84,7 +84,6 @@ Latest Mainnet software versions are defined here:
 ** skale-admin
 ** bounty
 ** transaction-manager
-** mysql
 ** nginx
 ** skale-api
 ** celery
