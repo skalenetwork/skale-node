@@ -1,0 +1,245 @@
+== SGX Setup
+
+[NOTE]
+Due date: 23rd of each month
+
+=== Overview
+
+**SGX is a secure storage for BLS private key shares, which are used in consensus to sign new blocks. SGX is also used for private key shares.**
+
+**SKALE DKG uses Intel® SGX server to store account and BLS keys and all the data related to DKG process and it also uses the random number generator provided by Intel® SGX. For more information, please check** xref:technology::skale-dkg.adoc[**here.**].
+
+Clients connect to the server, authenticate to it using TLS 1.0 protocol with client certificates, and then issue requests to the server to generate crypto keys and perform cryptographic operations. The keys are generated inside the secure SGX enclave and never leave the enclave unencrypted.
+
+=== Configure server
+
+To be able to set up an SGXWallet, validators are required to have SGX compatible servers. Before installing SGXWallet, validators must make sure that SGX is enabled in the server.
+
+==== **Server requirements**
+
+-   {sgx-linux-distro}
+-   SGX-enabled Intel processor
+-   {sgx-ram-size}
+-   {sgx-swap-size}
+
+=== Configure network
+
+It's required to setup VPN between nodes and SGX server. {sgx-port-range} ports should be accessible by nodes.
+
+[NOTE]
+SGXWallet can support up to *5* SKALE nodes. If you have more, you should setup additional server.
+
+=== Install and configure packages 
+
+Before running SGXWallet install the following packages
+
+**Install general tools:**
+
+```shell
+sudo apt-get install -y build-essential make cmake gcc g++ yasm  python libprotobuf10 flex bison automake libtool texinfo libgcrypt20-dev libgnutls28-dev
+```
+
+**Install Docker:**
+
+```shell
+sudo apt-get install -y docker
+```
+
+**Install docker.io:**
+
+```shell
+sudo apt-get install -y docker.io
+```
+
+**Install docker-compose:**
+
+```shell
+sudo apt-get install -y docker-compose
+```
+
+**Install cpuid and libelf-dev packages:**
+
+```shell
+sudo apt-get install -y libelf-dev cpuid
+```
+
+**Verify your processor supports Intel SGX with:**
+
+```shell
+cpuid | grep SGX:
+```
+
+[IMPORTANT]
+==== 
+After installing docker make sure that `live-restore` option
+is enabled in `/etc/docker/daemon.json`. See more info in the https://docs.docker.com/config/containers/live-restore/[docker docs].
+====
+
+**Disable automatic updates**
+
+It's recommended to only update the SGXWallet server if there are critical security fixes. This is because SGXWallet is based on new low level technology, and kernel updates may break the system. Currently SGX is tested on 4.15-\* kernels. It's best to avoid minor version updates too.
+
+To make sure `apt update` won't update the kernel you should use apt-mark hold command:
+
+```shell
+sudo apt-mark hold linux-generic linux-image-generic linux-headers-generic
+```
+
+Also if you configured unattended upgrades, you should make sure kernel won't update automatically. To do this, add the following lines to `/etc/apt/apt.conf.d/50unattended-upgrades` file:
+
+```shell
+Unattended-Upgrade::Package-Blacklist {
+        "linux-generic";
+        "linux-image-generic";
+        "linux-headers-generic";
+};
+```
+
+**Output**
+
+```shell
+SGX: Software Guard Extensions supported = true
+```
+
+=== Download SGXWallet source code
+
+==== Clone SGXWallet Repository
+
+Clone SGX Wallet Repository to your SGX compatible Server:
+
+```shell
+git clone https://github.com/skalenetwork/sgxwallet/
+cd sgxwallet
+git checkout tags/ADD_VERSION_TAG
+```
+
+==== Enable SGX
+
+**SGX Wallet repository includes the sgx_enable utility. To enable SGX run:**
+
+```shell
+sudo ./sgx_enable
+```
+
+Note: if you aren't using Ubuntu 18.04 (not recommended), you may need to rebuild the sgx-software-enable utility before use by typing:
+
+```shell
+cd sgx-software-enable;
+make
+cd ..
+```
+
+**Install SGX Library:**
+
+```shell
+cd scripts
+sudo ./sgx_linux_x64_driver_2.5.0_2605efa.bin
+cd ..
+```
+
+**System Reboot:**
+
+[NOTE]
+Reboot your machine after driver install!
+
+**Check driver installation:**
+To check that isgx device is properly installed run this command:
+
+```shell
+ls /dev/isgx
+```
+
+If you don't see the isgx device, you need to troubleshoot your driver installation from https://github.com/skalenetwork/sgxwallet/blob/develop/docs/enabling-sgx.md[**here.**]
+
+**Another way to verify Intel SGX is enabled in BIOS:**
+
+[NOTE]
+**_If you already executed the previous steps please move to STEP 3_**
+
+Enter BIOS by pressing the BIOS key during boot. The BIOS key varies by manufacturer and could be F10, F2, F12, F1, DEL, or ESC.
+
+Usually Intel SGX is disabled by default.
+
+To enable:
+
+find the Intel SGX feature in BIOS Menu (it's usually under the "Advanced" or "Security" menu)
+Set SGX in BIOS as enabled (preferably) or software-controlled.
+save your BIOS settings and exit BIOS.
+Enable "software-controlled" SGX
+Software-controlled means that SGX needs to be enabled by running a utility.
+
+=== Update docker-compose.yaml
+
+Open run_sgx directory
+
+```shell
+cd sgxwallet/run_sgx;
+```
+
+On some machines, the SGX device isn't **/dev/mei0** but a different device, such as **/dev/bs0** or **/dev/sg0**. In this case please edit docker-compose.yml on your machine to specify the correct device to use:
+
+```shell
+vi docker-compose.yml
+```
+
+make sure `image` is skalenetwork/sgxwallet:&lt;`SGX_VERSION`> in docker-compose and it will look like:
+
+```shell
+version: '3'
+services:
+  sgxwallet:
+    image: skalenetwork/sgxwallet:<SGX_VERSION>
+    ports:
+      - "1026:1026"
+      - "1027:1027"
+      - "1028:1028"
+      - "1029:1029"
+    devices:
+      - "/dev/isgx"
+      - "/dev/sg0"
+    volumes:
+      - ./sgx_data:/usr/src/sdk/sgx_data
+      -  /dev/urandom:/dev/random
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "4"
+    restart: unless-stopped
+    command: -s -y -V
+    healthcheck:
+      test: ["CMD", "ls", "/dev/isgx", "/dev/"]
+```
+
+
+
+=== Spin up SGXWallet container
+
+**Start SGX Wallet Containers**
+To run the server as a daemon:
+
+```shell
+sudo docker-compose up -d
+```
+
+=== Securely save generated backup key
+
+The backup key is automatically stored in *sgx_data* directory.
+
+The filename of the key is sgx_wallet_backup_key.txt, and is generated the first time the SGX wallet is started.
+
+[IMPORTANT]
+**This key must be securely recorded and stored.**
+Be sure to store this key in a safe place, then go into a docker container and securely remove it with the following command:
+
+```shell
+docker exec -it <SGX_CONTAINER_NAME> bash && apt-get install secure-delete && srm -vz backup_key.txt
+```
+
+[NOTE]
+You should enable SSL/TLS for your SGX node. Make sure you finalize this before you move on to your next step.
+
+
+=== Backup sgx data
+
+It's strongly recommended to backup sgx data regularly. The guide can be found https://github.com/skalenetwork/sgxwallet/blob/stable/docs/backup-procedure.md[here]

@@ -1,0 +1,296 @@
+== Node Setup
+
+[Note]
+Due date: 23rd of each month
+
+After Setting up SGX Wallet and create certifications, validators can download the SKALE Node CLI executables register and maintain your SKALE node. This process downloads docker container images from docker hub and spins up SKALE Node functionalities. Some base containers such as SKALE Admin, Bounty, TransactionManager will be created during installation for each node.
+
+This document contains instructions on how to setup node using SKALE Node CLI.
+
+=== Prepare server
+
+Node server should follow compliance requirements which will be checked during installing SKALE node software. Please make sure
+
+**General requirements**
+
+-   {machine}
+-   {linux-distro}
+-   {attached-size}
+-   {physical-cores}
+-   {ram-size}
+-   {swap-size}
+
+More information can be found here xref::compliance-requirements.adoc[Compliance requirements]
+
+=== Install packages
+
+Before setting up node you should make sure that the following software is installed:
+
+-   docker
+-   docker-compose (preferably 1.27.4)
+-   iptables-persistent 
+-   lvm2 
+
+[IMPORTANT]
+
+* After docker installation make sure that the `live-restore` option is enabled in `/etc/docker/daemon.json`. See more info in the https://docs.docker.com/config/containers/live-restore/[docker docs].  
+
+[NOTE]
+You can install iptables-persistent using the following commands:
+
+```shell
+echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
+echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
+sudo apt install iptables-persistent -y
+```
+
+[IMPORTANT]
+* You should carefully control any automatic updates. In general avoid updates to the Linux kernel, docker, docker-compose, btrfs-progs. And take care when updating lvm2, iptables, iptables-persistent, and python. Please see the [FAQ - Node update procedure for more information](/validators/faq.adoc#node-update-procedure).
+
+If you have any concerns or questions, please don't hesitate to reach out to SKALE Team leads on http://skale.chat/[Discord].
+
+=== Download Node CLI binary
+
+=== Download the executable
+
+```shell
+sudo -E bash -c "curl -L {node-cli} >  /usr/local/bin/skale"
+```
+
+=== Apply executable permissions to the downloaded binary:
+
+```shell
+chmod +x /usr/local/bin/skale
+```
+
+=== Test the installation
+
+```shell
+sudo skale --help
+```
+
+[IMPORTANT]
+You should run node-cli commands using sudo
+
+More information can be found xref:node-cli::index.adoc[here].
+
+
+=== Configure .env
+
+Configuration parameters are passed to Node CLI through .env file. It should contain the following variables:
+
+-   `CONTAINERS_CONFIG_STREAM` - git branch with containers versions config
+-   `DISK_MOUNTPOINT` - Attached storage block device 
+-   `DOCKER_LVMPY_STREAM` - git branch of docker lvmpy volume driver for schains
+-   `ENDPOINT` - RPC endpoint of the node in the network where SKALE manager is deployed (`http` or `https`)
+-   `FILEBEAT_HOST` - URL to the Filebeat log server
+-   `IMA_CONTRACTS_ABI_URL` - URL to IMA contracts ABI and addresses
+-   `IMA_ENDPOINT` - IMA endpoint to connect (should be the same as `ENDPOINT`).
+-   `MANAGER_CONTRACTS_ABI_URL` - URL to SKALE Manager contracts ABI and addresses
+-   `SGX_SERVER_URL` - URL to SGX server in the network 
+-   `ENV_TYPE` - network type (mainnet/testnet)
+
+
+`ENDPOINT`, `IMA_ENDPOINT`, `SGX_SERVER_URL`, `DISK_MOUNTPOINT` are server dependent. Other options depend on the network type.
+
+For the `{ENV_TYPE}` network .env will look like:
+
+[source, subs="attributes"]
+----
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+DOCKER_LVMPY_STREAM={DOCKER_LVMPY_STREAM}
+FILEBEAT_HOST={FILEBEAT_HOST}
+MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
+IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
+ENV_TYPE={ENV_TYPE}
+DISK_MOUNTPOINT=[DISK_MOUNTPOINT]
+IMA_ENDPOINT=[IMA_ENDPOINT]
+ENDPOINT=[ENDPOINT]
+SGX_SERVER_URL=[SGX_SERVER_URL]
+----
+
+It's possible to configure Telegram based alert system by providing the following options:
+
+-   `TG_API_KEY` - Telegram API key
+-   `TG_CHAT_ID` - Telegram chat ID
+
+=== Initialize node
+
+To install node on your server you should run `skale node init`. It will create necessary configuration files and run base services and containers. 
+
+```shell
+sudo skale node init .env 
+```
+
+**Example Output:**
+
+```shell
+48914619bcd3: Pull complete
+db7a07cce60c: Pull complete
+d285532a5ada: Pull complete
+8646278c4014: Pull complete
+3a12d6e582e7: Pull complete
+0a3d98d81a07: Pull complete
+43b3a182ba00: Pull complete
+Creating monitor_filebeat          ... done
+Creating skale_transaction-manager ... done
+Creating skale_watchdog            ... done
+Creating skale_admin               ... done
+Creating skale_bounty              ... done
+Creating skale_api                 ... done
+```
+
+You can verify installation procedure by running: 
+
+```shell
+sudo skale wallet info
+
+```
+
+**Output:**
+
+```shell
+Address: <your-skale-node-wallet-address>
+ETH balance: 1.0 ETH
+SKALE balance: 0 SKALE
+
+```
+
+The common problem is network misconfiguration between the node and SGXWallet. You can recheck connection status using `skale health sgx`:
+
+```shell
+sudo skale health sgx
+
+```
+
+**Output:**
+
+```shell
+SGX server status:
+┌────────────────┬──────────────────────────┐
+│ SGX server URL │ <sgx-url>                │
+├────────────────┼──────────────────────────┤
+│ Status         │ CONNECTED                │
+└────────────────┴──────────────────────────┘
+
+```
+
+=== Setup SSL Certificates
+
+==== Setup IP redirects
+
+You will need to setup redirects from each node IP to the node domain.
+
+==== Issue SSL certificates
+
+You will need SSL certs issued by one of the Trusted CAs. Once you've decided on the certificate issuer you have several options - issue a separate certificate for each subdomain (node-0.awesome-validator.com, node-1.awesome-validator.com) or issue a single Wildcard SSL for all nodes (\*.awesome-validator.com). As a result, you should have 2 main files saved and copied to the respective nodes:
+
+-   Certificate file (for example, fullchain.pem or cert.pem)
+-   Private key file (for example, privkey.pem, pk.pem)
+
+==== Upload certificates to the SKALE Node
+
+Once you copied the certificate and private key file, all you have to do is to run the following command:
+
+```shell
+sudo skale ssl upload -c $PATH_TO_CERT_FILE -k $PATH_TO_KEY_FILE
+```
+
+==== SSL Status
+
+Status of the SSL certificates on the node
+
+```shell
+sudo skale ssl status
+```
+
+For more details, please see xref:node-cli::node-ssl-setup.adoc[Node SSL docs].
+
+
+=== Fund Node wallet with ETH
+
+Some of the node operations send ETH mainnet transaction (e.g. chain creation). So the node wallet should have at least 1 ETH
+
+To get the address you should run `skale wallet info` command.
+
+[NOTE]
+Spent ETH is reimbursed after the transaction was completed.
+
+
+=== Sign validator id using SGXWallet
+
+Using *validator-cli* check your vaildator ID:
+
+```shell
+sk-val validator ls
+```
+
+Get your SKALE node signature by running node-cli command. 
+
+```shell
+sudo skale node signature [VALIDATOR_ID]
+
+```
+
+**Output:**
+
+```shell
+Signature: <your-signature>
+```
+
+=== Link skale wallet address to your validator account using validator-cli
+
+To successfully register new node you should bind node address and validator entity using *validator-cli* `link-address`:
+
+```shell
+ sk-val validator link-address [NODE_ADDRESS] [SIGNATURE]
+```
+
+[NOTE]
+You can find node address by executing `skale wallet info` command
+
+
+Optional arguments:
+
+-   `--pk-file` - Path to file with private key (only for `software` wallet type)
+-   `--gas-price` - Gas price value in Gwei for transaction (if not specified doubled average network value will be used)
+-   `--yes` - Confirmation flag
+
+=== Backup node
+
+We strongly recommend to regularly backup node data. The critical information stored `~/.skale` directory.
+
+The `skale node backup` command archives the data which you can download and store somewhere else.
+
+To restore the node you should use `skale node restore`
+
+More information can be found xref:node-cli::index.adoc#_node_backup[here].
+
+=== Accept Delegations
+
+Every delegation need to be accepted. You can do it using `sk-val validator accept-delegation` command:
+
+```shell
+sk-val validator accept-delegation --delegation-id [DELEGATION-ID] 
+```
+
+Required arguments:
+
+-   `--delegation-id` - Delegation id to accept
+
+Optional arguments:
+
+-   `--pk-file` - Path to file with private key (only for software wallet type)
+-   `--gas-price` - Gas price value in Gwei for transaction (if not specified doubled average network value will be used)
+-   `--yes` - Confirmation flag
+
+You can get [DELEGATION-ID] by running `sk-val validator delegations`:
+
+```shell
+sk-val validator delegations [VALIDATOR_ID]
+```
+
+You will see your pending delegation (`PENDING` status)  as well as already accepted ones (`DELEGATED` status).
+
+[NOTE]
+To register the node validator must meet https://docs.skale.network/validators/validator-faq#_what_is_the_minimum_amount_of_skl_tokens_needed_to_set_up_a_node[minimum staking requirement]

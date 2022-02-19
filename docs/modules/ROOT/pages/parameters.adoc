@@ -4,7 +4,7 @@
 :machine: A Linux x86_64 machine
 :linux-distro: Ubuntu 18.04
 :physical-cores: 8 physical cores
-:port-range: Ports 80, 443, 3009, 8080, 9100, and 10000–18192, and ICMP IPv4 should not be closed by external firewall
+:port-range: Ports 80, 443, 3009, and 10000–18192, and ICMP IPv4 should not be closed by external firewall
 :root-size: 100GB root storage
 :attached-size: 2TB attached storage
 :ram-size: 32GB RAM
@@ -21,7 +21,7 @@
 // base software
 :docker-compose-version: 1.27.4
 :packages: iptables-persistent, btrfs-progs, lsof, lvm2, psmisc, and apt
-:geth-version: 1.10.8
+:geth-version: latest
 :docker-config: live-restore enabled https://docs.docker.com/config/containers/live-restore/[docker docs]
 
 // skale software
