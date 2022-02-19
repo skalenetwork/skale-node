@@ -24,15 +24,7 @@ To be able to set up an SGXWallet, validators are required to have SGX compatibl
 
 === Configure network
 
-SKALE will have two types of SGX operations:
-
--   **Local (Secure)**: Wallet running on the same server as SKALE node.
--   **Network**: Node talks to SGXWallet over the SKALE Network. The validator is responsible for securing the connection. If validator is planning to have a separate SGX compatible server than the Blockchain node, the server doesn't have to have the same hardware requirements as the node. SGXWallet doesn't require a lot of computational power.
-
-The second option is *strongly recommended* since local wallet may affect chains performance. 
-
-[IMPORTANT]
-For Network SGX it's required to setup VPN between nodes and SGX server. {sgx-port-range} ports should be accessible by nodes.
+It's required to setup VPN between nodes and SGX server. {sgx-port-range} ports should be accessible by nodes.
 
 [NOTE]
 SGXWallet can support up to *5* SKALE nodes. If you have more, you should setup additional server.
