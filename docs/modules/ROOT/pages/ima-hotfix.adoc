@@ -3,6 +3,7 @@ include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
 
+
 == Change .env file
 
 Change `CONTAINER_CONFIGS_STREAM` to the {skale-node} hotfix release
@@ -20,3 +21,5 @@ CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
 ----
 skale node update .env
 ----
+
+More information about the hotfix can be found https://skale.network/blog/audits-for-the-win-the-value-of-consistent-audits/[here]
