@@ -1,4 +1,4 @@
-= {Network} SKALED Hotfix Upgrade
+= {Network} IMA Hotfix Upgrade
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
