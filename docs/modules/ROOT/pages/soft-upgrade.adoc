@@ -1,19 +1,11 @@
-= Fuji IMA Hotfix Soft Upgrade
+= Fuji V2 Upgrade
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
 
 
-[NOTE]
-From the `2.0.1` SKALE node release docker is listening on additional socket which is located in `/var/run/skale/docker.sock`. 
-To achieve it new socket path will be added to `daemon.json` config during update. In addition service configuration for docker daemon will be changed to ensure that `/var/run/skale` is created.
-
 [WARNING]
-If a validator has custom docker daemon service configuration (systemd unit file), update may lead to unexpected behavior. In this case it's better to ask for the assistance from the core team.
-
-[NOTE]
-Please, don't forget to run `skale node check` as a last step.
-
+Complience requirements will be checked during upgrade.
 
 == Install SKALE Node CLI
 
@@ -51,8 +43,9 @@ Make sure the following options are set
 [source, subs="attributes"]
 ----
 CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
 IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
-DISABLE_IMA={DISABLE_IMA}
+DOCKER_LVMPY_STREAM={DOCKER_LVMPY_STREAM}
 ----
 
 === Perform update
@@ -63,7 +56,9 @@ Run skale node update:
 skale node update .env
 ```
 
-== Run skale node check to make sure your node is configured properly
+[NOTE]
+If upgrade fails with `Host is not fully meet the requirements` please visit. 
+You can always rerun compliance checks by executing:
 
 ```shell
 skale node check -n testnet
