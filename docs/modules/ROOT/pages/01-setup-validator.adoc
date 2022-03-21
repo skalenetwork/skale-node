@@ -91,7 +91,7 @@ Replace `[YOUR PRIVATE KEY]` with your wallet private key
 echo [YOUR PRIVATE KEY] > ./pk.txt
 ```
 
-===== Ledger  wallet
+===== Ledger wallet
 
 If you want to use ledger you should install ETH ledger application and  initialize device with `setup-ledger` command.
 
