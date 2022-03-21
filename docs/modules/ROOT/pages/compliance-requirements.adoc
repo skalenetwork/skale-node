@@ -18,8 +18,8 @@ Node operators can use this general PASS/FAIL check to confirm whether a node me
 
 == Wallet Balances
 
-* >= 0.5 ETH in self-recharging validator wallet (should be >= NODES_NUMBER * 0.5)
-* >= 1 ETH in each node wallet
+* >= 0.5 Rinkeby ETH in self-recharging validator wallet (should be >= NODES_NUMBER * 0.5)
+* >= 1 Rinkeby ETH in each node wallet
 
 == Hardware
 
@@ -27,7 +27,7 @@ Node operators can use this general PASS/FAIL check to confirm whether a node me
 * >= {physical-cores} physical cores (benchmark AWS t2.2xlarge)
 * >= {ram-size} GB RAM
 * >= 100 GB root storage (not tested at the moment, recommended)
-* >= {attached-size} TB (1.9 TB actual measure) attached and unformatted non-boot storage (Note that {attached-size} TB storage results in < {attached-size} TB actual physical storage)
+* >= {attached-size} GB attached and unformatted non-boot storage (Note that {attached-size} GB storage results in < {attached-size} GB actual physical storage)
 * >= {swap-size} GB swap
 
 Test: `http://YOUR_SKALE_NODE_IP:3009/status/hardware`

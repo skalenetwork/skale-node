@@ -1,8 +1,5 @@
 == Node Setup
 
-[Note]
-Due date: 23rd of each month
-
 After Setting up SGX Wallet and create certifications, validators can download the SKALE Node CLI executables register and maintain your SKALE node. This process downloads docker container images from docker hub and spins up SKALE Node functionalities. Some base containers such as SKALE Admin, Bounty, TransactionManager will be created during installation for each node.
 
 This document contains instructions on how to setup node using SKALE Node CLI.
@@ -207,14 +204,14 @@ sudo skale ssl status
 For more details, please see xref:node-cli::node-ssl-setup.adoc[Node SSL docs].
 
 
-=== Fund Node wallet with ETH
+=== Fund Node wallet with Rinkeby ETH
 
-Some of the node operations send ETH mainnet transaction (e.g. chain creation). So the node wallet should have at least 1 ETH
+Some of the node operations send Rinkeby ETH mainnet transaction (e.g. chain creation). So the node wallet should have at least 1 Rinkeby ETH
 
 To get the address you should run `skale wallet info` command.
 
 [NOTE]
-Spent ETH is reimbursed after the transaction was completed.
+Spent Rinkeby ETH is reimbursed after the transaction was completed.
 
 
 === Sign validator id using SGXWallet
@@ -291,6 +288,3 @@ sk-val validator delegations [VALIDATOR_ID]
 ```
 
 You will see your pending delegation (`PENDING` status)  as well as already accepted ones (`DELEGATED` status).
-
-[NOTE]
-To register the node validator must meet https://docs.skale.network/validators/validator-faq#_what_is_the_minimum_amount_of_skl_tokens_needed_to_set_up_a_node[minimum staking requirement]

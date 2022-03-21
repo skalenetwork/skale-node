@@ -1,8 +1,5 @@
 == SGX Setup
 
-[NOTE]
-Due date: 23rd of each month
-
 === Overview
 
 **SGX is a secure storage for BLS private key shares, which are used in consensus to sign new blocks. SGX is also used for private key shares.**
