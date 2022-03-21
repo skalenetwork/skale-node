@@ -74,8 +74,8 @@ Example Response:  `{"data": {"block_number": 8728517, "syncing": false, "truste
 
 == Software
 
-Latest Mainnet software versions are defined here: 
-* xref:index.adoc#_mainnet_versions_for_set_up[Mainnet Versions]
+Latest {Network} software versions are defined here: 
+* xref:index.adoc#_mainnet_versions_for_set_up[Versions]
 * https://github.com/skalenetwork/skale-network/tree/master/releases
 
 * Node software versions must be updated to the latest {Network} requirements
