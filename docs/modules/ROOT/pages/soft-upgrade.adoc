@@ -57,7 +57,7 @@ skale node update .env
 ```
 
 [NOTE]
-If upgrade fails with `Host is not fully meet the requirements` please visit. 
+If upgrade fails with `Host is not fully meet the requirements` please visit xref:compliance-requirements.adoc[Complience requirements]. 
 You can always rerun compliance checks by executing:
 
 ```shell
