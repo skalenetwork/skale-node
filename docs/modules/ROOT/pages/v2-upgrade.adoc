@@ -5,7 +5,7 @@ include::parameters.adoc[]
 
 
 [WARNING]
-Complience requirements will be checked during upgrade.
+Compliance requirements will be checked during upgrade.
 
 == Install SKALE Node CLI
 
