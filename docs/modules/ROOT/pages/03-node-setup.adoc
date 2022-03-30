@@ -216,7 +216,7 @@ Spent Rinkeby ETH is reimbursed after the transaction was completed.
 
 === Sign validator id using SGXWallet
 
-Using *validator-cli* check your vaildator ID:
+Using *validator-cli* check your validator ID:
 
 ```shell
 sk-val validator ls
