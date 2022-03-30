@@ -1,6 +1,6 @@
 == Node Setup
 
-[Note]
+[NOTE]
 Due date: 23rd of each month
 
 After Setting up SGX Wallet and create certifications, validators can download the SKALE Node CLI executables register and maintain your SKALE node. This process downloads docker container images from docker hub and spins up SKALE Node functionalities. Some base containers such as SKALE Admin, Bounty, TransactionManager will be created during installation for each node.
