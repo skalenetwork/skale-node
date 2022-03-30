@@ -1,0 +1,11 @@
+== Post Registration Checks
+
+- [ ] Private and backup keys are secured in a safe place.
+- [ ] VPN is configured on all SGXWallet servers.
+
+
+- [ ] Ensure node wallets have sufficient Rinkeby ETH
+- [ ] Accept delegations for the next month
+- [ ] Check telegram notifications (if you enabled them)
+- [ ] Use xref:skale-watchdog::index.adoc[watchdog] to monitor node status.
+- [ ] Get support from the SKALE validator community

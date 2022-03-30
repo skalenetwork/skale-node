@@ -1,0 +1,134 @@
+== Validator Setup
+:stem: asciimath
+
+=== Prepare
+
+==== Obtain Ethereum Wallet 
+
+Get a Ledger, Hardware or Software wallet ready like Metamask/Portis/Bitski/Torus/myetherwallet. Specific setup instructions will follow.
+
+This wallet will be used for receiving delegation, bounties, and self delegating. 
+
+==== Fund Validator Wallet with Rinkeby ETH
+
+Be ready to have some Rinkeby ETH to accept delegations and link your validator node. Remember these are transactions with SKALE Manager on Rinkeby, and therefore require Rinkeby ETH.
+
+*Minimum Rinkeby ETH: 1.0*
+
+==== Get SKALE Manager contract ABIs from SKALE
+
+{MANAGER_CONTRACTS_ABI_URL}
+
+==== Fund SRW Wallet with Rinkeby ETH
+
+Be ready to fund Rinkeby ETH in your self-recharging wallet (SRW). See xref:validator-cli::self-recharging-wallets.adoc[Self-recharging wallet documentation].
+
+*Minimum Rinkeby ETH*: latexmath:[0.5 \bullet node count]
+
+==== Decide your commission fee
+
+Decide on your commission fee. This cannot be changed once it is set. To set a new commission fee, you'll have to register a new validator. This new validator would have to link nodes and accept delegations for it (old validator nodes and delegations cannot be rolled into a new validator commission fee).
+
+.Reference Documents
+* https://skale.network/blog/validator-economics/[Validator & Token Economics]
+* https://skale.network/tokenomics[Tokenomics]
+
+=== Register Validator
+
+SKALE Validator CLI is the validator client interface for registering a new validator into network or handling additional delegation services where validators can self delegate or token holders can delegate to a validator. These are the type of operations that can be done with the Validator CLI:
+
+* Register Validator (Set Commission Rate or Minimum delegation amount)
+* Accept pending delegations
+* Link all validator node addresses to a validator wallet address
+* Request or cancel a delegation
+
+xref:validator-cli::index.adoc[See the SKALE Validator CLI documentation ].
+
+This document contains instructions on how to get started with the SKALE Validator CLI.
+
+[NOTE]
+Validator CLI doesn't have to be installed in the same server as the node-cli. This can be set up on Mac or Linux. This does not need to be included in every node. Setting up once per validator organization is sufficient.
+
+==== Install SKALE Validator CLI
+
+===== Download the SKALE Validator CLI binary
+
+`VERSION_NUM` is a version identifier
+
+```shell
+VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/validator-cli/releases/download/$VERSION_NUM/sk-val-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/sk-val"
+```
+
+===== Apply executable permissions to the binary
+
+```shell
+chmod +x /usr/local/bin/sk-val
+```
+
+===== Set SKALE Manager contracts info and set the endpoint
+
+```shell
+sk-val init -e [ENDPOINT] -c [ABI] --wallet [software/ledger]
+```
+
+Required arguments:
+
+-   `--endpoint/-e` - RPC endpoint of the node in the network where SKALE manager is deployed (`http` or `https`) Example: <https://my.geth.node.ip/..>.
+
+-   `--contracts-url/-c` - URL to SKALE Manager contracts ABI and addresses
+
+-   `-w/--wallet` - Type of the wallet that will be used for signing transactions (software or ledger)
+
+==== Setup wallet
+
+===== Software wallet
+
+If you want to use software wallet you need to save private key into a file.
+
+Replace `[YOUR PRIVATE KEY]` with your wallet private key
+
+```shell
+echo [YOUR PRIVATE KEY] > ./pk.txt
+```
+
+===== Ledger wallet
+
+If you want to use ledger you should install ETH ledger application and  initialize device with `setup-ledger` command.
+
+```shell
+sk-val wallet setup-ledger --address-index [ADDRESS_INDEX] --keys-type [KEYS_TYPE]
+```
+
+Required arguments:
+
+-   `--address-index` - Index of the address to use (starting from `0`)
+-   `--keys-type` - Type of the Ledger keys (live or legacy)
+
+[IMPORTANT]
+Make sure you enabled blind signing on Rinkeby ETH application settings. Otherwise transactions won't work
+
+==== Register as a new SKALE validator
+
+[WARNING]
+DON'T REGISTER A NEW VALIDATOR IF YOU ALREADY HAVE ONE! check : `sk-val validator ls`. For additional node set up, please go to Step 3.
+
+```shell
+sk-val validator register -n [NAME] -d [DESCRIPTION] -c [COMMISSION_RATE] --min-delegation [MIN_DELEGATION] 
+```
+
+Required arguments:
+
+-   `--name/-n` - Validator name
+-   `--description/-d` - Validator description (preferably organization info)
+-   `--commission-rate/-c` - Commission rate (percent %)
+-   `--min-delegation` - Validator minimum delegation amount
+
+Optional arguments:
+
+-   `--pk-file` - Path to file with private key (only for `software` wallet type)
+-   `--gas-price` - Gas price value in Gwei for transaction (if not specified doubled average network value will be used)
+-   `--yes` - Confirmation flag
+
+=== Make sure that your validator is added to the trusted list
+
+To ensure that your validator is added to trusted contact SKALE team.

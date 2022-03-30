@@ -1,0 +1,48 @@
+== Register Node in SKALE Network
+
+=== Register Node with Node CLI
+
+[IMPORTANT]
+Before proceeding, you will need to have at least  **1 Rinkeby ETH**. Also amount of delegated skale tokens need to be more or equal to minimum staking amount.
+
+To register with the network, you will need to provide the following:
+
+-  Node name
+-  Machine public IP
+-  Domain name
+
+```shell
+sudo skale node register --name [NODE_NAME] --ip [NODE_IP] --domain [DOMAIN_NAME]
+
+```
+
+Optional arguments:
+
+-   `--port` - beginning of the port range that will be used for skale schains (`10000` by default)
+
+**Output:**
+
+```shell
+Node registered in SKALE manager. For more info run: skale node info
+```
+
+=== Check Node Status
+
+You can check the status of your node, and ensure that it's properly registered with the SKALE Network.
+
+```shell
+sudo skale node info
+```
+
+**Output:**
+
+```shell
+# Node info
+Name: <Node name>
+ID: <Node ID>
+IP: <IP of Machine>
+Public IP: <Public IP of Machine>
+Port: <Node port>
+Domain name: <Node domain name>
+Status: Active
+```

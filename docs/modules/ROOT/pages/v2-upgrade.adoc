@@ -1,0 +1,117 @@
+= {Network} V2 Upgrade
+include::parameters.adoc[]
+:sectnums:
+:sectnumlevels: 1
+
+== Upgrade SGXWallet 
+
+=== Switch to run_sgx directory
+**Terminal Command:**
+
+```shell
+cd run_sgx
+```
+
+=== Stop sgx server
+**Terminal Command:**
+
+```shell
+docker-compose stop
+```
+
+=== Update SGXWallet container version
+
+First pull new sgxwallet container: `docker pull {sgxwallet-container}`
+
+In `docker-compose.yml` change `image` field to `{sgxwallet-container}`
+
+Double check that your `docker-compose.yml` file begins and includes the ports listed here:
+
+[source, subs="attributes"]
+----
+version: '3'
+services:
+  sgxwallet:
+    image: {sgxwallet-container}
+    ports:
+      - "1026:1026"
+      - "1027:1027"
+      - "1028:1028"
+      - "1029:1029"
+      - "1031:1031"
+    volumes:
+      - ./sgx_data:/usr/src/sdk/sgx_data
+      -  /dev/urandom:/dev/random
+    command: -s -y -d -b
+[...rest of yml omitted...]
+----
+
+[IMPORTANT]
+Make sure `command` attribute contains `-b` option and your backup key is placed in `sgx_data/sgxwallet_backup_key.txt` file. 
+
+=== Recreate SGXWallet container
+**Terminal Command:**
+
+```shell
+docker-compose up -d
+```
+
+== Install SKALE Node CLI
+
+=== Download the SKALE Node CLI binary
+
+Make sure `VERSION_NUM` is `{node-cli}`
+
+**Terminal Command:**
+
+```shell
+VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/skale-node-cli/releases/download/$VERSION_NUM/skale-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/skale"
+
+```
+
+=== Make the SKALE Node CLI binary executable
+**Terminal Command:**
+
+
+```shell
+sudo chmod +x /usr/local/bin/skale
+```
+
+== Update node using skale node update
+
+[WARNING]
+Compliance requirements will be checked during upgrade.
+
+=== Change directory
+
+```shell
+cd  ~ && vi .env
+```
+
+=== Update .env
+
+Make sure the following options are set
+
+[source, subs="attributes"]
+----
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
+IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
+DOCKER_LVMPY_STREAM={DOCKER_LVMPY_STREAM}
+----
+
+=== Perform update
+
+Run skale node update:
+
+```shell
+skale node update .env
+```
+
+[NOTE]
+If upgrade fails with `Host is not fully meet the requirements` please visit xref:compliance-requirements.adoc[Compliance requirements]. 
+You can always rerun compliance checks by executing:
+
+```shell
+skale node check -n testnet
+```
