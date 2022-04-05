@@ -43,7 +43,9 @@ Example response:
 
 == Networking
 
-* SSL certificates for each node. The certificate file should be issued in PEM format, issued by a trusted authority, and contain a full certificate chain. 
+* Non-expired SSL certificates for each node. 
+** The certificate file should be issued in PEM format, issued by a trusted authority, and contain a full certificate chain.
+** **Certificate should always be renewed to avoid expiry.**
 
 * Don't touch machine firewall (iptables installed by skale node software automatically sets machine firewall rules), external VPC or networking firewall ensure {port-range}.
 
