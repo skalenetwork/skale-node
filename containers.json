@@ -42,7 +42,7 @@
     },
     "args": {
       "restart_policy": {
-        "Name": "on-failure"
+        "Name": "unless-stopped"
       },
       "network": "host"
     }
