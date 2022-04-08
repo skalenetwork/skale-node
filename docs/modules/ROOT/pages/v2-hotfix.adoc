@@ -1,4 +1,4 @@
-= {Network} V2 Upgrade
+= {Network} V2 Hotfix
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
@@ -19,7 +19,6 @@ Make sure the following options are set
 [source, subs="attributes"]
 ----
 CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
-IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
 ----
 
 === Perform update
