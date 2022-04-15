@@ -12,6 +12,10 @@ include::parameters.adoc[]
 cd run_sgx
 ```
 
+=== Pull new container
+
+First pull new sgxwallet container using: `docker pull {sgxwallet-container}`
+
 === Stop sgx server
 **Terminal Command:**
 
@@ -20,8 +24,6 @@ docker-compose stop
 ```
 
 === Update SGXWallet container version
-
-First pull new sgxwallet container: `docker pull {sgxwallet-container}`
 
 In `docker-compose.yml` change `image` field to `{sgxwallet-container}`
 
