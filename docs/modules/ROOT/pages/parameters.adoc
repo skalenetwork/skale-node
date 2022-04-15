@@ -17,7 +17,6 @@
 :sgx-port-range: Ports 1026–1031 open only to SKALE Nodes, not public
 
 
-
 // base software
 :docker-compose-version: 1.27.4
 :packages: iptables-persistent, btrfs-progs, lsof, lvm2, psmisc, and apt
@@ -25,26 +24,24 @@
 :docker-config: live-restore enabled https://docs.docker.com/config/containers/live-restore/[docker docs]
 
 // skale software
-:node-cli: https://github.com/skalenetwork/node-cli/releases/download/2.0.2/skale-2.0.2-Linux-x86_64[2.0.2]
-:validator-cli: https://github.com/skalenetwork/node-cli/releases/download/1.3.0/skale-1.3.0-Linux-x86_64[1.3.0]
-:sgxwallet: https://github.com/skalenetwork/sgxwallet/releases/tag/1.77.1-stable.2[1.77.1-stable.2]
-:sgxwallet-container: skalenetwork/sgxwallet_release:1.77.1-stable.2
-:sgxwallet-hotfix: https://github.com/skalenetwork/sgxwallet/releases/tag/1.77.1-stable.3[1.77.1-stable.3]
-:sgxwallet-hotfix-container: skalenetwork/sgxwallet_release:1.77.1-stable.3
-:skale-node: https://github.com/skalenetwork/skale-node/releases/tag/2.0.4[2.0.4]
-:skaled: https://github.com/skalenetwork/skaled/releases/tag/3.7.6-stable.0[3.7.6-stable.0]
-:docker-lvmpy: https://github.com/skalenetwork/docker-lvmpy/releases/tag/1.0.1-stable.3[1.0.1-stable.3]
-:transaction-manager: https://github.com/skalenetwork/transaction-manager/releases/tag/2.0.2[2.0.2]
-:skale-admin: https://github.com/skalenetwork/skale-admin/releases/tag/2.0.2[2.0.2]
-:bounty-agent: https://github.com/skalenetwork/bounty-agent/releases/tag/2.0.2-stable.0[2.0.2-stable.0]
-:skale-watchdog: https://github.com/skalenetwork/skale-watchdog/releases/tag/2.0.2-stable.0[2.0.2-stable.0]
+:node-cli: https://github.com/skalenetwork/node-cli/releases/download/2.1.0/skale-2.1.0-Linux-x86_64[2.1.0]
+:validator-cli: https://github.com/skalenetwork/node-cli/releases/download/1.3.2/skale-1.3.2-Linux-x86_64[1.3.2]
+:sgxwallet: https://github.com/skalenetwork/sgxwallet/releases/tag/1.83.0-stable.1[1.83.0-stable.1]
+:sgxwallet-container: skalenetwork/sgxwallet_release:1.83.0-stable.1
+:skale-node: https://github.com/skalenetwork/skale-node/releases/tag/2.1.0-testnet.2[2.1.0-testnet.2]
+:skaled: https://github.com/skalenetwork/skaled/releases/tag/3.14.9-stable.1[3.14.9-stable.1]
+:ima: https://github.com/skalenetwork/IMA/releases/tag/1.3.0-beta.3[1.3.0-beta.3]
+:docker-lvmpy: https://github.com/skalenetwork/docker-lvmpy/releases/tag/1.0.2-stable.0[1.0.2-stable.0]
+:transaction-manager: https://github.com/skalenetwork/transaction-manager/releases/tag/2.1.0[2.1.0]
+:skale-admin: https://github.com/skalenetwork/skale-admin/releases/tag/2.3.1[2.3.1]
+:bounty-agent: https://github.com/skalenetwork/bounty-agent/releases/tag/2.1.1-stable.0[2.1.1-stable.0]
+:skale-watchdog: https://github.com/skalenetwork/skale-watchdog/releases/tag/2.1.0-stable.0[2.1.0-stable.0]
 
 // environment variables
-:DOCKER_LVMPY_STREAM: 1.0.1-stable.3
-
-:MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/skale-manager/1.8.1/skale-manager-1.8.1-mainnet-abi.json
-:IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/IMA/1.0.0-stable.1/abi.json
-:CONTAINER_CONFIGS_STREAM: 2.0.4
+:DOCKER_LVMPY_STREAM: 1.0.2-stable.0
+:MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/rinkeby/skale-manager/1.9.0/skale-manager-1.9.0-beta.3-rinkeby-abi.json
+:IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/rinkeby/IMA/1.1.3-beta.1/abi.json
+:CONTAINER_CONFIGS_STREAM: 2.1.0-testnet.2
 :FILEBEAT_HOST: filebeat.mainnet.skalenodes.com:5000
 :DISABLE_IMA: False
 :ENV_TYPE: mainnet
