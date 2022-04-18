@@ -6,7 +6,6 @@ include::parameters.adoc[]
 == Upgrade SGXWallet 
 
 === Switch to run_sgx directory
-**Terminal Command:**
 
 ```shell
 cd run_sgx
@@ -17,7 +16,6 @@ cd run_sgx
 First pull new sgxwallet container using: `docker pull {sgxwallet-container}`
 
 === Stop sgx server
-**Terminal Command:**
 
 ```shell
 docker-compose stop
@@ -52,7 +50,6 @@ services:
 Make sure `command` attribute contains `-b` option and your backup key is placed in `sgx_data/sgxwallet_backup_key.txt` file. 
 
 === Recreate SGXWallet container
-**Terminal Command:**
 
 ```shell
 docker-compose up -d
@@ -64,16 +61,12 @@ docker-compose up -d
 
 Make sure `VERSION_NUM` is `{node-cli}`
 
-**Terminal Command:**
-
 ```shell
 VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/skale-node-cli/releases/download/$VERSION_NUM/skale-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/skale"
 
 ```
 
 === Make the SKALE Node CLI binary executable
-**Terminal Command:**
-
 
 ```shell
 sudo chmod +x /usr/local/bin/skale
