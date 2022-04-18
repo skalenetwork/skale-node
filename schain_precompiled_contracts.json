@@ -81,7 +81,7 @@
         "word": 0
       },
       "startingBlock": "0x0",
-      "restrictAccess": true
+      "restrictAccess": ["fs"]
     }
   },
   "000000000000000000000000000000000000000C": {
@@ -92,7 +92,7 @@
         "word": 0
       },
       "startingBlock": "0x0",
-      "restrictAccess": true
+      "restrictAccess": ["fs"]
     }
   },
   "000000000000000000000000000000000000000D": {
@@ -113,7 +113,7 @@
         "word": 0
       },
       "startingBlock": "0x0",
-      "restrictAccess": true
+      "restrictAccess": ["fs"]
     }
   },
   "000000000000000000000000000000000000000F": {
@@ -124,7 +124,7 @@
         "word": 0
       },
       "startingBlock": "0x0",
-      "restrictAccess": true
+      "restrictAccess": ["fs"]
     }
   },
   "0000000000000000000000000000000000000010": {
@@ -135,7 +135,7 @@
         "word": 0
       },
       "startingBlock": "0x0",
-      "restrictAccess": true
+      "restrictAccess": ["fs"]
     }
   },
   "0000000000000000000000000000000000000011": {
@@ -146,7 +146,7 @@
         "word": 0
       },
       "startingBlock": "0x0",
-      "restrictAccess": true
+      "restrictAccess": ["fs"]
     }
   },
   "0000000000000000000000000000000000000012": {
@@ -202,6 +202,26 @@
   "0000000000000000000000000000000000000017": {
     "precompiled": {
       "name": "getConfigPermissionFlag",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
+  },
+  "0000000000000000000000000000000000000018": {
+    "precompiled": {
+      "name": "getBlockRandom",
+      "linear": {
+        "base": 15,
+        "word": 0
+      },
+      "startingBlock": "0x0"
+    }
+  },
+  "0000000000000000000000000000000000000019": {
+    "precompiled": {
+      "name": "getIMABLSPublicKey",
       "linear": {
         "base": 15,
         "word": 0
