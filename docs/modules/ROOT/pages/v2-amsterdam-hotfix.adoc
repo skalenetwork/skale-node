@@ -1,0 +1,49 @@
+= {Network} V2 Amsterdam hotfix
+include::parameters.adoc[]
+:sectnums:
+:sectnumlevels: 1
+
+[IMPORTANT]
+Make sure SGX `1031` port is accessible from the nodes which are using it.
+
+== Install SKALE Node CLI
+
+=== Download the SKALE Node CLI binary
+
+Make sure `VERSION_NUM` is `{node-cli}`
+
+```shell
+VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/skale-node-cli/releases/download/$VERSION_NUM/skale-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/skale"
+
+```
+
+=== Make the SKALE Node CLI binary executable
+
+```shell
+sudo chmod +x /usr/local/bin/skale
+```
+
+== Update node using skale node update
+
+=== Change directory
+
+```shell
+cd  ~ && vi .env
+```
+
+=== Update .env
+
+Make sure the following options are set
+
+[source, subs="attributes"]
+----
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+----
+
+=== Perform update
+
+Run skale node update:
+
+```shell
+skale node update .env
+```
