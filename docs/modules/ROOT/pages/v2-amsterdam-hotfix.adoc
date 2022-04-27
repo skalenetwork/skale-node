@@ -1,0 +1,32 @@
+= {Network} Amsterdam hotfix
+include::parameters.adoc[]
+:sectnums:
+:sectnumlevels: 1
+
+[IMPORTANT]
+Make sure SGX `1031` port is accessible from the nodes which are using it.
+
+== Update node using skale node update
+
+=== Change directory
+
+```shell
+cd  ~ && vi .env
+```
+
+=== Update .env
+
+Make sure the following options are set
+
+[source, subs="attributes"]
+----
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+----
+
+=== Perform update
+
+Run skale node update:
+
+```shell
+skale node update .env
+```
