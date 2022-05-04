@@ -16,7 +16,7 @@ services:
   skale-sync-admin:
     <<: *skale_base
     container_name: skale_sync_admin
-    image: skalenetwork/admin:2.3.0-develop.10
+    image: skalenetwork/admin:sync-custom
     network_mode: host
     tty: true
     cap_add:
@@ -26,6 +26,7 @@ services:
       ENDPOINT: ${ENDPOINT}
       SKALE_DIR_HOST: ${SKALE_DIR}
       ENV_TYPE: ${ENV_TYPE}
+      SCHAIN_NAME: ${SCHAIN_NAME}
     command: "python3 sync_node.py"
     volumes:
       - /var/run/skale:/var/run/skale
