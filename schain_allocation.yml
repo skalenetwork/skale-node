@@ -24,12 +24,6 @@ devnet:
     test4:
       contract_storage: 1598399446
       db_storage: 532799815
-  rotate_after_block:
-    large: 1310721
-    medium: 163840
-    small: 10240
-    test: 163840
-    test4: 163840
   shared_space: 8959950848
   volume_limits:
     large:
