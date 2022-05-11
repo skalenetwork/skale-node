@@ -74,12 +74,6 @@ mainnet:
     test4:
       contract_storage: 37961998663
       db_storage: 12653999554
-  rotate_after_block:
-    large: 31129628
-    medium: 3891203
-    small: 243200
-    test: 3891203
-    test4: 3891203
   shared_space: 212799979520
   volume_limits:
     large:
@@ -130,12 +124,6 @@ qanet:
     test4:
       contract_storage: 3995998617
       db_storage: 1331999539
-  rotate_after_block:
-    large: 3276803
-    medium: 409600
-    small: 25600
-    test: 409600
-    test4: 409600
   shared_space: 22399942656
   volume_limits:
     large:
@@ -186,12 +174,6 @@ testnet:
     test4:
       contract_storage: 3995998617
       db_storage: 1331999539
-  rotate_after_block:
-    large: 3276803
-    medium: 409600
-    small: 25600
-    test: 409600
-    test4: 409600
   shared_space: 22399942656
   volume_limits:
     large:
