@@ -87,7 +87,7 @@ Configuration parameters are passed to Node CLI through .env file. It should con
 -   `IMA_CONTRACTS_ABI_URL` - URL to IMA contracts ABI and addresses
 -   `IMA_ENDPOINT` - IMA endpoint to connect (should be the same as `ENDPOINT`).
 -   `MANAGER_CONTRACTS_ABI_URL` - URL to SKALE Manager contracts ABI and addresses
--   `SGX_SERVER_URL` - URL to SGX server in the network 
+-   `SGX_SERVER_URL` - URL to SGX server in the network (i.e. http(s)://host:port, do not add a trailing "/" after the port number )
 -   `ENV_TYPE` - network type (mainnet/testnet)
 
 
@@ -106,7 +106,7 @@ ENV_TYPE={ENV_TYPE}
 DISK_MOUNTPOINT=[DISK_MOUNTPOINT]
 IMA_ENDPOINT=[IMA_ENDPOINT]
 ENDPOINT=[ENDPOINT]
-SGX_SERVER_URL=[SGX_SERVER_URL]
+SGX_SERVER_URL=[SGX_SERVER_URL] # Do not add a trailing "/" after the port number.
 ----
 
 It's possible to configure Telegram based alert system by providing the following options:
