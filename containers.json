@@ -42,8 +42,7 @@
     },
     "args": {
       "restart_policy": {
-        "MaximumRetryCount": 10,
-        "Name": "on-failure"
+        "Name": "unless-stopped"
       },
       "network": "host"
     }
