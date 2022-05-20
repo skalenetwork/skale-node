@@ -1,4 +1,4 @@
-= {Network} Amsterdam hotfix (IMA frame allowed time)
+= {Network} Amsterdam hotfix (IMA message index hash)
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
