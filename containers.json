@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "TICKET-124-IMA-broadcast-TXN-problem-in-stable",
+    "version": "3.14.9-stable.5.2.hotfix-asan",
     "custom_args": {
       "ulimits_list": [
         {
