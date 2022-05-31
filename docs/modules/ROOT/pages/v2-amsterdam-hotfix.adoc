@@ -1,4 +1,4 @@
-= {Network} Amsterdam hotfix (IMA message index hash)
+= {Network} Amsterdam hotfix (Skaled 31-bit chainId compatibility)
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
