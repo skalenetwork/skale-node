@@ -6,6 +6,7 @@ devnet:
     large: 71039975424
     medium: 8879996928
     small: 554999808
+    sync_node: 71039975424
     test: 8879996928
     test4: 8879996928
   leveldb_limits:
@@ -18,18 +19,15 @@ devnet:
     small:
       contract_storage: 99899965
       db_storage: 33299988
+    sync_node:
+      contract_storage: 1598399446
+      db_storage: -1
     test:
       contract_storage: 1598399446
       db_storage: 532799815
     test4:
       contract_storage: 1598399446
       db_storage: 532799815
-  rotate_after_block:
-    large: 1310721
-    medium: 163840
-    small: 10240
-    test: 163840
-    test4: 163840
   shared_space: 8959950848
   volume_limits:
     large:
@@ -47,6 +45,11 @@ devnet:
       max_file_storage_bytes: 166499942
       max_reserved_storage_bytes: 55499980
       max_skaled_leveldb_storage_bytes: 166499942
+    sync_node:
+      max_consensus_storage_bytes: 2663999078
+      max_file_storage_bytes: 2663999078
+      max_reserved_storage_bytes: 887999692
+      max_skaled_leveldb_storage_bytes: 2663999078
     test:
       max_consensus_storage_bytes: 2663999078
       max_file_storage_bytes: 2663999078
@@ -62,6 +65,7 @@ mainnet:
     large: 1687199940608
     medium: 210899992576
     small: 13181249536
+    sync_node: 1687199940608
     test: 210899992576
     test4: 210899992576
   leveldb_limits:
@@ -74,18 +78,15 @@ mainnet:
     small:
       contract_storage: 2372624916
       db_storage: 790874972
+    sync_node:
+      contract_storage: 37961998663
+      db_storage: -1
     test:
       contract_storage: 37961998663
       db_storage: 12653999554
     test4:
       contract_storage: 37961998663
       db_storage: 12653999554
-  rotate_after_block:
-    large: 31129628
-    medium: 3891203
-    small: 243200
-    test: 3891203
-    test4: 3891203
   shared_space: 212799979520
   volume_limits:
     large:
@@ -103,6 +104,11 @@ mainnet:
       max_file_storage_bytes: 3954374860
       max_reserved_storage_bytes: 1318124953
       max_skaled_leveldb_storage_bytes: 3954374860
+    sync_node:
+      max_consensus_storage_bytes: 63269997772
+      max_file_storage_bytes: 63269997772
+      max_reserved_storage_bytes: 21089999257
+      max_skaled_leveldb_storage_bytes: 63269997772
     test:
       max_consensus_storage_bytes: 63269997772
       max_file_storage_bytes: 63269997772
@@ -118,6 +124,7 @@ qanet:
     large: 177599938560
     medium: 22199992320
     small: 1387499520
+    sync_node: 177599938560
     test: 22199992320
     test4: 22199992320
   leveldb_limits:
@@ -130,18 +137,15 @@ qanet:
     small:
       contract_storage: 249749913
       db_storage: 83249971
+    sync_node:
+      contract_storage: 3995998617
+      db_storage: -1
     test:
       contract_storage: 3995998617
       db_storage: 1331999539
     test4:
       contract_storage: 3995998617
       db_storage: 1331999539
-  rotate_after_block:
-    large: 3276803
-    medium: 409600
-    small: 25600
-    test: 409600
-    test4: 409600
   shared_space: 22399942656
   volume_limits:
     large:
@@ -159,6 +163,11 @@ qanet:
       max_file_storage_bytes: 416249856
       max_reserved_storage_bytes: 138749952
       max_skaled_leveldb_storage_bytes: 416249856
+    sync_node:
+      max_consensus_storage_bytes: 6659997696
+      max_file_storage_bytes: 6659997696
+      max_reserved_storage_bytes: 2219999232
+      max_skaled_leveldb_storage_bytes: 6659997696
     test:
       max_consensus_storage_bytes: 6659997696
       max_file_storage_bytes: 6659997696
@@ -174,6 +183,7 @@ testnet:
     large: 177599938560
     medium: 22199992320
     small: 1387499520
+    sync_node: 177599938560
     test: 22199992320
     test4: 22199992320
   leveldb_limits:
@@ -186,18 +196,15 @@ testnet:
     small:
       contract_storage: 249749913
       db_storage: 83249971
+    sync_node:
+      contract_storage: 3995998617
+      db_storage: -1
     test:
       contract_storage: 3995998617
       db_storage: 1331999539
     test4:
       contract_storage: 3995998617
       db_storage: 1331999539
-  rotate_after_block:
-    large: 3276803
-    medium: 409600
-    small: 25600
-    test: 409600
-    test4: 409600
   shared_space: 22399942656
   volume_limits:
     large:
@@ -215,6 +222,11 @@ testnet:
       max_file_storage_bytes: 416249856
       max_reserved_storage_bytes: 138749952
       max_skaled_leveldb_storage_bytes: 416249856
+    sync_node:
+      max_consensus_storage_bytes: 6659997696
+      max_file_storage_bytes: 6659997696
+      max_reserved_storage_bytes: 2219999232
+      max_skaled_leveldb_storage_bytes: 6659997696
     test:
       max_consensus_storage_bytes: 6659997696
       max_file_storage_bytes: 6659997696
