@@ -60,7 +60,7 @@
         "free_contract_deployment": true
     },
     "schain_cmd": [
-        "-v 4",
+        "-v 2",
         "--web3-trace",
         "--aa no"
     ]
