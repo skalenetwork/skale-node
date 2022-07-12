@@ -147,7 +147,7 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:2.1.0-beta.3
+    image: skalenetwork/watchdog:2.1.0-beta.4
     network_mode: host
     environment:
       ALLOWED_TS_DIFF: 300
