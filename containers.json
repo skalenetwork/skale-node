@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.14.15_is-315_read_from_file",
+    "version": "3.14.15_is-348_hack_topTransactions",
     "custom_args": {
       "ulimits_list": [
         {
