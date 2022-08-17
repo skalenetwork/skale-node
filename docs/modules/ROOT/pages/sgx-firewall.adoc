@@ -1,0 +1,99 @@
+= SGXWallet network configuration
+
+== Introduction
+SKALE node infrastructure includes two parts: SKALE node itself and SGX wallet. SGX wallet is a separate server that supports Intel SGX.
+
+For security reasons SKALE node software requires firewall. 
+
+Node firewall is configured by SKALE node software. You can customize the rules though, but **only if you now for sure that it does not break anything**. 
+
+Firewall for SGX server should be configured manually. Expectation is the following: 
+Node is that connected to SGX wallet should be able to send traffic through 1026, 1027, 1031 ports. 
+For others this ports **must be closed**.
+
+Below you can see configuration steps for SGX server that you can use directly or as an example.
+
+== Configuration
+
+=== Assumptions 
+
+Let's assume your SGX wallet deployed to server with ip address `S.S.S.S` and network interface `INT` (you can find actual values using `ip a` command)
+
+Also you have 2 nodes with the following ip addresses:
+
+* A.A.A.A
+* B.B.B.B
+
+Besides 1026,1027 and 1031 ports we will do the same for 1028,1029,1030 ports, because they are also listened by SGX wallet due to historical reasons, although they aren't used.
+
+=== Iptables 
+
+Docker uses iptables under the hood, so it should be already installed on your system. 
+We also recommend to install `iptables-persistent` to make sure custom rules will persists after reboot.
+
+```
+sudo apt-get install iptables-persistent
+```
+
+=== Rules
+
+Since SGX is running using docker, we need to add custom configuration to DOCKER-USER chain.
+
+==== Insert rule to DROP traffic to docker containers for 1026-1031 ports
+
+This will prevent anyone except host to connect to docker exposed ports.
+```shell
+sudo iptables -I DOCKER-USER -i INT -p tcp -m multiport --dports 1026,1027,1028,1029,1030,1031 -j DROP
+```
+
+==== Insert rules to ALLOW traffic from nodes 
+
+The following rules will open all exposed ports to `A.A.A.A` and `B.B.B.B`:
+```shell
+sudo iptables -I DOCKER-USER -s A.A.A.A -i INT -p tcp -m multiport --dports 1026,1027,1028,1029,1030,1031 -j ACCEPT
+sudo iptables -I DOCKER-USER -s B.B.B.B -i INT -p tcp -m multiport --dports 1026,1027,1028,1029,1030,1031 -j ACCEPT
+```
+
+Inserting in iptables is "adding on top", so the rules will be processed before the one, that was inserted in the previous section. 
+
+==== Save rules
+
+To make rules persistent the following command is needed:
+
+```shell
+sudo iptables-save > /etc/iptables/rules.v4
+```
+
+=== Checking 
+
+To test the setup we can ssh from nodes `A.A.A.A`(`B.B.B.B`) and try to connect to SGX using `telnet`.
+
+You can see the command for 1026 below:
+```shell
+telnet S.S.S.S 1026
+```
+
+You should see the following output:
+
+```shell
+Trying S.S.S.S...
+Connected to S.S.S.S.
+Escape character is '^]'.
+```
+
+**All other clients** should hang on the step and eventually return timeout:
+
+```shell
+Trying S.S.S.S...
+telnet: Unable to connect to remote host: Connection timed out
+```
+
+You can also use other tools such as `nmap` to examine ports.
+
+=== Additional information
+
+More information about iptables can be found https://wiki.archlinux.org/title/Iptables[here].
+
+Additional information about docker iptables configuration in https://docs.docker.com/network/iptables/#restrict-connections-to-the-docker-host[official docker docs].
+
+SKALE node setup guide can be found in https://docs.skale.network/network/v2.0.x/setup-process[the offical SKALE docs]

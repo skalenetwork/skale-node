@@ -3,3 +3,4 @@
 * xref:compliance-requirements.adoc[Compliance Requirements]
 * xref:v2-upgrade.adoc[V2 Upgrade]
 * xref:v2-amsterdam-hotfix.adoc[V2 Amsterdam hotfix]
+* xref:sgx-firewall.adoc[SGXWallet firewall setup]
