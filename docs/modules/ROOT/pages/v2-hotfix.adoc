@@ -21,6 +21,8 @@ Make sure the following options are set
 [source, subs="attributes"]
 ----
 CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
+IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
 ----
 
 === Perform update
