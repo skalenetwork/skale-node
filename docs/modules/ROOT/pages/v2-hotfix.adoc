@@ -1,10 +1,12 @@
-= {Network} V2 Hotfix
+= {Network} V2 Hotfix 5
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
 
-
 == Update node using skale node update
+
+[IMPORTANT]
+During the update procedure any image is not a base of any container will be removed
 
 === Change directory
 
