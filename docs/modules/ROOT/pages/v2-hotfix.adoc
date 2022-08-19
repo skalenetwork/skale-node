@@ -6,7 +6,7 @@ include::parameters.adoc[]
 == Update node using skale node update
 
 [IMPORTANT]
-During the update procedure any image is not a base of any container will be removed
+During the update procedure any image that is not a base of any container will be removed
 
 === Change directory
 
