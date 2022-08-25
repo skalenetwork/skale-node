@@ -3,6 +3,23 @@ include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
 
+== Install SKALE Node CLI
+
+=== Download the SKALE Node CLI binary
+
+Make sure `VERSION_NUM` is `{node-cli}`
+
+```shell
+VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/skale-node-cli/releases/download/$VERSION_NUM/skale-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/skale"
+
+```
+
+=== Make the SKALE Node CLI binary executable
+
+```shell
+sudo chmod +x /usr/local/bin/skale
+```
+
 == Update node using skale node update
 
 [IMPORTANT]
