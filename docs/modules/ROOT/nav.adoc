@@ -1,5 +1,4 @@
 * xref:index.adoc[Overview]
 * xref:setup-process.adoc[Setup Process]
 * xref:compliance-requirements.adoc[Compliance Requirements]
-* xref:v2-upgrade.adoc[V2 Upgrade]
-* xref:v2-amsterdam-hotfix.adoc[V2 Amsterdam hotfix]
+* xref:v2-hotfix.adoc[V2 Hotfix 5]
