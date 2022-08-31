@@ -61,11 +61,14 @@ Test: `http://YOUR_SKALE_NODE_IP:3009/status/sgx`
 
 Example response: `{"data": {"status": 0, "status_name": "CONNECTED", "sgx_wallet_version": "1.75.0"}, "error": null}%`
 
-=== Geth Endpoint
+=== ETH Mainnet Endpoint
 
-* Must be actual Geth node, not Infura or other service providers
-* 1 Geth server for every <= 5 SKALE Nodes (not tested, but required)
-* Geth v{geth-version} (Berlin hard-fork support not tested, but required)
+After The Merge a Mainnet node operator must run both an execution client and a consensus client at the same time. 
+
+[IMPORTANT]
+It is a requirement to run Geth as an execution client. 
+
+We highly recommend using Prysm as a consensus client because it's the one which SKALE software is being tested on. You can find complete installation instructions https://docs.prylabs.network/docs/install/install-with-script[here]. 
 
 Test: `http://YOUR_SKALE_NODE_IP:3009/status/endpoint`
 
