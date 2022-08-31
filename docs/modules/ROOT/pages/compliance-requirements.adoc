@@ -68,7 +68,7 @@ After The Merge a Mainnet node operator must run both an execution client and a 
 [IMPORTANT]
 It is a requirement to run Geth as an execution client. 
 
-We highly recommend using Prysm as a consensus client because it's the one which SKALE software is being tested on. You can find complete installation instructions https://docs.prylabs.network/docs/install/install-with-script[here]. 
+We highly recommend using Prysm as a consensus client because it's the one which SKALE software is being tested on. You can find complete installation instructions here: https://docs.prylabs.network/docs/install/install-with-script . 
 
 Test: `http://YOUR_SKALE_NODE_IP:3009/status/endpoint`
 
