@@ -18,6 +18,15 @@ processors:
 #    target: "json"
     target: ""
     overwrite_keys: true
+- script:
+    lang: javascript
+    source: >
+      function process(event) {
+          var msg = event.Get("message");
+          msg = msg.replace(/\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/ig, "HIDDEN");
+          msg = msg.replace(/NEK\:\w+/ig, "HIDDEN");
+          event.Put("message", msg);
+      }
 
 output.logstash:
   hosts: ${FILEBEAT_HOST}
