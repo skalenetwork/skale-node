@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.14.15_is-348_reinsert_transactions",
+    "version": "OlehTestLogsImprovements",
     "custom_args": {
       "ulimits_list": [
         {
