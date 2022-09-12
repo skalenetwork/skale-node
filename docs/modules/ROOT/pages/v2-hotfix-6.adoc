@@ -1,4 +1,4 @@
-= {Network} ChainId Fix
+= {Network} Hotfix 6
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1

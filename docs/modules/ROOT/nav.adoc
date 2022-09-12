@@ -1,5 +1,5 @@
 * xref:index.adoc[Overview]
 * xref:setup-process.adoc[Setup Process]
 * xref:compliance-requirements.adoc[Compliance Requirements]
-* xref:v2-hotfix.adoc[V2 Hotfix 5]
-* xref:chain-id-fix.adoc[ChainId Fix]
+* xref:v2-hotfix-5.adoc[V2 Hotfix 5]
+* xref:v2-hotfix-6.adoc[V2 Hotfix 6]
