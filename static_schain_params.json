@@ -55,12 +55,12 @@
         }
     },
     "schain": {
-        "snapshot_interval_sec": 3600,
+        "snapshot_interval_sec": 1800,
         "empty_block_interval_ms": 10000,
         "free_contract_deployment": true
     },
     "schain_cmd": [
-        "-v 2",
+        "-v 3",
         "--web3-trace",
         "--aa no"
     ]
