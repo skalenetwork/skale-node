@@ -1,0 +1,29 @@
+= {Network} Hotfix 6
+include::parameters.adoc[]
+:sectnums:
+:sectnumlevels: 1
+
+== Update node using skale node update
+
+=== Change directory
+
+```shell
+cd  ~ && vi .env
+```
+
+=== Update .env
+
+Make sure the following options are set
+
+[source, subs="attributes"]
+----
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+----
+
+=== Perform update
+
+Run skale node update:
+
+```shell
+skale node update .env
+```
