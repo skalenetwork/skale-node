@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "OlehTestLogsImprovements",
+    "version": "3.14.15-stable.2",
     "custom_args": {
       "ulimits_list": [
         {
