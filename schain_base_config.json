@@ -20,7 +20,8 @@
 		"difficultyBoundDivisor": "0x0800",
 		"durationLimit": "0x0d",
 		"blockReward": "0x4563918244F40000",
-		"externalGasDifficulty": "0x01"
+		"externalGasDifficulty": "0x01",
+		"skaleDisableChainIdCheck": true
 	},
 	"unddos": {
 		"origins": [
