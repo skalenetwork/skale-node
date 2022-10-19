@@ -16,7 +16,7 @@ services:
   skale-sync-admin:
     <<: *skale_base
     container_name: skale_sync_admin
-    image: skalenetwork/admin:2.4.0-sync-node.7
+    image: skalenetwork/admin:2.11.0-beta-sync-node.0
     network_mode: host
     tty: true
     cap_add:
@@ -32,6 +32,7 @@ services:
       - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+      - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
     healthcheck:
       test: ["CMD", "python3", "healthchecks/admin.py"]
       interval: 1m
