@@ -41,7 +41,7 @@
 :DOCKER_LVMPY_STREAM: 1.0.2-stable.0
 :MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/skale-manager/1.9.2/skale-manager-1.9.2-mainnet-abi.json
 :IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/IMA/1.3.2/mainnet/abi.json
-:CONTAINER_CONFIGS_STREAM: 2.1.11
+:CONTAINER_CONFIGS_STREAM: 2.1.12
 :FILEBEAT_HOST: filebeat.mainnet.skalenodes.com:5000
 :DISABLE_IMA: False
 :ENV_TYPE: mainnet
