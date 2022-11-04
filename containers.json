@@ -11,7 +11,7 @@
         }
       ],
       "logs": {
-        "max-size": "250m",
+        "max-size": "1024m",
         "max-file": "5"
       }
     },
