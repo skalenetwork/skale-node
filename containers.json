@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.14.9-beta.10",
+    "version": "3.14.15-v1-noSnapshot-syncNode",
     "custom_args": {
       "ulimits_list": [
         {
@@ -11,7 +11,7 @@
         }
       ],
       "logs": {
-        "max-size": "1024m",
+        "max-size": "3024m",
         "max-file": "5"
       }
     },
