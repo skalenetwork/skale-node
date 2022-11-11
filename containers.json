@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.14.15-noSnapshot-syncNode-1",
+    "version": "3.14.15-getLogs-on-syncNode",
     "custom_args": {
       "ulimits_list": [
         {
