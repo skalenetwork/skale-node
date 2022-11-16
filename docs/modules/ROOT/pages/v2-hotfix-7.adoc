@@ -1,17 +1,9 @@
-= {Network} Amsterdam hotfix (Skaled 31-bit chainId compatibility)
+= {Network} V2 Hotfix 7
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
 
-== Update node using skale node update
-
-=== Change directory
-
-```shell
-cd  ~ && vi .env
-```
-
-=== Update .env
+== Update .env
 
 Make sure the following options are set
 
@@ -20,7 +12,7 @@ Make sure the following options are set
 CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
 ----
 
-=== Perform update
+== Perform update
 
 Run skale node update:
 
