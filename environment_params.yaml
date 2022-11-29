@@ -38,7 +38,7 @@ envs:
       docker-compose: 1.27.4
 
     patches:
-      revertableFSPatchTimestamp: 1000000,
+      revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
 
   testnet:
@@ -62,7 +62,7 @@ envs:
       docker-compose: 1.27.4
 
     patches:
-      revertableFSPatchTimestamp: 1000000,
+      revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
 
   qanet:
@@ -86,7 +86,7 @@ envs:
       docker-compose: 1.27.4
 
     patches:
-      revertableFSPatchTimestamp: 1000000,
+      revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
 
   devnet:
@@ -110,5 +110,5 @@ envs:
       docker-compose: 1.27.4
 
     patches:
-      revertableFSPatchTimestamp: 1000000,
+      revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
