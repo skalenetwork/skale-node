@@ -37,6 +37,10 @@ envs:
       docker-engine: 20.10.7
       docker-compose: 1.27.4
 
+    patches:
+      revertableFSPatchTimestamp: 1000000
+      contractStoragePatchTimestamp: 1000000
+
   testnet:
     server:
       cpu_total: 8
@@ -56,6 +60,10 @@ envs:
       docker-api: 1.41.0
       docker-engine: 20.10.7
       docker-compose: 1.27.4
+
+    patches:
+      revertableFSPatchTimestamp: 1000000
+      contractStoragePatchTimestamp: 1000000
 
   qanet:
     server:
@@ -77,6 +85,10 @@ envs:
       docker-engine: 20.10.7
       docker-compose: 1.27.4
 
+    patches:
+      revertableFSPatchTimestamp: 1000000
+      contractStoragePatchTimestamp: 1000000
+
   devnet:
     server:
       cpu_total: 1
@@ -96,3 +108,7 @@ envs:
       docker-api: 1.41.0
       docker-engine: 20.10.7
       docker-compose: 1.27.4
+
+    patches:
+      revertableFSPatchTimestamp: 1000000
+      contractStoragePatchTimestamp: 1000000
