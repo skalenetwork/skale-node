@@ -198,7 +198,7 @@ testnet:
       db_storage: 83249971
     sync_node:
       contract_storage: 3995998617
-      db_storage: -1
+      db_storage: 1331999539
     test:
       contract_storage: 3995998617
       db_storage: 1331999539
