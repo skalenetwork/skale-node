@@ -64,29 +64,29 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
 
   testnet:
     server:
@@ -136,29 +136,29 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
 
   qanet:
     server:
@@ -208,29 +208,29 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
 
 
   devnet:
@@ -281,26 +281,26 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 100000
-        maxOpenLeveldbFiles: 256
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
