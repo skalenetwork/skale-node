@@ -16,7 +16,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:2.0.1-develop.13
+    image: skalenetwork/transaction-manager:2.1.4-beta.1
     network_mode: host
     tty: true
     environment:
@@ -29,7 +29,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:2.3.0-develop.10
+    image: skalenetwork/admin:2.4.0-beta.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -52,6 +52,7 @@ services:
       MAX_ALLOWED_LOG_TIME_DIFF: 600
       DISABLE_IMA: ${DISABLE_IMA}
       ENV_TYPE: ${ENV_TYPE}
+      ALLOWED_TS_DIFF: 300
     command: "python3 admin.py"
     volumes:
       - /var/run/skale:/var/run/skale
@@ -67,7 +68,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:2.3.0-develop.10
+    image: skalenetwork/admin:2.4.0-beta.0
     network_mode: host
     tty: true
     cap_add:
@@ -91,6 +92,7 @@ services:
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       ENV_TYPE: ${ENV_TYPE}
+      ALLOWED_TS_DIFF: 300
     command: "gunicorn app:app -c gunicorn.conf.py"
     volumes:
       - /var/run/skale:/var/run/skale
@@ -100,7 +102,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:2.3.0-develop.10
+    image: skalenetwork/admin:2.4.0-beta.0
     network_mode: host
     tty: true
     environment:
@@ -128,7 +130,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:2.0.1-beta.0
+    image: skalenetwork/bounty-agent:2.1.2-beta.0
     network_mode: host
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
@@ -137,6 +139,7 @@ services:
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      ALLOWED_TS_DIFF: 300
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
@@ -144,9 +147,10 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:2.0.0-develop.7
+    image: skalenetwork/watchdog:2.1.1-beta.1
     network_mode: host
     environment:
+      ALLOWED_TS_DIFF: 300
       FLASK_APP_PORT: 3010
       FLASK_APP_HOST: "127.0.0.1"
       FLASK_DEBUG_MODE: "False"
