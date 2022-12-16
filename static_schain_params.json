@@ -60,12 +60,8 @@
         "free_contract_deployment": true
     },
     "schain_cmd": [
-        "-v 3",
+        "-v 2",
         "--web3-trace",
-        "--enable-debug-behavior-apis",
-        "--enable-personal-apis",
-        "--enable-admin-apis",
-        "--enable-performance-tracker-apis",
         "--aa no"
     ]
 }
