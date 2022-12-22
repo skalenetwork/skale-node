@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.14.15-sync.17",
+    "version": "3.14.15-sync.17-optimized",
     "custom_args": {
       "ulimits_list": [
         {
