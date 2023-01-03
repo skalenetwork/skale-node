@@ -37,6 +37,7 @@ envs:
       docker-compose: 1.27.4
 
     schain:
+      contractStorageZeroValuePatchTimestamp: 1000000
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
       snapshotIntervalSec: 86400
@@ -111,6 +112,7 @@ envs:
       docker-compose: 1.27.4
 
     schain:
+      contractStorageZeroValuePatchTimestamp: 1000000
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
       snapshotIntervalSec: 86400
@@ -185,6 +187,7 @@ envs:
       docker-compose: 1.27.4
 
     schain:
+      contractStorageZeroValuePatchTimestamp: 1000000
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
       snapshotIntervalSec: 86400
@@ -259,6 +262,7 @@ envs:
       docker-compose: 1.27.4
 
     schain:
+      contractStorageZeroValuePatchTimestamp: 1000000
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
       snapshotIntervalSec: 86400
