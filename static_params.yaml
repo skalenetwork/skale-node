@@ -40,7 +40,7 @@ envs:
       contractStorageZeroValuePatchTimestamp: 1000000
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
-      snapshotIntervalSec: 86400
+      snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
@@ -115,7 +115,7 @@ envs:
       contractStorageZeroValuePatchTimestamp: 1000000
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
-      snapshotIntervalSec: 86400
+      snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
@@ -190,7 +190,7 @@ envs:
       contractStorageZeroValuePatchTimestamp: 1000000
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
-      snapshotIntervalSec: 86400
+      snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
@@ -265,7 +265,7 @@ envs:
       contractStorageZeroValuePatchTimestamp: 1000000
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
-      snapshotIntervalSec: 86400
+      snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
