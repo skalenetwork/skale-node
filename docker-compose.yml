@@ -130,7 +130,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:2.1.2-beta.0
+    image: skalenetwork/bounty-agent:2.1.2-beta.1
     network_mode: host
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
