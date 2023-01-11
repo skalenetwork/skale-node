@@ -10,7 +10,9 @@
     "current_node_info": {
         "bind_ip": "0.0.0.0",
         "log_level": "info",
-        "log_level_config": "info"
+        "log_level_config": "info",
+        "pg_threads": 10,
+        "pg_threads_limit": 10
     },
     "cache_options": {
         "small": {
@@ -27,7 +29,7 @@
             "collection_queue_size": 20,
             "collection_duration": 60,
             "transaction_queue_size": 100000,
-            "max_open_leveldb_files": 256
+            "max_open_leveldb_files": 1000
         },
         "sync_node": {
             "min_cache_size": 32000000,
@@ -35,7 +37,7 @@
             "collection_queue_size": 20,
             "collection_duration": 60,
             "transaction_queue_size": 100000,
-            "max_open_leveldb_files": 256
+            "max_open_leveldb_files": 1000
         },
         "large": {
             "min_cache_size": 8000000,
@@ -43,7 +45,7 @@
             "collection_queue_size": 20,
             "collection_duration": 60,
             "transaction_queue_size": 100000,
-            "max_open_leveldb_files": 256
+            "max_open_leveldb_files": 1000
         },
         "test": {
             "min_cache_size": 8000000,
@@ -51,7 +53,7 @@
             "collection_queue_size": 20,
             "collection_duration": 60,
             "transaction_queue_size": 100000,
-            "max_open_leveldb_files": 256
+            "max_open_leveldb_files": 1000
         },
         "test4": {
             "min_cache_size": 8000000,
@@ -59,7 +61,7 @@
             "collection_queue_size": 20,
             "collection_duration": 60,
             "transaction_queue_size": 100000,
-            "max_open_leveldb_files": 256
+            "max_open_leveldb_files": 1000
         }
     },
     "schain": {
