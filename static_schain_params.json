@@ -28,7 +28,7 @@
             "max_cache_size": 16000000,
             "collection_queue_size": 20,
             "collection_duration": 60,
-            "transaction_queue_size": 100000,
+            "transaction_queue_size": 1000,
             "max_open_leveldb_files": 1000
         },
         "sync_node": {
@@ -36,7 +36,7 @@
             "max_cache_size": 64000000,
             "collection_queue_size": 20,
             "collection_duration": 60,
-            "transaction_queue_size": 100000,
+            "transaction_queue_size": 1000,
             "max_open_leveldb_files": 1000
         },
         "large": {
@@ -44,7 +44,7 @@
             "max_cache_size": 16000000,
             "collection_queue_size": 20,
             "collection_duration": 60,
-            "transaction_queue_size": 100000,
+            "transaction_queue_size": 1000,
             "max_open_leveldb_files": 1000
         },
         "test": {
@@ -52,7 +52,7 @@
             "max_cache_size": 16000000,
             "collection_queue_size": 20,
             "collection_duration": 60,
-            "transaction_queue_size": 100000,
+            "transaction_queue_size": 1000,
             "max_open_leveldb_files": 1000
         },
         "test4": {
@@ -60,7 +60,7 @@
             "max_cache_size": 16000000,
             "collection_queue_size": 20,
             "collection_duration": 60,
-            "transaction_queue_size": 100000,
+            "transaction_queue_size": 1000,
             "max_open_leveldb_files": 1000
         }
     },
