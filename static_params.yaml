@@ -40,6 +40,7 @@ envs:
       contractStorageZeroValuePatchTimestamp: 1000000
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
+      verifyDaSigsPatchTimestamp: 1000000
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -115,6 +116,7 @@ envs:
       contractStorageZeroValuePatchTimestamp: 1674208800
       revertableFSPatchTimestamp: 1674219600
       contractStoragePatchTimestamp: 1674230400
+      verifyDaSigsPatchTimestamp: 1674230400
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
