@@ -22,7 +22,6 @@
 		"blockReward": "0x4563918244F40000",
 		"externalGasDifficulty": "0x01",
 		"skaleDisableChainIdCheck": true
-
 	},
 	"unddos": {
 		"origins": [
@@ -30,13 +29,20 @@
 				"origin": [
 					"*"
 				],
-				"ban_lengthy": 120,
-				"ban_peak": 15,
-				"max_calls_per_minute": 1000000000,
-				"max_calls_per_second": 1000000000,
+				"ban_lengthy": 30,
+				"ban_peak": 10,
+				"max_calls_per_minute": 60000,
+				"max_calls_per_second": 1000,
 				"max_ws_conn": 20000
 			}
-		]
+		],
+		"global": {
+			"ban_lengthy": 30,
+			"ban_peak": 10,
+			"max_calls_per_minute": 300000,
+			"max_calls_per_second": 5000,
+			"max_ws_conn": 20000
+		}
 	},
 	"genesis": {
 		"nonce": "0x0000000000000042",
