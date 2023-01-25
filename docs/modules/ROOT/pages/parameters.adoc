@@ -39,9 +39,9 @@
 
 // environment variables
 :DOCKER_LVMPY_STREAM: 1.0.2-stable.0
-:MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/rinkeby/skale-manager/1.9.2/abi.json
-:IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/rinkeby/IMA/1.3.2-stable.1/mainnet/abi.json
-:CONTAINER_CONFIGS_STREAM: 2.1.10
+:MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/staging-v3/skale-manager/1.9.2/manager.json
+:IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/staging-v3/IMA/1.3.4-rc.0/mainnet/ima.json
+:CONTAINER_CONFIGS_STREAM: 2.1.12
 :FILEBEAT_HOST: filebeat.testnet.skalenodes.com:5001
 :DISABLE_IMA: False
 :ENV_TYPE: testnet
