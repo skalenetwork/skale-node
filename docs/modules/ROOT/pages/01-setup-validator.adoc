@@ -45,7 +45,7 @@ Validator CLI doesn't have to be installed in the same server as the node-cli. T
 
 ===== Download the SKALE Validator CLI binary
 
-`VERSION_NUM` is a version identifier and equals {VERSION_NUM}
+`VERSION_NUM` is a version identifier and equals {node-cli}
 
 ```shell
 VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/validator-cli/releases/download/$VERSION_NUM/sk-val-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/sk-val"
