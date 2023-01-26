@@ -9,12 +9,13 @@ Initially testnet node was connected to test SKALE Network which was connected t
 It is a perfect opportunity to combine validators testnet and dapp testnet into one test SKALE Network infrastructure which connected to Goerli.
 
 Node requirements for validators:
- - Please follow this guide to move your testnet node to test SKALE Network infrastructure which connected to Goerli
- - Run only ONE node(if you had more than 1 nodes please move only one and turn off the others)
+
+* Please follow this guide to move your testnet node to test SKALE Network infrastructure which connected to Goerli
+* Run only ONE node(if you had more than 1 nodes please move only one and turn off the others)
 
 == Prune node data
 
-Please run following commands in SKALE Node CLI on the machine to prune the old testnet node data:
+Please run following commands on the machine to prune the old testnet node data:
 
 === Turn-off SKALE node on current machine
 
