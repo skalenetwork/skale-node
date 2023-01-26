@@ -1,4 +1,4 @@
 * xref:index.adoc[Overview]
 * xref:setup-process.adoc[Setup Process]
 * xref:compliance-requirements.adoc[Compliance Requirements]
-* xref:v2-hotfix.adoc[V2 hotfix]
+* xref:move-to-goerli.adoc[Move to Goerli]

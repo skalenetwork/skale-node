@@ -25,14 +25,6 @@ Be ready to fund Rinkeby ETH in your self-recharging wallet (SRW). See xref:vali
 
 *Minimum Rinkeby ETH*: latexmath:[0.5 \bullet node count]
 
-==== Decide your commission fee
-
-Decide on your commission fee. This cannot be changed once it is set. To set a new commission fee, you'll have to register a new validator. This new validator would have to link nodes and accept delegations for it (old validator nodes and delegations cannot be rolled into a new validator commission fee).
-
-.Reference Documents
-* https://skale.network/blog/validator-economics/[Validator & Token Economics]
-* https://skale.network/tokenomics[Tokenomics]
-
 === Register Validator
 
 SKALE Validator CLI is the validator client interface for registering a new validator into network or handling additional delegation services where validators can self delegate or token holders can delegate to a validator. These are the type of operations that can be done with the Validator CLI:
@@ -53,7 +45,7 @@ Validator CLI doesn't have to be installed in the same server as the node-cli. T
 
 ===== Download the SKALE Validator CLI binary
 
-`VERSION_NUM` is a version identifier
+`VERSION_NUM` is a version identifier and equals {node-cli}
 
 ```shell
 VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/validator-cli/releases/download/$VERSION_NUM/sk-val-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/sk-val"
@@ -73,9 +65,9 @@ sk-val init -e [ENDPOINT] -c [ABI] --wallet [software/ledger]
 
 Required arguments:
 
--   `--endpoint/-e` - RPC endpoint of the node in the network where SKALE manager is deployed (`http` or `https`) Example: <https://my.geth.node.ip/..>.
+-   `--endpoint/-e` - RPC endpoint of the node in the network(Goerli ethereum testnet) where SKALE manager is deployed (`http` or `https`) Example: <https://my.geth.node.ip/..>.
 
--   `--contracts-url/-c` - URL to SKALE Manager contracts ABI and addresses
+-   `--contracts-url/-c` - URL to SKALE Manager contracts ABI and addresses(copy link from step 1.1.3)
 
 -   `-w/--wallet` - Type of the wallet that will be used for signing transactions (software or ledger)
 
@@ -86,6 +78,8 @@ Required arguments:
 If you want to use software wallet you need to save private key into a file.
 
 Replace `[YOUR PRIVATE KEY]` with your wallet private key
+
+===== (Recommended option, you can generate an ethereum address in Metamask and copy paste a private key from it.)
 
 ```shell
 echo [YOUR PRIVATE KEY] > ./pk.txt
@@ -120,8 +114,8 @@ Required arguments:
 
 -   `--name/-n` - Validator name
 -   `--description/-d` - Validator description (preferably organization info)
--   `--commission-rate/-c` - Commission rate (percent %)
--   `--min-delegation` - Validator minimum delegation amount
+-   `--commission-rate/-c` - Commission rate (percent %) - Set `0` for testnet
+-   `--min-delegation` - Validator minimum delegation amount - Set `0` for testnet
 
 Optional arguments:
 

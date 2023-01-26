@@ -262,29 +262,3 @@ The `skale node backup` command archives the data which you can download and sto
 To restore the node you should use `skale node restore`
 
 More information can be found xref:node-cli::index.adoc#_node_backup[here].
-
-=== Accept Delegations
-
-Every delegation need to be accepted. You can do it using `sk-val validator accept-delegation` command:
-
-```shell
-sk-val validator accept-delegation --delegation-id [DELEGATION-ID] 
-```
-
-Required arguments:
-
--   `--delegation-id` - Delegation id to accept
-
-Optional arguments:
-
--   `--pk-file` - Path to file with private key (only for software wallet type)
--   `--gas-price` - Gas price value in Gwei for transaction (if not specified doubled average network value will be used)
--   `--yes` - Confirmation flag
-
-You can get [DELEGATION-ID] by running `sk-val validator delegations`:
-
-```shell
-sk-val validator delegations [VALIDATOR_ID]
-```
-
-You will see your pending delegation (`PENDING` status)  as well as already accepted ones (`DELEGATED` status).
