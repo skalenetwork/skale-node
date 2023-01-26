@@ -28,9 +28,9 @@ skale node turn-off --yes
 ```shell
 systemctl disable docker-lvmpy
 
-lvremove schains
+lvremove -f schains
 
-vgremove schains
+vgremove -f schains
 
 rm -r .skale 
 ```
