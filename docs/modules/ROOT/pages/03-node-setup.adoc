@@ -50,8 +50,9 @@ If you have any concerns or questions, please don't hesitate to reach out to SKA
 
 === Download the executable
 
+[source, subs="attributes"]
 ```shell
-sudo -E bash -c "curl -L {node-cli} >  /usr/local/bin/skale"
+sudo -E bash -c "curl -L {node-cli-url} >  /usr/local/bin/skale"
 ```
 
 === Apply executable permissions to the downloaded binary:
@@ -85,7 +86,8 @@ Configuration parameters are passed to Node CLI through .env file. It should con
 -   `IMA_ENDPOINT` - IMA endpoint to connect (should be the same as `ENDPOINT`).
 -   `MANAGER_CONTRACTS_ABI_URL` - URL to SKALE Manager contracts ABI and addresses
 -   `SGX_SERVER_URL` - URL to SGX server in the network 
--   `ENV_TYPE` - network type (mainnet/testnet)
+-   `ENV_TYPE` - network type (testnet)
+-   `MONITORING_CONTAINERS` - set to False
 
 
 `ENDPOINT`, `IMA_ENDPOINT`, `SGX_SERVER_URL`, `DISK_MOUNTPOINT` are server dependent. Other options depend on the network type.
@@ -94,6 +96,7 @@ For the `{ENV_TYPE}` network .env will look like:
 
 [source, subs="attributes"]
 ----
+MONITORING_CONTAINERS=False
 CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
 DOCKER_LVMPY_STREAM={DOCKER_LVMPY_STREAM}
 FILEBEAT_HOST={FILEBEAT_HOST}

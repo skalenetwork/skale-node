@@ -1,21 +1,21 @@
-= {Network} Move to goerli
+= {Network} Move to Goerli
 include::parameters.adoc[]
 :sectnums:
 :sectnumlevels: 1
 
-This page is a guide how to connect a testnet node to goerli.
+This page is a guide how to connect a testnet node to Goerli.
 
 Initially testnet node was connected to test SKALE Network which was connected to Rinkeby, which became outdated in October 2022.
 It is a perfect opportunity to combine validators testnet and dapp testnet into one test SKALE Network infrastructure which connected to Goerli.
 
 Node requirements for validators:
 
-* Please follow this guide to move your testnet node to test SKALE Network infrastructure which connected to Goerli
+* Please follow this guide to connect your node to a new SKALE Testnet
 * Run only ONE node(if you had more than 1 nodes please move only one and turn off the others)
 
 == Prune node data
 
-Please run following commands on the machine to prune the old testnet node data:
+Please run following commands on the node machine to cleanup the old testnet data:
 
 === Turn-off SKALE node on current machine
 
@@ -28,6 +28,8 @@ skale node turn-off --yes
 ```shell
 systemctl disable docker-lvmpy
 
+umount /mnt/schains-shared-space
+
 lvremove -f schains
 
 vgremove -f schains
@@ -37,7 +39,7 @@ rm -r .skale
 
 == Setup a node
 
-Please follow the updated xref:setup-process.adoc[Setup process] doc to setup a node connected to test SKALE Network infrastructure which connected to Goerli.
+Please follow the updated xref:setup-process.adoc[Setup process] doc to setup a node connected to connected to Goerli.
 
 Thanks!
 

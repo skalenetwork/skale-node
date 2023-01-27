@@ -16,10 +16,6 @@ sudo skale node register --name [NODE_NAME] --ip [NODE_IP] --domain [DOMAIN_NAME
 
 ```
 
-Optional arguments:
-
--   `--port` - beginning of the port range that will be used for skale schains (`10000` by default)
-
 **Output:**
 
 ```shell
