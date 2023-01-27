@@ -37,7 +37,7 @@ rm -r .skale
 
 == Setup a node
 
-Please follow the updated xref:network::setup-process.adoc[Setup process] doc to setup a node connected to test SKALE Network infrastructure which connected to Goerli.
+Please follow the updated xref:setup-process.adoc[Setup process] doc to setup a node connected to test SKALE Network infrastructure which connected to Goerli.
 
 Thanks!
 
