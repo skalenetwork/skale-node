@@ -99,7 +99,7 @@ Required arguments:
 -   `--keys-type` - Type of the Ledger keys (live or legacy)
 
 [IMPORTANT]
-Make sure you enabled blind signing on Rinkeby ETH application settings. Otherwise transactions won't work
+Make sure you enabled blind signing on Goerli ETH application settings. Otherwise transactions won't work
 
 ==== Register as a new SKALE validator
 
