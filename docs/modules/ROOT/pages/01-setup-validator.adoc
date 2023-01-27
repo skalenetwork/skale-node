@@ -7,23 +7,25 @@
 
 Get a Ledger, Hardware or Software wallet ready like Metamask/Portis/Bitski/Torus/myetherwallet. Specific setup instructions will follow.
 
-This wallet will be used for receiving delegation, bounties, and self delegating. 
+Software wallet is enough to use on testnet.
 
-==== Fund Validator Wallet with Rinkeby ETH
+This wallet will be used for send txs on goerli(register node, register validator)
 
-Be ready to have some Rinkeby ETH to accept delegations and link your validator node. Remember these are transactions with SKALE Manager on Rinkeby, and therefore require Rinkeby ETH.
+==== Fund Validator Wallet with Goerli ETH
 
-*Minimum Rinkeby ETH: 1.0*
+You need to have some Goerli ETH to link your validator node. Remember these are transactions with SKALE Manager on Goerli, and therefore require Goerli ETH.
+
+*Minimum Goerli ETH: 1.0*
 
 ==== Get SKALE Manager contract ABIs from SKALE
 
 {MANAGER_CONTRACTS_ABI_URL}
 
-==== Fund SRW Wallet with Rinkeby ETH
+==== Fund SRW Wallet with Goerli ETH
 
-Be ready to fund Rinkeby ETH in your self-recharging wallet (SRW). See xref:validator-cli::self-recharging-wallets.adoc[Self-recharging wallet documentation].
+You need to fund Goerli ETH in your self-recharging wallet (SRW). See xref:validator-cli::self-recharging-wallets.adoc[Self-recharging wallet documentation].
 
-*Minimum Rinkeby ETH*: latexmath:[0.5 \bullet node count]
+*Minimum Goerli ETH*: latexmath:[0.5]
 
 === Register Validator
 
@@ -45,7 +47,7 @@ Validator CLI doesn't have to be installed in the same server as the node-cli. T
 
 ===== Download the SKALE Validator CLI binary
 
-`VERSION_NUM` is a version identifier and equals {node-cli}
+`VERSION_NUM` is a version identifier and equals {validator-cli}
 
 ```shell
 VERSION_NUM=[VERSION_NUM] && sudo -E bash -c "curl -L https://github.com/skalenetwork/validator-cli/releases/download/$VERSION_NUM/sk-val-$VERSION_NUM-`uname -s`-`uname -m` >  /usr/local/bin/sk-val"
@@ -67,7 +69,7 @@ Required arguments:
 
 -   `--endpoint/-e` - RPC endpoint of the node in the network(Goerli ethereum testnet) where SKALE manager is deployed (`http` or `https`) Example: <https://my.geth.node.ip/..>.
 
--   `--contracts-url/-c` - URL to SKALE Manager contracts ABI and addresses(copy link from step 1.1.3)
+-   `--contracts-url/-c` - URL to SKALE Manager contracts ABI and addresses (copy paste this link - {MANAGER_CONTRACTS_ABI_URL})
 
 -   `-w/--wallet` - Type of the wallet that will be used for signing transactions (software or ledger)
 
@@ -78,8 +80,6 @@ Required arguments:
 If you want to use software wallet you need to save private key into a file.
 
 Replace `[YOUR PRIVATE KEY]` with your wallet private key
-
-===== (Recommended option, you can generate an ethereum address in Metamask and copy paste a private key from it.)
 
 ```shell
 echo [YOUR PRIVATE KEY] > ./pk.txt
@@ -99,7 +99,7 @@ Required arguments:
 -   `--keys-type` - Type of the Ledger keys (live or legacy)
 
 [IMPORTANT]
-Make sure you enabled blind signing on Rinkeby ETH application settings. Otherwise transactions won't work
+Make sure you enabled blind signing on Goerli ETH application settings. Otherwise transactions won't work
 
 ==== Register as a new SKALE validator
 
