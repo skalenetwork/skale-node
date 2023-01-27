@@ -1,5 +1,8 @@
 == SGX Setup
 
+[NOTE]
+If you already have SGX server with needed version ({sgxwallet-container}) you can utilize it (set `SGX_SERVER_URL` in `skale node init` config file)
+
 === Overview
 
 **SGX is a secure storage for BLS private key shares, which are used in consensus to sign new blocks. SGX is also used for private key shares.**

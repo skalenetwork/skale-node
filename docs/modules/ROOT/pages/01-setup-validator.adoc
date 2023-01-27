@@ -17,10 +17,6 @@ You need to have some Goerli ETH to link your validator node. Remember these are
 
 *Minimum Goerli ETH: 1.0*
 
-==== Get SKALE Manager contract ABIs from SKALE
-
-{MANAGER_CONTRACTS_ABI_URL}
-
 ==== Fund SRW Wallet with Goerli ETH
 
 You need to fund Goerli ETH in your self-recharging wallet (SRW). See xref:validator-cli::self-recharging-wallets.adoc[Self-recharging wallet documentation].
@@ -114,7 +110,7 @@ Required arguments:
 
 -   `--name/-n` - Validator name
 -   `--description/-d` - Validator description (preferably organization info)
--   `--commission-rate/-c` - Commission rate (percent %) - Set `0` for testnet
+-   `--commission-rate/-c` - Commission rate (percent %) - Set `1` for testnet
 -   `--min-delegation` - Validator minimum delegation amount - Set `0` for testnet
 
 Optional arguments:
