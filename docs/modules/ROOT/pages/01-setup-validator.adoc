@@ -9,21 +9,21 @@ Get a Ledger, Hardware or Software wallet ready like Metamask/Portis/Bitski/Toru
 
 This wallet will be used for receiving delegation, bounties, and self delegating. 
 
-==== Fund Validator Wallet with Rinkeby ETH
+==== Fund Validator Wallet with Goerli ETH
 
-Be ready to have some Rinkeby ETH to accept delegations and link your validator node. Remember these are transactions with SKALE Manager on Rinkeby, and therefore require Rinkeby ETH.
+Be ready to have some Goerli ETH to accept delegations and link your validator node. Remember these are transactions with SKALE Manager on Goerli, and therefore require Goerli ETH.
 
-*Minimum Rinkeby ETH: 1.0*
+*Minimum Goerli ETH: 1.0*
 
 ==== Get SKALE Manager contract ABIs from SKALE
 
 {MANAGER_CONTRACTS_ABI_URL}
 
-==== Fund SRW Wallet with Rinkeby ETH
+==== Fund SRW Wallet with Goerli ETH
 
-Be ready to fund Rinkeby ETH in your self-recharging wallet (SRW). See xref:validator-cli::self-recharging-wallets.adoc[Self-recharging wallet documentation].
+Be ready to fund Goerli ETH in your self-recharging wallet (SRW). See xref:validator-cli::self-recharging-wallets.adoc[Self-recharging wallet documentation].
 
-*Minimum Rinkeby ETH*: latexmath:[0.5 \bullet node count]
+*Minimum Goerli ETH*: latexmath:[0.5 \bullet node count]
 
 === Register Validator
 
