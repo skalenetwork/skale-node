@@ -204,14 +204,14 @@ sudo skale ssl status
 For more details, please see xref:node-cli::node-ssl-setup.adoc[Node SSL docs].
 
 
-=== Fund Node wallet with Rinkeby ETH
+=== Fund Node wallet with Goerli ETH
 
-Some of the node operations send Rinkeby ETH mainnet transaction (e.g. chain creation). So the node wallet should have at least 1 Rinkeby ETH
+Some of the node operations send Goerli ETH mainnet transaction (e.g. chain creation). So the node wallet should have at least 1 Goerli ETH
 
 To get the address you should run `skale wallet info` command.
 
 [NOTE]
-Spent Rinkeby ETH is reimbursed after the transaction was completed.
+Spent Goerli ETH is reimbursed after the transaction was completed.
 
 
 === Sign validator id using SGXWallet
