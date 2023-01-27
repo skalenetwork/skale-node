@@ -3,7 +3,7 @@
 === Register Node with Node CLI
 
 [IMPORTANT]
-Before proceeding, you will need to have at least  **1 Rinkeby ETH**. Also amount of delegated skale tokens need to be more or equal to minimum staking amount.
+Before proceeding, you will need to have at least  **1 Goerli ETH**. Also amount of delegated skale tokens need to be more or equal to minimum staking amount.
 
 To register with the network, you will need to provide the following:
 
