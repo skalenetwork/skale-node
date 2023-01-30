@@ -11,8 +11,8 @@
         "bind_ip": "0.0.0.0",
         "log_level": "info",
         "log_level_config": "info",
-        "pg_threads": 10,
-        "pg_threads_limit": 10
+        "pg_threads": 15,
+        "pg_threads_limit": 15
     },
     "cache_options": {
         "small": {
