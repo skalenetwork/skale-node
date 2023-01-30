@@ -35,14 +35,7 @@
 				"max_calls_per_second": 1000,
 				"max_ws_conn": 20000
 			}
-		],
-		"global": {
-			"ban_lengthy": 30,
-			"ban_peak": 10,
-			"max_calls_per_minute": 300000,
-			"max_calls_per_second": 5000,
-			"max_ws_conn": 20000
-		}
+		]
 	},
 	"genesis": {
 		"nonce": "0x0000000000000042",
