@@ -23,6 +23,13 @@
 		"externalGasDifficulty": "0x01",
 		"skaleDisableChainIdCheck": true
 	},
+    "unddos": {
+            "origins": [
+                    {
+                            "origin": ["*"]
+                    }
+            ]
+    },
 	"genesis": {
 		"nonce": "0x0000000000000042",
 		"difficulty": "0x0",
