@@ -63,9 +63,9 @@ envs:
       docker-compose: 1.27.4
 
     patches:
-      contractStorageZeroValuePatchTimestamp: 1674817200,
-      revertableFSPatchTimestamp: 1674820800,
-      contractStoragePatchTimestamp: 1674824400,
+      contractStorageZeroValuePatchTimestamp: 1674817200
+      revertableFSPatchTimestamp: 1674820800
+      contractStoragePatchTimestamp: 1674824400
       verifyDaSigsPatchTimestamp: 1674828000
 
   qanet:
