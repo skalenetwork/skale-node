@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "skalenetwork/schain:noSnapshotMajorityFix1",
+    "version": "noSnapshotMajorityFix1",
     "custom_args": {
       "ulimits_list": [
         {
