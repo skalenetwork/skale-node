@@ -1,0 +1,90 @@
+= {Network} 2.1 Upgrade
+include::parameters.adoc[]
+:sectnums:
+:sectnumlevels: 1
+
+== Update validator-cli to {validator-cli}
+
+[NOTE]
+This binary is used to execute transactions from validator's account and can be installed on the local machine
+
+```shell
+curl {} -o /usr/local/bin/sk-val
+```
+
+== Verify checksum
+
+```shell
+sha256sum /usr/local/bin/sk-val/
+```
+
+Expected checksum is {validator-cli-checksum}
+
+== Make it executable
+
+```shell
+chmod +x /usr/local/bin/sk-val
+```
+
+== Verify binary
+
+[NOTE]
+If you don't know your validator id, please, reach out to Core Team
+
+```shell
+sk-val validator info [VALIDATOR_ID]
+```
+
+It should output something like
+
+```shell
+sk-val validator info 1
+┌─────────────────────────────────┬────────────────────────────────────────────┐
+│ Validator ID                    │ [VALIDATOR_ID]                             │
+├─────────────────────────────────┼────────────────────────────────────────────┤
+│ Name                            │ Test                                       │
+│ Address                         │ [ADDRESS]                                  │
+│ Fee rate (percent %)            │ 0.1                                        │
+│ Minimum delegation amount (SKL) │ 0                                          │
+└─────────────────────────────────┴────────────────────────────────────────────┘
+```
+
+== Run simple transaction
+```shell
+sk-val wallet info eth-send [ADDRESS] 0.001
+```
+
+== Upgrade node-cli
+
+=== Download node-cli binary
+
+```shell
+curl {node-cli-url} -o /usr/bin/local/skale
+```
+
+=== Verify checksum 
+
+```shell
+sha256sum /usr/local/bin/skale
+```
+
+Expected checksum is {node-cli-checksum}
+
+=== Make it executable
+
+```shell
+chmod +x /usr/local/bin/skale
+```
+
+== Modify .env
+
+Update the following parameters to a new values
+
+```shell
+```
+
+== Execute update
+
+```shell
+skale node update .env -y
+```
