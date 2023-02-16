@@ -51,9 +51,9 @@ If you have any concerns or questions, please don't hesitate to reach out to SKA
 === Download the executable
 
 [source, subs="attributes"]
-```shell
+----
 sudo -E bash -c "curl -L {node-cli-url} >  /usr/local/bin/skale"
-```
+----
 
 === Apply executable permissions to the downloaded binary:
 
