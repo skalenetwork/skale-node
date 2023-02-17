@@ -11,7 +11,7 @@ services:
       driver: "json-file"
       options:
         max-file: "5"
-        max-size: "10m"
+        max-size: "50m"
 
   transaction-manager:
     <<: *skale_base
