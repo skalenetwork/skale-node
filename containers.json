@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "noSnapshotMajorityFix1",
+    "version": "daProofsVerificationFix",
     "custom_args": {
       "ulimits_list": [
         {
