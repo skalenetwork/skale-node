@@ -117,7 +117,7 @@ envs:
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
       verifyDaSigsPatchTimestamp: 1000000
-      snapshotIntervalSec: 3600
+      snapshotIntervalSec: 1800
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
