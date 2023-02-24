@@ -24,6 +24,7 @@ services:
       - NET_RAW
     environment:
       ENDPOINT: ${ENDPOINT}
+      IMA_ENDPOINT: ${IMA_ENDPOINT}
       SKALE_DIR_HOST: ${SKALE_DIR}
       ENV_TYPE: ${ENV_TYPE}
       SCHAIN_NAME: ${SCHAIN_NAME}

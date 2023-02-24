@@ -1,0 +1,321 @@
+common:
+  schain:
+    cpu:
+      skaled: 0.8
+      ima: 0.2
+    mem:
+      skaled: 0.8
+      ima: 0.2
+    volume_limits:
+      max_consensus_storage_bytes: 0.3
+      max_skaled_leveldb_storage_bytes: 0.3
+      max_file_storage_bytes: 0.3
+      max_reserved_storage_bytes: 0.1
+    leveldb_limits:
+      contract_storage: 0.6
+      db_storage: 0.2 # leveldb may use x2 storage, so 0.4 divided by 2, actually using 0.4
+    shared_space_coefficient: 1
+envs:
+  mainnet:
+    server:
+      cpu_total: 8
+      cpu_physical: 1
+      memory: 32000000000
+      swap: 16000000000
+      disk: 1900000000000
+
+    package:
+      iptables-persistent: 1.0.4
+      lvm2: 2.02.0
+      btrfs-progs: 4.15.1
+      lsof: "4.89"
+      psmisc: 23.1-1
+
+    docker:
+      docker-api: 1.41.0
+      docker-engine: 20.10.7
+      docker-compose: 1.27.4
+
+    schain:
+      contractStorageZeroValuePatchTimestamp: 1000000
+      revertableFSPatchTimestamp: 1000000
+      contractStoragePatchTimestamp: 1000000
+      verifyDaSigsPatchTimestamp: 1000000
+      snapshotIntervalSec: 86400
+      emptyBlockIntervalMs: 10000
+      snapshotDownloadTimeout: 18000
+      snapshotDownloadInactiveTimeout: 120
+
+    schain_cmd:
+      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+
+    node:
+      common:
+        bindIP: "0.0.0.0"
+        logLevel: "info"
+        logLevelConfig: "info"
+        pg-threads: 10
+        pg-threads-limit: 10
+      small:
+        minCacheSize: 1000000
+        maxCacheSize: 2000000
+        collectionQueueSize: 2
+        collectionDuration: 10
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 25
+      medium:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      large:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      test:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      test4:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+
+  testnet:
+    server:
+      cpu_total: 8
+      cpu_physical: 1
+      memory: 32000000000
+      swap: 16000000000
+      disk: 200000000000
+
+    package:
+      iptables-persistent: 1.0.4
+      lvm2: 2.02.0
+      btrfs-progs: 4.15.1
+      lsof: "4.89"
+      psmisc: 23.1-1
+
+    docker:
+      docker-api: 1.41.0
+      docker-engine: 20.10.7
+      docker-compose: 1.27.4
+
+    schain:
+      contractStorageZeroValuePatchTimestamp: 1000000
+      revertableFSPatchTimestamp: 1000000
+      contractStoragePatchTimestamp: 1000000
+      verifyDaSigsPatchTimestamp: 1000000
+      snapshotIntervalSec: 3600
+      emptyBlockIntervalMs: 10000
+      snapshotDownloadTimeout: 18000
+      snapshotDownloadInactiveTimeout: 120
+
+    schain_cmd:
+      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+
+    node:
+      common:
+        bindIP: "0.0.0.0"
+        logLevel: "info"
+        logLevelConfig: "info"
+        pg-threads: 10
+        pg-threads-limit: 10
+      small:
+        minCacheSize: 1000000
+        maxCacheSize: 2000000
+        collectionQueueSize: 2
+        collectionDuration: 10
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 25
+      medium:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      large:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      test:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      test4:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+
+  qanet:
+    server:
+      cpu_total: 8
+      cpu_physical: 1
+      memory: 32000000000
+      swap: 16000000000
+      disk: 200000000000
+
+    package:
+      iptables-persistent: 1.0.4
+      lvm2: 2.02.0
+      btrfs-progs: 4.15.1
+      lsof: "4.89"
+      psmisc: 23.1-1
+
+    docker:
+      docker-api: 1.41.0
+      docker-engine: 20.10.7
+      docker-compose: 1.27.4
+
+    schain:
+      contractStorageZeroValuePatchTimestamp: 1000000
+      revertableFSPatchTimestamp: 1000000
+      contractStoragePatchTimestamp: 1000000
+      verifyDaSigsPatchTimestamp: 1000000
+      snapshotIntervalSec: 3600
+      emptyBlockIntervalMs: 10000
+      snapshotDownloadTimeout: 18000
+      snapshotDownloadInactiveTimeout: 120
+
+    schain_cmd:
+      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+
+    node:
+      common:
+        bindIP: "0.0.0.0"
+        logLevel: "info"
+        logLevelConfig: "info"
+        pg-threads: 10
+        pg-threads-limit: 10
+      small:
+        minCacheSize: 1000000
+        maxCacheSize: 2000000
+        collectionQueueSize: 2
+        collectionDuration: 10
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 25
+      medium:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      large:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      test:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      test4:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+
+  devnet:
+    server:
+      cpu_total: 1
+      cpu_physical: 1
+      memory: 2000000000
+      swap: 2000000000
+      disk: 80000000000
+
+    package:
+      iptables-persistent: 1.0.4
+      lvm2: 2.02.0
+      btrfs-progs: 4.15.1
+      lsof: "4.89"
+      psmisc: 23.1-1
+
+    docker:
+      docker-api: 1.41.0
+      docker-engine: 20.10.7
+      docker-compose: 1.27.4
+
+    schain:
+      contractStorageZeroValuePatchTimestamp: 1000000
+      revertableFSPatchTimestamp: 1000000
+      contractStoragePatchTimestamp: 1000000
+      verifyDaSigsPatchTimestamp: 1000000
+      snapshotIntervalSec: 3600
+      emptyBlockIntervalMs: 10000
+      snapshotDownloadTimeout: 18000
+      snapshotDownloadInactiveTimeout: 120
+
+    schain_cmd:
+      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+
+    node:
+      common:
+        bindIP: "0.0.0.0"
+        logLevel: "info"
+        logLevelConfig: "info"
+        pg-threads: 10
+        pg-threads-limit: 10
+      small:
+        minCacheSize: 1000000
+        maxCacheSize: 2000000
+        collectionQueueSize: 2
+        collectionDuration: 10
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 25
+      medium:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      large:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      test:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
+      test4:
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
+        collectionQueueSize: 20
+        collectionDuration: 60
+        transactionQueueSize: 1000
+        maxOpenLeveldbFiles: 1000
