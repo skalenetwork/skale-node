@@ -20,39 +20,40 @@
 // base software
 :docker-compose-version: 1.27.4
 :packages: iptables-persistent, btrfs-progs, lsof, lvm2, psmisc, and apt
-:geth-version: 1.10.22
+:geth-version: 1.11.2
 :docker-config: live-restore enabled https://docs.docker.com/config/containers/live-restore/[docker docs]
 
 // skale software
-:node-cli: https://github.com/skalenetwork/node-cli/releases/download/2.1.2/skale-2.1.2-Linux-x86_64[2.1.2]
-:node-cli-url: https://github.com/skalenetwork/node-cli/releases/download/2.1.2/skale-2.1.2-Linux-x86_64
-:validator-cli: https://github.com/skalenetwork/validator-cli/releases/download/1.3.2/sk-val-1.3.2-Linux-x86_64[1.3.2]
+:node-cli: https://github.com/skalenetwork/node-cli/releases/download/2.2.0/skale-2.2.0-Linux-x86_64[2.2.0]
+:node-cli-url: https://github.com/skalenetwork/node-cli/releases/download/2.2.0/skale-2.2.0-Linux-x86_64
+:node-cli-checksum: a336142f654816b2ad20ed484afb557c8a2bb87ee001913d2e2ce7e68a78d533
+:validator-cli: https://github.com/skalenetwork/validator-cli/releases/download/1.3.3/sk-val-1.3.3-Linux-x86_64[1.3.3]
+:validator-cli-url: https://github.com/skalenetwork/validator-cli/releases/download/1.3.3/sk-val-1.3.3-Linux-x86_64
 :sgxwallet: https://github.com/skalenetwork/sgxwallet/releases/tag/1.83.0-stable.1[1.83.0-stable.1]
 :sgxwallet-container: skalenetwork/sgxwallet_release:1.83.0-stable.1
-:skale-node: https://github.com/skalenetwork/skale-node/releases/tag/2.1.12[2.1.12]
-:skaled: https://github.com/skalenetwork/skaled/releases/tag/3.14.15-stable.1[3.14.15-stable.1]
+:skale-node: https://github.com/skalenetwork/skale-node/releases/tag/2.13.0-staging[2.13.0-staging]
+:skaled: https://github.com/skalenetwork/skaled/releases/tag/3.14.15-stable.2[3.14.15-stable.2]
 :ima: https://github.com/skalenetwork/IMA/releases/tag/1.3.3-stable.0[1.3.3-stable.0]
 :docker-lvmpy: https://github.com/skalenetwork/docker-lvmpy/releases/tag/1.0.2-stable.0[1.0.2-stable.0]
-:transaction-manager: https://github.com/skalenetwork/transaction-manager/releases/tag/2.1.3[2.1.3]
-:skale-admin: https://github.com/skalenetwork/skale-admin/releases/tag/2.3.8[2.3.8]
-:bounty-agent: https://github.com/skalenetwork/bounty-agent/releases/tag/2.1.1-stable.1[2.1.1-stable.1]
-:skale-watchdog: https://github.com/skalenetwork/skale-watchdog/releases/tag/2.1.1-stable.0[2.1.1-stable.0]
+:transaction-manager: https://github.com/skalenetwork/transaction-manager/releases/tag/2.1.4[2.1.4]
+:skale-admin: https://github.com/skalenetwork/skale-admin/releases/tag/2.4.0[2.4.0]
+:bounty-agent: https://github.com/skalenetwork/bounty-agent/releases/tag/2.1.2-stable.0[2.1.2-stable.0]
+:skale-watchdog: https://github.com/skalenetwork/skale-watchdog/releases/tag/2.1.1-stable.1[2.1.1-stable.1]
 
 // environment variables
 :DOCKER_LVMPY_STREAM: 1.0.2-stable.0
 :MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/staging-v3/skale-manager/1.9.2/manager.json
 :IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/staging-v3/IMA/1.3.4-rc.0/mainnet/ima.json
-:CONTAINER_CONFIGS_STREAM: 2.1.12
+:CONTAINER_CONFIGS_STREAM: 2.1.13-staging
 :FILEBEAT_HOST: filebeat.testnet.skalenodes.com:5001
 :DISABLE_IMA: False
 :ENV_TYPE: testnet
 :MONITORING_CONTAINERS: True
-:by-validator: [By Validator]
 :SGX_SERVER_URL: [By validator, setup SGX wallet first]
 :DISK_MOUNTPOINT: [By validator, your attached storage /dev/sda or /dev/xvdd (this is an example. You just need to use your 2TB block volume mount point)]
 :DB_PORT: [By validator]
 :DB_ROOT_PASSWORD: [By validator]
 :DB_PASSWORD: [By validator]
 :DB_USER: [by validator]
-:IMA_ENDPOINT: [by validator, GETH NODE ENDPOINT ]
-:ENDPOINT: [by validator, GETH NODE ENDPOINT]
+:IMA_ENDPOINT: [by validator, ETH MAINNET ENDPOINT (Goerli)]
+:ENDPOINT: [by validator, ETH MAINNET ENDPOINT (Goerli)]
