@@ -114,10 +114,10 @@ envs:
 
     schain:
 
-      contractStorageZeroValuePatchTimestamp: 1677060000
-      revertableFSPatchTimestamp: 1677060000
-      contractStoragePatchTimestamp: 1677060000
-      verifyDaSigsPatchTimestamp: 1677060000
+      contractStorageZeroValuePatchTimestamp: 1678100400
+      revertableFSPatchTimestamp: 1678100400
+      contractStoragePatchTimestamp: 1678100400
+      verifyDaSigsPatchTimestamp: 1678100400
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
