@@ -9,7 +9,7 @@ include::parameters.adoc[]
 
 [source, subs="attributes"]
 ----
-curl -L {node-cli-url} > /usr/bin/local/skale
+curl -L {node-cli-url} > /usr/local/bin/skale
 ----
 
 === Verify checksum 
