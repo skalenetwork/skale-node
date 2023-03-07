@@ -16,7 +16,7 @@ services:
   skale-sync-admin:
     <<: *skale_base
     container_name: skale_sync_admin
-    image: skalenetwork/admin:2.11.0-sync-node.0
+    image: skalenetwork/admin:2.11.0-sync-node.1
     network_mode: host
     tty: true
     cap_add:
@@ -24,6 +24,7 @@ services:
       - NET_RAW
     environment:
       ENDPOINT: ${ENDPOINT}
+      IMA_ENDPOINT: ${IMA_ENDPOINT}
       SKALE_DIR_HOST: ${SKALE_DIR}
       ENV_TYPE: ${ENV_TYPE}
       SCHAIN_NAME: ${SCHAIN_NAME}
