@@ -47,7 +47,7 @@ envs:
       snapshotDownloadInactiveTimeout: 120
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 2", "--aa no"]
 
     node:
       common:
