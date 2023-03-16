@@ -1,5 +1,6 @@
 name: network
 title: Network
-version: v2.0.x
+version: v2.1.x
+prerelease: true
 nav:
   - modules/ROOT/nav.adoc
