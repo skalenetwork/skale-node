@@ -1,5 +1,4 @@
 = Validator Parameters
-
 :network: Denali (SKALEVERSE v2.1)
 
 :machine: A Linux x86_64 machine
