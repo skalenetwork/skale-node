@@ -118,13 +118,13 @@ envs:
       revertableFSPatchTimestamp: 1678100400
       contractStoragePatchTimestamp: 1678100400
       verifyDaSigsPatchTimestamp: 1678100400
-      snapshotIntervalSec: 86400
+      snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
 
     schain_cmd:
-      ["-v 2", "--aa no"]
+      ["-v 3", "--aa no", "--web3-trace", "--enable-debug-behavior-apis"]
 
     node:
       common:
