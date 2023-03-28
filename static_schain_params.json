@@ -61,7 +61,7 @@
     },
     "schain_cmd": [
         "-v 2",
-        "--web3-trace",
+        "--enable-debug-behavior-apis",
         "--aa no"
     ]
 }
