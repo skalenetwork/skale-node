@@ -713,7 +713,7 @@ For Testnet Only, please ask Core team to skip time to update delegation status
 
 == Step 4: Setup SSL Certificates
 
-Here is an overview of the process to setup SSL certificates. For more details, please see xref::node-cli:node-ssl-setup.adoc[Node SSL docs].
+Here is an overview of the process to setup SSL certificates. For more details, please see xref:node-cli::node-ssl-setup.adoc[Node SSL docs].
 
 === 4.1: Setup IP redirects
 
