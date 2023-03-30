@@ -7,7 +7,7 @@ If you already have SGX server with needed version ({sgxwallet-container}) you c
 
 **SGX is a secure storage for BLS private key shares, which are used in consensus to sign new blocks. SGX is also used for private key shares.**
 
-**SKALE DKG uses Intel® SGX server to store account and BLS keys and all the data related to DKG process and it also uses the random number generator provided by Intel® SGX. For more information, please check** xref:technology::skale-dkg.adoc[**here.**].
+**SKALE DKG uses Intel® SGX server to store account and BLS keys and all the data related to DKG process and it also uses the random number generator provided by Intel® SGX. For more information, please check** xref:technology::dkg-bls.adoc[**here.**].
 
 Clients connect to the server, authenticate to it using TLS 1.0 protocol with client certificates, and then issue requests to the server to generate crypto keys and perform cryptographic operations. The keys are generated inside the secure SGX enclave and never leave the enclave unencrypted.
 
