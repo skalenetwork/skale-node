@@ -1,6 +1,5 @@
 * xref:index.adoc[Overview]
 * xref:setup-process.adoc[Setup Process]
 * xref:compliance-requirements.adoc[Compliance Requirements]
-* xref:move-to-goerli.adoc[Move to Goerli]
-* xref:update-to-2.1.adoc[2.1 Upgrade]
-* xref:update-to-2.1-hotfix.adoc[2.1 Upgrade (Hotfix)]
+* xref:2.1.1-upgrade.adoc[2.1.1 Upgrade]
+* xref:migration-to-20.04.adoc[Migration to Ubuntu 20.04]

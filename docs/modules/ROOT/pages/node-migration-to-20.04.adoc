@@ -1,0 +1,153 @@
+== Upgrade 18.04 node server to 2.1.1
+
+[IMPORTANT]
+If you have multiple nodes, please, do this and the following step node by node.
+
+include::2.1.1-node-upgrade.adoc[]
+
+
+== Backup the 18.04 server
+
+=== Run skale node backup
+
+```shell
+skale node backup .
+```
+
+Output example:
+```
+Backup archive successfully created ~/skale-node-backup-2023-04-20-09-24-53.tar.gz
+```
+
+=== Check that backup archive is present
+
+```shell
+ls | grep skale-node-backup
+```
+
+=== Save backup tarball and .env config on another machine
+
+You can use scp, rsync or some other tools. For example from your local machine run
+```shell
+scp user@NODE_IP:~/skale-node-backup* /path/to/create/local/backup
+scp user@NODE_IP:~/.env /path/to/create/local/.env
+```
+
+== Turn off the 18.04 node
+
+To switch off the old 18.04, please, run
+
+```shell
+skale node turn-off --yes
+```
+
+== Prepare 20.04 machine
+
+You can reinstall OS on the current server or provision a new one. 
+SKALE node uses two different disks: 
+
+* mounted as /.
+* separate one for chains' data.
+
+The doc assumes that in case of reinstallation the first (root) disk was wiped out. If it's not, please, contact Core Team. 
+
+[NOTE]
+If you are migrating to a new server do not shut down the node until the migration is complete.
+
+[IMPORTANT]
+If you have node and SGX wallet on the same machine you need to migrate to a new server. 
+
+=== Provision the machine 
+Setup machine with Ubuntu 20.04 installed following the xref:index.adoc[requirements].
+
+Or reinstall a new one. For OVHCloud you can use the steps below:
+
+* Open your server control panel.
+* Click "Install" in OS/Distribution section (under three dots button).
+* Choose Ubuntu 20.04.
+
+To configure required dependencies you can run the following script.
+
+```bash
+#!/usr/bin/env bash
+set -ea
+
+sudo apt-get update
+sudo apt install apt-transport-https ca-certificates curl gnupg software-properties-common iptables-persistent -y
+sudo mkdir -m 0755 -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+wget -qO - apt-key add https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+echo \
+"deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+"$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin -y
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ulimit -Sc 1000000000
+sudo ulimit -Hc 1000000000
+sudo timedatectl set-ntp on
+sudo service systemd-timesyncd enable > /dev/null 2>&1
+```
+
+It will install iptables-persistent, docker, docker-compose, adjust resource limits and enable timesyncd daemon.
+
+[NOTE]
+Newer version of docker-compose is required - 1.29.2 (on Ubuntu 18.04 it was 1.27.4)
+
+=== Copy the backup archive to the new machine
+
+Like during the backup step you can use scp.
+
+```shell
+scp /path/to/create/local/backup user@NEW_NODE_IP:~/
+scp /path/to/create/local/.env user@NEW_NODE_IP:~/
+```
+=== Download node-cli
+
+==== Download node-cli binary
+
+[source, subs="attributes"]
+----
+curl -L {node-cli-url} > /usr/local/bin/skale
+----
+
+==== Verify checksum 
+
+```shell
+sha512sum /usr/local/bin/skale
+```
+
+Expected checksum is stored here {node-cli-checksum}.
+
+==== Make node-cli executable
+
+```shell
+chmod +x /usr/local/bin/skale
+```
+
+== Restore backup on the 20.04 node
+
+There is a different restore procedure depending on how the chain's disk was migrated.
+
+If the disk was saved from the previous machine `lvs | grep shared-space` should output something like
+
+```
+shared-space         schains -wi-ao---- <8.35g
+```
+
+In case shared-space volume is present execute.
+
+```shell
+skale node restore skale-node-backup.tar.gz .env --no-snapshot
+```
+
+Otherwise, please, run regular restore.
+
+```shell
+skale node restore skale-node-backup.tar.gz .env
+```
+
+== Contact Core Team
+
+To finalize migration, please, connect with the team using default communication channel.

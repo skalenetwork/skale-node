@@ -40,7 +40,7 @@ Example response:
 
 == Networking
 
-* Non-expired SSL certificates for each node. 
+* Valid SSL certificates for each node. 
 ** The certificate file should be issued in PEM format, issued by a trusted authority, and contain a full certificate chain.
 ** **Certificate should always be renewed to avoid expiry.**
 
@@ -56,7 +56,7 @@ Example response:
 
 Test: `http://YOUR_SKALE_NODE_IP:3009/status/sgx`
 
-Example response: `{"data": {"status": 0, "status_name": "CONNECTED", "sgx_wallet_version": "1.75.0"}, "error": null}%`
+Example response: `{"data": {"status": 0, "status_name": "CONNECTED", "sgx_wallet_version": "1.9.0"}, "error": null}%`
 
 === Geth Endpoint
 
