@@ -1,16 +1,13 @@
 == Backup 18.04 SGX server
 
 [IMPORTANT]
-Do not register or exit nodes and shut down old SGX server before Core Team confirmation.
-
-[NOTE]
-The doc assumes that your home holder is /root/. Please adjust the commands accordingly if you have different configuration.
+Do not register, exit nodes or shut down old SGX server before Core Team confirmation.
 
 === Switch to run_sgx folder
 Change directory to sgxwallet/run_sgx, which is usually located in /root directory.
 
 ```shell
-cd /root/sgxwallet/run_sgx
+cd ~/sgxwallet/run_sgx
 ```
 
 === Stop SGX container
@@ -23,7 +20,7 @@ docker-compose down
 You can use scp, rsync or other tools. For example from your local machine run
 
 ```shell
-scp -r user@SGX_IP:/root/sgxwallet/run_sgx/sgx_data /path/to/create/local/backup
+scp -r user@SGX_IP:~/sgxwallet/run_sgx/sgx_data /path/to/create/local/backup
 ```
 
 === Restart SGX container   
@@ -38,7 +35,7 @@ Make sure backup key is stored somewhere. Otherwise, recovery is impossible and 
 
 You display check backup key like this
 ```
-cat /root/sgxwallet/run_sgx/sgx_data/sgxwallet_backup_key.txt
+cat ~/sgxwallet/run_sgx/sgx_data/sgxwallet_backup_key.txt
 ```
 
 == Provision 20.04 machine 
@@ -69,7 +66,7 @@ git clone https://github.com/skalenetwork/sgxwallet.git; cd sgxwallet; git check
 
 You can use scp to do it.
 ```shell
-scp -r /path/to/local/backup root@SGX_NEW_IP:/root/sgxwallet/run_sgx/sgx_data
+scp -r /path/to/local/backup user@SGX_NEW_IP:~/sgxwallet/run_sgx/sgx_data
 ```
 
 === Copy backup key to the new server
@@ -78,7 +75,7 @@ scp -r /path/to/local/backup root@SGX_NEW_IP:/root/sgxwallet/run_sgx/sgx_data
 Verify that your saved SGX backup key is equal on both 18.04 and 20.04 servers.
 
 ```shell
-cat /root/sgxwallet/run_sgx/sgx_data/sgxwallet_backup_key.txt
+cat ~/sgxwallet/run_sgx/sgx_data/sgxwallet_backup_key.txt
 ```
 
 === Check connection to intel enclave whitelist
@@ -100,13 +97,13 @@ Output should be: `SGX: Software Guard Extensions supported = true`.
 === Enable software-controlled SGX
 
 ```
-sudo /root/sgxwallet/sgx_enable
+sudo ~/sgxwallet/sgx_enable
 ```
 
 === Install SGX driver
 
 ```
-bash /root/sgxwallet/scripts/sgx_linux_x64_driver_*.bin
+bash ~/sgxwallet/scripts/sgx_linux_x64_driver_*.bin
 ```
 
 === Reboot machine
@@ -132,18 +129,21 @@ cat /etc/systemd/system.conf | grep 'DefaultLimitNOFILE'
 
 If it's not, then edit the file and reboot to apply the changes.
 
+=== Find device names
+SGX will need devices to
 
 === Modify docker-compose.yml file
 
-* Make sure image is set to {sgxwallet-container}.
-* Verify that device listed in `device` section corresponds to your sgx device.
+Make sure ~/sgxwallet/run_sgx/docker-compose.yml has the following modifications
+* `image` is set to {sgxwallet-container}.
+* device listed in `device` section corresponds to your sgx device devices - on different machines SGX device name may differ, check which one you have by `ls /dev/ | grep -E '^sg.$|^mei.$|^bt.$'` and set it instead of `/dev/mei0`,
 * remove -d flag and add -b flag in the `command` section to restore from backup.
 
 === Run SGX container
 
 Run the following command to spin up container on the new server.
 ```shell
-cd /root/sgxwallet/run_sgx
+cd ~/sgxwallet/run_sgx
 docker-compose up -d
 docker-compose logs --tail 100
 ```
@@ -152,11 +152,11 @@ If `SGX Server started` printed in logs - all good.
 
 == Migrate nodes to the new server
 
-For every node that is connected to the 18.04 server run the steps below to link them to the new one.
+For every node that is connected to 18.04 server run the steps below to link them to the new one.
 
 include::migrate-nodes-to-new-sgx.adoc[]
 
-== Shut down the 18.04 SGX server
+== Shut down 18.04 SGX server
 
 After sgx was restored successfully you can safely shut down the old one.
 

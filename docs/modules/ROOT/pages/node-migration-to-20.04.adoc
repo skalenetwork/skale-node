@@ -12,7 +12,7 @@ skale node backup .
 
 Output example:
 ```
-Backup archive successfully created /root/skale-node-backup-2023-04-20-09-24-53.tar.gz
+Backup archive successfully created ~/skale-node-backup-2023-04-20-09-24-53.tar.gz
 ```
 
 === Check that backup archive is present
@@ -25,8 +25,8 @@ ls | grep skale-node-backup
 
 You can use scp, rsync or some other tools. For example from your local machine run
 ```shell
-scp user@NODE_IP:/root/skale-node-backup* /path/to/create/local/backup
-scp user@NODE_IP:/root/.env /path/to/create/local/.env
+scp user@NODE_IP:~/skale-node-backup* /path/to/create/local/backup
+scp user@NODE_IP:~/.env /path/to/create/local/.env
 ```
 
 [IMPORTANT]
@@ -77,14 +77,14 @@ Newer version of docker-compose is required - 1.29.2 (on Ubuntu 18.04 it was 1.2
 Like during the backup step you can use scp.
 
 ```shell
-scp /path/to/create/local/backup user@NEW_NODE_IP:/root/
-scp /path/to/create/local/.env user@NEW_NODE_IP:/root/
+scp /path/to/create/local/backup user@NEW_NODE_IP:~/
+scp /path/to/create/local/.env user@NEW_NODE_IP:~/
 ```
 
 == Turn off the 18.04 node
 
 [IMPORTANT]
-If you have more then one node, please do this and the following step node by node.
+If you have more than one node, please do this and the following step node by node.
 
 To switch off the old 18.04 please run
 
@@ -102,7 +102,7 @@ If the disk was saved from the previous machine `lvs | grep shared-space` should
 shared-space         schains -wi-ao---- <8.35g
 ```
 
-In case disk was saved.
+In case disk was saved execute.
 
 ```shell
 skale node restore skale-node-backup.tar.gz .env --no-snapshot
