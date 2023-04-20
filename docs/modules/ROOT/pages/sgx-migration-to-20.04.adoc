@@ -131,13 +131,17 @@ If it's not, then edit the file and reboot to apply the changes.
 
 === Find device names
 SGX container will need serveral devices to be linked. You can find them using
-`ls /dev/ | grep -E '^sg.$|^mei.$|^bt.$'`
 
-One of them should be `/dev/isgx`
+```shell
+ls /dev/ | grep -E '^sg.$|^mei.$|^bt.$'
+```
+
+One of such devices should be `/dev/isgx`.
 
 === Modify docker-compose.yml file
 
-Make sure ~/sgxwallet/run_sgx/docker-compose.yml has the following modifications
+Make sure ~/sgxwallet/run_sgx/docker-compose.yml has modifications listed below.
+
 * `image` is set to {sgxwallet-container}.
 * set devices from the previous step in `device` and `healthcheck` -> `test` sections.
 * remove -d flag and add -b flag in the `command` section to restore from backup.
@@ -151,7 +155,7 @@ docker-compose up -d
 docker-compose logs --tail 100
 ```
 
-If `SGX Server started` printed in logs - all good.
+If `SGX Server started` printed in logs - restore is completed.
 
 == Migrate nodes to the new server
 

@@ -43,10 +43,10 @@ skale node turn-off --yes
 
 == Prepare 20.04 machine
 
-Usually it's possible to reinstall OS on the current server or provision the new one. 
+You can reinstall OS on the current server or provision a new one. 
 SKALE node uses two different disks: 
 
-* mounted as /
+* mounted as /.
 * separate one for chains' data.
 
 The doc assumes that in case of reinstallation the first (root) disk was wiped out. If it's not, please, contact Core Team. 
@@ -61,6 +61,7 @@ If you have node and SGX wallet on the same machine you need to migrate to a new
 Setup machine with Ubuntu 20.04 installed following the xref:index.adoc[requirements].
 
 Or reinstall a new one. For OVHCloud you can use the steps below:
+
 * Open your server control panel.
 * Click "Install" in OS/Distribution section (under three dots button).
 * Choose Ubuntu 20.04.
@@ -117,7 +118,7 @@ curl -L {node-cli-url} > /usr/local/bin/skale
 sha512sum /usr/local/bin/skale
 ```
 
-Expected checksum is stored here {node-cli-checksum}
+Expected checksum is stored here {node-cli-checksum}.
 
 ==== Make node-cli executable
 
