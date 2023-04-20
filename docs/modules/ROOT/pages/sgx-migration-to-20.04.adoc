@@ -168,4 +168,4 @@ include::migrate-nodes-to-new-sgx.adoc[]
 After sgx was restored successfully you can safely shut down the old one.
 
 [IMPORTANT]
-SGX migration success status should be verified with Core Team. Please contact the team using default communication channel.
+SGX migration success status should be verified with Core Team. Please, contact the team using default communication channel.

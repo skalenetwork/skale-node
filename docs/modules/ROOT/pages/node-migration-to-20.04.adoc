@@ -150,4 +150,4 @@ skale node restore skale-node-backup.tar.gz .env
 
 == Contact Core Team
 
-To finalize migration please connect with the team using default communication channel.
+To finalize migration, please, connect with the team using default communication channel.
