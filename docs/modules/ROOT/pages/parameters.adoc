@@ -1,38 +1,39 @@
 = Validator Parameters
-:network: Fuji 
+:network: Testnet 
 
 :machine: A Linux x86_64 machine
-:linux-distro: Ubuntu 18.04
+:linux-distro: Ubuntu 18.04 / 20.04
 :physical-cores: 8 physical cores
 :port-range: Ports 80, 443, 3009, 8080, 9100, and 10000–18192, and ICMP IPv4 should not be closed by external firewall
-:root-size: 100GB root storage
-:attached-size: 200GB attached storage
+:root-size: disk mounted as / - 100GB
+:attached-size: separate not mounted block device - 200GB
 :ram-size: 32GB RAM
 :swap-size: 16GB Swap
 
 // SGX
-:sgx-linux-distro: Ubuntu 18.04 (Ubuntu > 18.04 not yet supported)
+:sgx-linux-distro: Ubuntu 18.04 / 20.04
 :sgx-ram-size: At least 8 GB
 :sgx-swap-size: Swap size equals to half of RAM size
 :sgx-port-range: Ports 1026–1031 open only to SKALE Nodes, not public
 
 
 // base software
-:docker-compose-version: 1.27.4
+:docker-compose-version: 1.29.2
 :packages: iptables-persistent, btrfs-progs, lsof, lvm2, psmisc, and apt
-:geth-version: 1.11.2
+:geth-version: 1.11.5
 :docker-config: live-restore enabled https://docs.docker.com/config/containers/live-restore/[docker docs]
 
 // skale software
-:node-cli: https://github.com/skalenetwork/node-cli/releases/download/2.2.0/skale-2.2.0-Linux-x86_64[2.2.0]
-:node-cli-url: https://github.com/skalenetwork/node-cli/releases/download/2.2.0/skale-2.2.0-Linux-x86_64
-:node-cli-checksum: a336142f654816b2ad20ed484afb557c8a2bb87ee001913d2e2ce7e68a78d533
+:node-cli: https://github.com/skalenetwork/node-cli/releases/download/2.3.0/skale-2.2.0-Linux-x86_64[2.3.0]
+:node-cli-url: https://github.com/skalenetwork/node-cli/releases/download/2.3.0/skale-2.3.0-Linux-x86_64
+:node-cli-checksum: https://github.com/skalenetwork/node-cli/releases/download/2.3.0/skale-2.3.0-Linux-x86_64.sha512
 :validator-cli: https://github.com/skalenetwork/validator-cli/releases/download/1.3.3/sk-val-1.3.3-Linux-x86_64[1.3.3]
 :validator-cli-url: https://github.com/skalenetwork/validator-cli/releases/download/1.3.3/sk-val-1.3.3-Linux-x86_64
-:sgxwallet: https://github.com/skalenetwork/sgxwallet/releases/tag/1.83.0-stable.1[1.83.0-stable.1]
-:sgxwallet-container: skalenetwork/sgxwallet_release:1.83.0-stable.1
+:sgxwallet: https://github.com/skalenetwork/sgxwallet/releases/tag/1.9.0-stable.0[1.9.0-stable.0]
+:sgxwallet-version: 1.9.0-stable.0
+:sgxwallet-container: skalenetwork/sgxwallet_release:1.9.0-stable.0
 :skale-node: https://github.com/skalenetwork/skale-node/releases/tag/2.1.15-staging[2.1.15-staging]
-:skaled: https://github.com/skalenetwork/skaled/releases/tag/3.14.15-stable.2[3.14.15-stable.2]
+:skaled: https://github.com/skalenetwork/skaled/releases/tag/3.16.1[3.16.1]
 :ima: https://github.com/skalenetwork/IMA/releases/tag/1.3.3-stable.0[1.3.3-stable.0]
 :docker-lvmpy: https://github.com/skalenetwork/docker-lvmpy/releases/tag/1.0.2-stable.0[1.0.2-stable.0]
 :transaction-manager: https://github.com/skalenetwork/transaction-manager/releases/tag/2.1.4[2.1.4]
@@ -44,13 +45,13 @@
 :DOCKER_LVMPY_STREAM: 1.0.2-stable.0
 :MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/staging-v3/skale-manager/1.9.2/manager.json
 :IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/staging-v3/IMA/1.3.4-rc.0/mainnet/ima.json
-:CONTAINER_CONFIGS_STREAM: 2.1.15-staging
+:CONTAINER_CONFIGS_STREAM: 2.1.16
 :FILEBEAT_HOST: filebeat.testnet.skalenodes.com:5001
 :DISABLE_IMA: False
 :ENV_TYPE: testnet
 :MONITORING_CONTAINERS: True
 :SGX_SERVER_URL: [By validator, setup SGX wallet first]
-:DISK_MOUNTPOINT: [By validator, your attached storage /dev/sda or /dev/xvdd (this is an example. You just need to use your 2TB block volume mount point)]
+:DISK_MOUNTPOINT: [By validator, your not mounted block device name (e.g. /dev/sdb )]
 :DB_PORT: [By validator]
 :DB_ROOT_PASSWORD: [By validator]
 :DB_PASSWORD: [By validator]

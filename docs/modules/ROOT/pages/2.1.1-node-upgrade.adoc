@@ -1,32 +1,27 @@
-= {Network} 2.1 Upgrade
-include::parameters.adoc[]
-:sectnums:
-:sectnumlevels: 1
+=== Upgrade node-cli
 
-== Upgrade node-cli
-
-=== Download node-cli binary
+==== Download node-cli binary
 
 [source, subs="attributes"]
 ----
 curl -L {node-cli-url} > /usr/local/bin/skale
 ----
 
-=== Verify checksum 
+==== Verify checksum 
 
 ```shell
-sha256sum /usr/local/bin/skale
+sha512sum /usr/local/bin/skale
 ```
 
-Expected checksum is {node-cli-checksum}
+Expected checksum is stored here {node-cli-checksum}
 
-=== Make it executable
+==== Make node-cli executable
 
 ```shell
 chmod +x /usr/local/bin/skale
 ```
 
-== Modify .env
+=== Modify .env
 
 Update the following parameters to the new values
 
@@ -35,7 +30,7 @@ Update the following parameters to the new values
 CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
 ----
 
-== Execute update
+=== Execute update
 
 ```shell
 skale node update .env -y

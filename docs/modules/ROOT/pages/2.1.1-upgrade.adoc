@@ -1,0 +1,9 @@
+= {Network} 2.1.1 Upgrade
+include::parameters.adoc[]
+:sectnums:
+:sectnumlevels: 1
+
+// Node upgrade steps
+include::2.1.1-node-upgrade.adoc[]
+
+// Sgx upgrade steps

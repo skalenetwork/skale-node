@@ -1,0 +1,20 @@
+= {Network} Node migration to Ubuntu 20.04
+include::parameters.adoc[]
+:sectnums:
+:sectnumlevels: 1
+
+== Introduction 
+Since Canonical stopped supporting Ubuntu 18.04 for free, nodes should be migrated to a newer version. 2.1.1 release is supporting of Ubuntu 20.04 (Focal Fossa).
+
+[IMPORTANT]
+22.04 (Jammy Jellyfish) is not yet fully supported. Please, use 20.04 exclusively.
+
+[NOTE]
+If you have SGX wallet on the same machine as a node you still can to the steps below, but be extra careful, since this setup is not verified by Core Team.
+
+<<<<
+// 1. SGX migration 
+include::sgx-migration-to-20.04.adoc[]
+
+// 2. Node migration
+include::node-migration-to-20.04.adoc[]
