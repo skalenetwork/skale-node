@@ -5,5 +5,3 @@ include::parameters.adoc[]
 
 // Node upgrade steps
 include::2.1.1-node-upgrade.adoc[]
-
-// Sgx upgrade steps

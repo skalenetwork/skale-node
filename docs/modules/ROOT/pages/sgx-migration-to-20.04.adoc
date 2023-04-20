@@ -130,13 +130,16 @@ cat /etc/systemd/system.conf | grep 'DefaultLimitNOFILE'
 If it's not, then edit the file and reboot to apply the changes.
 
 === Find device names
-SGX will need devices to
+SGX container will need serveral devices to be linked. You can find them using
+`ls /dev/ | grep -E '^sg.$|^mei.$|^bt.$'`
+
+One of them should be `/dev/isgx`
 
 === Modify docker-compose.yml file
 
 Make sure ~/sgxwallet/run_sgx/docker-compose.yml has the following modifications
 * `image` is set to {sgxwallet-container}.
-* device listed in `device` section corresponds to your sgx device devices - on different machines SGX device name may differ, check which one you have by `ls /dev/ | grep -E '^sg.$|^mei.$|^bt.$'` and set it instead of `/dev/mei0`,
+* set devices from the previous step in `device` and `healthcheck` -> `test` sections.
 * remove -d flag and add -b flag in the `command` section to restore from backup.
 
 === Run SGX container
