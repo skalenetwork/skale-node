@@ -23,7 +23,7 @@ chmod +x /usr/local/bin/skale
 
 === Modify .env
 
-Update the following parameters to the new values
+Update the following parameters to the new values.
 
 [source, subs="attributes"]
 ----

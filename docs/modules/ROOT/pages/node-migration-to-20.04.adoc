@@ -43,7 +43,7 @@ For OVHCloud you can use the steps below:
 * Click "Install" in OS/Distribution section (under three dots button).
 * Choose Ubuntu 20.04.
 
-To configure required dependencies you can run the following script:
+To configure required dependencies you can run the following script.
 
 ```bash
 #!/usr/bin/env bash
