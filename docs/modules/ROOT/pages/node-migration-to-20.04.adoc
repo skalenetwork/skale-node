@@ -55,8 +55,6 @@ SKALE node uses two different disks:
 
 The doc assumes that in case of reinstallation the first (root) disk was wiped out. If it's not, please, contact Core Team. 
 
-If you have node and SGX wallet on the same machine you need to migrate to a new server. 
-
 === Provision the machine 
 Setup machine with Ubuntu 20.04 installed following the xref:index.adoc[requirements].
 
