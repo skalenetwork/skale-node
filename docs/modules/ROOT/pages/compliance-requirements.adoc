@@ -8,7 +8,7 @@ The following document outlines compliance requirements for SKALE Network nodes.
 The following compliance requirements are required to ensure all nodes meet a standard of performance. 
 
 [WARNING]
-Failure to meet ANY ONE of the following Denali compliance requirements will result in a node being marked “Out of Compliance” by the NODE Foundation and the node may be forced to forfeit monthly bounties if it is unable to return to "In Compliance" by the time the monthly `getBounty` is called. 
+Failure to meet ANY ONE of the following Denali compliance requirements will result in a node being marked “Out of Compliance” by the NODE Foundation and the node may be forced to forfeit monthly bounties if it is unable to return to "In Compliance" by the time the monthly `getBounty` is called.
 
 [NOTE]
 Compliance requirements may be reviewed and modified at any given time.
@@ -43,7 +43,7 @@ Example response:
 
 == Networking
 
-* Non-expired SSL certificates for each node. 
+* Non-expired SSL certificates for each node.
 ** The certificate file should be issued in PEM format, issued by a trusted authority, and contain a full certificate chain.
 ** **Certificate should always be renewed to avoid expiry.**
 
@@ -106,18 +106,15 @@ Test: `http://YOUR_SKALE_NODE_IP:3009/status/core`
 
 Example response: `{"data": [{"image": "skalenetwork/schain:3.5.12-stable.1", "name": "skale_schain_beautiful-al-anz", "state": {"Status": "running", "Running": true, "Paused": false, "Restarting": false, "OOMKilled": false, "Dead": false, "Pid": 21709, "ExitCode": 0, "Error": "", "StartedAt": "2021-04-26T14:49:51.705052477Z", "FinishedAt": "0001-01-01T00:00:00Z"}}, ...}`
 
-== Upcoming Denali Update 
+BTRFS kernel module must be enabled.  `http://YOUR_SKALE_NODE_IP:3009/status/btrfs` returns information about btrfs kernel module (enabled/disabled).
 
-=== Networking
+Public IP must be the same as the registered node IP. `http://YOUR_SKALE_NODE_IP:3009/status/public-ip` returns public ip address (source of the packets that your node is sending to other nodes)
+
+IMA Container must pass healthcheck. `http://YOUR_SKALE_NODE_IP:3009/status/ima` returns information about basic ima healthcheck
+
+== Networking
 
 * Check key-cert pair validity using `http://YOUR_SKALE_NODE_IP:3009/status/ssl`
 * Test ssl certificates using `skale ssl check`
 * Don't touch machine firewall (iptables installed by skale node software automatically sets machine firewall rules), external VPC or networking firewall ensure Ports open on **80, 311, 443,** 3009, 8080, 9100, 10000–18192, and ICMP IPv4  (in other words, not closed by an external firewall).
 
-=== Software
-
-* BTRFS kernel module must be enabled.  `http://YOUR_SKALE_NODE_IP:3009/status/btrfs` returns information about btrfs kernel module (enabled/disabled).
-
-* Public IP must be the same as the registered node IP. `http://YOUR_SKALE_NODE_IP:3009/status/public-ip` returns public ip address (source of the packets that your node is sending to other nodes)
-
-* IMA Container must pass healthcheck. `http://YOUR_SKALE_NODE_IP:3009/status/ima` returns information about basic ima healthcheck
