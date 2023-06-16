@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   base: &skale_base
-    image: rancher/pause
+    image: rancher/pause:3.6
     restart: unless-stopped
     labels:
       com.skale.prefix: "node"
