@@ -37,17 +37,17 @@ envs:
       docker-compose: 1.27.4
 
     schain:
-      contractStorageZeroValuePatchTimestamp: 1000000
-      revertableFSPatchTimestamp: 1000000
-      contractStoragePatchTimestamp: 1000000
-      verifyDaSigsPatchTimestamp: 1000000
+      contractStorageZeroValuePatchTimestamp: 1681128000
+      revertableFSPatchTimestamp: 1681473600
+      contractStoragePatchTimestamp: 1681732800
+      verifyDaSigsPatchTimestamp: 1681300800
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 2", "--aa no"]
 
     node:
       common:
@@ -113,17 +113,18 @@ envs:
       docker-compose: 1.27.4
 
     schain:
+
       contractStorageZeroValuePatchTimestamp: 1678100400
       revertableFSPatchTimestamp: 1678100400
       contractStoragePatchTimestamp: 1678100400
       verifyDaSigsPatchTimestamp: 1678100400
-      snapshotIntervalSec: 3600
+      snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 2", "--aa no"]
 
     node:
       common:
