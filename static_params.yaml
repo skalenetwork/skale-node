@@ -62,6 +62,8 @@ envs:
         collectionQueueSize: 2
         collectionDuration: 10
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
       medium:
         minCacheSize: 8000000
@@ -69,6 +71,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
@@ -76,6 +80,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
@@ -83,6 +89,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
@@ -90,6 +98,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
 
   testnet:
@@ -138,6 +148,8 @@ envs:
         collectionQueueSize: 2
         collectionDuration: 10
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
       medium:
         minCacheSize: 8000000
@@ -145,6 +157,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
@@ -152,6 +166,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
@@ -159,6 +175,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
@@ -166,6 +184,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
 
   qanet:
@@ -214,6 +234,8 @@ envs:
         collectionQueueSize: 2
         collectionDuration: 10
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
       medium:
         minCacheSize: 8000000
@@ -221,6 +243,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
@@ -228,6 +252,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
@@ -235,6 +261,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
@@ -242,6 +270,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
 
   devnet:
@@ -290,6 +320,8 @@ envs:
         collectionQueueSize: 2
         collectionDuration: 10
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
       medium:
         minCacheSize: 8000000
@@ -297,6 +329,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
@@ -304,6 +338,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
@@ -311,6 +347,8 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
@@ -318,4 +356,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
