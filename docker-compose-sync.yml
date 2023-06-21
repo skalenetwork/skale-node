@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   base: &skale_base
-    image: kubernetes/pause
+    image: rancher/pause:3.6
     restart: unless-stopped
     labels:
       com.skale.prefix: "node"
@@ -16,7 +16,7 @@ services:
   skale-sync-admin:
     <<: *skale_base
     container_name: skale_sync_admin
-    image: skalenetwork/admin:2.11.0-sync-node.1
+    image: skalenetwork/admin:2.11.0-beta-sync-node.7
     network_mode: host
     tty: true
     cap_add:
