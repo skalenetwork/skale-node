@@ -215,7 +215,7 @@ envs:
       revertableFSPatchTimestamp: 1678100400
       contractStoragePatchTimestamp: 1678100400
       verifyDaSigsPatchTimestamp: 1678100400
-      storageDestructionPatchTimestamp: 1688558400
+      storageDestructionPatchTimestamp: 1689163200
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
