@@ -41,7 +41,6 @@ envs:
       revertableFSPatchTimestamp: 1681473600
       contractStoragePatchTimestamp: 1681732800
       verifyDaSigsPatchTimestamp: 1681300800
-      storageDestructionPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -63,8 +62,6 @@ envs:
         collectionQueueSize: 2
         collectionDuration: 10
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
       medium:
         minCacheSize: 8000000
@@ -72,8 +69,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
@@ -81,8 +76,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
@@ -90,8 +83,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
@@ -99,8 +90,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
 
   testnet:
@@ -128,7 +117,6 @@ envs:
       revertableFSPatchTimestamp: 1678100400
       contractStoragePatchTimestamp: 1678100400
       verifyDaSigsPatchTimestamp: 1678100400
-      storageDestructionPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -150,8 +138,6 @@ envs:
         collectionQueueSize: 2
         collectionDuration: 10
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
       medium:
         minCacheSize: 8000000
@@ -159,8 +145,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
@@ -168,8 +152,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
@@ -177,8 +159,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
@@ -186,8 +166,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
 
   qanet:
@@ -215,7 +193,6 @@ envs:
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
       verifyDaSigsPatchTimestamp: 1000000
-      storageDestructionPatchTimestamp: 1000000
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -237,8 +214,6 @@ envs:
         collectionQueueSize: 2
         collectionDuration: 10
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
       medium:
         minCacheSize: 8000000
@@ -246,8 +221,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
@@ -255,8 +228,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
@@ -264,8 +235,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
@@ -273,8 +242,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
 
   devnet:
@@ -302,7 +269,6 @@ envs:
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
       verifyDaSigsPatchTimestamp: 1000000
-      storageDestructionPatchTimestamp: 1000000
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -324,8 +290,6 @@ envs:
         collectionQueueSize: 2
         collectionDuration: 10
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
       medium:
         minCacheSize: 8000000
@@ -333,8 +297,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       large:
         minCacheSize: 8000000
@@ -342,8 +304,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test:
         minCacheSize: 8000000
@@ -351,8 +311,6 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
       test4:
         minCacheSize: 8000000
@@ -360,6 +318,4 @@ envs:
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
-        transactionQueueLimitBytes: 69206016
-        futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
