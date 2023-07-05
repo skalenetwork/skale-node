@@ -1,1 +1,8 @@
-cafu: 1688476010
+devnet:
+  test-chain: 0
+testnet:
+  test-chain: 0
+qanet:
+  test-chain: 0
+mainnet:
+  test-chain: 0
