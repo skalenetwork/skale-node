@@ -3,7 +3,7 @@ devnet:
 testnet:
   test-chain: 0
 qanet:
-  test-chain: 1691341600
+  curly-red-alterf: 1691341600
 mainnet:
   test-chain: 0
 
