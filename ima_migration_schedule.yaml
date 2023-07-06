@@ -1,0 +1,9 @@
+devnet:
+  test-chain: 0
+testnet:
+  test-chain: 0
+qanet:
+  test-chain: 1678100400
+mainnet:
+  test-chain: 0
+
