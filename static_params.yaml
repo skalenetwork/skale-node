@@ -283,7 +283,7 @@ envs:
       cpu_physical: 1
       memory: 2000000000
       swap: 2000000000
-      disk: 80000000000
+      disk: 8000000000
 
     package:
       iptables-persistent: 1.0.4

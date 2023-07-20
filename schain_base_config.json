@@ -29,11 +29,11 @@
 				"origin": [
 					"*"
 				],
-				"ban_lengthy": 30,
-				"ban_peak": 10,
-				"max_calls_per_minute": 60000,
-				"max_calls_per_second": 1000,
-				"max_ws_conn": 20000
+				"ban_lengthy": 601,
+				"ban_peak": 200,
+				"max_calls_per_minute": 600000,
+				"max_calls_per_second": 10000,
+				"max_ws_conn": 200000
 			}
 		],
 		"global": {
