@@ -2,3 +2,4 @@
 * xref:setup-process.adoc[Setup Process]
 * xref:compliance-requirements.adoc[Compliance Requirements]
 * xref:v2-hotfix-7.adoc[V2 Hotfix 7]
+* xref:sgx-firewall.adoc[SGXWallet firewall setup]
