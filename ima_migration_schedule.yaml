@@ -3,7 +3,14 @@ devnet:
 testnet:
   test-chain: 0
 qanet:
-  curly-red-alterf: 1691341600
+  curly-red-alterf: 1690902000
+  portly-passionate-sirius: 1690902000
+  howling-hoedus: 1690988400
+  quiet-alchiba: 1690988400
+  green-giddy-denebola: 1690988400
+  wan-tasty-kitalpha: 1691074800
+  wet-third-darling-skale: 1691074800
+  polite-friendly-alphard: 1691074800
 mainnet:
   test-chain: 0
 
