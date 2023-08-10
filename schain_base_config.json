@@ -29,7 +29,7 @@
 				"origin": [
 					"*"
 				],
-				"ban_lengthy": 30,
+				"ban_lengthy": 31,
 				"ban_peak": 10,
 				"max_calls_per_minute": 60000,
 				"max_calls_per_second": 1000,
