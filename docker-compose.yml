@@ -198,7 +198,7 @@ services:
       - '--path.procfs=/host/proc'
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+      - '--collector.filesystem.ignored-mount-points=^/(mnt|sys|proc|dev|host|etc|var/lib/docker)($$|/)'
     network_mode: host
 
   filebeat:
