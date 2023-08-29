@@ -216,7 +216,7 @@ envs:
       contractStoragePatchTimestamp: 1678100400
       verifyDaSigsPatchTimestamp: 1678100400
       storageDestructionPatchTimestamp: 1689163200
-      powCheckTimestamp: 1693328400
+      powCheckTimestamp: 1693396800
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
