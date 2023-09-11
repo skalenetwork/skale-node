@@ -217,7 +217,7 @@ envs:
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
       verifyDaSigsPatchTimestamp: 1000000
-      storageDestructionPatchTimestamp: 0
+      storageDestructionPatchTimestamp: 1000000
       powCheckPatchTimestamp: 1000000
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
@@ -305,7 +305,7 @@ envs:
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
       verifyDaSigsPatchTimestamp: 1000000
-      storageDestructionPatchTimestamp: 0
+      storageDestructionPatchTimestamp: 1000000
       powCheckPatchTimestamp: 1000000
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
