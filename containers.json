@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "skalenetwork/schain:leveldbSyncOff",
+    "version": "leveldbSyncOff",
     "custom_args": {
       "ulimits_list": [
         {
