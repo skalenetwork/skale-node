@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "experimentBisectSwtGrow3",
+    "version": "experimentBisectSwtGrow4",
     "custom_args": {
       "ulimits_list": [
         {
