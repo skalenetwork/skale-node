@@ -113,7 +113,6 @@ envs:
       docker-compose: 1.27.4
 
     schain:
-
       contractStorageZeroValuePatchTimestamp: 1678100400
       revertableFSPatchTimestamp: 1678100400
       contractStoragePatchTimestamp: 1678100400
