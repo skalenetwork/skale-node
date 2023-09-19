@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "experimentBisectSwtGrow5",
+    "version": "removeLevelDbFilters",
     "custom_args": {
       "ulimits_list": [
         {
