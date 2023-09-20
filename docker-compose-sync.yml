@@ -16,7 +16,7 @@ services:
   skale-sync-admin:
     <<: *skale_base
     container_name: skale_sync_admin
-    image: skalenetwork/admin:2.11.0-sync-node.1
+    image: skalenetwork/admin:2.11.0-sync-2.0.0
     network_mode: host
     tty: true
     cap_add:
