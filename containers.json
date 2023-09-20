@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "removeLevelDbFilters",
+    "version": "measureGarbageCollectorTime",
     "custom_args": {
       "ulimits_list": [
         {
