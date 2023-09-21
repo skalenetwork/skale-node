@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "measureGarbageCollectorTime",
+    "version": "addMoreStatistics",
     "custom_args": {
       "ulimits_list": [
         {
