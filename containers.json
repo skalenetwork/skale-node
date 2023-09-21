@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "addMoreStatistics1",
+    "version": "addMoreStatistics2",
     "custom_args": {
       "ulimits_list": [
         {
