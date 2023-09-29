@@ -33,8 +33,8 @@
   },
   "ima": {
     "name": "skalenetwork/ima",
-    "version": "13.13.13-develop.13.26",
-    "new_version": "13.13.13-develop.13.26",
+    "version": "13.13.13-develop.13.28",
+    "new_version": "13.13.13-develop.13.28",
     "custom_args": {
       "logs": {
         "max-size": "250m",
