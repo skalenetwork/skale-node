@@ -1,0 +1,15 @@
+devnet:
+  test-chain: 0
+testnet:
+  test-chain: 0
+qanet:
+  hungry-formal-ascella: 1697133600
+  big-majestic-oval-SKALE: 1697133600
+  international-villainous-zaurak: 1697133600
+  ill-informed-friendly-haedi: 1697133600
+  rural-colossal-cebalrai: 1697133600
+  worrisome-fortunate-talitha: 1697133600
+  breakable-anguished-tania-borealis: 1697133600
+  skale-innocent-nasty: 1697133600
+mainnet:
+  test-chain: 0
