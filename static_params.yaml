@@ -43,7 +43,7 @@ envs:
       verifyDaSigsPatchTimestamp: 1681300800
       storageDestructionPatchTimestamp: 0
       powCheckPatchTimestamp: 0
-      skipInvalidTransactionsPatchTimestamp: 0
+      skipInvalidTransactionsPatchTimestamp: 1701300800
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
