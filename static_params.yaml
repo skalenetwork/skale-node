@@ -41,6 +41,7 @@ envs:
       revertableFSPatchTimestamp: 1681473600
       contractStoragePatchTimestamp: 1681732800
       verifyDaSigsPatchTimestamp: 1681300800
+      skipInvalidTransactionsPatchTimestamp: 1697457600
       storageDestructionPatchTimestamp: 0
       powCheckPatchTimestamp: 0
       snapshotIntervalSec: 86400
@@ -130,6 +131,7 @@ envs:
       contractStoragePatchTimestamp: 1678100400
       verifyDaSigsPatchTimestamp: 1678100400
       storageDestructionPatchTimestamp: 0
+      skipInvalidTransactionsPatchTimestamp: 1697457600
       powCheckPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
@@ -218,6 +220,7 @@ envs:
       contractStoragePatchTimestamp: 1000000
       verifyDaSigsPatchTimestamp: 1000000
       storageDestructionPatchTimestamp: 1000000
+      skipInvalidTransactionsPatchTimestamp: 1697457600
       powCheckPatchTimestamp: 1000000
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
@@ -307,6 +310,7 @@ envs:
       verifyDaSigsPatchTimestamp: 1000000
       storageDestructionPatchTimestamp: 1000000
       powCheckPatchTimestamp: 1000000
+      skipInvalidTransactionsPatchTimestamp: 1697457600
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
