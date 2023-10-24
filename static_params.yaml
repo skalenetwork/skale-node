@@ -199,9 +199,9 @@ envs:
       revertableFSPatchTimestamp: 1691146800
       contractStoragePatchTimestamp: 1691146800
       verifyDaSigsPatchTimestamp: 1691146800
-      storageDestructionPatchTimestamp: 1698225995
-      powCheckPatchTimestamp: 1698153300
-      skipInvalidTransactionsPatchTimestamp: 1698160500
+      storageDestructionPatchTimestamp: 1698232500
+      powCheckPatchTimestamp: 1698239700
+      skipInvalidTransactionsPatchTimestamp: 1698246900
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
