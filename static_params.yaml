@@ -269,8 +269,8 @@ envs:
       revertableFSPatchTimestamp: 1000000
       contractStoragePatchTimestamp: 1000000
       verifyDaSigsPatchTimestamp: 1000000
-      storageDestructionPatchTimestamp: 1000000
-      powCheckPatchTimestamp: 1000000
+      storageDestructionPatchTimestamp: 0
+      powCheckPatchTimestamp: 0
       skipInvalidTransactionsPatchTimestamp: 1781300800
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
@@ -278,7 +278,7 @@ envs:
       snapshotDownloadInactiveTimeout: 120
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 2","--aa no"]
 
     node:
       common:
