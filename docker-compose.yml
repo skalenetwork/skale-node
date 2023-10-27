@@ -53,6 +53,8 @@ services:
       DISABLE_IMA: ${DISABLE_IMA}
       ENV_TYPE: ${ENV_TYPE}
       ALLOWED_TS_DIFF: 300
+      PULL_CONFIG_FOR_SCHAIN: ${PULL_CONFIG_FOR_SCHAIN}
+
     command: "python3 admin.py"
     volumes:
       - /var/run/skale:/var/run/skale
