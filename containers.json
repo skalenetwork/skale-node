@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.17.0-stable-and-check-block",
+    "version": "3.17.0-check-block-historic",
     "custom_args": {
       "ulimits_list": [
         {
