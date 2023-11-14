@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.18.0-timeout-5-sec",
+    "version": "olehPrecompiledOracleFix1",
     "custom_args": {
       "ulimits_list": [
         {
