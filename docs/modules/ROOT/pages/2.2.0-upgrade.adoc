@@ -1,6 +1,7 @@
-=== Upgrade node-cli
+= {Network} {prev-version} -> {version} upgrade steps
+include::parameters.adoc[]
 
-=== Modify .env
+== Modify .env
 
 Update the following parameters to the new values.
 
