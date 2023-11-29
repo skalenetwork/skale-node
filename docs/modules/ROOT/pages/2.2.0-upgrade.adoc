@@ -1,0 +1,19 @@
+= {Network} {prev-version} -> {version} upgrade steps
+include::parameters.adoc[]
+
+== Modify .env
+
+Update the following parameters to the new values.
+
+[source, subs="attributes"]
+----
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
+IMA_CONTRACTS_ABI_URL={IMA_CONTRACTS_ABI_URL}
+----
+
+=== Execute update
+
+```shell
+skale node update .env -y
+```
