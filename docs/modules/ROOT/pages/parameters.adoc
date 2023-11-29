@@ -1,5 +1,7 @@
 = Validator Parameters
-:network: SKALEVERSE v2.2 (Denali)
+:network: SKALEVERSE v2.2
+:version: 2.2.0
+:prev-version: 2.1.16
 
 :machine: A Linux x86_64 machine
 :linux-distro: Ubuntu 20.04 (focal)
