@@ -77,10 +77,6 @@ DISABLE_IMA={DISABLE_IMA}
 ENV_TYPE={ENV_TYPE}
 SGX_SERVER_URL=[{by-validator}, setup SGX wallet first]
 DISK_MOUNTPOINT=[{by-validator}, your attached storage /dev/sda or /dev/xvdd (this is an example. You just need to use your 2TB block volume mount point)]
-DB_PORT={by-validator}
-DB_ROOT_PASSWORD={by-validator}
-DB_PASSWORD={by-validator}
-DB_USER={by-validator}
 IMA_ENDPOINT=[{by-validator}, GETH NODE ENDPOINT ]
 ENDPOINT=[{by-validator}, GETH NODE ENDPOINT]
 ```
