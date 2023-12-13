@@ -1,6 +1,20 @@
 = {Network} {prev-version} -> {version} upgrade steps
 include::parameters.adoc[]
 
+[NOTE]
+To address the issues occurred during testnet upgrade the procedure slightly differs from the one that is specified for the testnet.
+
+== Run skale node turn-off
+
+```shell
+skale node turn-off --yes
+```
+
+== Stop docker-lvmpy service
+```shell
+systemctl stop docker-lvmpy
+```
+
 == Download node-cli binary
 
 [source, subs="attributes"]
@@ -40,5 +54,5 @@ CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
 == Execute update
 
 ```shell
-skale node update .env -y
+skale node update .env --yes
 ```
