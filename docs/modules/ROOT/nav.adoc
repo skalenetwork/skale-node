@@ -1,4 +1,4 @@
 * xref:index.adoc[Overview]
 * xref:setup-process.adoc[Setup Process]
 * xref:compliance-requirements.adoc[Compliance Requirements]
-* xref:2.2.0-upgrade.adoc[2.2.0 Upgrade]
+* xref:2.2.1-upgrade.adoc[2.2.1 Upgrade]
