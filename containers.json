@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.17.1",
+    "version": "paymasterTestingOleh",
     "custom_args": {
       "ulimits_list": [
         {
