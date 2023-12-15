@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "fixHistoricNodeStuckOleh1",
+    "version": "3.17.2-develop.2",
     "custom_args": {
       "ulimits_list": [
         {
