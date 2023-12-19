@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.18.0-sync-node-broadcast-txs.1",
+    "version": "lessLevelDbOpenFilesOleh",
     "custom_args": {
       "ulimits_list": [
         {
