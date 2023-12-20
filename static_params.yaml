@@ -41,9 +41,9 @@ envs:
       revertableFSPatchTimestamp: 1681473600
       contractStoragePatchTimestamp: 1681732800
       verifyDaSigsPatchTimestamp: 1681300800
-      storageDestructionPatchTimestamp: 0
-      powCheckPatchTimestamp: 0
-      skipInvalidTransactionsPatchTimestamp: 0
+      storageDestructionPatchTimestamp: 1703851200
+      powCheckPatchTimestamp: 1703592000
+      skipInvalidTransactionsPatchTimestamp: 1703764800
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -130,9 +130,9 @@ envs:
       revertableFSPatchTimestamp: 1678100400
       contractStoragePatchTimestamp: 1678100400
       verifyDaSigsPatchTimestamp: 1678100400
-      storageDestructionPatchTimestamp: 0
-      powCheckPatchTimestamp: 0
-      skipInvalidTransactionsPatchTimestamp: 0
+      storageDestructionPatchTimestamp: 1702393200
+      powCheckPatchTimestamp: 1702296000
+      skipInvalidTransactionsPatchTimestamp: 1702382400
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -228,7 +228,7 @@ envs:
       snapshotDownloadInactiveTimeout: 120
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 2", "--aa no"]
 
     node:
       common:
