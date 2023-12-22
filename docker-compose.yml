@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   base: &skale_base
-    image: kubernetes/pause
+    image: rancher/pause:3.6
     restart: unless-stopped
     labels:
       com.skale.prefix: "node"
@@ -16,7 +16,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:2.1.4
+    image: skalenetwork/transaction-manager:2.1.5
     network_mode: host
     tty: true
     environment:
@@ -29,7 +29,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:2.4.0
+    image: skalenetwork/admin:2.5.3
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -53,6 +53,8 @@ services:
       DISABLE_IMA: ${DISABLE_IMA}
       ENV_TYPE: ${ENV_TYPE}
       ALLOWED_TS_DIFF: 300
+      PULL_CONFIG_FOR_SCHAIN: ${PULL_CONFIG_FOR_SCHAIN}
+
     command: "python3 admin.py"
     volumes:
       - /var/run/skale:/var/run/skale
@@ -68,7 +70,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:2.4.0
+    image: skalenetwork/admin:2.5.3
     network_mode: host
     tty: true
     cap_add:
@@ -102,7 +104,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:2.4.0
+    image: skalenetwork/admin:2.5.3
     network_mode: host
     tty: true
     environment:
@@ -198,7 +200,7 @@ services:
       - '--path.procfs=/host/proc'
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+      - '--collector.filesystem.mount-points-exclude=^/(mnt|dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($$|/)'
     network_mode: host
 
   filebeat:
