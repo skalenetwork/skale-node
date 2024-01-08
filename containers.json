@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "noOSBuffersLevelDBOleh",
+    "version": "lessLevelDbOpenFilesOleh",
     "custom_args": {
       "ulimits_list": [
         {
