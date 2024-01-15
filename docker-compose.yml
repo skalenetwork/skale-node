@@ -29,7 +29,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:2.5.1
+    image: skalenetwork/admin:2.5.4
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -53,6 +53,8 @@ services:
       DISABLE_IMA: ${DISABLE_IMA}
       ENV_TYPE: ${ENV_TYPE}
       ALLOWED_TS_DIFF: 300
+      PULL_CONFIG_FOR_SCHAIN: ${PULL_CONFIG_FOR_SCHAIN}
+
     command: "python3 admin.py"
     volumes:
       - /var/run/skale:/var/run/skale
@@ -68,7 +70,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:2.5.1
+    image: skalenetwork/admin:2.5.4
     network_mode: host
     tty: true
     cap_add:
@@ -102,7 +104,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:2.5.1
+    image: skalenetwork/admin:2.5.4
     network_mode: host
     tty: true
     environment:
