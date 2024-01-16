@@ -48,6 +48,9 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      pushZeroPatchTimestamp: 1714025000
+      precompiledPatchTimestamp: 1714115000
+      correctForkInPowPatchTimestamp: 1714195000
 
     schain_cmd:
       ["-v 2", "--aa no"]
@@ -137,6 +140,10 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      pushZeroPatchTimestamp: 1711025000
+      precompiledPatchTimestamp: 1711115000
+      correctForkInPowPatchTimestamp: 1711195000
+
 
     schain_cmd:
       ["-v 2", "--aa no"]
@@ -226,6 +233,9 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      pushZeroPatchTimestamp: 1706005000
+      precompiledPatchTimestamp: 1706009000
+      correctForkInPowPatchTimestamp: 1706019000
 
     schain_cmd:
       ["-v 2", "--aa no"]
@@ -315,6 +325,9 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      pushZeroPatchTimestamp: 0
+      precompiledPatchTimestamp: 0
+      correctForkInPowPatchTimestamp: 0
 
     schain_cmd:
       ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
