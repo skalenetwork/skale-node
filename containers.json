@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "partialSnapshotHashComputationOleh2",
+    "version": "partialSnapshotHashComputationOleh3",
     "custom_args": {
       "ulimits_list": [
         {
