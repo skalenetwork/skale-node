@@ -232,7 +232,7 @@ envs:
 
     node:
       admin:
-        automatic_repair: false
+        automatic_repair: true
       common:
         bindIP: "0.0.0.0"
         logLevel: "info"
