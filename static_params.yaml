@@ -247,7 +247,7 @@ envs:
         pg-threads: 10
         pg-threads-limit: 10
       admin:
-        automatic_repair: true
+        automatic_repair: false
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
