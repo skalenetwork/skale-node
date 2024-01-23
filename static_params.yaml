@@ -45,7 +45,7 @@ envs:
       powCheckPatchTimestamp: 1703592000
       skipInvalidTransactionsPatchTimestamp: 1703764800
       pushZeroPatchTimestamp: 0
-      precompiledPatchTimestamp: 0
+      precompiledConfigPatchTimestamp: 0
       correctForkInPowPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
@@ -137,7 +137,7 @@ envs:
       powCheckPatchTimestamp: 1702296000
       skipInvalidTransactionsPatchTimestamp: 1702382400
       pushZeroPatchTimestamp: 0
-      precompiledPatchTimestamp: 0
+      precompiledConfigPatchTimestamp: 0
       correctForkInPowPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
@@ -229,7 +229,7 @@ envs:
       powCheckPatchTimestamp: 1699625700
       skipInvalidTransactionsPatchTimestamp: 1699632900
       pushZeroPatchTimestamp: 0
-      precompiledPatchTimestamp: 0
+      precompiledConfigPatchTimestamp: 0
       correctForkInPowPatchTimestamp: 0
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
@@ -321,7 +321,7 @@ envs:
       powCheckPatchTimestamp: 1000000
       skipInvalidTransactionsPatchTimestamp: 1000000
       pushZeroPatchTimestamp: 0
-      precompiledPatchTimestamp: 0
+      precompiledConfigPatchTimestamp: 0
       correctForkInPowPatchTimestamp: 0
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
