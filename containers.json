@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.18.0-beta.0",
+    "version": "zmqSndMoreBroadcastOleh-release",
     "custom_args": {
       "ulimits_list": [
         {
