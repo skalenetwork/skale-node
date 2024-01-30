@@ -228,16 +228,16 @@ envs:
       storageDestructionPatchTimestamp: 1699618500
       powCheckPatchTimestamp: 1699625700
       skipInvalidTransactionsPatchTimestamp: 1699632900
-      pushZeroPatchTimestamp: 0
-      precompiledConfigPatchTimestamp: 0
-      correctForkInPowPatchTimestamp: 0
+      pushZeroPatchTimestamp: 1706533200
+      precompiledConfigPatchTimestamp: 1706540400
+      correctForkInPowPatchTimestamp: 1706547600
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
 
     schain_cmd:
-      ["-v 2", "--aa no"]
+      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
       common:
