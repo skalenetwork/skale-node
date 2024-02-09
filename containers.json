@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.18.0-beta.0",
+    "version": "3.18.0-beta.1",
     "custom_args": {
       "ulimits_list": [
         {
@@ -34,7 +34,7 @@
   "ima": {
     "name": "skalenetwork/ima",
     "version": "2.0.2",
-    "new_version": "2.1.0-beta.2",
+    "new_version": "2.1.0-beta.3",
     "custom_args": {
       "logs": {
         "max-size": "250m",
