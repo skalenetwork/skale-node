@@ -1,0 +1,31 @@
+= {Network} upgrade
+include::parameters.adoc[]
+
+This document describes the procedure for upgrading from {prev-version} to {version} release.
+
+== Run skale node turn-off
+
+```shell
+skale node turn-off --yes
+```
+
+== Stop docker-lvmpy service
+```shell
+systemctl stop docker-lvmpy
+```
+
+== Modify .env
+
+Update the following parameters to the new values.
+
+[source, subs="attributes"]
+----
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
+----
+
+== Execute update
+
+```shell
+skale node update .env --yes
+```
