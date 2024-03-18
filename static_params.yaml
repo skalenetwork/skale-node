@@ -189,10 +189,10 @@ envs:
       docker-compose: 1.27.4
 
     schain:
-      contractStorageZeroValuePatchTimestamp: 1691146800
-      revertableFSPatchTimestamp: 1691146800
-      contractStoragePatchTimestamp: 1691146800
-      verifyDaSigsPatchTimestamp: 1691146800
+      contractStorageZeroValuePatchTimestamp: 1000000
+      revertableFSPatchTimestamp: 1000000
+      contractStoragePatchTimestamp: 1000000
+      verifyDaSigsPatchTimestamp: 1000000
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
