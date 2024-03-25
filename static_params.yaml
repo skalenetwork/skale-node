@@ -237,17 +237,17 @@ envs:
       snapshotDownloadInactiveTimeout: 120
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 2", "--aa no"]
 
     node:
+      admin:
+        automatic_repair: false
       common:
         bindIP: "0.0.0.0"
         logLevel: "info"
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
-      admin:
-        automatic_repair: false
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
