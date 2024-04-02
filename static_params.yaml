@@ -322,9 +322,9 @@ envs:
       storageDestructionPatchTimestamp: 1000000
       powCheckPatchTimestamp: 1000000
       skipInvalidTransactionsPatchTimestamp: 1000000
-      pushZeroPatchTimestamp: 0
-      precompiledConfigPatchTimestamp: 0
-      correctForkInPowPatchTimestamp: 0
+      pushZeroPatchTimestamp: 1706178712
+      precompiledConfigPatchTimestamp: 1706178712
+      correctForkInPowPatchTimestamp: 1706178712
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
