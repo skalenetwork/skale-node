@@ -32,18 +32,14 @@
   protocol = "udp"
   service_address = ":8125"
 
- [[inputs.nginx]]
-   alias = "nginx"
-   urls = ["http://localhost:3009/nginx-status"]
-   response_timeout = "5s"
+[[inputs.nginx]]
+  alias = "nginx"
+  urls = ["http://localhost:3009/nginx-status"]
+  response_timeout = "5s"
 
-[outputs.influxdb_v2]]
+[[outputs.influxdb_v2]]
    alias = "influx"
    urls = ["{{ url }}"]
    bucket = "{{ bucket }}"
    organization = "{{ org }}"
    token = "{{ token }}"
-
-[[outputs.prometheus_client]]
-  alias = "prom"
-  listen = ":9280"
