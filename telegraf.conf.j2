@@ -1,0 +1,49 @@
+[agent]
+  interval = "60s"
+  round_interval = true
+  metric_batch_size = 1000
+  metric_buffer_limit = 10000
+  collection_jitter = "1s"
+  flush_interval = "60s"
+  flush_jitter = "1s"
+  precision = ""
+  hostname = "localhost"
+  omit_hostname = false
+
+[[inputs.mem]]
+  alias = "mem"
+
+[[inputs.cpu]]
+  alias = "cpu"
+
+[[inputs.procstat]]
+  alias = "skaled_procstat"
+  pattern = ".*"
+  pid_finder = "native"
+  cmdline_tag = true
+
+[[inputs.docker]]
+  alias = "docker"
+  endpoint = "unix:///var/run/skale/docker.sock"
+  timeout = "5s"
+
+[[inputs.statsd]]
+  alias = "statsd"
+  protocol = "udp"
+  service_address = ":8125"
+
+ [[inputs.nginx]]
+   alias = "nginx"
+   urls = ["http://localhost:3009/nginx-status"]
+   response_timeout = "5s"
+
+[outputs.influxdb_v2]]
+   alias = "influx"
+   urls = ["{{ url }}"]
+   bucket = "{{ bucket }}"
+   organization = "{{ org }}"
+   token = "{{ token }}"
+
+[[outputs.prometheus_client]]
+  alias = "prom"
+  listen = ":9280"
