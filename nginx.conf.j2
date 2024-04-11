@@ -26,7 +26,7 @@ server {
         uwsgi_pass 127.0.0.1:3010;
     }
 
-    location /nginx_status {
+    location /nginx-status {
         stub_status;
         allow 127.0.0.1;
         deny all;
