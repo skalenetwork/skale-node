@@ -37,9 +37,7 @@
   urls = ["http://localhost:3009/nginx-status"]
   response_timeout = "5s"
 
-[[outputs.influxdb_v2]]
-   alias = "influx"
+[[outputs.influxdb]]
+   alias = "vm"
    urls = ["{{ url }}"]
-   bucket = "{{ bucket }}"
-   organization = "{{ org }}"
-   token = "{{ token }}"
+   http_headers = {"Authorization" = "Bearer {{ token }}"}
