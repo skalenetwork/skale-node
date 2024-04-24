@@ -7,8 +7,11 @@
   flush_interval = "60s"
   flush_jitter = "1s"
   precision = ""
-  hostname = "localhost"
+  hostname = "{{ ip }}"
   omit_hostname = false
+
+[global_tags]
+  node_id = "{{ node_id }}"
 
 [[inputs.mem]]
   alias = "mem"
@@ -20,12 +23,17 @@
   alias = "skaled_procstat"
   pattern = ".*"
   pid_finder = "native"
-  cmdline_tag = true
 
 [[inputs.docker]]
   alias = "docker"
   endpoint = "unix:///var/run/skale/docker.sock"
   timeout = "5s"
+
+[[inputs.disk]]
+  alias = "disk"
+
+[[inputs.diskio]]
+  alias = "diskio"
 
 [[inputs.statsd]]
   alias = "statsd"
@@ -38,6 +46,6 @@
   response_timeout = "5s"
 
 [[outputs.influxdb]]
-   alias = "vm"
-   urls = ["{{ url }}"]
-   http_headers = {"Authorization" = "Bearer {{ token }}"}
+  alias = "vm"
+  urls = ["{{ url }}"]
+  http_headers = {"Authorization" = "Bearer {{ token }}"}
