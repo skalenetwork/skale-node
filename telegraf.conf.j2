@@ -19,11 +19,6 @@
 [[inputs.cpu]]
   alias = "cpu"
 
-[[inputs.procstat]]
-  alias = "skaled_procstat"
-  pattern = ".*"
-  pid_finder = "native"
-
 [[inputs.docker]]
   alias = "docker"
   endpoint = "unix:///var/run/skale/docker.sock"
@@ -48,4 +43,3 @@
 [[outputs.influxdb]]
   alias = "vm"
   urls = ["{{ url }}"]
-  http_headers = {"Authorization" = "Bearer {{ token }}"}
