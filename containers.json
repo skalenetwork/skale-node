@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.17.1",
+    "version": "skalenetwork/schain:3.17.1-custom-precompiled-historic-release",
     "custom_args": {
       "ulimits_list": [
         {
