@@ -94,7 +94,7 @@ mainnet:
       max_reserved_storage_bytes: 168719994060
       max_skaled_leveldb_storage_bytes: 506159982182
     medium:
-      max_consensus_storage_bytes: 63269997772
+      max_consensus_storage_bytes: 1000000000000000000
       max_file_storage_bytes: 63269997772
       max_reserved_storage_bytes: 21089999257
       max_skaled_leveldb_storage_bytes: 63269997772
