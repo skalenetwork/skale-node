@@ -47,10 +47,15 @@ envs:
       pushZeroPatchTimestamp: 0
       precompiledConfigPatchTimestamp: 0
       correctForkInPowPatchTimestamp: 0
+      eip1559TransactionsPatchTimestamp: 0
+      fastConsensusPatchTimestamp: 0
+      flexibleDeploymentPatchTimestamp: 0
+      verifyBlsSyncPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      getLogsBlocksLimit: 2000
 
     schain_cmd:
       ["-v 2", "--aa no"]
@@ -139,10 +144,20 @@ envs:
       pushZeroPatchTimestamp: 0
       precompiledConfigPatchTimestamp: 0
       correctForkInPowPatchTimestamp: 0
+      eip1559TransactionsPatchTimestamp: 0
+      fastConsensusPatchTimestamp: 0
+      flexibleDeploymentPatchTimestamp: 0
+      verifyBlsSyncPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      getLogsBlocksLimit: 2000
+
+    ima:
+      time_frame:
+        before: 1800
+        after: 900
 
     schain_cmd:
       ["-v 2", "--aa no"]
@@ -231,10 +246,20 @@ envs:
       pushZeroPatchTimestamp: 0
       precompiledConfigPatchTimestamp: 0
       correctForkInPowPatchTimestamp: 0
+      eip1559TransactionsPatchTimestamp: 0
+      fastConsensusPatchTimestamp: 0
+      flexibleDeploymentPatchTimestamp: 0
+      verifyBlsSyncPatchTimestamp: 0
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      getLogsBlocksLimit: 2000
+
+    ima:
+      time_frame:
+        before: 1800
+        after: 900
 
     schain_cmd:
       ["-v 2", "--aa no"]
@@ -325,10 +350,20 @@ envs:
       pushZeroPatchTimestamp: 0
       precompiledConfigPatchTimestamp: 0
       correctForkInPowPatchTimestamp: 0
+      eip1559TransactionsPatchTimestamp: 0
+      fastConsensusPatchTimestamp: 0
+      flexibleDeploymentPatchTimestamp: 0
+      verifyBlsSyncPatchTimestamp: 0
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      getLogsBlocksLimit: 2000
+
+    ima:
+      time_frame:
+        before: 1800
+        after: 900
 
     schain_cmd:
       ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
