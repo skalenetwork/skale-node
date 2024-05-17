@@ -49,7 +49,11 @@ envs:
       correctForkInPowPatchTimestamp: 0
       eip1559TransactionsPatchTimestamp: 0
       fastConsensusPatchTimestamp: 0
-      flexibleDeploymentPatchTimestamp: 0
+      flexibleDeploymentPatchTimestamp:
+        honorable-steel-rasalhague: 0
+        elated-tan-skat: 0
+        green-giddy-denebola: 0
+        parallel-stormy-spica: 0
       verifyBlsSyncPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
