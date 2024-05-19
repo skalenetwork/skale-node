@@ -150,8 +150,7 @@ envs:
       correctForkInPowPatchTimestamp: 1710331200
       eip1559TransactionsPatchTimestamp: 0
       fastConsensusPatchTimestamp: 0
-      flexibleDeploymentPatchTimestamp:
-        nesta: 0
+      flexibleDeploymentPatchTimestamp: 0
       verifyBlsSyncPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
@@ -355,10 +354,11 @@ envs:
       pushZeroPatchTimestamp: 1712142000
       precompiledConfigPatchTimestamp: 1712314800
       correctForkInPowPatchTimestamp: 1711969200
-      eip1559TransactionsPatchTimestamp: 0
-      fastConsensusPatchTimestamp: 0
-      flexibleDeploymentPatchTimestamp: 0
-      verifyBlsSyncPatchTimestamp: 0
+      eip1559TransactionsPatchTimestamp: 1716116659
+      fastConsensusPatchTimestamp: 1716116659
+      flexibleDeploymentPatchTimestamp:
+        nesta: 1716116659
+      verifyBlsSyncPatchTimestamp: 1716116659
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000

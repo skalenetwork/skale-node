@@ -1,5 +1,5 @@
 devnet:
-  test-chain: 0
+  nesta: 1716116659
 
 testnet:
   staging-legal-crazy-castor: 0
@@ -8,4 +8,4 @@ qanet:
   hungry-formal-ascella: 0
 
 mainnet:
-  affectionate-immediate-pollux: 0
+  pollux: 0
