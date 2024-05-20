@@ -25,6 +25,12 @@ server {
         uwsgi_socket_keepalive on;
         uwsgi_pass 127.0.0.1:3010;
     }
+
+    location /nginx-status {
+        stub_status;
+        allow 127.0.0.1;
+        deny all;
+    }
 }
 
 server {
