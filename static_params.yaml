@@ -243,16 +243,16 @@ envs:
       docker-compose: 1.27.4
 
     schain:
-      contractStorageZeroValuePatchTimestamp: 1691146800
-      revertableFSPatchTimestamp: 1691146800
-      contractStoragePatchTimestamp: 1691146800
-      verifyDaSigsPatchTimestamp: 1691146800
-      storageDestructionPatchTimestamp: 1699618500
-      powCheckPatchTimestamp: 1699625700
-      skipInvalidTransactionsPatchTimestamp: 1699632900
-      pushZeroPatchTimestamp: 1712142000
-      precompiledConfigPatchTimestamp: 1712314800
-      correctForkInPowPatchTimestamp: 1711969200
+      contractStorageZeroValuePatchTimestamp: 1000000
+      revertableFSPatchTimestamp: 1000000
+      contractStoragePatchTimestamp: 1000000
+      verifyDaSigsPatchTimestamp: 1000000
+      storageDestructionPatchTimestamp: 1000000
+      powCheckPatchTimestamp: 1000000
+      skipInvalidTransactionsPatchTimestamp: 1000000
+      pushZeroPatchTimestamp: 1706533200
+      precompiledConfigPatchTimestamp: 1706540400
+      correctForkInPowPatchTimestamp: 1706547600
       EIP1559TransactionsPatchTimestamp: 0
       fastConsensusPatchTimestamp: 0
       flexibleDeploymentPatchTimestamp: 0
@@ -268,9 +268,11 @@ envs:
         after: 900
 
     schain_cmd:
-      ["-v 2", "--aa no"]
+      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
+      admin:
+        automatic_repair: false
       common:
         bindIP: "0.0.0.0"
         logLevel: "info"
