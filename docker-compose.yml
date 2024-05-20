@@ -31,6 +31,11 @@ services:
     container_name: skale_admin
     image: skalenetwork/admin:2.7.0-beta.0
     cpu_shares: 192
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "20m"
     network_mode: host
     tty: true
     cap_add:
