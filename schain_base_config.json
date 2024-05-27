@@ -22,7 +22,7 @@
 		"blockReward": "0x4563918244F40000",
 		"externalGasDifficulty": "0x01",
 		"skaleDisableChainIdCheck": true,
-		"getLogsBlocksLimit": 2000
+                "getLogsBlocksLimit": 2000
 	},
 	"unddos": {
 		"origins": [
