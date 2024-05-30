@@ -250,17 +250,16 @@ envs:
       storageDestructionPatchTimestamp: 1000000
       powCheckPatchTimestamp: 1000000
       skipInvalidTransactionsPatchTimestamp: 1000000
-      skipInvalidTransactionsPatchTimestamp:
+      pushZeroPatchTimestamp: 1706533200
+      precompiledConfigPatchTimestamp: 1706540400
+      correctForkInPowPatchTimestamp: 1706547600
+      EIP1559TransactionsPatchTimestamp:
         submissive-well-off-rotanev: 1717502400
         numb-heavy-sadalachbia: 1717509600
         default: 1717416000
-      pushZeroPatchTimestamp: 1717423200
-      precompiledConfigPatchTimestamp: 1717426800
-      correctForkInPowPatchTimestamp: 1717430400
-      EIP1559TransactionsPatchTimestamp: 0
-      fastConsensusPatchTimestamp: 0
-      flexibleDeploymentPatchTimestamp: 0
-      verifyBlsSyncPatchTimestamp: 0
+      fastConsensusPatchTimestamp: 1717423200
+      flexibleDeploymentPatchTimestamp: 1717426800
+      verifyBlsSyncPatchTimestamp: 1717430400
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
