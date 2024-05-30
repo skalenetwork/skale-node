@@ -250,9 +250,10 @@ envs:
       storageDestructionPatchTimestamp: 1000000
       powCheckPatchTimestamp: 1000000
       skipInvalidTransactionsPatchTimestamp: 1000000
-      pushZeroPatchTimestamp: 1706533200
-      precompiledConfigPatchTimestamp: 1706540400
-      correctForkInPowPatchTimestamp: 1706547600
+      skipInvalidTransactionsPatchTimestamp: 1717416000
+      pushZeroPatchTimestamp: 1717423200
+      precompiledConfigPatchTimestamp: 1717426800
+      correctForkInPowPatchTimestamp: 1717430400
       EIP1559TransactionsPatchTimestamp: 0
       fastConsensusPatchTimestamp: 0
       flexibleDeploymentPatchTimestamp: 0
@@ -271,8 +272,6 @@ envs:
       ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
-      admin:
-        automatic_repair: false
       common:
         bindIP: "0.0.0.0"
         logLevel: "info"
