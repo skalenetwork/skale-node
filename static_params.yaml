@@ -253,7 +253,7 @@ envs:
       skipInvalidTransactionsPatchTimestamp:
         submissive-well-off-rotanev: 1717502400
         numb-heavy-sadalachbia: 1717509600
-        defeult: 1717416000
+        default: 1717416000
       pushZeroPatchTimestamp: 1717423200
       precompiledConfigPatchTimestamp: 1717426800
       correctForkInPowPatchTimestamp: 1717430400
