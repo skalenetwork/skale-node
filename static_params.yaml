@@ -253,13 +253,12 @@ envs:
       pushZeroPatchTimestamp: 1706533200
       precompiledConfigPatchTimestamp: 1706540400
       correctForkInPowPatchTimestamp: 1706547600
-      EIP1559TransactionsPatchTimestamp:
-        submissive-well-off-rotanev: 1717502400
-        numb-heavy-sadalachbia: 1717509600
-        default: 1717416000
+      EIP1559TransactionsPatchTimestamp: 1717416000
       fastConsensusPatchTimestamp: 1717423200
-      flexibleDeploymentPatchTimestamp: 1717426800
-      verifyBlsSyncPatchTimestamp: 1717430400
+      flexibleDeploymentPatchTimestamp: 
+        submissive-well-off-rotanev: 1717502400
+        default: 0
+      verifyBlsSyncPatchTimestamp: 1717498800
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
