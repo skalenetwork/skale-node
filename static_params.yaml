@@ -50,6 +50,7 @@ envs:
       EIP1559TransactionsPatchTimestamp: 0
       fastConsensusPatchTimestamp: 0
       flexibleDeploymentPatchTimestamp:
+        default: 0
         honorable-steel-rasalhague: 0
         elated-tan-skat: 0
         green-giddy-denebola: 0
