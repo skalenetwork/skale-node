@@ -181,7 +181,7 @@
                 "0x61759c7a6278f7839645191969d0dcc2a4fa3c2531a1768385b22ec4ad9e9f2609ac50ab035e9ed278fed3d90f5f12c0670ad6b081c371c3fbb3615eb7a5e8b5"
             ]
         },
-        "finish_ts": 1682456003,
+        "finish_ts": 1682017886,
         "bls_public_key": null
     },
     "3": {
@@ -271,7 +271,7 @@
                 "0x79212f75ab9d1412ce4693dacda22ac7b67d1eb2ba7833abdcc7aafcd5e5a5bb90919428732d8cdcbf27ec2fdc5b3057d11e83ef5a424fa468bbb7f079e3ca8e"
             ]
         },
-        "finish_ts": null,
+        "finish_ts": 1682017885,
         "bls_public_key": null
     },
     "2": {
@@ -361,7 +361,7 @@
                 "0x79212f75ab9d1412ce4693dacda22ac7b67d1eb2ba7833abdcc7aafcd5e5a5bb90919428732d8cdcbf27ec2fdc5b3057d11e83ef5a424fa468bbb7f079e3ca8e"
             ]
         },
-        "finish_ts": null,
+        "finish_ts": 1682017884,
         "bls_public_key": null
     },
     "1": {
@@ -451,7 +451,7 @@
                 "0x60c03528942b6b5c729c69eb8d484aa88cba3d17b71fe4633941d2f222a669fc9c793959288353d1e7984526a6a7b6c2cfd5b348cf19c43bcceeb64f715b5d74"
             ]
         },
-        "finish_ts": null,
+        "finish_ts": 1682017883,
         "bls_public_key": {
             "blsPublicKey0": "14734776812675555117926537665197006740582899221410777602340029563807551250693",
             "blsPublicKey1": "8368312483250245669515134845984298970961758626711946038683575556065977897976",
