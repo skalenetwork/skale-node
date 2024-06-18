@@ -57,6 +57,8 @@ services:
       ENV_TYPE: ${ENV_TYPE}
       ALLOWED_TS_DIFF: 300
       PULL_CONFIG_FOR_SCHAIN: ${PULL_CONFIG_FOR_SCHAIN}
+      TELEGRAF: ${TELEGRAF}
+      INFLUX_URL: ${INFLUX_URL}
 
     command: "python3 admin.py"
     volumes:
