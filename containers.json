@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "custom_archive_build2-release",
+    "version": "3.18.2-catchup-limits-release-historic",
     "custom_args": {
       "ulimits_list": [
         {
