@@ -16,7 +16,7 @@ services:
   skale-sync-admin:
     <<: *skale_base
     container_name: skale_sync_admin
-    image: skalenetwork/admin:2.7.0-beta.2
+    image: skalenetwork/admin:2.7.0-beta.3
     network_mode: host
     tty: true
     cap_add:
@@ -27,6 +27,8 @@ services:
       SKALE_DIR_HOST: ${SKALE_DIR}
       ENV_TYPE: ${ENV_TYPE}
       SCHAIN_NAME: ${SCHAIN_NAME}
+      TELEGRAF: ${TELEGRAF}
+      INFLUX_URL: ${INFLUX_URL}
       SYNC_NODE: "True"
     command: "python3 sync_node.py"
     volumes:
