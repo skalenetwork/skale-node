@@ -257,6 +257,7 @@ envs:
       fastConsensusPatchTimestamp: 1717423200
       flexibleDeploymentPatchTimestamp: 
         submissive-well-off-rotanev: 1717502400
+        scary-illegal-celaeno: 1720641600
         default: 0
       verifyBlsSyncPatchTimestamp: 1717498800
       snapshotIntervalSec: 3600
