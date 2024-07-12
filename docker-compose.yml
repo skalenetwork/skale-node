@@ -131,7 +131,7 @@ services:
   bounty:
     <<: *skale_base
     container_name: skale_bounty
-    image: skalenetwork/bounty-agent:2.2.0-beta.1
+    image: skalenetwork/bounty-agent:2.2.0-stable.0
     network_mode: host
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
@@ -148,7 +148,7 @@ services:
   watchdog:
     <<: *skale_base
     container_name: skale_watchdog
-    image: skalenetwork/watchdog:2.2.0-beta.0
+    image: skalenetwork/watchdog:2.2.0-stable.0
     network_mode: host
     environment:
       ALLOWED_TS_DIFF: 300
