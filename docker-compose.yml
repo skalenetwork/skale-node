@@ -16,7 +16,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:2.2.0
+    image: skalenetwork/transaction-manager:2.3.0
     network_mode: host
     tty: true
     environment:
@@ -29,7 +29,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:2.6.1
+    image: skalenetwork/admin:2.7.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -40,7 +40,6 @@ services:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
-      IMA_ENDPOINT: ${IMA_ENDPOINT}
       SKALE_DIR_HOST: ${SKALE_DIR}
       TG_API_KEY: ${TG_API_KEY}
       TG_CHAT_ID: ${TG_CHAT_ID}
@@ -50,10 +49,11 @@ services:
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
       DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
       MAX_ALLOWED_LOG_TIME_DIFF: 600
-      DISABLE_IMA: ${DISABLE_IMA}
       ENV_TYPE: ${ENV_TYPE}
       ALLOWED_TS_DIFF: 300
       PULL_CONFIG_FOR_SCHAIN: ${PULL_CONFIG_FOR_SCHAIN}
+      TELEGRAF: ${TELEGRAF}
+      INFLUX_URL: ${INFLUX_URL}
 
     command: "python3 admin.py"
     volumes:
@@ -70,7 +70,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:2.6.1
+    image: skalenetwork/admin:2.7.0
     network_mode: host
     tty: true
     cap_add:
@@ -80,7 +80,6 @@ services:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
-      IMA_ENDPOINT: ${IMA_ENDPOINT}
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
       FLASK_APP_PORT: 3007
       FLASK_APP_HOST: "127.0.0.1"
@@ -104,7 +103,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:2.6.1
+    image: skalenetwork/admin:2.7.0
     network_mode: host
     tty: true
     environment:
