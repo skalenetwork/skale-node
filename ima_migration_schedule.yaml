@@ -2,17 +2,17 @@ devnet:
   test-chain: 0
 
 testnet:
-  staging-legal-crazy-castor: 0
+  test-chain: 0
 
 qanet:
-  carefree-knowing-sarin: 1717765200
-  splendid-equal-atik: 1717765200
-  scary-illegal-celaeno: 1717765200
-  terrible-metallic-markab: 1717765200
-  easy-going-eminent-sadr: 1717765200
-  numb-heavy-sadalachbia: 1717765200
-  submissive-well-off-rotanev: 1717765200
-  pleased-hairy-wezn: 1717765200
+  spanish-smug-auva: 1721304000
+  adorable-quaint-bellatrix: 1721304000
+  direct-querulous-alcor: 1721304000
+  massive-long-sirius: 1721304000
+  these-long-sadalsuud: 1721304000
+  black-spherical-graffias: 1721304000
+  mad-rusty-vindemiatrix: 1721304000
+  prickly-wary-sirius: 1721304000
 
 mainnet:
-  affectionate-immediate-pollux: 0
+  test-chain: 0
