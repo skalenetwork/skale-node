@@ -243,26 +243,24 @@ envs:
       docker-compose: 1.27.4
 
     schain:
-      contractStorageZeroValuePatchTimestamp: 1000000
-      revertableFSPatchTimestamp: 1000000
-      contractStoragePatchTimestamp: 1000000
-      verifyDaSigsPatchTimestamp: 1000000
-      storageDestructionPatchTimestamp: 1000000
-      powCheckPatchTimestamp: 1000000
-      skipInvalidTransactionsPatchTimestamp: 1000000
-      pushZeroPatchTimestamp: 1706533200
-      precompiledConfigPatchTimestamp: 1706540400
-      correctForkInPowPatchTimestamp: 1706547600
-      EIP1559TransactionsPatchTimestamp: 1717416000
-      fastConsensusPatchTimestamp: 1717423200
+      contractStorageZeroValuePatchTimestamp: 1691146800
+      revertableFSPatchTimestamp: 1691146800
+      contractStoragePatchTimestamp: 1691146800
+      verifyDaSigsPatchTimestamp: 1691146800
+      storageDestructionPatchTimestamp: 1699618500
+      powCheckPatchTimestamp: 1699625700
+      skipInvalidTransactionsPatchTimestamp: 1699632900
+      pushZeroPatchTimestamp: 1708516800
+      precompiledConfigPatchTimestamp: 1708520400
+      correctForkInPowPatchTimestamp: 1708527600
+      EIP1559TransactionsPatchTimestamp: 1721304000
+      fastConsensusPatchTimestamp: 1721307600
       flexibleDeploymentPatchTimestamp: 
-        submissive-well-off-rotanev: 1717502400
-        scary-illegal-celaeno: 1720641600
-        skale-parallel-droopy-miaplacidus: 1720821600
-        splendid-equal-atik: 1720821600
-        easy-going-eminent-sadr: 1720821600
+        mad-rusty-vindemiatrix: 1721304000
+        spanish-smug-auva: 1721304000
+        adorable-quaint-bellatrix: 1721304000
         default: 0
-      verifyBlsSyncPatchTimestamp: 1717498800
+      verifyBlsSyncPatchTimestamp: 1721311200
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -274,7 +272,7 @@ envs:
         after: 900
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 2", "--aa no"]
 
     node:
       common:
