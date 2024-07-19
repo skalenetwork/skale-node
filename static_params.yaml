@@ -55,7 +55,7 @@ envs:
         elated-tan-skat: 0
         green-giddy-denebola: 0
         parallel-stormy-spica: 0
-      verifyBlsSyncPatchTimestamp: 0
+      verifyBlsSyncPatchTimestamp: 1
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
