@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "custom_archive_build2-release-historic",
+    "version": "custom_archive_build2-release",
     "custom_args": {
       "ulimits_list": [
         {
