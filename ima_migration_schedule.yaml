@@ -2,7 +2,10 @@ devnet:
   test-chain: 0
 
 testnet:
-  staging-legal-crazy-castor: 0
+  aware-fake-trim-testnet: 1721833200
+  lanky-ill-funny-testnet: 1721833200
+  giant-half-dual-testnet: 1721833200
+  juicy-low-small-testnet: 1721833200
 
 qanet:
   hungry-formal-ascella: 0
