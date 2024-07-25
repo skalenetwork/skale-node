@@ -1,12 +1,14 @@
 = Validator Parameters
 :network: SKALE
-:version: 3.0
+:title-version: 3.0
+:version: 3.0.0
 :prev-version: 2.3.2
 
 :machine: A Linux x86_64 machine
 :linux-distro: Ubuntu 20.04 (focal)
 :physical-cores: 8 physical cores
-:port-range: Ports 80, 443, 3009, 311, and 10000–18192, and ICMP IPv4 should not be closed by external firewall
+:incoming-port-range: Incoming ports 80, 443, 3009, 311, and 10000–18192, and ICMP IPv4 should not be closed by external firewall
+:outgoing-port-range: Outgoing ports 5000, 8391, should be opened
 :root-size: disk mounted as / - 100GB
 :attached-size: separate not mounted block device - 2Tb
 :ram-size: 32GB RAM

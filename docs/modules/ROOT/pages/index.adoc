@@ -1,4 +1,4 @@
-= {Network} {Version}
+= {Network} {title-version}
 include::parameters.adoc[]
 
 image::https://img.shields.io/discord/534485763354787851.svg[link="https://discord.gg/vvUtWJB"]
@@ -14,7 +14,8 @@ Right now versions are backwards *incompatible*. So *do not* downgrade the node 
 
 === Node machine
 * {machine}
-* {port-range}
+* {incoming-port-range}
+* {outgoing-port-range}
 * {linux-distro}
 * {root-size}
 * {attached-size}
@@ -36,7 +37,7 @@ Right now versions are backwards *incompatible*. So *do not* downgrade the node 
 
 . Make sure `DISABLE_IMA` .env option set to `False`.
 
-. {port-range}. If you're using `ufw` or `iptables` for configuring your own rules, please, do not open any of this ports.
+. If you're using `ufw` or `iptables` for configuring your own firewall rules, please, do not allow any of the ports listed above.
 
 . Nodes should be able to access {sgx-port-range} SGX ports.
 

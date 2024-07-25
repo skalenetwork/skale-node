@@ -1,0 +1,78 @@
+= {Network} {Version} upgrade
+include::parameters.adoc[]
+
+This document describes the procedure for upgrading from {prev-version} to {version} release.
+
+== New monitoring pipeline
+In {Version} release we added new metrics collection pipeline.
+
+Telegraf (https://github.com/influxdata/telegraf) service will be deployed on the nodes. It will push some node metrics to the database server hosted by SKALE Core team. 
+
+The metrics list includes the following:
+
+- CPU rate of the hsot and each service.
+- RAM usage of the host and each service.
+- Disk performance data.
+- Some internal SKALE service metrics.
+
+[IMPORTANT]
+Firewall rules should be adjusted to allow outgoing 8391 port.
+
+Telegraf configuration can be found here https://github.com/skalenetwork/skale-node/blob/stable/telegraf.conf.j2 .
+
+[NOTE]
+It is possible to use telegraf for your own needs. However currently custom configuration will be reset after each `skale node update` execution.
+
+In the next releases we are planning to provide more metrics and enhance the healthcheck API.
+
+If you have any questions regarding the new pipeline feel free to communicate with us through dedicated channel. 
+
+== Download new node-cli binary
+
+[source, subs="attributes"]
+----
+curl -L {node-cli-url} > /usr/local/bin/skale
+----
+
+== Verify checksum 
+
+Verify checksum using sha512sum command
+
+```shell
+sha512sum /usr/local/bin/skale
+```
+
+Expected checksum:
+[source, subs="attributes"]
+----
+{node-cli-checksum}
+----
+
+== Make node-cli executable
+
+```shell
+chmod +x /usr/local/bin/skale
+```
+
+== Modify .env
+
+Add the new fields.
+
+[source, subs="attributes"]
+----
+TELEGRAF={TELEGRAF}
+INFLUX_URL={INFLUX_URL}
+----
+
+Update the following parameters to the new values.
+
+[source, subs="attributes"]
+----
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+----
+
+== Execute update
+
+```shell
+skale node update .env --yes
+```
