@@ -10,7 +10,7 @@ Telegraf (https://github.com/influxdata/telegraf) service will be deployed on th
 
 The metrics list includes the following:
 
-- CPU rate of the hsot and each service.
+- CPU rate of the host and each service.
 - RAM usage of the host and each service.
 - Disk performance data.
 - Some internal SKALE service metrics.
