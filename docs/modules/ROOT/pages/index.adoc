@@ -1,4 +1,4 @@
-= SKALE {Network} Versions
+= {Network} {Version}
 include::parameters.adoc[]
 
 image::https://img.shields.io/discord/534485763354787851.svg[link="https://discord.gg/vvUtWJB"]
