@@ -49,7 +49,7 @@
 
 // environment variables
 :DOCKER_LVMPY_STREAM: 1.0.2-stable.0
-:MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/skale-manager/1.10.0/skale-manager-1.10.0-mainnet-abi.json
+:MANAGER_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/skale-manager/1.11.0/skale-manager-1.11.0-mainnet-abi.json
 :IMA_CONTRACTS_ABI_URL: https://raw.githubusercontent.com/skalenetwork/skale-network/master/releases/mainnet/IMA/1.5.0/mainnet/abi.json
 :CONTAINER_CONFIGS_STREAM: 3.0.0
 :FILEBEAT_HOST: filebeat.mainnet.skalenodes.com:5000

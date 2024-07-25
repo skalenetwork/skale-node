@@ -6,14 +6,12 @@ This document describes the procedure for upgrading from {prev-version} to {vers
 == New monitoring pipeline
 In {Version} release we added new metrics collection pipeline.
 
-Telegraf (https://github.com/influxdata/telegraf) service will be deployed on the nodes. It will push some node metrics to the database server hosted by SKALE Core team. 
+In the 3.0.0 release, we have introduced a new metrics collection pipeline. The Telegraf service (https://github.com/influxdata/telegraf) will be deployed on the nodes, pushing various node metrics to a database server hosted by the SKALE Core team. The metrics collected include:
 
-The metrics list includes the following:
-
-- CPU rate of the host and each service.
+- CPU usage of the host and each service.
 - RAM usage of the host and each service.
 - Disk performance data.
-- Some internal SKALE service metrics.
+- Various internal SKALE service metrics.
 
 [IMPORTANT]
 Firewall rules should be adjusted to allow outgoing 8391 port.
@@ -68,6 +66,7 @@ Update the following parameters to the new values.
 
 [source, subs="attributes"]
 ----
+MANAGER_CONTRACTS_ABI_URL={MANAGER_CONTRACTS_ABI_URL}
 CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
 ----
 
