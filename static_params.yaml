@@ -47,15 +47,15 @@ envs:
       pushZeroPatchTimestamp: 1712142000
       precompiledConfigPatchTimestamp: 1712314800
       correctForkInPowPatchTimestamp: 1711969200
-      EIP1559TransactionsPatchTimestamp: 0
-      fastConsensusPatchTimestamp: 0
+      EIP1559TransactionsPatchTimestamp: 1722942000
+      fastConsensusPatchTimestamp: 1723114800
       flexibleDeploymentPatchTimestamp:
         default: 0
-        honorable-steel-rasalhague: 0
-        elated-tan-skat: 0
-        green-giddy-denebola: 0
-        parallel-stormy-spica: 0
-      verifyBlsSyncPatchTimestamp: 0
+        honorable-steel-rasalhague: 1723460400
+        elated-tan-skat: 1723460400
+        green-giddy-denebola: 1723460400
+        parallel-stormy-spica: 1723460400
+      verifyBlsSyncPatchTimestamp: 1722855600
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -153,10 +153,10 @@ envs:
       pushZeroPatchTimestamp: 1710331200
       precompiledConfigPatchTimestamp: 1710331200
       correctForkInPowPatchTimestamp: 1710331200
-      EIP1559TransactionsPatchTimestamp: 0
-      fastConsensusPatchTimestamp: 0
-      flexibleDeploymentPatchTimestamp: 0
-      verifyBlsSyncPatchTimestamp: 0
+      EIP1559TransactionsPatchTimestamp: 1721818800
+      fastConsensusPatchTimestamp: 1721822400
+      flexibleDeploymentPatchTimestamp: 1721826000
+      verifyBlsSyncPatchTimestamp: 1721829600
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -357,10 +357,10 @@ envs:
       pushZeroPatchTimestamp: 1712142000
       precompiledConfigPatchTimestamp: 1712314800
       correctForkInPowPatchTimestamp: 1711969200
-      EIP1559TransactionsPatchTimestamp: 0
-      fastConsensusPatchTimestamp: 0
+      EIP1559TransactionsPatchTimestamp: 1722942000
+      fastConsensusPatchTimestamp: 1723114800
       flexibleDeploymentPatchTimestamp: 0
-      verifyBlsSyncPatchTimestamp: 0
+      verifyBlsSyncPatchTimestamp: 1722855600
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
