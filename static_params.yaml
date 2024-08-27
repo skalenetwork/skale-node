@@ -51,10 +51,6 @@ envs:
       fastConsensusPatchTimestamp: 1723114800
       flexibleDeploymentPatchTimestamp:
         default: 0
-        honorable-steel-rasalhague: 0
-        elated-tan-skat: 0
-        green-giddy-denebola: 0
-        parallel-stormy-spica: 0
         honorable-steel-rasalhague: 1723460400
         elated-tan-skat: 1723460400
         green-giddy-denebola: 1723460400
