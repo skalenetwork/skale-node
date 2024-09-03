@@ -1,0 +1,19 @@
+= {Network} {Version} upgrade
+include::parameters.adoc[]
+
+This document describes the procedure for upgrading from {prev-version} to {version} release.
+
+== Modify .env
+
+Update the following parameters to the new values.
+
+[source, subs="attributes"]
+----
+CONTAINER_CONFIGS_STREAM={CONTAINER_CONFIGS_STREAM}
+----
+
+== Execute update
+
+```shell
+skale node update .env --yes
+```
