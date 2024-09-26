@@ -261,6 +261,7 @@ envs:
         adorable-quaint-bellatrix: 1721304000
         default: 0
       verifyBlsSyncPatchTimestamp: 1721311200
+      externalGasPatchTimestamp: 1727370000
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
