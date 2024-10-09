@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.20.0-state-root-check.2-release",
+    "version": "3.19.3",
     "custom_args": {
       "ulimits_list": [
         {
