@@ -298,7 +298,7 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 13000
+        transactionQueueSize: 1000
         transactionQueueLimitBytes: 69206016
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
@@ -365,7 +365,7 @@ envs:
       fastConsensusPatchTimestamp: 0
       flexibleDeploymentPatchTimestamp: 0
       verifyBlsSyncPatchTimestamp: 0
-      snapshotIntervalSec: 3600
+      snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
@@ -376,7 +376,7 @@ envs:
         after: 900
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 2", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
       common:
@@ -399,7 +399,7 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 1000
+        transactionQueueSize: 13000
         transactionQueueLimitBytes: 69206016
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
