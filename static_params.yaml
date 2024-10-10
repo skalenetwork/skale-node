@@ -298,7 +298,7 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 1000
+        transactionQueueSize: 13000
         transactionQueueLimitBytes: 69206016
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000

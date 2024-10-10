@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.19.3",
+    "version": "1545_state_locking_final-release-latest",
     "custom_args": {
       "ulimits_list": [
         {
