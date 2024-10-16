@@ -271,7 +271,7 @@ envs:
         after: 900
 
     schain_cmd:
-      ["-v 2", "--aa no"]
+      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
       common:
