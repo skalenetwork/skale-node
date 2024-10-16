@@ -7,31 +7,10 @@ common:
       skaled: 0.8
       ima: 0.2
     volume_limits:
-      default:
-        max_consensus_storage_bytes: 0.3
-        max_skaled_leveldb_storage_bytes: 0.3
-        max_file_storage_bytes: 0.3
-        max_reserved_storage_bytes: 0.1
-      no_filestorage:
-        max_consensus_storage_bytes: 0.45
-        max_skaled_leveldb_storage_bytes: 0.45
-        max_file_storage_bytes: 0.0
-        max_reserved_storage_bytes: 0.1
-      max_contract_storage:
-        max_consensus_storage_bytes: 0.135
-        max_skaled_leveldb_storage_bytes: 0.765
-        max_file_storage_bytes: 0.0
-        max_reserved_storage_bytes: 0.1
-      max_filestorage:
-        max_consensus_storage_bytes: 0.135
-        max_skaled_leveldb_storage_bytes: 0.135
-        max_file_storage_bytes: 0.63
-        max_reserved_storage_bytes: 0.1
-      max_consensus_db:
-        max_consensus_storage_bytes: 0.72
-        max_skaled_leveldb_storage_bytes: 0.18
-        max_file_storage_bytes: 0.0
-        max_reserved_storage_bytes: 0.1
+      max_consensus_storage_bytes: 0.3
+      max_skaled_leveldb_storage_bytes: 0.3
+      max_file_storage_bytes: 0.3
+      max_reserved_storage_bytes: 0.1
     leveldb_limits:
       contract_storage: 0.6
       db_storage: 0.2 # leveldb may use x2 storage, so 0.4 divided by 2, actually using 0.4
