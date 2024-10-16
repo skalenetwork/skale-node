@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "archiveNodeSnapshotDevnet1-release",
+    "version": "archiveNodeSnapshotDevnet2-release",
     "custom_args": {
       "ulimits_list": [
         {
