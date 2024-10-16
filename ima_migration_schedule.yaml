@@ -5,14 +5,7 @@ testnet:
   test-chain: 0
 
 qanet:
-  spanish-smug-auva: 1721304000
-  adorable-quaint-bellatrix: 1721304000
-  direct-querulous-alcor: 1721304000
-  massive-long-sirius: 1721304000
-  these-long-sadalsuud: 1721304000
-  black-spherical-graffias: 1721304000
-  mad-rusty-vindemiatrix: 1721304000
-  prickly-wary-sirius: 1721304000
+  test-chain: 0
 
 mainnet:
   test-chain: 0

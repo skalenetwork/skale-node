@@ -256,9 +256,7 @@ envs:
       EIP1559TransactionsPatchTimestamp: 1721304000
       fastConsensusPatchTimestamp: 1721307600
       flexibleDeploymentPatchTimestamp: 
-        mad-rusty-vindemiatrix: 1721304000
-        spanish-smug-auva: 1721304000
-        adorable-quaint-bellatrix: 1721304000
+        idealistic-dual-miram: 1721304000 # Sasha1 chain
         default: 0
       verifyBlsSyncPatchTimestamp: 1721311200
       externalGasPatchTimestamp: 1727370000

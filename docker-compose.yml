@@ -35,7 +35,7 @@ services:
       driver: "json-file"
       options:
         max-file: "5"
-        max-size: "20m"
+        max-size: "100m"
     network_mode: host
     tty: true
     cap_add:
