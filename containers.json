@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "IS1083-2-release",
+    "version": "1870-test-release",
     "custom_args": {
       "ulimits_list": [
         {
