@@ -385,7 +385,6 @@ envs:
       fastConsensusPatchTimestamp: 1723114800
       flexibleDeploymentPatchTimestamp: 0
       verifyBlsSyncPatchTimestamp: 1722855600
-      externalGasPatchTimestamp: 1727353446
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
