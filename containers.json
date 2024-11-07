@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "3.20.0-historic-rotation-fixed-release",
+    "version": "3.20.0-new-historic-state-without-limits-release",
     "custom_args": {
       "ulimits_list": [
         {
