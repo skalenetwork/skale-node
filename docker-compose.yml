@@ -183,7 +183,7 @@ services:
   advisor:
     <<: *skale_base
     container_name: monitor_cadvisor
-    image: google/cadvisor:latest
+    image: gcr.io/cadvisor/cadvisor-amd64:v0.50.0
     cpu_shares: 128
     network_mode: host
     volumes:
