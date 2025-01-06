@@ -16,7 +16,7 @@ services:
   skale-sync-admin:
     <<: *skale_base
     container_name: skale_sync_admin
-    image: skalenetwork/admin:2.8.0
+    image: skalenetwork/admin:2.9.0-beta.0
     network_mode: host
     tty: true
     cap_add:
@@ -30,6 +30,7 @@ services:
       TELEGRAF: ${TELEGRAF}
       INFLUX_URL: ${INFLUX_URL}
       SYNC_NODE: "True"
+      MAX_SCHAIN_FAILED_RPC_COUNT: 60
     command: "python3 sync_node.py"
     volumes:
       - /var/run/skale:/var/run/skale
