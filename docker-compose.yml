@@ -60,7 +60,7 @@ services:
       - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-      - /etc/nft.conf.d/chains:/etc/nft.conf.d/chains
+      - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
     healthcheck:
       test: ["CMD", "python3", "healthchecks/admin.py"]
       interval: 1m
@@ -100,7 +100,7 @@ services:
       - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
-      - /etc/nft.conf.d/chains:/etc/nft.conf.d/chains
+      - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
 
   celery:
     <<: *skale_base
