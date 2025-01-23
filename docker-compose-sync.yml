@@ -16,7 +16,7 @@ services:
   skale-sync-admin:
     <<: *skale_base
     container_name: skale_sync_admin
-    image: skalenetwork/admin:2.9.0
+    image: skalenetwork/admin:2.9.0-beta.1
     network_mode: host
     tty: true
     cap_add:
@@ -37,7 +37,7 @@ services:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
       - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
-      - /etc/nft.conf.d/chains:/etc/nft.conf.d/chains
+      - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
     healthcheck:
       test: ["CMD", "python3", "healthchecks/admin.py"]
       interval: 1m
