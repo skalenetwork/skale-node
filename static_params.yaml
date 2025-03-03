@@ -82,6 +82,7 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      maxHistoricStateDbSize: 2530799910
 
     ima:
       time_frame:
