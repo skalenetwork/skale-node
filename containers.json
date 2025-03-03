@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "4.0.0-1870-historic-state-cache-release-historic",
+    "version": "4.0.0-1870-historic-state-cache-release",
     "custom_args": {
       "ulimits_list": [
         {
