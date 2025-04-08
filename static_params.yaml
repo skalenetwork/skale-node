@@ -415,6 +415,24 @@ envs:
         transactionQueueLimitBytes: 69206016
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
+      light32:
+        minCacheSize: 1000000
+        maxCacheSize: 2000000
+        collectionQueueSize: 2
+        collectionDuration: 10
+        transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
+        maxOpenLeveldbFiles: 25
+      light64:
+        minCacheSize: 1000000
+        maxCacheSize: 2000000
+        collectionQueueSize: 2
+        collectionDuration: 10
+        transactionQueueSize: 1000
+        transactionQueueLimitBytes: 69206016
+        futureTransactionQueueLimitBytes: 140509184
+        maxOpenLeveldbFiles: 25
       medium:
         minCacheSize: 8000000
         maxCacheSize: 16000000
