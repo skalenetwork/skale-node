@@ -283,6 +283,8 @@ envs:
         default: 0
       verifyBlsSyncPatchTimestamp: 1721311200
       externalGasPatchTimestamp: 1727370000
+      invalidTransactionFormatPatchTimestamp: 1744373700
+      clearPartialReceiptsPatchTimestamp: 1744384500
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
