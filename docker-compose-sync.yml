@@ -31,6 +31,8 @@ services:
       INFLUX_URL: ${INFLUX_URL}
       SYNC_NODE: "True"
       MAX_SCHAIN_FAILED_RPC_COUNT: 60
+      MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
+      IMA_CONTRACTS: ${IMA_CONTRACTS}
     command: "python3 sync_node.py"
     volumes:
       - /var/run/skale:/var/run/skale
