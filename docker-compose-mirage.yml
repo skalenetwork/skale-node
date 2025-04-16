@@ -1,0 +1,269 @@
+version: '3.4'
+
+services:
+  base: &skale_base
+    image: rancher/pause:3.6
+    restart: unless-stopped
+    labels:
+      com.skale.prefix: "node"
+    cpu_shares: 128
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+
+  transaction-manager:
+    <<: *skale_base
+    container_name: skale_transaction-manager
+    image: skalenetwork/transaction-manager:2.3.0
+    network_mode: host
+    tty: true
+    environment:
+      SGX_URL: ${SGX_SERVER_URL}
+      ENDPOINT: ${ENDPOINT}
+    volumes:
+      - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
+
+  mirage-boot:
+    <<: *skale_base
+    container_name: mirage-boot
+    image: skalenetwork/admin:2.10.0-beta.1
+    cpu_shares: 192
+    network_mode: host
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    environment:
+      SGX_SERVER_URL: ${SGX_SERVER_URL}
+      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
+      ENDPOINT: ${ENDPOINT}
+      SKALE_DIR_HOST: ${SKALE_DIR}
+      TG_API_KEY: ${TG_API_KEY}
+      TG_CHAT_ID: ${TG_CHAT_ID}
+      MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
+      BACKUP_RUN: ${BACKUP_RUN}
+      DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
+      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      MAX_ALLOWED_LOG_TIME_DIFF: 600
+      ENV_TYPE: ${ENV_TYPE}
+      ALLOWED_TS_DIFF: 300
+      PULL_CONFIG_FOR_SCHAIN: ${PULL_CONFIG_FOR_SCHAIN}
+      TELEGRAF: ${TELEGRAF}
+      INFLUX_URL: ${INFLUX_URL}
+      MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
+      IMA_CONTRACTS: ${IMA_CONTRACTS}
+      SKALE_NETWORK_TYPE: "mirage"
+
+    command: "python3 admin.py"
+    volumes:
+      - /var/run/skale:/var/run/skale
+      - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
+      - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
+    healthcheck:
+      test: ["CMD", "python3", "healthchecks/admin.py"]
+      interval: 1m
+      timeout: 10s
+      retries: 2
+      start_period: 30s
+
+  mirage-admin:
+    <<: *skale_base
+    container_name: mirage-admin
+    image: skalenetwork/admin:2.10.0-beta.1
+    cpu_shares: 192
+    network_mode: host
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    environment:
+      SGX_SERVER_URL: ${SGX_SERVER_URL}
+      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
+      ENDPOINT: ${ENDPOINT}
+      SKALE_DIR_HOST: ${SKALE_DIR}
+      TG_API_KEY: ${TG_API_KEY}
+      TG_CHAT_ID: ${TG_CHAT_ID}
+      MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
+      BACKUP_RUN: ${BACKUP_RUN}
+      DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
+      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      MAX_ALLOWED_LOG_TIME_DIFF: 600
+      ENV_TYPE: ${ENV_TYPE}
+      ALLOWED_TS_DIFF: 300
+      PULL_CONFIG_FOR_SCHAIN: ${PULL_CONFIG_FOR_SCHAIN}
+      TELEGRAF: ${TELEGRAF}
+      INFLUX_URL: ${INFLUX_URL}
+      MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
+
+    command: "python3 mirage.py"
+    volumes:
+      - /var/run/skale:/var/run/skale
+      - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
+      - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
+    healthcheck:
+      test: ["CMD", "python3", "healthchecks/admin.py"]
+      interval: 1m
+      timeout: 10s
+      retries: 2
+      start_period: 30s
+
+  skale-api:
+    <<: *skale_base
+    container_name: skale_api
+    image: skalenetwork/admin:2.10.0-beta.1
+    network_mode: host
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    environment:
+      SGX_SERVER_URL: ${SGX_SERVER_URL}
+      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
+      ENDPOINT: ${ENDPOINT}
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
+      FLASK_APP_PORT: 3007
+      FLASK_APP_HOST: "127.0.0.1"
+      FLASK_DEBUG_MODE: "False"
+      SKALE_DIR_HOST: ${SKALE_DIR}
+      TG_API_KEY: ${TG_API_KEY}
+      TG_CHAT_ID: ${TG_CHAT_ID}
+      MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
+      BACKUP_RUN: ${BACKUP_RUN}
+      DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
+      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      ENV_TYPE: ${ENV_TYPE}
+      ALLOWED_TS_DIFF: 300
+      MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
+      IMA_CONTRACTS: ${IMA_CONTRACTS}
+    command: "gunicorn app:app -c gunicorn.conf.py"
+    volumes:
+      - /var/run/skale:/var/run/skale
+      - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
+      - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
+
+  celery:
+    <<: *skale_base
+    container_name: celery
+    image: skalenetwork/admin:2.10.0-beta.1
+    network_mode: host
+    tty: true
+    environment:
+      TG_API_KEY: ${TG_API_KEY}
+      TG_CHAT_ID: ${TG_CHAT_ID}
+      SKALE_DIR_HOST: ${SKALE_DIR}
+    command: "celery -A tools.notifications.tasks worker --loglevel=info"
+
+    volumes:
+      - /var/run/skale:/var/run/skale
+
+  redis:
+    <<: *skale_base
+    container_name: skale_redis
+    image: "redis:6.0.10-alpine"
+    network_mode: host
+    tty: true
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    command: "redis-server /data/redis.conf"
+    volumes:
+      - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
+      - ${SKALE_DIR}/config/redis.conf:/data/redis.conf
+
+  bounty:
+    <<: *skale_base
+    container_name: skale_bounty
+    image: skalenetwork/bounty-agent:2.2.0-stable.0
+    network_mode: host
+    environment:
+      SGX_SERVER_URL: ${SGX_SERVER_URL}
+      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
+      ENDPOINT: ${ENDPOINT}
+      DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
+      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      ALLOWED_TS_DIFF: 300
+      MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
+      IMA_CONTRACTS: ${IMA_CONTRACTS}
+    volumes:
+      - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
+
+  watchdog:
+    <<: *skale_base
+    container_name: skale_watchdog
+    image: skalenetwork/watchdog:2.2.0-stable.0
+    network_mode: host
+    environment:
+      ALLOWED_TS_DIFF: 300
+      FLASK_APP_PORT: 3010
+      FLASK_APP_HOST: "127.0.0.1"
+      FLASK_DEBUG_MODE: "False"
+
+  nginx:
+    <<: *skale_base
+    image: nginx:1.20.2
+    container_name: skale_nginx
+    network_mode: host
+    depends_on:
+      - watchdog
+    volumes:
+      - ${SKALE_DIR}/node_data/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ${SKALE_DIR}/node_data/ssl:/ssl:ro
+      - ${FILESTORAGE_MAPPING}:/filestorage:ro
+      - type: bind
+        bind:
+          propagation: slave
+        source: ${SCHAINS_MNT_DIR}
+        target: ${SCHAINS_MNT_DIR}
+        read_only: true
+
+  advisor:
+    <<: *skale_base
+    image: gcr.io/cadvisor/cadvisor-amd64:v0.50.0
+    container_name: monitor_cadvisor
+    cpu_shares: 128
+    network_mode: host
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+
+  node-exporter:
+    <<: *skale_base
+    container_name: monitor_node_exporter
+    image: quay.io/prometheus/node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(mnt|dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($$|/)'
+    network_mode: host
+
+  filebeat:
+    <<: *skale_base
+    container_name: skale_filebeat
+    user: root
+    image: docker.elastic.co/beats/filebeat:7.3.1
+    network_mode: host
+    environment:
+      FILEBEAT_HOST: ${FILEBEAT_HOST}
+    volumes:
+      - ${SKALE_DIR}/node_data/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/lib/docker:/var/lib/docker:ro
+      - /var/log/docker-lvmpy:/var/log/docker-lvmpy:ro
+      - /var/run/skale:/var/run/skale
