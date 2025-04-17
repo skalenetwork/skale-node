@@ -15,7 +15,7 @@ services:
 
   transaction-manager:
     <<: *skale_base
-    container_name: skale_transaction-manager
+    container_name: mirage_transaction-manager
     image: skalenetwork/transaction-manager:2.3.0
     network_mode: host
     tty: true
@@ -28,7 +28,7 @@ services:
 
   mirage-boot:
     <<: *skale_base
-    container_name: mirage-boot
+    container_name: mirage_boot_admin
     image: skalenetwork/admin:2.10.0-beta.1
     cpu_shares: 192
     network_mode: host
@@ -70,7 +70,7 @@ services:
 
   mirage-admin:
     <<: *skale_base
-    container_name: mirage-admin
+    container_name: mirage_admin
     image: skalenetwork/admin:2.10.0-beta.1
     cpu_shares: 192
     network_mode: host
@@ -110,7 +110,7 @@ services:
 
   skale-api:
     <<: *skale_base
-    container_name: skale_api
+    container_name: mirage_api
     image: skalenetwork/admin:2.10.0-beta.1
     network_mode: host
     tty: true
@@ -144,7 +144,7 @@ services:
 
   redis:
     <<: *skale_base
-    container_name: skale_redis
+    container_name: mirage_redis
     image: "redis:6.0.10-alpine"
     network_mode: host
     tty: true
@@ -157,7 +157,7 @@ services:
 
   watchdog:
     <<: *skale_base
-    container_name: skale_watchdog
+    container_name: mirage_watchdog
     image: skalenetwork/watchdog:2.2.0-stable.0
     network_mode: host
     environment:
@@ -169,7 +169,7 @@ services:
   nginx:
     <<: *skale_base
     image: nginx:1.20.2
-    container_name: skale_nginx
+    container_name: mirage_nginx
     network_mode: host
     depends_on:
       - watchdog
@@ -213,7 +213,7 @@ services:
 
   filebeat:
     <<: *skale_base
-    container_name: skale_filebeat
+    container_name: mirage_filebeat
     user: root
     image: docker.elastic.co/beats/filebeat:7.3.1
     network_mode: host
