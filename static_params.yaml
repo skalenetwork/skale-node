@@ -181,8 +181,8 @@ envs:
       flexibleDeploymentPatchTimestamp: 1721826000
       verifyBlsSyncPatchTimestamp: 1721829600
       externalGasPatchTimestamp: 1727712000
-      invalidTransactionFormatPatchTimestamp: 0
-      clearPartialReceiptsPatchTimestamp: 0
+      invalidTransactionFormatPatchTimestamp: 1745319600
+      clearPartialReceiptsPatchTimestamp: 1745323200
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
