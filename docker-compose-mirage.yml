@@ -108,7 +108,7 @@ services:
       retries: 2
       start_period: 30s
 
-  skale-api:
+  mirage-api:
     <<: *skale_base
     container_name: mirage_api
     image: skalenetwork/admin:2.10.0-beta.1
