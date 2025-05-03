@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "is-1158-block-rewards-test-6-debug",
+    "version": "is-1158-block-rewards-test-7-debug",
     "custom_args": {
       "ulimits_list": [
         {
