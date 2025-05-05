@@ -391,7 +391,7 @@ envs:
       externalGasPatchTimestamp: 1727353446
       invalidTransactionFormatPatchTimestamp: 1741956440
       clearPartialReceiptsPatchTimestamp: 1742042840
-      snapshotIntervalSec: 3600
+      snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
