@@ -28,7 +28,12 @@ envs:
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
 
-    schain_cmd: ["-v 2", "--aa no"]
+    limits:
+      contract_storage_limit: 1000000000000000000
+      db_storage_limit: 1000000000000000000
+      max_consensus_storage_bytes: 1000000000000000000
+
+    skaled_cmd: ["-v 2", "--aa no"]
 
     node:
       bindIP: "0.0.0.0"
@@ -71,7 +76,12 @@ envs:
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
 
-    schain_cmd: ["-v 2", "--aa no"]
+    limits:
+      contract_storage_limit: 1000000000000000000
+      db_storage_limit: 1000000000000000000
+      max_consensus_storage_bytes: 1000000000000000000
+
+    skaled_cmd: ["-v 2", "--aa no"]
 
     node:
       bindIP: "0.0.0.0"
@@ -114,7 +124,12 @@ envs:
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
 
-    schain_cmd: ["-v 2", "--aa no"]
+    limits:
+      contract_storage_limit: 1000000000000000000
+      db_storage_limit: 1000000000000000000
+      max_consensus_storage_bytes: 1000000000000000000
+
+    skaled_cmd: ["-v 2", "--aa no"]
 
     node:
       bindIP: "0.0.0.0"
@@ -157,7 +172,12 @@ envs:
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
 
-    schain_cmd:
+    limits:
+      contract_storage_limit: 1000000000000000000
+      db_storage_limit: 1000000000000000000
+      max_consensus_storage_bytes: 1000000000000000000
+
+    skaled_cmd:
       ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
