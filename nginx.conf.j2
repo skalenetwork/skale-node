@@ -33,6 +33,7 @@ server {
     }
 }
 
+{% if regular_node %}
 server {
     listen 80;
 
@@ -51,3 +52,4 @@ server {
         root /filestorage;
     }
 }
+{% endif %}
