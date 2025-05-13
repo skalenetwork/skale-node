@@ -28,7 +28,7 @@ envs:
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 1000000000000000000
-      maxConsensusStorageBytes: 1000000000000000000
+      maxConsensusStorageBytes: 759239973273
 
     skaled_cmd: ["-v 2", "--aa no"]
 
@@ -73,7 +73,7 @@ envs:
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 1000000000000000000
-      maxConsensusStorageBytes: 1000000000000000000
+      maxConsensusStorageBytes: 79919972352
 
     skaled_cmd: ["-v 2", "--aa no"]
 
@@ -118,7 +118,7 @@ envs:
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 1000000000000000000
-      maxConsensusStorageBytes: 1000000000000000000
+      maxConsensusStorageBytes: 79919972352
 
     skaled_cmd: ["-v 2", "--aa no"]
 
@@ -163,7 +163,7 @@ envs:
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 1000000000000000000
-      maxConsensusStorageBytes: 1000000000000000000
+      maxConsensusStorageBytes: 31967988940
 
     skaled_cmd:
       ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
