@@ -27,7 +27,6 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      contractStorageLimit: 1000000000000000000
       dbStorageLimit: 1000000000000000000
       maxConsensusStorageBytes: 1000000000000000000
 
@@ -73,7 +72,6 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      contractStorageLimit: 1000000000000000000
       dbStorageLimit: 1000000000000000000
       maxConsensusStorageBytes: 1000000000000000000
 
@@ -119,7 +117,6 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      contractStorageLimit: 1000000000000000000
       dbStorageLimit: 1000000000000000000
       maxConsensusStorageBytes: 1000000000000000000
 
@@ -165,7 +162,6 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      contractStorageLimit: 1000000000000000000
       dbStorageLimit: 1000000000000000000
       maxConsensusStorageBytes: 1000000000000000000
 
