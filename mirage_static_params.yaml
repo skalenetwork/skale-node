@@ -146,8 +146,8 @@ envs:
       maxOpenLeveldbFiles: 1000
 
     info:
-      chainId: 0x3A8
-      chainName: mirage-devnet
+      chainId: 0x3A9
+      chainName: mirage-qa
 
   devnet:
     server:
@@ -196,5 +196,5 @@ envs:
       maxOpenLeveldbFiles: 1000
 
     info:
-      chainId: 0x3A9
-      chainName: mirage-qa
+      chainId: 0x3A8
+      chainName: mirage-devnet
