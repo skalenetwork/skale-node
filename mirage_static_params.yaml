@@ -48,8 +48,8 @@ envs:
       maxOpenLeveldbFiles: 1000
 
     info:
-      chainId: 0x3A6
-      chainName: mirage
+      chain_id: 0x3A6
+      chain_name: mirage
 
   testnet:
     server:
@@ -97,8 +97,8 @@ envs:
       maxOpenLeveldbFiles: 1000
 
     info:
-      chainId: 0x3A7
-      chainName: mirage-testnet
+      chain_id: 0x3A7
+      chain_name: mirage-testnet
 
   qanet:
     server:
@@ -146,8 +146,8 @@ envs:
       maxOpenLeveldbFiles: 1000
 
     info:
-      chainId: 0x3A9
-      chainName: mirage-qa
+      chain_id: 0x3A9
+      chain_name: mirage-qa
 
   devnet:
     server:
@@ -196,5 +196,5 @@ envs:
       maxOpenLeveldbFiles: 1000
 
     info:
-      chainId: 0x3A8
-      chainName: mirage-devnet
+      chain_id: 0x3A8
+      chain_name: mirage-devnet
