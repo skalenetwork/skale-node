@@ -118,9 +118,10 @@ envs:
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 1000000000000000000
-      maxConsensusStorageBytes: 79919972352
+      maxConsensusStorageBytes: 7991997235
 
-    skaled_cmd: ["-v 2", "--aa no"]
+    skaled_cmd: 
+      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
       bindIP: "0.0.0.0"
@@ -132,10 +133,10 @@ envs:
       maxCacheSize: 16000000
       collectionQueueSize: 20
       collectionDuration: 60
-      transactionQueueSize: 1000
+      transactionQueueSize: 12000
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
-      maxOpenLeveldbFiles: 1000
+      maxOpenLeveldbFiles: 2000
 
   devnet:
     server:
