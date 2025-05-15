@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "4.0-archive-node-performance-relwithdebinfo",
+    "version": "4.0-archive-node-performance-2-relwithdebinfo",
     "custom_args": {
       "ulimits_list": [
         {
