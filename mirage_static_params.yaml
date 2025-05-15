@@ -47,6 +47,10 @@ envs:
       futureTransactionQueueLimitBytes: 140509184
       maxOpenLeveldbFiles: 1000
 
+    info:
+      chain_id: 0x3A6
+      chain_name: mirage
+
   testnet:
     server:
       cpu_total: 8
@@ -91,6 +95,10 @@ envs:
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
       maxOpenLeveldbFiles: 1000
+
+    info:
+      chain_id: 0x3A7
+      chain_name: mirage-testnet
 
   qanet:
     server:
@@ -137,6 +145,10 @@ envs:
       futureTransactionQueueLimitBytes: 140509184
       maxOpenLeveldbFiles: 1000
 
+    info:
+      chain_id: 0x3A9
+      chain_name: mirage-qa
+
   devnet:
     server:
       cpu_total: 1
@@ -182,3 +194,7 @@ envs:
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
       maxOpenLeveldbFiles: 1000
+
+    info:
+      chain_id: 0x3A8
+      chain_name: mirage-devnet
