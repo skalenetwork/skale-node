@@ -27,7 +27,7 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      dbStorageLimit: 1000000000000000000
+      dbStorageLimit: 79919972352
       maxConsensusStorageBytes: 759239973273
 
     skaled_cmd: ["-v 2", "--aa no"]
@@ -76,7 +76,7 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      dbStorageLimit: 1000000000000000000
+      dbStorageLimit: 79919972352
       maxConsensusStorageBytes: 79919972352
 
     skaled_cmd: ["-v 2", "--aa no"]
@@ -125,7 +125,7 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      dbStorageLimit: 1000000000000000000
+      dbStorageLimit: 79919972352
       maxConsensusStorageBytes: 79919972352
 
     skaled_cmd: 
@@ -141,10 +141,10 @@ envs:
       maxCacheSize: 16000000
       collectionQueueSize: 20
       collectionDuration: 60
-      transactionQueueSize: 12000
+      transactionQueueSize: 12800
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
-      maxOpenLeveldbFiles: 2000
+      maxOpenLeveldbFiles: 1000
 
     info:
       chain_id: 0x3A9
@@ -175,7 +175,7 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      dbStorageLimit: 1000000000000000000
+      dbStorageLimit: 79919972352
       maxConsensusStorageBytes: 31967988940
 
     skaled_cmd:
