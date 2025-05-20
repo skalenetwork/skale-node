@@ -1,7 +1,7 @@
-{
   "schain": {
+{
     "name": "skalenetwork/schain",
-    "version": "is-1158-block-rewards-test-7-debug",
+    "version": "2175.encrypt.to.field-relwithdebinfo",
     "custom_args": {
       "ulimits_list": [
         {
