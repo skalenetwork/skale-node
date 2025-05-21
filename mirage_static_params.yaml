@@ -198,4 +198,4 @@ envs:
 
     info:
       chain_id: "0x3A8"
-      chain_name: mirage-devnet
+      chain_name: mirage-devnet1
