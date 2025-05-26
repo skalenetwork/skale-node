@@ -148,7 +148,7 @@ envs:
 
     info:
       chain_id: "0x3A9"
-      chain_name: mirage-qa-beta-1
+      chain_name: mirage-qa
 
   devnet:
     server:
