@@ -137,14 +137,14 @@ envs:
       logLevelConfig: "info"
       pg-threads: 10
       pg-threads-limit: 10
-      minCacheSize: 8000000
-      maxCacheSize: 16000000
+      minCacheSize: 16000000
+      maxCacheSize: 32000000
       collectionQueueSize: 20
       collectionDuration: 60
       transactionQueueSize: 12800
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
-      maxOpenLeveldbFiles: 1000
+      maxOpenLeveldbFiles: 3000
 
     info:
       chain_id: "0x3A9"
