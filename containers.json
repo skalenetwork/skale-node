@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "4.1.0-develop.13-commit-logs-relwithdebinfo",
+    "version": "4.1.0-develop.16-mirage",
     "custom_args": {
       "ulimits_list": [
         {
