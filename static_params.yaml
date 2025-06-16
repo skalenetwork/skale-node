@@ -276,9 +276,7 @@ envs:
       correctForkInPowPatchTimestamp: 1708527600
       EIP1559TransactionsPatchTimestamp: 1721304000
       fastConsensusPatchTimestamp: 1721307600
-      flexibleDeploymentPatchTimestamp: 
-        idealistic-dual-miram: 1721304000 # Sasha1 chain
-        default: 0
+      flexibleDeploymentPatchTimestamp: 0
       verifyBlsSyncPatchTimestamp: 1721311200
       externalGasPatchTimestamp: 1727370000
       snapshotIntervalSec: 3600
@@ -292,7 +290,7 @@ envs:
         after: 900
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 2", "--aa no"]
 
     node:
       common:
