@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   base: &skale_base
     image: rancher/pause:3.6
@@ -145,15 +143,16 @@ services:
   redis:
     <<: *skale_base
     container_name: skale_redis
-    image: "redis:6.0.10-alpine"
+    image: "redis:8.0.1-alpine"
     network_mode: host
     tty: true
     environment:
       - REDIS_REPLICATION_MODE=master
     command: "redis-server /data/redis.conf"
     volumes:
-      - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
+      - ${SKALE_DIR}/node_data/redis-data:/data:rw
       - ${SKALE_DIR}/config/redis.conf:/data/redis.conf
+    restart: unless-stopped
 
   watchdog:
     <<: *skale_base
