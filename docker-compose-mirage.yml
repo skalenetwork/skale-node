@@ -27,7 +27,7 @@ services:
   mirage-boot:
     <<: *skale_base
     container_name: mirage_boot_admin
-    image: skalenetwork/admin:2.10.2-mirage.9
+    image: skalenetwork/admin:2.10.2-mirage-beta.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -69,7 +69,7 @@ services:
   mirage-admin:
     <<: *skale_base
     container_name: mirage_admin
-    image: skalenetwork/admin:2.10.2-mirage.9
+    image: skalenetwork/admin:2.10.2-mirage-beta.0
     cpu_shares: 192
     network_mode: host
     tty: true

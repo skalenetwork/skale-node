@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "IS1201noContractStorageLimit-relwithdebinfo",
+    "version": "4.1.0-develop.13-mirage",
     "custom_args": {
       "ulimits_list": [
         {
