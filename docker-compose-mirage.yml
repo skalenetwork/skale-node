@@ -92,6 +92,7 @@ services:
       TELEGRAF: ${TELEGRAF}
       INFLUX_URL: ${INFLUX_URL}
       MIRAGE_CONTRACTS: ${MIRAGE_CONTRACTS}
+      SKALE_NETWORK_TYPE: "mirage"
 
     command: "python3 mirage.py"
     volumes:
@@ -133,6 +134,7 @@ services:
       ALLOWED_TS_DIFF: 300
       MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
       IMA_CONTRACTS: ${IMA_CONTRACTS}
+      SKALE_NETWORK_TYPE: "mirage"
     command: "gunicorn app:app -c gunicorn.conf.py"
     volumes:
       - /var/run/skale:/var/run/skale
@@ -166,6 +168,7 @@ services:
       ENV_TYPE: ${ENV_TYPE}
       ALLOWED_TS_DIFF: 300
       MIRAGE_CONTRACTS: ${MIRAGE_CONTRACTS}
+      SKALE_NETWORK_TYPE: "mirage"
     command: "gunicorn mirage_api:app -c gunicorn.conf.py"
     volumes:
       - /var/run/skale:/var/run/skale
