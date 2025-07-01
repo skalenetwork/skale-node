@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "4.1.0-develop.13-mirage",
+    "version": "4.0.1",
     "custom_args": {
       "ulimits_list": [
         {

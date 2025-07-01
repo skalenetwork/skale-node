@@ -389,7 +389,6 @@ envs:
       flexibleDeploymentPatchTimestamp: 0
       verifyBlsSyncPatchTimestamp: 1722855600
       externalGasPatchTimestamp: 1727353446
-      maxFeePerGasPatchTimestamp: 1741956440
       clearPartialReceiptsPatchTimestamp: 1742042840
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
