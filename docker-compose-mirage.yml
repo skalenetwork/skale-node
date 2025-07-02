@@ -14,7 +14,7 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:2.3.0
+    image: skalenetwork/transaction-manager:3.0.0-develop.0
     network_mode: host
     tty: true
     environment:
@@ -27,7 +27,7 @@ services:
   mirage-boot:
     <<: *skale_base
     container_name: mirage_boot_admin
-    image: skalenetwork/admin:2.10.2-mirage-beta.0
+    image: skalenetwork/admin:3.0.0-mirage.3
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -69,7 +69,7 @@ services:
   mirage-admin:
     <<: *skale_base
     container_name: mirage_admin
-    image: skalenetwork/admin:2.10.2-mirage-beta.0
+    image: skalenetwork/admin:3.0.0-mirage.3
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -110,7 +110,7 @@ services:
   mirage-boot-api:
     <<: *skale_base
     container_name: mirage_boot_api
-    image: skalenetwork/admin:2.10.2-mirage.9
+    image: skalenetwork/admin:3.0.0-mirage.3
     network_mode: host
     tty: true
     cap_add:
@@ -145,7 +145,7 @@ services:
   mirage-api:
     <<: *skale_base
     container_name: mirage_api
-    image: skalenetwork/admin:2.10.2-mirage.9
+    image: skalenetwork/admin:3.0.0-mirage.3
     network_mode: host
     tty: true
     cap_add:
