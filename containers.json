@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "4.1.0-develop.17-bite-relwithdebinfo",
+    "version": "4.1.0-develop.23-bite-relwithdebinfo",
     "custom_args": {
       "ulimits_list": [
         {
