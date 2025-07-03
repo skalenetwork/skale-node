@@ -19,8 +19,9 @@ services:
     tty: true
     environment:
       SGX_URL: ${SGX_SERVER_URL}
+      ENDPOINT: ${ENDPOINT}
       BOOT_ENDPOINT: ${BOOT_ENDPOINT}
-      SKALE_NETWORK_TYPE: "mirage"
+      # SKALE_NETWORK_TYPE: "mirage"
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
