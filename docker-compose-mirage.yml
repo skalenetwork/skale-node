@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   base: &skale_base
     image: rancher/pause:3.6
@@ -16,12 +14,14 @@ services:
   transaction-manager:
     <<: *skale_base
     container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:2.3.0
+    image: skalenetwork/transaction-manager:3.0.0-develop.0
     network_mode: host
     tty: true
     environment:
       SGX_URL: ${SGX_SERVER_URL}
       ENDPOINT: ${ENDPOINT}
+      BOOT_ENDPOINT: ${BOOT_ENDPOINT}
+      # SKALE_NETWORK_TYPE: "mirage"
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
@@ -29,7 +29,7 @@ services:
   mirage-boot:
     <<: *skale_base
     container_name: mirage_boot_admin
-    image: skalenetwork/admin:2.10.2-mirage-beta.0
+    image: skalenetwork/admin:3.0.0-mirage.3
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -71,7 +71,7 @@ services:
   mirage-admin:
     <<: *skale_base
     container_name: mirage_admin
-    image: skalenetwork/admin:2.10.2-mirage-beta.0
+    image: skalenetwork/admin:3.0.0-mirage.3
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -81,7 +81,7 @@ services:
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
       SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
-      ENDPOINT: ${ENDPOINT}
+      BOOT_ENDPOINT: ${BOOT_ENDPOINT}
       SKALE_DIR_HOST: ${SKALE_DIR}
       MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
       BACKUP_RUN: ${BACKUP_RUN}
@@ -93,7 +93,8 @@ services:
       ALLOWED_TS_DIFF: 300
       TELEGRAF: ${TELEGRAF}
       INFLUX_URL: ${INFLUX_URL}
-      MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
+      MIRAGE_CONTRACTS: ${MIRAGE_CONTRACTS}
+      SKALE_NETWORK_TYPE: "mirage"
 
     command: "python3 mirage.py"
     volumes:
@@ -108,10 +109,10 @@ services:
       retries: 2
       start_period: 30s
 
-  mirage-api:
+  mirage-boot-api:
     <<: *skale_base
-    container_name: mirage_api
-    image: skalenetwork/admin:2.10.2-mirage-beta.0
+    container_name: mirage_boot_api
+    image: skalenetwork/admin:3.0.0-mirage.3
     network_mode: host
     tty: true
     cap_add:
@@ -135,7 +136,42 @@ services:
       ALLOWED_TS_DIFF: 300
       MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
       IMA_CONTRACTS: ${IMA_CONTRACTS}
+      SKALE_NETWORK_TYPE: "mirage"
     command: "gunicorn app:app -c gunicorn.conf.py"
+    volumes:
+      - /var/run/skale:/var/run/skale
+      - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
+      - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
+
+  mirage-api:
+    <<: *skale_base
+    container_name: mirage_api
+    image: skalenetwork/admin:3.0.0-mirage.3
+    network_mode: host
+    tty: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    environment:
+      SGX_SERVER_URL: ${SGX_SERVER_URL}
+      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
+      BOOT_ENDPOINT: ${BOOT_ENDPOINT}
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
+      FLASK_APP_PORT: 3007
+      FLASK_APP_HOST: "127.0.0.1"
+      FLASK_DEBUG_MODE: "False"
+      SKALE_DIR_HOST: ${SKALE_DIR}
+      MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
+      BACKUP_RUN: ${BACKUP_RUN}
+      DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
+      DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
+      DEFAULT_GAS_PRICE_WEI: ${DEFAULT_GAS_PRICE_WEI}
+      ENV_TYPE: ${ENV_TYPE}
+      ALLOWED_TS_DIFF: 300
+      MIRAGE_CONTRACTS: ${MIRAGE_CONTRACTS}
+      SKALE_NETWORK_TYPE: "mirage"
+    command: "gunicorn mirage_api:app -c gunicorn.conf.py"
     volumes:
       - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
@@ -145,15 +181,16 @@ services:
   redis:
     <<: *skale_base
     container_name: skale_redis
-    image: "redis:6.0.10-alpine"
+    image: "redis:8.0.1-alpine"
     network_mode: host
     tty: true
     environment:
       - REDIS_REPLICATION_MODE=master
     command: "redis-server /data/redis.conf"
     volumes:
-      - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
+      - ${SKALE_DIR}/node_data/redis-data:/data:rw
       - ${SKALE_DIR}/config/redis.conf:/data/redis.conf
+    restart: unless-stopped
 
   watchdog:
     <<: *skale_base
