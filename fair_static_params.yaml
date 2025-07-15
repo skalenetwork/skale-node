@@ -49,7 +49,7 @@ envs:
 
     info:
       chain_id: "0x3A6"
-      chain_name: mirage
+      chain_name: fair
 
   testnet:
     server:
@@ -98,7 +98,7 @@ envs:
 
     info:
       chain_id: "0x3A7"
-      chain_name: mirage-testnet
+      chain_name: fair-testnet
 
   qanet:
     server:
@@ -147,7 +147,7 @@ envs:
 
     info:
       chain_id: "0x3A9"
-      chain_name: mirage-qa
+      chain_name: fair-qa
 
   devnet:
     server:
@@ -197,4 +197,4 @@ envs:
 
     info:
       chain_id: "0x3A8"
-      chain_name: mirage-devnet5
+      chain_name: fair-devnet5
