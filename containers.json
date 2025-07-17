@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "4.1.0-no-ima-fair.0-relwithdebinfo",
+    "version": "demo-committee-rotation-relwithdebinfo",
     "custom_args": {
       "ulimits_list": [
         {
