@@ -143,7 +143,8 @@ envs:
       transactionQueueSize: 1000
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
-      maxOpenLeveldbFiles: 1000
+      maxOpenLeveldbFiles: 3000
+      catchupTimeoutSec: 5
 
     info:
       chain_id: "0x3A9"
@@ -195,7 +196,6 @@ envs:
       futureTransactionQueueLimitBytes: 140509184
       maxOpenLeveldbFiles: 1000
       catchupTimeoutSec: 5
-      
 
     info:
       chain_id: "0x3A8"
