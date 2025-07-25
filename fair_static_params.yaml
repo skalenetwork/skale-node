@@ -132,8 +132,8 @@ envs:
 
     node:
       bindIP: "0.0.0.0"
-      logLevel: "info"
-      logLevelConfig: "info"
+      logLevel: "debug"
+      logLevelConfig: "debug"
       pg-threads: 10
       pg-threads-limit: 10
       minCacheSize: 8000000
