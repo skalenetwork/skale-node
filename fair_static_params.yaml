@@ -147,7 +147,7 @@ envs:
 
     info:
       chain_id: "0x3A9"
-      chain_name: fair-qa-cr
+      chain_name: fair-qa-beta-1
 
   devnet:
     server:
