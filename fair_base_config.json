@@ -20,8 +20,9 @@
 		"difficultyBoundDivisor": "0x0800",
 		"durationLimit": "0x0d",
 		"blockReward": "0x4563918244F40000",
-		"skaleDisableChainIdCheck": true,
-		"getLogsBlocksLimit": 2000
+		"skaleDisableChainIdCheck": false,
+		"getLogsBlocksLimit": 2000,
+		"allowPreEIP155Txns": true
 	},
 	"unddos": {
 		"origins": [
@@ -59,6 +60,9 @@
 			"balance": "10000000000000000000000000000000"
 		},
 		"0xE4298dEEEF37fA2e5086e3CD3CdF000A8fa4C97E": {
+			"balance": "100000000000000000000000"
+		},
+		"0x1057dc7277a319927D3eB43e05680B75a00eb5f4": {
 			"balance": "100000000000000000000000"
 		}
 	}
