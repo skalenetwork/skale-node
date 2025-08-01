@@ -22,7 +22,7 @@
 		"blockReward": "0x4563918244F40000",
 		"skaleDisableChainIdCheck": false,
 		"getLogsBlocksLimit": 2000,
-		"allowPreEIP155Txns": true
+		"allowPreEIP155Txns": false
 	},
 	"unddos": {
 		"origins": [
