@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "consensus-920-relwithdebinfo",
+    "version": "4.1.0-develop.43-mirage",
     "custom_args": {
       "ulimits_list": [
         {
