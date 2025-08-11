@@ -28,7 +28,7 @@ services:
   fair-boot:
     <<: *skale_base
     container_name: fair_boot_admin
-    image: skalenetwork/admin:3.1.0-fair-beta.3
+    image: skalenetwork/admin:3.1.0-fair-beta.4
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -71,7 +71,7 @@ services:
   fair-admin:
     <<: *skale_base
     container_name: fair_admin
-    image: skalenetwork/admin:3.1.0-fair-beta.3
+    image: skalenetwork/admin:3.1.0-fair-beta.4
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -113,7 +113,7 @@ services:
   fair-boot-api:
     <<: *skale_base
     container_name: fair_boot_api
-    image: skalenetwork/admin:3.1.0-fair-beta.3
+    image: skalenetwork/admin:3.1.0-fair-beta.4
     network_mode: host
     tty: true
     cap_add:
@@ -149,7 +149,7 @@ services:
   fair-api:
     <<: *skale_base
     container_name: fair_api
-    image: skalenetwork/admin:3.1.0-fair-beta.3
+    image: skalenetwork/admin:3.1.0-fair-beta.4
     network_mode: host
     tty: true
     cap_add:
@@ -205,6 +205,7 @@ services:
       FLASK_APP_PORT: 3010
       FLASK_APP_HOST: "127.0.0.1"
       FLASK_DEBUG_MODE: "False"
+      SKALE_NETWORK_TYPE: "fair"
 
   nginx:
     <<: *skale_base
