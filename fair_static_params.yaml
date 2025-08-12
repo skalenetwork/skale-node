@@ -78,6 +78,7 @@ envs:
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 30000000000
       maxConsensusStorageBytes: 30000000000
+      constantGasPrice: 10000000000
 
     skaled_cmd: ["-v 2", "--aa no"]
 
