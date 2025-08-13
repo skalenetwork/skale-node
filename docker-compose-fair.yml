@@ -21,6 +21,7 @@ services:
       SGX_URL: ${SGX_SERVER_URL}
       ENDPOINT: ${ENDPOINT}
       BOOT_ENDPOINT: ${BOOT_ENDPOINT}
+      GAS_MULTIPLIER: 2
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
