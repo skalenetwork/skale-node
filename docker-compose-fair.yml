@@ -95,6 +95,7 @@ services:
       INFLUX_URL: ${INFLUX_URL}
       FAIR_CONTRACTS: ${FAIR_CONTRACTS}
       SKALE_NETWORK_TYPE: "fair"
+      PASSIVE_NODE: ${PASSIVE_NODE}
 
     command: "python3 fair.py"
     volumes:
@@ -173,6 +174,7 @@ services:
       ALLOWED_TS_DIFF: 300
       FAIR_CONTRACTS: ${FAIR_CONTRACTS}
       SKALE_NETWORK_TYPE: "fair"
+      PASSIVE_NODE: ${PASSIVE_NODE}
     command: "gunicorn fair_api:app -c gunicorn.conf.py"
     volumes:
       - /var/run/skale:/var/run/skale
