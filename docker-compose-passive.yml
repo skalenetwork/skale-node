@@ -16,7 +16,7 @@ services:
   skale-passive-admin:
     <<: *skale_base
     container_name: skale_passive_admin
-    image: skalenetwork/admin:2.10.0-beta.1
+    image: skalenetwork/admin:3.1.0-fair.19
     network_mode: host
     tty: true
     cap_add:
