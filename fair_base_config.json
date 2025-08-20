@@ -20,8 +20,9 @@
 		"difficultyBoundDivisor": "0x0800",
 		"durationLimit": "0x0d",
 		"blockReward": "0x4563918244F40000",
-		"skaleDisableChainIdCheck": true,
-		"getLogsBlocksLimit": 2000
+		"skaleDisableChainIdCheck": false,
+		"getLogsBlocksLimit": 2000,
+		"allowPreEIP155Txns": false
 	},
 	"unddos": {
 		"origins": [
@@ -55,15 +56,20 @@
 		"gasLimit": "0xFFFFFFF"
 	},
 	"accounts": {
-		"0x83b7b3A59857188474FF0269cCC3859b46479aaF": {
-			"balance": "10000000000000000000000000000000"
+		"0x487360568fE5Ee4AE5c75782D5F63e9935B0E512": {
+			"balance": "1000000000000000000000000000000"
 		},
-		"0xa68F946090c600eDa6f139783077EE802Afeb990": {
-			"balance": "10000000000000000000000000000000"
+		"0x71cBE3fedE33905d4D1Bf2Bd51f9d4A62375e659": {
+			"balance": "1000000000000000000000000000000"
 		},
-		"0xE4298dEEEF37fA2e5086e3CD3CdF000A8fa4C97E": {
-			"balance": "100000000000000000000000"
+		"0x2955e3CEAaD78B3a7318e9AC49aa1207228883f4": {
+			"balance": "1000000000000000000000000000000"
+		},
+		"0x777d34DC0538A2Bbc2092B1E8E6f8FE1629fCFD9": {
+			"balance": "1000000000000000000000000000000"
+		},
+		"0xa68f946090c600eda6f139783077ee802afeb990": {
+			"balance": "10000000000000000000"
 		}
 	}
 }
-

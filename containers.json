@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "consensus-886-2-relwithdebinfo",
+    "version": "4.1.0-develop.43.1-fair-relwithdebinfo",
     "custom_args": {
       "ulimits_list": [
         {

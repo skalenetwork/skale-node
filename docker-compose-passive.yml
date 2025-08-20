@@ -13,10 +13,10 @@ services:
         max-file: "5"
         max-size: "10m"
 
-  skale-sync-admin:
+  skale-passive-admin:
     <<: *skale_base
-    container_name: skale_sync_admin
-    image: skalenetwork/admin:2.10.0-beta.1
+    container_name: skale_passive_admin
+    image: skalenetwork/admin:3.1.0-fair.20
     network_mode: host
     tty: true
     cap_add:
@@ -29,11 +29,11 @@ services:
       SCHAIN_NAME: ${SCHAIN_NAME}
       TELEGRAF: ${TELEGRAF}
       INFLUX_URL: ${INFLUX_URL}
-      SYNC_NODE: "True"
+      PASSIVE_NODE: "True"
       MAX_SCHAIN_FAILED_RPC_COUNT: 60
       MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
       IMA_CONTRACTS: ${IMA_CONTRACTS}
-    command: "python3 sync_node.py"
+    command: "python3 skale_passive.py"
     volumes:
       - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
