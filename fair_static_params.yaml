@@ -190,13 +190,13 @@ envs:
       maxCacheSize: 16000000
       collectionQueueSize: 20
       collectionDuration: 60
-      transactionQueueSize: 1000
+      transactionQueueSize: 12800
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
-      maxOpenLeveldbFiles: 1000
+      maxOpenLeveldbFiles: 3000
       catchupTimeoutSec: 5
       
 
     info:
       chain_id: "0x3A8"
-      chain_name: fair-devnet1
+      chain_name: fair-devnet
