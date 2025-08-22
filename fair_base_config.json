@@ -25,6 +25,7 @@
 		"allowPreEIP155Txns": false
 	},
 	"unddos": {
+        "enabled": false,
 		"origins": [
 			{
 				"origin": [
