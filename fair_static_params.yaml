@@ -178,7 +178,7 @@ envs:
       maxConsensusStorageBytes: 30000000000
 
     skaled_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 2", "--aa no"]
 
     node:
       bindIP: "0.0.0.0"
