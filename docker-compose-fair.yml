@@ -208,6 +208,7 @@ services:
       FLASK_APP_HOST: "127.0.0.1"
       FLASK_DEBUG_MODE: "False"
       SKALE_NETWORK_TYPE: "fair"
+      PASSIVE_NODE: ${PASSIVE_NODE}
 
   nginx:
     <<: *skale_base
