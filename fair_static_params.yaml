@@ -80,7 +80,7 @@ envs:
       maxConsensusStorageBytes: 30000000000
       constantGasPrice: 10000000000
 
-    skaled_cmd: ["-v 3", "--aa no"]
+    skaled_cmd: ["-v 2", "--aa no"]
 
     node:
       bindIP: "0.0.0.0"
