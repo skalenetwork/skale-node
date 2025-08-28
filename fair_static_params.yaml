@@ -80,12 +80,12 @@ envs:
       maxConsensusStorageBytes: 30000000000
       constantGasPrice: 10000000000
 
-    skaled_cmd: ["-v 4", "--aa no"]
+    skaled_cmd: ["-v 3", "--aa no"]
 
     node:
       bindIP: "0.0.0.0"
-      logLevel: "trace"
-      logLevelConfig: "trace"
+      logLevel: "debug"
+      logLevelConfig: "debug"
       pg-threads: 10
       pg-threads-limit: 10
       minCacheSize: 8000000
