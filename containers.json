@@ -1,5 +1,5 @@
 {
-  "schain": {
+  "skaled": {
     "name": "skalenetwork/schain",
     "version": "4.1.0-develop.47-mirage",
     "custom_args": {
