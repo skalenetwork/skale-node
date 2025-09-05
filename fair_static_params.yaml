@@ -50,6 +50,7 @@ envs:
     info:
       chain_id: "0x3A6"
       chain_name: fair
+      testnet_reward_activation_address: false
 
   testnet:
     server:
@@ -99,6 +100,7 @@ envs:
     info:
       chain_id: "0x3A7"
       chain_name: fair-testnet
+      testnet_reward_activation_address: true
 
   qanet:
     server:
@@ -148,6 +150,7 @@ envs:
     info:
       chain_id: "0x3A9"
       chain_name: fair-qa
+      testnet_reward_activation_address: true
 
   devnet:
     server:
@@ -197,4 +200,5 @@ envs:
 
     info:
       chain_id: "0x3A8"
-      chain_name: fair-devnet
+      chain_name: fair-devnet1
+      testnet_reward_activation_address: true
