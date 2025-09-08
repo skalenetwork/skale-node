@@ -148,8 +148,8 @@ envs:
       maxOpenLeveldbFiles: 3000
 
     info:
-      chain_id: "0x3A9"
-      chain_name: fair-qa-beta-1
+      chain_id: "0x3A6"
+      chain_name: fair-qa-beta-2
       testnet_reward_activation_address: true
 
   devnet:
