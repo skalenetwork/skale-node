@@ -1,5 +1,5 @@
 services:
-  base: &skale_base
+  base: &sk_base
     image: rancher/pause:3.6
     restart: unless-stopped
     labels:
@@ -12,23 +12,24 @@ services:
         max-size: "10m"
 
   transaction-manager:
-    <<: *skale_base
-    container_name: skale_transaction-manager
-    image: skalenetwork/transaction-manager:3.0.0-beta.1
+    <<: *sk_base
+    container_name: sk_tm
+    image: skalenetwork/transaction-manager:3.0.1-beta.0
     network_mode: host
     tty: true
     environment:
       SGX_URL: ${SGX_SERVER_URL}
       ENDPOINT: ${ENDPOINT}
       BOOT_ENDPOINT: ${BOOT_ENDPOINT}
+      CONFIRMATION_BLOCKS: 0
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
 
-  fair-boot:
-    <<: *skale_base
-    container_name: fair_boot_admin
-    image: skalenetwork/admin:3.1.0-fair.11
+  boot-admin:
+    <<: *sk_base
+    container_name: sk_boot_admin
+    image: skalenetwork/admin:3.1.0-fair-beta.6
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -68,10 +69,10 @@ services:
       retries: 2
       start_period: 30s
 
-  fair-admin:
-    <<: *skale_base
-    container_name: fair_admin
-    image: skalenetwork/admin:3.1.0-fair.11
+  admin:
+    <<: *sk_base
+    container_name: sk_admin
+    image: skalenetwork/admin:3.1.0-fair-beta.6
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -95,6 +96,7 @@ services:
       INFLUX_URL: ${INFLUX_URL}
       FAIR_CONTRACTS: ${FAIR_CONTRACTS}
       SKALE_NETWORK_TYPE: "fair"
+      PASSIVE_NODE: ${PASSIVE_NODE}
 
     command: "python3 fair.py"
     volumes:
@@ -110,10 +112,10 @@ services:
       retries: 2
       start_period: 30s
 
-  fair-boot-api:
-    <<: *skale_base
-    container_name: fair_boot_api
-    image: skalenetwork/admin:3.1.0-fair.11
+  boot-api:
+    <<: *sk_base
+    container_name: sk_boot_api
+    image: skalenetwork/admin:3.1.0-fair-beta.6
     network_mode: host
     tty: true
     cap_add:
@@ -146,10 +148,10 @@ services:
       - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
       - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
 
-  fair-api:
-    <<: *skale_base
-    container_name: fair_api
-    image: skalenetwork/admin:3.1.0-fair.11
+  api:
+    <<: *sk_base
+    container_name: sk_api
+    image: skalenetwork/admin:3.1.0-fair-beta.6
     network_mode: host
     tty: true
     cap_add:
@@ -173,6 +175,7 @@ services:
       ALLOWED_TS_DIFF: 300
       FAIR_CONTRACTS: ${FAIR_CONTRACTS}
       SKALE_NETWORK_TYPE: "fair"
+      PASSIVE_NODE: ${PASSIVE_NODE}
     command: "gunicorn fair_api:app -c gunicorn.conf.py"
     volumes:
       - /var/run/skale:/var/run/skale
@@ -182,8 +185,8 @@ services:
       - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
 
   redis:
-    <<: *skale_base
-    container_name: skale_redis
+    <<: *sk_base
+    container_name: sk_redis
     image: "redis:8.0.1-alpine"
     network_mode: host
     tty: true
@@ -196,20 +199,22 @@ services:
     restart: unless-stopped
 
   watchdog:
-    <<: *skale_base
-    container_name: skale_watchdog
-    image: skalenetwork/watchdog:2.2.0-stable.0
+    <<: *sk_base
+    container_name: sk_watchdog
+    image: skalenetwork/watchdog:3.0.1-beta.0
     network_mode: host
     environment:
       ALLOWED_TS_DIFF: 300
       FLASK_APP_PORT: 3010
       FLASK_APP_HOST: "127.0.0.1"
       FLASK_DEBUG_MODE: "False"
+      SKALE_NETWORK_TYPE: "fair"
+      PASSIVE_NODE: ${PASSIVE_NODE}
 
   nginx:
-    <<: *skale_base
+    <<: *sk_base
     image: nginx:1.20.2
-    container_name: skale_nginx
+    container_name: sk_nginx
     network_mode: host
     depends_on:
       - watchdog
@@ -224,7 +229,7 @@ services:
         read_only: true
 
   advisor:
-    <<: *skale_base
+    <<: *sk_base
     image: gcr.io/cadvisor/cadvisor-amd64:v0.50.0
     container_name: monitor_cadvisor
     cpu_shares: 128
@@ -237,7 +242,7 @@ services:
       - /dev/disk/:/dev/disk:ro
 
   node-exporter:
-    <<: *skale_base
+    <<: *sk_base
     container_name: monitor_node_exporter
     image: quay.io/prometheus/node-exporter
     volumes:
@@ -252,10 +257,10 @@ services:
     network_mode: host
 
   filebeat:
-    <<: *skale_base
-    container_name: skale_filebeat
+    <<: *sk_base
+    container_name: sk_filebeat
     user: root
-    image: docker.elastic.co/beats/filebeat:7.3.1
+    image: elastic/filebeat:9.1.3
     network_mode: host
     environment:
       FILEBEAT_HOST: ${FILEBEAT_HOST}
