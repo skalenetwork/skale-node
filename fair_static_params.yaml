@@ -99,7 +99,7 @@ envs:
 
     info:
       chain_id: "0x3A7"
-      chain_name: fair-testnet
+      chain_name: fair-testnet2
       testnet_reward_activation_address: true
 
   qanet:
