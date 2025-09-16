@@ -149,7 +149,7 @@ envs:
 
     info:
       chain_id: "0x3A6"
-      chain_name: fair-qa-beta-2
+      chain_name: fair-qa-testnet-v2
       testnet_reward_activation_address: true
 
   devnet:
