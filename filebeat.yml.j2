@@ -31,5 +31,6 @@ processors:
 
 output.logstash:
   hosts: ["${FILEBEAT_HOST}"]
+  ssl.enabled: true
 
 logging.metrics.enabled: false
