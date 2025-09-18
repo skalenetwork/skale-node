@@ -1,7 +1,7 @@
 {
   "skaled": {
     "name": "skalenetwork/schain",
-    "version": "4.1.0-develop.52-mirage",
+    "version": "4.1.0-develop.53-fair",
     "custom_args": {
       "ulimits_list": [
         {
