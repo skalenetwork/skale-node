@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  base: &skale_base
+  base: &sk_base
     image: rancher/pause:3.6
     restart: unless-stopped
     labels:
@@ -13,9 +13,9 @@ services:
         max-file: "5"
         max-size: "10m"
 
-  skale-sync-admin:
-    <<: *skale_base
-    container_name: skale_sync_admin
+  admin:
+    <<: *sk_base
+    container_name: sk_admin
     image: skalenetwork/admin:2.10.0-beta.1
     network_mode: host
     tty: true
@@ -29,11 +29,11 @@ services:
       SCHAIN_NAME: ${SCHAIN_NAME}
       TELEGRAF: ${TELEGRAF}
       INFLUX_URL: ${INFLUX_URL}
-      SYNC_NODE: "True"
+      PASSIVE_NODE: "True"
       MAX_SCHAIN_FAILED_RPC_COUNT: 60
       MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
       IMA_CONTRACTS: ${IMA_CONTRACTS}
-    command: "python3 sync_node.py"
+    command: "python3 skale_passive.py"
     volumes:
       - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
@@ -48,9 +48,9 @@ services:
       start_period: 30s
 
   nginx:
-    <<: *skale_base
+    <<: *sk_base
     image: nginx:1.20.2
-    container_name: skale_nginx
+    container_name: sk_nginx
     network_mode: host
     volumes:
       - ${SKALE_DIR}/node_data/nginx.conf:/etc/nginx/conf.d/default.conf:ro
