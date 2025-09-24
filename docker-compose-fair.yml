@@ -22,6 +22,7 @@ services:
       ENDPOINT: ${ENDPOINT}
       BOOT_ENDPOINT: ${BOOT_ENDPOINT}
       CONFIRMATION_BLOCKS: 0
+      GAS_MULTIPLIER: 2
     volumes:
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data

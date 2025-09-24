@@ -79,13 +79,14 @@ envs:
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 30000000000
       maxConsensusStorageBytes: 30000000000
+      constantGasPrice: 10000000000
 
     skaled_cmd: ["-v 2", "--aa no"]
 
     node:
       bindIP: "0.0.0.0"
-      logLevel: "info"
-      logLevelConfig: "info"
+      logLevel: "debug"
+      logLevelConfig: "debug"
       pg-threads: 10
       pg-threads-limit: 10
       minCacheSize: 8000000
@@ -95,7 +96,7 @@ envs:
       transactionQueueSize: 12800
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
-      maxOpenLeveldbFiles: 3000
+      maxOpenLeveldbFiles: 4000
 
     info:
       chain_id: "0x3A7"
