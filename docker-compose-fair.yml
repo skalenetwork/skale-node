@@ -64,7 +64,7 @@ services:
       - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
       - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
     healthcheck:
-      test: [ "CMD", "python3", "healthchecks/admin.py" ]
+      test: ["CMD", "python3", "healthchecks/admin.py"]
       interval: 1m
       timeout: 10s
       retries: 2
@@ -107,7 +107,7 @@ services:
       - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
       - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
     healthcheck:
-      test: [ "CMD", "python3", "healthchecks/admin.py" ]
+      test: ["CMD", "python3", "healthchecks/admin.py"]
       interval: 1m
       timeout: 10s
       retries: 2
@@ -188,7 +188,7 @@ services:
   redis:
     <<: *sk_base
     container_name: sk_redis
-    image: "redis:8.0.1-alpine"
+    image: "redis:8.2.2-alpine"
     network_mode: host
     tty: true
     environment:
@@ -214,7 +214,7 @@ services:
 
   nginx:
     <<: *sk_base
-    image: nginx:1.20.2
+    image: nginx:1.29.1
     container_name: sk_nginx
     network_mode: host
     depends_on:
@@ -251,17 +251,17 @@ services:
       - /sys:/host/sys:ro
       - /:/rootfs:ro
     command:
-      - '--path.procfs=/host/proc'
-      - '--path.rootfs=/rootfs'
-      - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.mount-points-exclude=^/(mnt|dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($$|/)'
+      - "--path.procfs=/host/proc"
+      - "--path.rootfs=/rootfs"
+      - "--path.sysfs=/host/sys"
+      - "--collector.filesystem.mount-points-exclude=^/(mnt|dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($$|/)"
     network_mode: host
 
   filebeat:
     <<: *sk_base
     container_name: sk_filebeat
     user: root
-    image: elastic/filebeat:9.1.3
+    image: elastic/filebeat:9.1.5
     network_mode: host
     environment:
       FILEBEAT_HOST: ${FILEBEAT_HOST}
