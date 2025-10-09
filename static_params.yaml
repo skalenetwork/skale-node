@@ -277,12 +277,12 @@ envs:
       EIP1559TransactionsPatchTimestamp: 1721304000
       fastConsensusPatchTimestamp: 1721307600
       flexibleDeploymentPatchTimestamp: 
-        cruel-fast-altarf: 1759840503
+        cruel-fast-altarf: 1759845929
         default: 0
       verifyBlsSyncPatchTimestamp: 1721311200
       externalGasPatchTimestamp: 1727370000
-      invalidTransactionFormatPatchTimestamp: 1759840503
-      clearPartialReceiptsPatchTimestamp: 1759840503
+      invalidTransactionFormatPatchTimestamp: 1759845929
+      clearPartialReceiptsPatchTimestamp: 1759845929
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
