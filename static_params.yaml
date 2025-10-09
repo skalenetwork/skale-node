@@ -277,7 +277,7 @@ envs:
       EIP1559TransactionsPatchTimestamp: 1721304000
       fastConsensusPatchTimestamp: 1721307600
       flexibleDeploymentPatchTimestamp: 
-        cruel-fast-altarf: 1721314800
+        cruel-fast-altarf: 1759840503
         default: 0
       verifyBlsSyncPatchTimestamp: 1721311200
       externalGasPatchTimestamp: 1727370000
