@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   base: &skale_base
@@ -29,7 +29,7 @@ services:
   skale-admin:
     <<: *skale_base
     container_name: skale_admin
-    image: skalenetwork/admin:2.10.2
+    image: skalenetwork/admin:2.10.3
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -71,7 +71,7 @@ services:
   skale-api:
     <<: *skale_base
     container_name: skale_api
-    image: skalenetwork/admin:2.10.2
+    image: skalenetwork/admin:2.10.3
     network_mode: host
     tty: true
     cap_add:
@@ -105,7 +105,7 @@ services:
   celery:
     <<: *skale_base
     container_name: celery
-    image: skalenetwork/admin:2.10.2
+    image: skalenetwork/admin:2.10.3
     network_mode: host
     tty: true
     environment:
@@ -198,10 +198,10 @@ services:
       - /sys:/host/sys:ro
       - /:/rootfs:ro
     command:
-      - '--path.procfs=/host/proc'
-      - '--path.rootfs=/rootfs'
-      - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.mount-points-exclude=^/(mnt|dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($$|/)'
+      - "--path.procfs=/host/proc"
+      - "--path.rootfs=/rootfs"
+      - "--path.sysfs=/host/sys"
+      - "--collector.filesystem.mount-points-exclude=^/(mnt|dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($$|/)"
     network_mode: host
 
   filebeat:
