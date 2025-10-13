@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "IS-1247-5-more-logs-relwithdebinfo",
+    "version": "IS-1247-6-more-logs-relwithdebinfo",
     "custom_args": {
       "ulimits_list": [
         {
