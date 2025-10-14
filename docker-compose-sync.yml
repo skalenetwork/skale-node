@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   base: &skale_base
@@ -16,7 +16,7 @@ services:
   skale-sync-admin:
     <<: *skale_base
     container_name: skale_sync_admin
-    image: skalenetwork/admin:2.10.2
+    image: skalenetwork/admin:2.10.3
     network_mode: host
     tty: true
     cap_add:
