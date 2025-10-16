@@ -1,18 +1,15 @@
-version: '3.4'
+x-sk-base: &sk_base
+  restart: unless-stopped
+  labels:
+    com.skale.prefix: "node"
+  cpu_shares: 128
+  logging:
+    driver: "json-file"
+    options:
+      max-file: "5"
+      max-size: "10m"
 
 services:
-  base: &sk_base
-    image: rancher/pause:3.6
-    restart: unless-stopped
-    labels:
-      com.skale.prefix: "node"
-    cpu_shares: 128
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "5"
-        max-size: "10m"
-
   admin:
     <<: *sk_base
     container_name: sk_admin
