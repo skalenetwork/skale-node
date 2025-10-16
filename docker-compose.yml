@@ -1,22 +1,19 @@
-version: '3.4'
+x-sk-base: &sk_base
+  restart: unless-stopped
+  labels:
+    com.skale.prefix: "node"
+  cpu_shares: 128
+  logging:
+    driver: "json-file"
+    options:
+      max-file: "5"
+      max-size: "10m"
 
 services:
-  base: &sk_base
-    image: rancher/pause:3.6
-    restart: unless-stopped
-    labels:
-      com.skale.prefix: "node"
-    cpu_shares: 128
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "5"
-        max-size: "10m"
-
   transaction-manager:
     <<: *sk_base
     container_name: sk_tm
-    image: skalenetwork/transaction-manager:2.3.0
+    image: skalenetwork/transaction-manager:3.1.0-beta.0
     network_mode: host
     tty: true
     environment:
@@ -156,7 +153,7 @@ services:
   watchdog:
     <<: *sk_base
     container_name: sk_watchdog
-    image: skalenetwork/watchdog:2.2.0-stable.0
+    image: skalenetwork/watchdog:3.1.0-beta.0
     network_mode: host
     environment:
       ALLOWED_TS_DIFF: 300
@@ -204,10 +201,10 @@ services:
       - /sys:/host/sys:ro
       - /:/rootfs:ro
     command:
-      - '--path.procfs=/host/proc'
-      - '--path.rootfs=/rootfs'
-      - '--path.sysfs=/host/sys'
-      - '--collector.filesystem.mount-points-exclude=^/(mnt|dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($$|/)'
+      - "--path.procfs=/host/proc"
+      - "--path.rootfs=/rootfs"
+      - "--path.sysfs=/host/sys"
+      - "--collector.filesystem.mount-points-exclude=^/(mnt|dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($$|/)"
     network_mode: host
 
   filebeat:
