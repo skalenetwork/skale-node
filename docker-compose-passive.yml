@@ -46,7 +46,7 @@ services:
 
   nginx:
     <<: *sk_base
-    image: nginx:1.20.2
+    image: nginx:1.29.1
     container_name: sk_nginx
     network_mode: host
     volumes:
