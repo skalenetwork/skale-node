@@ -187,7 +187,7 @@ services:
   redis:
     <<: *sk_base
     container_name: sk_redis
-    image: "redis:8.0.1-alpine"
+    image: "redis:8.2.2-alpine"
     network_mode: host
     tty: true
     environment:
@@ -213,7 +213,7 @@ services:
 
   nginx:
     <<: *sk_base
-    image: nginx:1.20.2
+    image: nginx:1.29.1
     container_name: sk_nginx
     network_mode: host
     depends_on:
@@ -260,7 +260,7 @@ services:
     <<: *sk_base
     container_name: sk_filebeat
     user: root
-    image: elastic/filebeat:9.1.3
+    image: elastic/filebeat:9.1.5
     network_mode: host
     environment:
       FILEBEAT_HOST: ${FILEBEAT_HOST}
