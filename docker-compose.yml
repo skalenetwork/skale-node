@@ -13,7 +13,7 @@ services:
   transaction-manager:
     <<: *sk_base
     container_name: sk_tm
-    image: skalenetwork/transaction-manager:3.1.0-beta.0
+    image: skalenetwork/transaction-manager:3.1.0
     network_mode: host
     tty: true
     environment:
@@ -153,7 +153,7 @@ services:
   watchdog:
     <<: *sk_base
     container_name: sk_watchdog
-    image: skalenetwork/watchdog:3.1.0-beta.0
+    image: skalenetwork/watchdog:3.1.0-stable.0
     network_mode: host
     environment:
       ALLOWED_TS_DIFF: 300
