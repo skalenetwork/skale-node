@@ -22,7 +22,7 @@
 		"blockReward": "0x4563918244F40000",
 		"externalGasDifficulty": "0x01",
 		"skaleDisableChainIdCheck": true,
-                "getLogsBlocksLimit": 2000
+		"getLogsBlocksLimit": 2000
 	},
 	"unddos": {
 		"origins": [
@@ -55,5 +55,24 @@
 		"extraData": "0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa",
 		"gasLimit": "0xFFFFFFF"
 	},
-	"accounts": {}
+	"accounts": {
+		"0x5522724C33B4e34677c1cd8fEa55632393F33e40": {
+			"balance": "1000000000000000000000000000000000000"
+		},
+		"0xEeee90e9cFC56B6B2874b1857763193d4405c3B1": {
+			"balance": "1000000000000000000000000000000000000"
+		},
+		"0x2c20Ef3fc0248FCA2DC57bcb202F2CAe504A9A66": {
+			"balance": "1000000000000000000000000000000000000"
+		},
+		"0x83b7b3A59857188474FF0269cCC3859b46479aaF": {
+			"balance": "1000000000000000000000000000000000000"
+		},
+		"0x1057dc7277a319927d3eb43e05680b75a00eb5f4": {
+			"balance": "1000000000000000000000000000000000000"
+		},
+		"0x49F765E1094Ab3a88f24ff36e8b507a3Ec28186c": {
+			"balance": "1000000000000000000000000000000000000"
+		}
+	}
 }
