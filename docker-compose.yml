@@ -26,7 +26,7 @@ services:
   admin:
     <<: *sk_base
     container_name: sk_admin
-    image: skalenetwork/admin:2.10.2-fair-beta.0
+    image: skalenetwork/admin:3.2.0-fair-stable.1
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -53,6 +53,7 @@ services:
       INFLUX_URL: ${INFLUX_URL}
       MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
       IMA_CONTRACTS: ${IMA_CONTRACTS}
+      DISABLE_COLORS: "True"
 
     command: "python3 admin.py"
     volumes:
@@ -70,7 +71,7 @@ services:
   api:
     <<: *sk_base
     container_name: sk_api
-    image: skalenetwork/admin:2.10.2-fair-beta.0
+    image: skalenetwork/admin:3.2.0-fair-stable.1
     network_mode: host
     tty: true
     cap_add:
@@ -106,7 +107,7 @@ services:
   celery:
     <<: *sk_base
     container_name: celery
-    image: skalenetwork/admin:2.10.2-fair-beta.0
+    image: skalenetwork/admin:3.2.0-fair-stable.1
     network_mode: host
     tty: true
     environment:
@@ -121,7 +122,7 @@ services:
   redis:
     <<: *sk_base
     container_name: sk_redis
-    image: "redis:6.0.10-alpine"
+    image: "redis:8.2.2-alpine"
     network_mode: host
     tty: true
     environment:
