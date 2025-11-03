@@ -29,6 +29,7 @@ envs:
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 70000000000
       maxConsensusStorageBytes: 70000000000
+      disableSelfDestructPatchTimestamp: 1762773498
 
     skaled_cmd: ["-v 2", "--aa no"]
 
@@ -80,6 +81,7 @@ envs:
       dbStorageLimit: 30000000000
       maxConsensusStorageBytes: 30000000000
       constantGasPrice: 10000000000
+      disableSelfDestructPatchTimestamp: 1762773498
 
     skaled_cmd: ["-v 2", "--aa no"]
 
@@ -130,6 +132,7 @@ envs:
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 30000000000
       maxConsensusStorageBytes: 30000000000
+      disableSelfDestructPatchTimestamp: 1762273498
 
     skaled_cmd: ["-v 2", "--aa no"]
 
@@ -180,6 +183,7 @@ envs:
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 30000000000
       maxConsensusStorageBytes: 30000000000
+      disableSelfDestructPatchTimestamp: 1
 
     skaled_cmd:
       ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
