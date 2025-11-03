@@ -13,7 +13,7 @@ services:
   admin:
     <<: *sk_base
     container_name: sk_admin
-    image: skalenetwork/admin:3.2.0-fair-stable.1
+    image: skalenetwork/admin:3.2.0-fair-stable.2
     network_mode: host
     tty: true
     cap_add:
