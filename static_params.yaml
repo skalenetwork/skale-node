@@ -99,6 +99,8 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+        dynamicPricingMinPrice: 47619047619048
+        dynamicPricingStartPrice: 47619047619048
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
@@ -202,6 +204,8 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+        dynamicPricingMinPrice: 47619047619048
+        dynamicPricingStartPrice: 47619047619048
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
@@ -305,6 +309,8 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+        dynamicPricingMinPrice: 47619047619048
+        dynamicPricingStartPrice: 47619047619048
       admin:
         automatic_repair: false
       small:
@@ -411,6 +417,8 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+        dynamicPricingMinPrice: 47619047619048
+        dynamicPricingStartPrice: 47619047619048
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
