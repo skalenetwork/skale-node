@@ -1,7 +1,7 @@
 {
   "skaled": {
     "name": "skalenetwork/schain",
-    "version": "4.1.0-develop.56-2291-11-logs-relwithdebinfo",
+    "version": "2305-test-2",
     "custom_args": {
       "ulimits_list": [
         {
