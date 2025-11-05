@@ -132,7 +132,7 @@ envs:
       snapshotDownloadInactiveTimeout: 120
       dbStorageLimit: 30000000000
       maxConsensusStorageBytes: 30000000000
-      disableSelfDestructPatchTimestamp: 1762273498
+      disableSelfDestructPatchTimestamp: 1762357543
 
     skaled_cmd: ["-v 2", "--aa no"]
 
