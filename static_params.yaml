@@ -100,6 +100,7 @@ envs:
         pg-threads: 10
         pg-threads-limit: 10
         dynamicPricingMinPrice: 47619047619048
+        dynamicPricingMaxPrice: 1000000000000000000
         dynamicPricingStartPrice: 47619047619048
       small:
         minCacheSize: 1000000
@@ -205,6 +206,7 @@ envs:
         pg-threads: 10
         pg-threads-limit: 10
         dynamicPricingMinPrice: 47619047619048
+        dynamicPricingMaxPrice: 1000000000000000000
         dynamicPricingStartPrice: 47619047619048
       small:
         minCacheSize: 1000000
@@ -310,6 +312,7 @@ envs:
         pg-threads: 10
         pg-threads-limit: 10
         dynamicPricingMinPrice: 47619047619048
+        dynamicPricingMaxPrice: 1000000000000000000
         dynamicPricingStartPrice: 47619047619048
       admin:
         automatic_repair: false
@@ -418,6 +421,7 @@ envs:
         pg-threads: 10
         pg-threads-limit: 10
         dynamicPricingMinPrice: 47619047619048
+        dynamicPricingMaxPrice: 1000000000000000000
         dynamicPricingStartPrice: 47619047619048
       small:
         minCacheSize: 1000000
