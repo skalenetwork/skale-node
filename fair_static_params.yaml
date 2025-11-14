@@ -150,7 +150,7 @@ envs:
 
     info:
       chain_id: "0x3A9"
-      chain_name: fair-qa
+      chain_name: fair-perf-qa
       testnet_reward_activation_address: true
 
   devnet:
