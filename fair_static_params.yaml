@@ -81,7 +81,7 @@ envs:
       dbStorageLimit: 30000000000
       maxConsensusStorageBytes: 30000000000
       constantGasPrice: 10000000000
-      disableSelfDestructPatchTimestamp: 1762773498
+      disableSelfDestructPatchTimestamp: 1764158400
 
     skaled_cmd: ["-v 2", "--aa no"]
 
