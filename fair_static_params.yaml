@@ -140,7 +140,7 @@ envs:
 
     node:
       bindIP: "0.0.0.0"
-      logLevel: "info"
+      logLevel: "trace"
       logLevelConfig: "info"
       pg-threads: 10
       pg-threads-limit: 10
