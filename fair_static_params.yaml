@@ -47,6 +47,7 @@ envs:
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
       maxOpenLeveldbFiles: 1000
+      getResponseLogCountLimit: 10000
 
     info:
       chain_id: "0x3A6"
@@ -99,6 +100,7 @@ envs:
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
       maxOpenLeveldbFiles: 4000
+      getResponseLogCountLimit: 10000
 
     info:
       chain_id: "0x3A7"
@@ -150,6 +152,7 @@ envs:
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
       maxOpenLeveldbFiles: 1000
+      getResponseLogCountLimit: 10000
 
     info:
       chain_id: "0x3A9"
@@ -202,6 +205,7 @@ envs:
       transactionQueueLimitBytes: 69206016
       futureTransactionQueueLimitBytes: 140509184
       maxOpenLeveldbFiles: 1000
+      getResponseLogCountLimit: 10000
 
     info:
       chain_id: "0x3A8"
