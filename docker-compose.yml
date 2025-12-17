@@ -122,7 +122,7 @@ services:
   redis:
     <<: *sk_base
     container_name: sk_redis
-    image: "redis:8.2.2-alpine"
+    image: "redis:8.4.0-alpine"
     network_mode: host
     tty: true
     environment:
