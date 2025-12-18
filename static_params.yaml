@@ -279,7 +279,7 @@ envs:
       pushZeroPatchTimestamp: 1712142000
       precompiledConfigPatchTimestamp: 1712314800
       correctForkInPowPatchTimestamp: 1711969200
-      EIP1559TransactionsPatchTimestamp: 0
+      EIP1559TransactionsPatchTimestamp: 1766053966
       fastConsensusPatchTimestamp: 0
       flexibleDeploymentPatchTimestamp: 0
       verifyBlsSyncPatchTimestamp: 0
