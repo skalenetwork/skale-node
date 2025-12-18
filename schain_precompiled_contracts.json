@@ -228,5 +228,25 @@
       },
       "startingBlock": "0x0"
     }
+  },
+  "0x000000000000000000000000000000000000001A": {
+      "precompiled": {
+          "name": "getRandomWalletAndSignatureForCTX",
+          "linear": {
+              "base": 15,
+              "word": 0
+          },
+          "startingBlock": "0x0"
+      }
+  },
+  "0x000000000000000000000000000000000000001B": {
+      "precompiled": {
+          "name": "submitCTX",
+          "linear": {
+              "base": 15,
+              "word": 0
+          },
+          "startingBlock": "0x0"
+      }
   }
 }
