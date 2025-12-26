@@ -60,3 +60,16 @@ services:
         source: ${SCHAINS_MNT_DIR}
         target: ${SCHAINS_MNT_DIR}
         read_only: true
+
+  redis:
+    <<: *sk_base
+    container_name: sk_redis
+    image: "redis:8.4.0-alpine"
+    network_mode: host
+    tty: true
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    command: "redis-server /data/redis.conf"
+    volumes:
+      - ${SKALE_DIR}/node_data/redis-data:/data/db:rw
+      - ${SKALE_DIR}/config/redis.conf:/data/redis.conf
