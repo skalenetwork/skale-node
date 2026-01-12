@@ -54,12 +54,20 @@ services:
       MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
       IMA_CONTRACTS: ${IMA_CONTRACTS}
       DISABLE_COLORS: "True"
+      PASSIVE_NODE: ${PASSIVE_NODE}
+      SCHAIN_NAME: ${SCHAIN_NAME}
 
-    command: "python3 admin.py"
+    command: >
+      sh -c 'if [ "$$PASSIVE_NODE" = "True" ]; then
+        python3 skale_passive.py;
+      else
+        python3 admin.py;
+      fi'
     volumes:
       - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+      - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
       - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
     healthcheck:
       test: ["CMD", "python3", "healthchecks/admin.py"]
@@ -97,11 +105,14 @@ services:
       ALLOWED_TS_DIFF: 300
       MANAGER_CONTRACTS: ${MANAGER_CONTRACTS}
       IMA_CONTRACTS: ${IMA_CONTRACTS}
+      SKALE_NETWORK_TYPE: "skale"
+      PASSIVE_NODE: ${PASSIVE_NODE}
     command: "gunicorn app:app -c gunicorn.conf.py"
     volumes:
       - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
       - ${SKALE_DIR}/node_data:/skale_node_data
+      - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
       - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
 
   celery:
@@ -161,6 +172,8 @@ services:
       FLASK_APP_PORT: 3010
       FLASK_APP_HOST: "127.0.0.1"
       FLASK_DEBUG_MODE: "False"
+      SKALE_NETWORK_TYPE: "skale"
+      PASSIVE_NODE: ${PASSIVE_NODE}
 
   nginx:
     <<: *sk_base
