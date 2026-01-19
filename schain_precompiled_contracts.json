@@ -248,5 +248,25 @@
           },
           "startingBlock": "0x0"
       }
+  },
+  "0x000000000000000000000000000000000000001C": {
+      "precompiled": {
+          "name": "encryptECIES",
+          "linear": {
+              "base": 15,
+              "word": 0
+          },
+          "startingBlock": "0x0"
+      }
+  },
+  "0x000000000000000000000000000000000000001D": {
+      "precompiled": {
+          "name": "encryptTE",
+          "linear": {
+              "base": 15,
+              "word": 0
+          },
+          "startingBlock": "0x0"
+      }
   }
 }
