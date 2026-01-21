@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "bite2-demo-token-relwithdebinfo",
+    "version": "bite2-demo-token-final-relwithdebinfo",
     "custom_args": {
       "ulimits_list": [
         {
