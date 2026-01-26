@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "4.0.1",
+    "version": "1321-increase-buffer",
     "custom_args": {
       "ulimits_list": [
         {
