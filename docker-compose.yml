@@ -26,7 +26,7 @@ services:
   admin:
     <<: *sk_base
     container_name: sk_admin
-    image: skalenetwork/admin:3.2.0-develop.2
+    image: skalenetwork/admin:3.3.0-develop.1
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -56,6 +56,7 @@ services:
       DISABLE_COLORS: "True"
       PASSIVE_NODE: ${PASSIVE_NODE}
       SCHAIN_NAME: ${SCHAIN_NAME}
+      BITE: ${BITE}
 
     command: >
       sh -c 'if [ "$$PASSIVE_NODE" = "True" ]; then
@@ -79,7 +80,7 @@ services:
   api:
     <<: *sk_base
     container_name: sk_api
-    image: skalenetwork/admin:3.2.0-develop.2
+    image: skalenetwork/admin:3.3.0-develop.1
     network_mode: host
     tty: true
     cap_add:
@@ -118,7 +119,7 @@ services:
   celery:
     <<: *sk_base
     container_name: celery
-    image: skalenetwork/admin:3.2.0-develop.1
+    image: skalenetwork/admin:3.3.0-develop.1
     network_mode: host
     tty: true
     environment:
