@@ -229,9 +229,9 @@
       "startingBlock": "0x0"
     }
   },
-  "0x000000000000000000000000000000000000001A": {
+  "0x000000000000000000000000000000000000001B": {
       "precompiled": {
-          "name": "getRandomWalletAndSignatureForCTX",
+          "name": "submitCTX",
           "linear": {
               "base": 15,
               "word": 0
@@ -239,9 +239,19 @@
           "startingBlock": "0x0"
       }
   },
-  "0x000000000000000000000000000000000000001B": {
+  "0x000000000000000000000000000000000000001C": {
       "precompiled": {
-          "name": "submitCTX",
+          "name": "encryptECIES",
+          "linear": {
+              "base": 15,
+              "word": 0
+          },
+          "startingBlock": "0x0"
+      }
+  },
+  "0x000000000000000000000000000000000000001D": {
+      "precompiled": {
+          "name": "encryptTE",
           "linear": {
               "base": 15,
               "word": 0
