@@ -198,8 +198,8 @@ envs:
     node:
       common:
         bindIP: "0.0.0.0"
-        logLevel: "info"
-        logLevelConfig: "info"
+        logLevel: "trace"
+        logLevelConfig: "trace"
         pg-threads: 10
         pg-threads-limit: 10
       small:
