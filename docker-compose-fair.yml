@@ -38,7 +38,6 @@ services:
       - NET_RAW
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
-      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       SKALE_DIR_HOST: ${SKALE_DIR}
       MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
@@ -81,7 +80,6 @@ services:
       - NET_RAW
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
-      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       BOOT_ENDPOINT: ${BOOT_ENDPOINT}
       SKALE_DIR_HOST: ${SKALE_DIR}
       MONITORING_CONTAINERS: ${MONITORING_CONTAINERS}
@@ -124,7 +122,6 @@ services:
       - NET_RAW
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
-      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
       FLASK_APP_PORT: 3007
@@ -160,7 +157,6 @@ services:
       - NET_RAW
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
-      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       BOOT_ENDPOINT: ${BOOT_ENDPOINT}
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
       FLASK_APP_PORT: 3007
@@ -215,7 +211,7 @@ services:
 
   nginx:
     <<: *sk_base
-    image: nginx:1.29.1
+    image: nginx:1.29.4
     container_name: sk_nginx
     network_mode: host
     depends_on:

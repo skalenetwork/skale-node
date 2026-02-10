@@ -21,7 +21,6 @@ services:
       ENDPOINT: ${ENDPOINT}
     volumes:
       - ${SKALE_DIR}:/skale_vol
-      - ${SKALE_DIR}/node_data:/skale_node_data
 
   admin:
     <<: *sk_base
@@ -35,7 +34,6 @@ services:
       - NET_RAW
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
-      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       SKALE_DIR_HOST: ${SKALE_DIR}
       TG_API_KEY: ${TG_API_KEY}
@@ -66,7 +64,6 @@ services:
     volumes:
       - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
-      - ${SKALE_DIR}/node_data:/skale_node_data
       - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
       - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
     healthcheck:
@@ -87,7 +84,6 @@ services:
       - NET_RAW
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
-      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
       FLASK_APP_PORT: 3007
@@ -111,7 +107,6 @@ services:
     volumes:
       - /var/run/skale:/var/run/skale
       - ${SKALE_DIR}:/skale_vol
-      - ${SKALE_DIR}/node_data:/skale_node_data
       - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
       - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
 
@@ -150,7 +145,6 @@ services:
     network_mode: host
     environment:
       SGX_SERVER_URL: ${SGX_SERVER_URL}
-      SGX_CERTIFICATES_DIR_NAME: ${SGX_CERTIFICATES_DIR_NAME}
       ENDPOINT: ${ENDPOINT}
       DISABLE_DRY_RUN: ${DISABLE_DRY_RUN}
       DEFAULT_GAS_LIMIT: ${DEFAULT_GAS_LIMIT}
@@ -160,7 +154,6 @@ services:
       IMA_CONTRACTS: ${IMA_CONTRACTS}
     volumes:
       - ${SKALE_DIR}:/skale_vol
-      - ${SKALE_DIR}/node_data:/skale_node_data
 
   watchdog:
     <<: *sk_base
@@ -177,7 +170,7 @@ services:
 
   nginx:
     <<: *sk_base
-    image: nginx:1.29.1
+    image: nginx:1.29.4
     container_name: sk_nginx
     network_mode: host
     depends_on:
