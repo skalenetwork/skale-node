@@ -76,6 +76,9 @@ envs:
         elated-tan-skat: 1723460400
         green-giddy-denebola: 1723460400
         parallel-stormy-spica: 1723460400
+        affectionate-immediate-pollux: 0
+        light-vast-diphda: 0
+        fussy-smoggy-megrez: 0
       verifyBlsSyncPatchTimestamp: 1722855600
       externalGasPatchTimestamp: 1728817200
       invalidTransactionFormatPatchTimestamp: 1746442800
@@ -84,7 +87,9 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-
+      groupIndexInitPatchTimestamp: 0
+      currentBlockRandomPatchTimestamp: 0
+      singleStateCommitPerBlockPatchTimestamp: 0
     ima:
       time_frame:
         before: 1800
@@ -187,6 +192,9 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      groupIndexInitPatchTimestamp: 0
+      currentBlockRandomPatchTimestamp: 0
+      singleStateCommitPerBlockPatchTimestamp: 0
 
     ima:
       time_frame:
@@ -290,6 +298,9 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      groupIndexInitPatchTimestamp: 0
+      currentBlockRandomPatchTimestamp: 0
+      singleStateCommitPerBlockPatchTimestamp: 0
 
     ima:
       time_frame:
@@ -395,6 +406,9 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      groupIndexInitPatchTimestamp: 0
+      currentBlockRandomPatchTimestamp: 0
+      singleStateCommitPerBlockPatchTimestamp: 0
 
     ima:
       time_frame:

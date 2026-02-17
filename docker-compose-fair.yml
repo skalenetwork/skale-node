@@ -13,7 +13,7 @@ services:
   transaction-manager:
     <<: *sk_base
     container_name: sk_tm
-    image: skalenetwork/transaction-manager:3.1.0
+    image: skalenetwork/transaction-manager:3.2.0-beta.0
     network_mode: host
     tty: true
     volumes:
@@ -23,7 +23,7 @@ services:
   boot-admin:
     <<: *sk_base
     container_name: sk_boot_admin
-    image: skalenetwork/admin:3.3.0-develop.1
+    image: skalenetwork/admin:3.3.0-beta.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -47,7 +47,7 @@ services:
   admin:
     <<: *sk_base
     container_name: sk_admin
-    image: skalenetwork/admin:3.3.0-develop.1
+    image: skalenetwork/admin:3.3.0-beta.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -71,7 +71,7 @@ services:
   boot-api:
     <<: *sk_base
     container_name: sk_boot_api
-    image: skalenetwork/admin:3.3.0-develop.1
+    image: skalenetwork/admin:3.3.0-beta.0
     network_mode: host
     tty: true
     cap_add:
@@ -88,7 +88,7 @@ services:
   api:
     <<: *sk_base
     container_name: sk_api
-    image: skalenetwork/admin:3.3.0-develop.1
+    image: skalenetwork/admin:3.3.0-beta.0
     network_mode: host
     tty: true
     cap_add:
@@ -105,7 +105,7 @@ services:
   redis:
     <<: *sk_base
     container_name: sk_redis
-    image: "redis:8.4.0-alpine"
+    image: "redis:8.6.0-alpine"
     network_mode: host
     tty: true
     environment:
@@ -120,7 +120,7 @@ services:
   watchdog:
     <<: *sk_base
     container_name: sk_watchdog
-    image: skalenetwork/watchdog:3.1.0-stable.0
+    image: skalenetwork/watchdog:3.1.0-develop.1
     network_mode: host
     environment:
       ALLOWED_TS_DIFF: 300
@@ -132,7 +132,7 @@ services:
 
   nginx:
     <<: *sk_base
-    image: nginx:1.29.4
+    image: nginx:1.29.5
     container_name: sk_nginx
     network_mode: host
     depends_on:
@@ -179,7 +179,7 @@ services:
     <<: *sk_base
     container_name: sk_filebeat
     user: root
-    image: elastic/filebeat:9.1.5
+    image: elastic/filebeat:9.2.5
     network_mode: host
     environment:
       FILEBEAT_HOST: ${FILEBEAT_HOST}
