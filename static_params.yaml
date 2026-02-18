@@ -296,27 +296,28 @@ envs:
       pushZeroPatchTimestamp: 1712142000
       precompiledConfigPatchTimestamp: 1712314800
       correctForkInPowPatchTimestamp: 1711969200
-      EIP1559TransactionsPatchTimestamp: 0
-      fastConsensusPatchTimestamp: 0
-      flexibleDeploymentPatchTimestamp: 0
-      verifyBlsSyncPatchTimestamp: 0
+      EIP1559TransactionsPatchTimestamp: 1771425408
+      fastConsensusPatchTimestamp: 1771425408
+      flexibleDeploymentPatchTimestamp: 1771425408
+      verifyBlsSyncPatchTimestamp: 1771425408
       externalGasPatchTimestamp: 1727712000
-      invalidTransactionFormatPatchTimestamp: 0
-      clearPartialReceiptsPatchTimestamp: 0
+      invalidTransactionFormatPatchTimestamp: 1771425408
+      clearPartialReceiptsPatchTimestamp: 1771425408
+      groupIndexInitPatchTimestamp: 1771425408
+      currentBlockRandomPatchTimestamp: 1771425408
+      singleStateCommitPerBlockPatchTimestamp: 1771425408
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      groupIndexInitPatchTimestamp: 0
-      currentBlockRandomPatchTimestamp: 0
-      singleStateCommitPerBlockPatchTimestamp: 0
 
     ima:
       time_frame:
         before: 1800
         after: 900
 
-    schain_cmd: ["-v 2", "--aa no"]
+    schain_cmd: 
+      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
       common:
