@@ -18,6 +18,7 @@ services:
     tty: true
     volumes:
       - ${SKALE_DIR}:/skale_vol
+      - ${SKALE_DIR}/node_data:/skale_node_data
 
   admin:
     <<: *sk_base
