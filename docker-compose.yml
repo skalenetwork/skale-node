@@ -86,7 +86,7 @@ services:
   bounty:
     <<: *sk_base
     container_name: sk_bounty
-    image: skalenetwork/bounty-agent:2.2.0-stable.0
+    image: skalenetwork/bounty-agent:3.1.0-beta.0
     network_mode: host
     volumes:
       - ${SKALE_DIR}:/skale_vol
