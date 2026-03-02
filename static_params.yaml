@@ -386,7 +386,7 @@ envs:
       correctForkInPowPatchTimestamp: 1711969200
       EIP1559TransactionsPatchTimestamp: 1722942000
       fastConsensusPatchTimestamp: 1723114800
-      flexibleDeploymentPatchTimestamp: 0
+      flexibleDeploymentPatchTimestamp: 1722855600
       verifyBlsSyncPatchTimestamp: 1722855600
       externalGasPatchTimestamp: 1727353446
       invalidTransactionFormatPatchTimestamp: 1741956440
@@ -402,15 +402,17 @@ envs:
         after: 900
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 4", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
       common:
         bindIP: "0.0.0.0"
-        logLevel: "info"
+        logLevel: "trace"
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+      admin:
+        automatic_repair: false
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
