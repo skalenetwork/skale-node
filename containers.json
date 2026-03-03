@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "5.0.0-develop.2-snapshots-fix-relwithdebinfo",
+    "version": "5.1.0-develop.16-snapshot-fix-bite2-relwithdebinfo",
     "custom_args": {
       "ulimits_list": [
         {
