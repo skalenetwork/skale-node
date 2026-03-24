@@ -82,6 +82,7 @@ envs:
       clearPartialReceiptsPatchTimestamp: 1746615600
       currentBlockRandomPatchTimestamp: 0
       bite2PatchTimestamp: 0
+      contractCreationReadOnlyPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -187,6 +188,7 @@ envs:
       clearPartialReceiptsPatchTimestamp: 1745323200
       currentBlockRandomPatchTimestamp: 0
       bite2PatchTimestamp: 0
+      contractCreationReadOnlyPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -292,6 +294,7 @@ envs:
       clearPartialReceiptsPatchTimestamp: 0
       currentBlockRandomPatchTimestamp: 0
       bite2PatchTimestamp: 0
+      contractCreationReadOnlyPatchTimestamp: 0
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -399,6 +402,7 @@ envs:
       clearPartialReceiptsPatchTimestamp: 1742042840
       currentBlockRandomPatchTimestamp: 0
       bite2PatchTimestamp: 0
+      contractCreationReadOnlyPatchTimestamp: 0
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
