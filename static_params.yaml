@@ -416,9 +416,9 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      groupIndexInitPatchTimestamp: 1772637300
-      currentBlockRandomPatchTimestamp: 1772637300
-      singleStateCommitPerBlockPatchTimestamp: 1772637300
+      groupIndexInitPatchTimestamp: 1774620915
+      currentBlockRandomPatchTimestamp: 1774620915
+      singleStateCommitPerBlockPatchTimestamp: 1774620915
 
     ima:
       time_frame:
