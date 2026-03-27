@@ -446,7 +446,7 @@ envs:
         maxCacheSize: 2000000
         collectionQueueSize: 2
         collectionDuration: 10
-        transactionQueueSize: 1000
+        transactionQueueSize: 12800
         transactionQueueLimitBytes: 69206016
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
@@ -455,7 +455,7 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 1000
+        transactionQueueSize: 12800
         transactionQueueLimitBytes: 69206016
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
@@ -464,7 +464,7 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 1000
+        transactionQueueSize: 12800
         transactionQueueLimitBytes: 69206016
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
@@ -473,7 +473,7 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 1000
+        transactionQueueSize: 12800
         transactionQueueLimitBytes: 69206016
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
@@ -482,7 +482,7 @@ envs:
         maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
-        transactionQueueSize: 1000
+        transactionQueueSize: 12800
         transactionQueueLimitBytes: 69206016
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 1000
