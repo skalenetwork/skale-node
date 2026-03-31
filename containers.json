@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "5.1.0-develop.33-ctxGasLimitFix-bite-relwithdebinfo",
+    "version": "5.1.0-develop.34-bite",
     "custom_args": {
       "ulimits_list": [
         {
