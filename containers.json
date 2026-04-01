@@ -1,7 +1,7 @@
 {
   "schain": {
     "name": "skalenetwork/schain",
-    "version": "5.1.0-develop.34-bite",
+    "version": "5.1.0-develop.36-bite",
     "custom_args": {
       "ulimits_list": [
         {
