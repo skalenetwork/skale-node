@@ -325,7 +325,7 @@ envs:
         dynamicPricingMaxPrice: 1000000000000000000
         dynamicPricingStartPrice: 47619047620
       admin:
-        automatic_repair: false
+          automatic_repair: false
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
