@@ -103,6 +103,9 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+        dynamicPricingMinPrice: 47619047620
+        dynamicPricingMaxPrice: 1000000000000000000
+        dynamicPricingStartPrice: 47619047620
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
@@ -187,10 +190,10 @@ envs:
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1745319600
       clearPartialReceiptsPatchTimestamp: 1745323200
-      currentBlockRandomPatchTimestamp: 1775473200
-      singleStateCommitPerBlockPatchTimestamp: 1775476800
-      bite2PatchTimestamp: 1775480400
-      contractCreationReadOnlyPatchTimestamp: 1775484000
+      currentBlockRandomPatchTimestamp: 1775136600
+      singleStateCommitPerBlockPatchTimestamp: 1775136600
+      bite2PatchTimestamp: 1775136600
+      contractCreationReadOnlyPatchTimestamp: 1775136600
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -210,6 +213,8 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+        admin:
+          automatic_repair: false
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
@@ -287,17 +292,17 @@ envs:
       pushZeroPatchTimestamp: 1712142000
       precompiledConfigPatchTimestamp: 1712314800
       correctForkInPowPatchTimestamp: 1711969200
-      EIP1559TransactionsPatchTimestamp: 0
-      fastConsensusPatchTimestamp: 0
-      flexibleDeploymentPatchTimestamp: 0
-      verifyBlsSyncPatchTimestamp: 0
+      EIP1559TransactionsPatchTimestamp: 1711969200
+      fastConsensusPatchTimestamp: 1711969200
+      flexibleDeploymentPatchTimestamp: 1711969200
+      verifyBlsSyncPatchTimestamp: 1711969200
       externalGasPatchTimestamp: 1727712000
-      invalidTransactionFormatPatchTimestamp: 0
-      clearPartialReceiptsPatchTimestamp: 0
-      currentBlockRandomPatchTimestamp: 1775473200
-      singleStateCommitPerBlockPatchTimestamp: 1775476800
-      bite2PatchTimestamp: 1775480400
-      contractCreationReadOnlyPatchTimestamp: 1775484000
+      invalidTransactionFormatPatchTimestamp: 1711969200
+      clearPartialReceiptsPatchTimestamp: 1711969200
+      currentBlockRandomPatchTimestamp: 1775136600
+      singleStateCommitPerBlockPatchTimestamp: 1775136600
+      bite2PatchTimestamp: 1775136600
+      contractCreationReadOnlyPatchTimestamp: 1775136600
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -317,6 +322,9 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+        dynamicPricingMinPrice: 47619047620
+        dynamicPricingMaxPrice: 1000000000000000000
+        dynamicPricingStartPrice: 47619047620
       admin:
         automatic_repair: false
       small:
@@ -403,10 +411,10 @@ envs:
       externalGasPatchTimestamp: 1727353446
       invalidTransactionFormatPatchTimestamp: 1741956440
       clearPartialReceiptsPatchTimestamp: 1742042840
-      currentBlockRandomPatchTimestamp: 1775473200
-      singleStateCommitPerBlockPatchTimestamp: 1775476800
-      bite2PatchTimestamp: 1775480400
-      contractCreationReadOnlyPatchTimestamp: 1775484000
+      currentBlockRandomPatchTimestamp: 1775136600
+      singleStateCommitPerBlockPatchTimestamp: 1775136600
+      bite2PatchTimestamp: 1775136600
+      contractCreationReadOnlyPatchTimestamp: 1775136600
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -427,6 +435,9 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+        dynamicPricingMinPrice: 47619047620
+        dynamicPricingMaxPrice: 1000000000000000000
+        dynamicPricingStartPrice: 47619047620
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
