@@ -103,9 +103,6 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
-        dynamicPricingMinPrice: 47619047620
-        dynamicPricingMaxPrice: 1000000000000000000
-        dynamicPricingStartPrice: 47619047620
         admin:
           automatic_repair: false
       small:
