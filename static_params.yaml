@@ -80,10 +80,10 @@ envs:
       externalGasPatchTimestamp: 1728817200
       invalidTransactionFormatPatchTimestamp: 1746442800
       clearPartialReceiptsPatchTimestamp: 1746615600
-      currentBlockRandomPatchTimestamp: 1774617300
-      singleStateCommitPerBlockPatchTimestamp: 1774617300
-      bite2PatchTimestamp: 1774617300
-      ContractCreationReadOnlyPatchTimestamp: 1774617300
+      currentBlockRandomPatchTimestamp: 1775131620
+      singleStateCommitPerBlockPatchTimestamp: 1775131620
+      bite2PatchTimestamp: 1775131620
+      ContractCreationReadOnlyPatchTimestamp: 1775131620
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -190,10 +190,10 @@ envs:
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1745319600
       clearPartialReceiptsPatchTimestamp: 1745323200
-      currentBlockRandomPatchTimestamp: 1774617300
-      singleStateCommitPerBlockPatchTimestamp: 1774617300
-      bite2PatchTimestamp: 1774617300
-      ContractCreationReadOnlyPatchTimestamp: 1774617300
+      currentBlockRandomPatchTimestamp: 1775131620
+      singleStateCommitPerBlockPatchTimestamp: 1775131620
+      bite2PatchTimestamp: 1775131620
+      ContractCreationReadOnlyPatchTimestamp: 1775131620
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -300,10 +300,10 @@ envs:
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1711969200
       clearPartialReceiptsPatchTimestamp: 1711969200
-      currentBlockRandomPatchTimestamp: 1774617300
-      singleStateCommitPerBlockPatchTimestamp: 1774617300
-      bite2PatchTimestamp: 1774617300
-      ContractCreationReadOnlyPatchTimestamp: 1774617300
+      currentBlockRandomPatchTimestamp: 1775131620
+      singleStateCommitPerBlockPatchTimestamp: 1775131620
+      bite2PatchTimestamp: 1775131620
+      ContractCreationReadOnlyPatchTimestamp: 1775131620
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -412,11 +412,11 @@ envs:
       externalGasPatchTimestamp: 1727353446
       invalidTransactionFormatPatchTimestamp: 1741956440
       clearPartialReceiptsPatchTimestamp: 1742042840
-      currentBlockRandomPatchTimestamp: 1774617300
-      singleStateCommitPerBlockPatchTimestamp: 1774617300
-      bite2PatchTimestamp: 1774617300
-      ContractCreationReadOnlyPatchTimestamp: 1774617300
-      snapshotIntervalSec: 3600
+      currentBlockRandomPatchTimestamp: 1775131620
+      singleStateCommitPerBlockPatchTimestamp: 1775131620
+      bite2PatchTimestamp: 1775131620
+      ContractCreationReadOnlyPatchTimestamp: 1775131620
+      snapshotIntervalSec: 900
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
