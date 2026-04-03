@@ -203,13 +203,13 @@ envs:
         before: 1800
         after: 900
 
-    schain_cmd: ["-v 2", "--aa no"]
+    schain_cmd: ["-v 9", "--web3-trace", "--aa no"]
 
     node:
       common:
         bindIP: "0.0.0.0"
-        logLevel: "info"
-        logLevelConfig: "info"
+        logLevel: "trace"
+        logLevelConfig: "trace"
         pg-threads: 10
         pg-threads-limit: 10
       admin:
