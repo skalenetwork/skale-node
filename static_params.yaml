@@ -99,7 +99,7 @@ envs:
       groupIndexInitPatchTimestamp: 0
       currentBlockRandomPatchTimestamp: 0
       singleStateCommitPerBlockPatchTimestamp: 0
-      contractCreationReadOnlyPatchTimestamp: 1777028562000
+      contractCreationReadOnlyPatchTimestamp: 1777028562
     ima:
       time_frame:
         before: 1800
@@ -205,7 +205,7 @@ envs:
       groupIndexInitPatchTimestamp: 0
       currentBlockRandomPatchTimestamp: 0
       singleStateCommitPerBlockPatchTimestamp: 0
-      contractCreationReadOnlyPatchTimestamp: 1777028562000
+      contractCreationReadOnlyPatchTimestamp: 1777028562
 
     ima:
       time_frame:
@@ -312,7 +312,7 @@ envs:
       groupIndexInitPatchTimestamp: 0
       currentBlockRandomPatchTimestamp: 0
       singleStateCommitPerBlockPatchTimestamp: 0
-      contractCreationReadOnlyPatchTimestamp: 1777028562000
+      contractCreationReadOnlyPatchTimestamp: 1777028562
 
     ima:
       time_frame:
