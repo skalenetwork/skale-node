@@ -308,10 +308,10 @@ envs:
       externalGasPatchTimestamp: 1727370000
       invalidTransactionFormatPatchTimestamp: 1760357100
       clearPartialReceiptsPatchTimestamp: 1760364300
-      groupIndexInitPatchTimestamp: 0
-      currentBlockRandomPatchTimestamp: 0
-      singleStateCommitPerBlockPatchTimestamp: 0
-      contractCreationReadOnlyPatchTimestamp: 0
+      groupIndexInitPatchTimestamp: 1776781225
+      currentBlockRandomPatchTimestamp: 1776781225
+      singleStateCommitPerBlockPatchTimestamp: 1776781225
+      contractCreationReadOnlyPatchTimestamp: 1776781225
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
