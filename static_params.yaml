@@ -294,12 +294,12 @@ envs:
         after: 900
 
     schain_cmd:
-      ["-v 2", "--aa no"]
+      ["-v 4", "--aa no"]
 
     node:
       common:
         bindIP: "0.0.0.0"
-        logLevel: "info"
+        logLevel: "trace"
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
