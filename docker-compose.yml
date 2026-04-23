@@ -13,7 +13,7 @@ services:
   transaction-manager:
     <<: *sk_base
     container_name: sk_tm
-    image: skalenetwork/transaction-manager:3.2.0-beta.0
+    image: skalenetwork/transaction-manager:3.2.0
     network_mode: host
     tty: true
     volumes:
@@ -23,7 +23,7 @@ services:
   admin:
     <<: *sk_base
     container_name: sk_admin
-    image: skalenetwork/admin:3.3.0-beta.2
+    image: skalenetwork/admin:3.3.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -46,7 +46,7 @@ services:
   api:
     <<: *sk_base
     container_name: sk_api
-    image: skalenetwork/admin:3.3.0-beta.2
+    image: skalenetwork/admin:3.3.0
     network_mode: host
     tty: true
     cap_add:
@@ -62,7 +62,7 @@ services:
   celery:
     <<: *sk_base
     container_name: celery
-    image: skalenetwork/admin:3.3.0-beta.2
+    image: skalenetwork/admin:3.3.0
     network_mode: host
     tty: true
     command: "celery -A tools.notifications.tasks worker --loglevel=info"
@@ -86,7 +86,7 @@ services:
   bounty:
     <<: *sk_base
     container_name: sk_bounty
-    image: skalenetwork/bounty-agent:3.1.0-beta.0
+    image: skalenetwork/bounty-agent:3.1.0-stable.0
     network_mode: host
     volumes:
       - ${SKALE_DIR}:/skale_vol
@@ -94,7 +94,7 @@ services:
   watchdog:
     <<: *sk_base
     container_name: sk_watchdog
-    image: skalenetwork/watchdog:3.2.0-beta.0
+    image: skalenetwork/watchdog:3.2.0-stable.0
     network_mode: host
     volumes:
       - ${SKALE_DIR}/node_data/settings:/settings:ro
