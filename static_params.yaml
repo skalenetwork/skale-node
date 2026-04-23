@@ -96,10 +96,10 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      groupIndexInitPatchTimestamp: 0
-      currentBlockRandomPatchTimestamp: 0
-      singleStateCommitPerBlockPatchTimestamp: 0
-      contractCreationReadOnlyPatchTimestamp: 1777028562
+      groupIndexInitPatchTimestamp: 1777415467
+      currentBlockRandomPatchTimestamp: 1777415467
+      singleStateCommitPerBlockPatchTimestamp: 1777415467
+      contractCreationReadOnlyPatchTimestamp: 1777415467
     ima:
       time_frame:
         before: 1800
@@ -202,10 +202,10 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      groupIndexInitPatchTimestamp: 0
-      currentBlockRandomPatchTimestamp: 0
-      singleStateCommitPerBlockPatchTimestamp: 0
-      contractCreationReadOnlyPatchTimestamp: 1777028562
+      groupIndexInitPatchTimestamp: 1777415467
+      currentBlockRandomPatchTimestamp: 1777415467
+      singleStateCommitPerBlockPatchTimestamp: 1777415467
+      contractCreationReadOnlyPatchTimestamp: 1777415467
 
     ima:
       time_frame:
@@ -309,10 +309,10 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      groupIndexInitPatchTimestamp: 0
-      currentBlockRandomPatchTimestamp: 0
-      singleStateCommitPerBlockPatchTimestamp: 0
-      contractCreationReadOnlyPatchTimestamp: 1777028562
+      groupIndexInitPatchTimestamp: 1777415467
+      currentBlockRandomPatchTimestamp: 1777415467
+      singleStateCommitPerBlockPatchTimestamp: 1777415467
+      contractCreationReadOnlyPatchTimestamp: 1777415467
 
     ima:
       time_frame:
@@ -418,10 +418,10 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      groupIndexInitPatchTimestamp: 0
-      currentBlockRandomPatchTimestamp: 0
-      singleStateCommitPerBlockPatchTimestamp: 0
-      contractCreationReadOnlyPatchTimestamp: 1
+      groupIndexInitPatchTimestamp: 1777415467
+      currentBlockRandomPatchTimestamp: 1777415467
+      singleStateCommitPerBlockPatchTimestamp: 1777415467
+      contractCreationReadOnlyPatchTimestamp: 1777415467
 
     ima:
       time_frame:
