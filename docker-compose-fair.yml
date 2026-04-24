@@ -13,7 +13,7 @@ services:
   transaction-manager:
     <<: *sk_base
     container_name: sk_tm
-    image: skalenetwork/transaction-manager:3.2.0-beta.0
+    image: skalenetwork/transaction-manager:3.2.0
     network_mode: host
     tty: true
     volumes:
@@ -23,7 +23,7 @@ services:
   boot-admin:
     <<: *sk_base
     container_name: sk_boot_admin
-    image: skalenetwork/admin:3.3.0-beta.2
+    image: skalenetwork/admin:3.3.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -47,7 +47,7 @@ services:
   admin:
     <<: *sk_base
     container_name: sk_admin
-    image: skalenetwork/admin:3.3.0-beta.2
+    image: skalenetwork/admin:3.3.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -71,7 +71,7 @@ services:
   boot-api:
     <<: *sk_base
     container_name: sk_boot_api
-    image: skalenetwork/admin:3.3.0-beta.2
+    image: skalenetwork/admin:3.3.0
     network_mode: host
     tty: true
     cap_add:
@@ -88,7 +88,7 @@ services:
   api:
     <<: *sk_base
     container_name: sk_api
-    image: skalenetwork/admin:3.3.0-beta.2
+    image: skalenetwork/admin:3.3.0
     network_mode: host
     tty: true
     cap_add:
@@ -120,7 +120,7 @@ services:
   watchdog:
     <<: *sk_base
     container_name: sk_watchdog
-    image: skalenetwork/watchdog:3.1.0-develop.1
+    image: skalenetwork/watchdog:3.2.0-stable.0
     network_mode: host
     environment:
       ALLOWED_TS_DIFF: 300
