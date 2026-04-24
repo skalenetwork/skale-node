@@ -46,7 +46,6 @@ envs:
       disk: 1900000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -76,15 +75,30 @@ envs:
         elated-tan-skat: 1723460400
         green-giddy-denebola: 1723460400
         parallel-stormy-spica: 1723460400
+        affectionate-immediate-pollux: 0
+        light-vast-diphda: 0
+        fussy-smoggy-megrez: 0
+        round-hasty-alsafi: 0
+        gargantuan-wealthy-zosma: 0
+        portly-passionate-sirius: 0
+        haunting-devoted-deneb: 0
+        curly-red-alterf: 0
+        frayed-decent-antares: 0
+        wan-red-ain: 0
+        adorable-quaint-bellatrix: 0
+        wary-teeming-mizar: 0
       verifyBlsSyncPatchTimestamp: 1722855600
       externalGasPatchTimestamp: 1728817200
       invalidTransactionFormatPatchTimestamp: 1746442800
       clearPartialReceiptsPatchTimestamp: 1746615600
+      groupIndexInitPatchTimestamp: 1777415467
+      currentBlockRandomPatchTimestamp: 1777415467
+      singleStateCommitPerBlockPatchTimestamp: 1777415467
+      contractCreationReadOnlyPatchTimestamp: 1777415467
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-
     ima:
       time_frame:
         before: 1800
@@ -154,7 +168,6 @@ envs:
       disk: 200000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -183,6 +196,10 @@ envs:
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1745319600
       clearPartialReceiptsPatchTimestamp: 1745323200
+      groupIndexInitPatchTimestamp: 1777415467
+      currentBlockRandomPatchTimestamp: 1777415467
+      singleStateCommitPerBlockPatchTimestamp: 1777415467
+      contractCreationReadOnlyPatchTimestamp: 1777415467
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -257,7 +274,6 @@ envs:
       disk: 200000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -276,16 +292,22 @@ envs:
       storageDestructionPatchTimestamp: 1699618500
       powCheckPatchTimestamp: 1699625700
       skipInvalidTransactionsPatchTimestamp: 1699632900
-      pushZeroPatchTimestamp: 1712142000
-      precompiledConfigPatchTimestamp: 1712314800
-      correctForkInPowPatchTimestamp: 1711969200
-      EIP1559TransactionsPatchTimestamp: 0
-      fastConsensusPatchTimestamp: 0
-      flexibleDeploymentPatchTimestamp: 0
-      verifyBlsSyncPatchTimestamp: 0
-      externalGasPatchTimestamp: 1727712000
-      invalidTransactionFormatPatchTimestamp: 0
-      clearPartialReceiptsPatchTimestamp: 0
+      pushZeroPatchTimestamp: 1708516800
+      precompiledConfigPatchTimestamp: 1708520400
+      correctForkInPowPatchTimestamp: 1708527600
+      EIP1559TransactionsPatchTimestamp: 1721304000
+      fastConsensusPatchTimestamp: 1721307600
+      flexibleDeploymentPatchTimestamp:
+        miniature-live-tabit: 1760357100
+        default: 0
+      verifyBlsSyncPatchTimestamp: 1721311200
+      externalGasPatchTimestamp: 1727370000
+      invalidTransactionFormatPatchTimestamp: 1760357100
+      clearPartialReceiptsPatchTimestamp: 1760364300
+      groupIndexInitPatchTimestamp: 1776781225
+      currentBlockRandomPatchTimestamp: 1776781225
+      singleStateCommitPerBlockPatchTimestamp: 1776781225
+      contractCreationReadOnlyPatchTimestamp: 1776781225
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -362,7 +384,6 @@ envs:
       disk: 80000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -391,6 +412,10 @@ envs:
       externalGasPatchTimestamp: 1727353446
       invalidTransactionFormatPatchTimestamp: 1741956440
       clearPartialReceiptsPatchTimestamp: 1742042840
+      groupIndexInitPatchTimestamp: 1777415467
+      currentBlockRandomPatchTimestamp: 1777415467
+      singleStateCommitPerBlockPatchTimestamp: 1777415467
+      contractCreationReadOnlyPatchTimestamp: 1777415467
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
