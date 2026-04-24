@@ -425,7 +425,7 @@ envs:
       bite2PatchTimestamp: 1775131620
       contractCreationReadOnlyPatchTimestamp: 1775131620
       groupIndexInitPatchTimestamp: 0
-      snapshotIntervalSec: 3600
+      snapshotIntervalSec: 900
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
