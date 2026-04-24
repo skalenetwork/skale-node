@@ -20,10 +20,9 @@
 		"difficultyBoundDivisor": "0x0800",
 		"durationLimit": "0x0d",
 		"blockReward": "0x4563918244F40000",
-		"externalGasDifficulty": "0x00",
 		"skaleDisableChainIdCheck": true,
 		"getResponseLogCountLimit": 10000,
-		"getLogsBlocksLimit": 2000
+		"allowPreEIP155Txns": true
 	},
 	"unddos": {
 		"origins": [
@@ -56,5 +55,15 @@
 		"extraData": "0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa",
 		"gasLimit": "0xFFFFFFF"
 	},
-	"accounts": {}
+	"accounts": {
+		"0x5522724C33B4e34677c1cd8fEa55632393F33e40": {
+			"balance": "1000000000000000000000000000000000000"
+		},
+		"0xEeee90e9cFC56B6B2874b1857763193d4405c3B1": {
+			"balance": "1000000000000000000000000000000000000"
+		},
+		"0x2c20Ef3fc0248FCA2DC57bcb202F2CAe504A9A66": {
+			"balance": "1000000000000000000000000000000000000"
+		}
+	}
 }
