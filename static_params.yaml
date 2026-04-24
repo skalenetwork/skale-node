@@ -92,14 +92,14 @@ envs:
       externalGasPatchTimestamp: 1728817200
       invalidTransactionFormatPatchTimestamp: 1746442800
       clearPartialReceiptsPatchTimestamp: 1746615600
-      snapshotIntervalSec: 86400
-      emptyBlockIntervalMs: 10000
-      snapshotDownloadTimeout: 18000
-      snapshotDownloadInactiveTimeout: 120
       groupIndexInitPatchTimestamp: 1777415467
       currentBlockRandomPatchTimestamp: 1777415467
       singleStateCommitPerBlockPatchTimestamp: 1777415467
       contractCreationReadOnlyPatchTimestamp: 1777415467
+      snapshotIntervalSec: 86400
+      emptyBlockIntervalMs: 10000
+      snapshotDownloadTimeout: 18000
+      snapshotDownloadInactiveTimeout: 120
     ima:
       time_frame:
         before: 1800
@@ -198,14 +198,14 @@ envs:
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1745319600
       clearPartialReceiptsPatchTimestamp: 1745323200
-      snapshotIntervalSec: 86400
-      emptyBlockIntervalMs: 10000
-      snapshotDownloadTimeout: 18000
-      snapshotDownloadInactiveTimeout: 120
       groupIndexInitPatchTimestamp: 1777415467
       currentBlockRandomPatchTimestamp: 1777415467
       singleStateCommitPerBlockPatchTimestamp: 1777415467
       contractCreationReadOnlyPatchTimestamp: 1777415467
+      snapshotIntervalSec: 86400
+      emptyBlockIntervalMs: 10000
+      snapshotDownloadTimeout: 18000
+      snapshotDownloadInactiveTimeout: 120
 
     ima:
       time_frame:
@@ -311,6 +311,10 @@ envs:
       currentBlockRandomPatchTimestamp: 1776781225
       singleStateCommitPerBlockPatchTimestamp: 1776781225
       contractCreationReadOnlyPatchTimestamp: 1776781225
+      snapshotIntervalSec: 3600
+      emptyBlockIntervalMs: 10000
+      snapshotDownloadTimeout: 18000
+      snapshotDownloadInactiveTimeout: 120
 
     ima:
       time_frame:
@@ -412,14 +416,14 @@ envs:
       externalGasPatchTimestamp: 1727353446
       invalidTransactionFormatPatchTimestamp: 1741956440
       clearPartialReceiptsPatchTimestamp: 1742042840
-      snapshotIntervalSec: 3600
-      emptyBlockIntervalMs: 10000
-      snapshotDownloadTimeout: 18000
-      snapshotDownloadInactiveTimeout: 120
       groupIndexInitPatchTimestamp: 1777415467
       currentBlockRandomPatchTimestamp: 1777415467
       singleStateCommitPerBlockPatchTimestamp: 1777415467
       contractCreationReadOnlyPatchTimestamp: 1777415467
+      snapshotIntervalSec: 3600
+      emptyBlockIntervalMs: 10000
+      snapshotDownloadTimeout: 18000
+      snapshotDownloadInactiveTimeout: 120
 
     ima:
       time_frame:
