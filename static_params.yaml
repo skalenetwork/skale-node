@@ -451,8 +451,8 @@ envs:
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
       medium:
-        minCacheSize: 8000000
-        maxCacheSize: 16000000
+        minCacheSize: 100000000
+        maxCacheSize: 160000000
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
