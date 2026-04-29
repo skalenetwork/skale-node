@@ -424,7 +424,7 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1775131620
       bite2PatchTimestamp: 1775131620
       contractCreationReadOnlyPatchTimestamp: 1775131620
-      groupIndexInitPatchTimestamp: 0
+      groupIndexInitPatchTimestamp: 1777536000
       snapshotIntervalSec: 900
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
