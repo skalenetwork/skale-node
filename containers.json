@@ -1,7 +1,7 @@
 {
   "skaled": {
     "name": "skalenetwork/schain",
-    "version": "5.1.0-develop.38",
+    "version": "IS.1451.BITE.node.rotation.-relwithdebinfo",
     "custom_args": {
       "ulimits_list": [
         {
