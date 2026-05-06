@@ -292,21 +292,19 @@ envs:
       storageDestructionPatchTimestamp: 1699618500
       powCheckPatchTimestamp: 1699625700
       skipInvalidTransactionsPatchTimestamp: 1699632900
-      pushZeroPatchTimestamp: 1708516800
-      precompiledConfigPatchTimestamp: 1708520400
-      correctForkInPowPatchTimestamp: 1708527600
-      EIP1559TransactionsPatchTimestamp: 1721304000
-      fastConsensusPatchTimestamp: 1721307600
-      flexibleDeploymentPatchTimestamp:
-        miniature-live-tabit: 1760357100
-        default: 0
-      verifyBlsSyncPatchTimestamp: 1721311200
-      externalGasPatchTimestamp: 1727370000
-      invalidTransactionFormatPatchTimestamp: 1760357100
-      clearPartialReceiptsPatchTimestamp: 1760364300
-      groupIndexInitPatchTimestamp: 1776781225
-      currentBlockRandomPatchTimestamp: 1776781225
-      singleStateCommitPerBlockPatchTimestamp: 1776781225
+      pushZeroPatchTimestamp: 1712142000
+      precompiledConfigPatchTimestamp: 1712314800
+      correctForkInPowPatchTimestamp: 1711969200
+      EIP1559TransactionsPatchTimestamp: 1771425408
+      fastConsensusPatchTimestamp: 1771425408
+      flexibleDeploymentPatchTimestamp: 1771425408
+      verifyBlsSyncPatchTimestamp: 1771425408
+      externalGasPatchTimestamp: 1727712000
+      invalidTransactionFormatPatchTimestamp: 1771425408
+      clearPartialReceiptsPatchTimestamp: 1771425408
+      groupIndexInitPatchTimestamp: 1771425408
+      currentBlockRandomPatchTimestamp: 1771425408
+      singleStateCommitPerBlockPatchTimestamp: 1771425408
       contractCreationReadOnlyPatchTimestamp: 1776781225
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
@@ -412,10 +410,10 @@ envs:
       externalGasPatchTimestamp: 1727353446
       invalidTransactionFormatPatchTimestamp: 1741956440
       clearPartialReceiptsPatchTimestamp: 1742042840
-      groupIndexInitPatchTimestamp: 1777415467
-      currentBlockRandomPatchTimestamp: 1777415467
-      singleStateCommitPerBlockPatchTimestamp: 1777415467
-      contractCreationReadOnlyPatchTimestamp: 1777415467
+      groupIndexInitPatchTimestamp: 1774620915
+      currentBlockRandomPatchTimestamp: 1774620915
+      singleStateCommitPerBlockPatchTimestamp: 1774620915
+      contractCreationReadOnlyPatchTimestamp: 1774620915
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -427,12 +425,12 @@ envs:
         after: 900
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 4", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
       common:
         bindIP: "0.0.0.0"
-        logLevel: "info"
+        logLevel: "debug"
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10

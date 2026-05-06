@@ -26,6 +26,7 @@
 		"getLogsBlocksLimit": 2000
 	},
 	"unddos": {
+		"enabled": false,
 		"origins": [
 			{
 				"origin": [
