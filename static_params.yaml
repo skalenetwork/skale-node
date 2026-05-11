@@ -94,7 +94,7 @@ envs:
       clearPartialReceiptsPatchTimestamp: 1746615600
       currentBlockRandomPatchTimestamp: 1775131620
       singleStateCommitPerBlockPatchTimestamp: 1775131620
-      bite2PatchTimestamp: 1775131620
+      bite2PatchTimestamp: 0
       contractCreationReadOnlyPatchTimestamp: 1775131620
       groupIndexInitPatchTimestamp: 0
       snapshotIntervalSec: 86400
@@ -209,7 +209,7 @@ envs:
       clearPartialReceiptsPatchTimestamp: 1745323200
       currentBlockRandomPatchTimestamp: 1775158001
       singleStateCommitPerBlockPatchTimestamp: 1775158001
-      bite2PatchTimestamp: 1775158001
+      bite2PatchTimestamp: 0
       contractCreationReadOnlyPatchTimestamp: 1775158001
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
@@ -434,7 +434,7 @@ envs:
       clearPartialReceiptsPatchTimestamp: 1742042840
       currentBlockRandomPatchTimestamp: 1775131620
       singleStateCommitPerBlockPatchTimestamp: 1775131620
-      bite2PatchTimestamp: 1775131620
+      bite2PatchTimestamp: 0
       contractCreationReadOnlyPatchTimestamp: 1775131620
       groupIndexInitPatchTimestamp: 1777536000
       snapshotIntervalSec: 900
