@@ -13,7 +13,7 @@ services:
   transaction-manager:
     <<: *sk_base
     container_name: sk_tm
-    image: skalenetwork/transaction-manager:3.2.0
+    image: skalenetwork/transaction-manager:3.2.1
     network_mode: host
     tty: true
     volumes:
