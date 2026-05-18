@@ -46,7 +46,7 @@ services:
   api:
     <<: *sk_base
     container_name: sk_api
-    image: skalenetwork/admin:3.3.0
+    image: skalenetwork/admin:3.3.0-beta.4
     network_mode: host
     tty: true
     cap_add:
