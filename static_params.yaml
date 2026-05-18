@@ -83,7 +83,8 @@ envs:
       currentBlockRandomPatchTimestamp: 1775131620
       singleStateCommitPerBlockPatchTimestamp: 1775131620
       bite2PatchTimestamp: 1775131620
-      ContractCreationReadOnlyPatchTimestamp: 1775131620
+      contractCreationReadOnlyPatchTimestamp: 1775131620
+      groupIndexInitPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -106,6 +107,8 @@ envs:
         dynamicPricingMinPrice: 47619047620
         dynamicPricingMaxPrice: 1000000000000000000
         dynamicPricingStartPrice: 47619047620
+      admin:
+        automatic_repair: false
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
@@ -190,14 +193,16 @@ envs:
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1745319600
       clearPartialReceiptsPatchTimestamp: 1745323200
-      currentBlockRandomPatchTimestamp: 1775131620
-      singleStateCommitPerBlockPatchTimestamp: 1775131620
-      bite2PatchTimestamp: 1775131620
-      ContractCreationReadOnlyPatchTimestamp: 1775131620
+      currentBlockRandomPatchTimestamp: 1775158001
+      singleStateCommitPerBlockPatchTimestamp: 1775158001
+      bite2PatchTimestamp: 1775158001
+      contractCreationReadOnlyPatchTimestamp: 1775158001
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
+      groupIndexInitPatchTimestamp: 0
+
 
     ima:
       time_frame:
@@ -216,6 +221,8 @@ envs:
         dynamicPricingMinPrice: 47619047620
         dynamicPricingMaxPrice: 1000000000000000000
         dynamicPricingStartPrice: 47619047620
+      admin:
+        automatic_repair: false
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
@@ -303,7 +310,8 @@ envs:
       currentBlockRandomPatchTimestamp: 1775131620
       singleStateCommitPerBlockPatchTimestamp: 1775131620
       bite2PatchTimestamp: 1775131620
-      ContractCreationReadOnlyPatchTimestamp: 1775131620
+      contractCreationReadOnlyPatchTimestamp: 1775131620
+      groupIndexInitPatchTimestamp: 0
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -415,7 +423,8 @@ envs:
       currentBlockRandomPatchTimestamp: 1775131620
       singleStateCommitPerBlockPatchTimestamp: 1775131620
       bite2PatchTimestamp: 1775131620
-      ContractCreationReadOnlyPatchTimestamp: 1775131620
+      contractCreationReadOnlyPatchTimestamp: 1775131620
+      groupIndexInitPatchTimestamp: 1777536000
       snapshotIntervalSec: 900
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
