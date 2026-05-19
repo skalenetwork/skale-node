@@ -7,11 +7,13 @@ filebeat.inputs:
       - container:
           stream: all
 
+  {% if is_skale_node|default(false) %}
   - type: filestream
     id: lvmpy-log
     enabled: true
     paths:
       - /var/log/docker-lvmpy/lvmpy.log
+  {% endif %}
 
 processors:
   - add_host_metadata: {}
