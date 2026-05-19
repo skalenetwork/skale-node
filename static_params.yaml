@@ -69,6 +69,12 @@ envs:
       correctForkInPowPatchTimestamp: 1711969200
       EIP1559TransactionsPatchTimestamp: 1722942000
       fastConsensusPatchTimestamp: 1723114800
+      flexibleDeploymentPatchTimestamp:
+        default: 0
+        honorable-steel-rasalhague: 1723460400
+        elated-tan-skat: 1723460400
+        green-giddy-denebola: 1723460400
+        parallel-stormy-spica: 1723460400
       verifyBlsSyncPatchTimestamp: 1722855600
       externalGasPatchTimestamp: 1728817200
       invalidTransactionFormatPatchTimestamp: 1746442800
@@ -176,6 +182,7 @@ envs:
       correctForkInPowPatchTimestamp: 1710331200
       EIP1559TransactionsPatchTimestamp: 1721818800
       fastConsensusPatchTimestamp: 1721822400
+      flexibleDeploymentPatchTimestamp: 1721826000
       verifyBlsSyncPatchTimestamp: 1721829600
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1745319600
@@ -284,6 +291,7 @@ envs:
       correctForkInPowPatchTimestamp: 1711969200
       EIP1559TransactionsPatchTimestamp: 1711969200
       fastConsensusPatchTimestamp: 1711969200
+      flexibleDeploymentPatchTimestamp: 1711969200
       verifyBlsSyncPatchTimestamp: 1711969200
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1711969200
@@ -392,6 +400,7 @@ envs:
       correctForkInPowPatchTimestamp: 1711969200
       EIP1559TransactionsPatchTimestamp: 1722942000
       fastConsensusPatchTimestamp: 1723114800
+      flexibleDeploymentPatchTimestamp: 0
       verifyBlsSyncPatchTimestamp: 1722855600
       externalGasPatchTimestamp: 1727353446
       invalidTransactionFormatPatchTimestamp: 1741956440
