@@ -84,6 +84,7 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 0
       bite2PatchTimestamp: 0
       contractCreationReadOnlyPatchTimestamp: 0
+      groupIndexInitPatchTimestamp: 0
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -193,6 +194,7 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1775158001
       bite2PatchTimestamp: 1775158001
       contractCreationReadOnlyPatchTimestamp: 1775158001
+      groupIndexInitPatchTimestamp: 1779210087
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -302,6 +304,7 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1775136600
       bite2PatchTimestamp: 1775136600
       contractCreationReadOnlyPatchTimestamp: 1775136600
+      groupIndexInitPatchTimestamp: 1779210087
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -321,9 +324,6 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
-        dynamicPricingMinPrice: 47619047620
-        dynamicPricingMaxPrice: 1000000000000000000
-        dynamicPricingStartPrice: 47619047620
       admin:
         automatic_repair: false
       small:
@@ -414,6 +414,7 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1775136600
       bite2PatchTimestamp: 1775136600
       contractCreationReadOnlyPatchTimestamp: 1775136600
+      groupIndexInitPatchTimestamp: 1779210087
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -434,9 +435,6 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
-        dynamicPricingMinPrice: 47619047620
-        dynamicPricingMaxPrice: 1000000000000000000
-        dynamicPricingStartPrice: 47619047620
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
