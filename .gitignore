@@ -32,6 +32,8 @@ config/data.json
 *.tfstate.*
 *.tfvars
 
+*.rdb
+
 **/import_and_unlock.py
 node_wallets.json
 
