@@ -79,7 +79,7 @@ envs:
       externalGasPatchTimestamp: 1728817200
       invalidTransactionFormatPatchTimestamp: 1746442800
       clearPartialReceiptsPatchTimestamp: 1746615600
-      groupIndexInitPatchTimestamp: 0
+      groupIndexInitPatchTimestamp: 1779296887
       currentBlockRandomPatchTimestamp: 1775729001
       singleStateCommitPerBlockPatchTimestamp: 1775729001
       contractCreationReadOnlyPatchTimestamp: 1775729001
