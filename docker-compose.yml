@@ -23,7 +23,7 @@ services:
   admin:
     <<: *sk_base
     container_name: sk_admin
-    image: skalenetwork/admin:3.3.0
+    image: skalenetwork/admin:3.3.1
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -46,7 +46,7 @@ services:
   api:
     <<: *sk_base
     container_name: sk_api
-    image: skalenetwork/admin:3.3.0
+    image: skalenetwork/admin:3.3.1
     network_mode: host
     tty: true
     cap_add:
@@ -62,7 +62,7 @@ services:
   celery:
     <<: *sk_base
     container_name: celery
-    image: skalenetwork/admin:3.3.0
+    image: skalenetwork/admin:3.3.1
     network_mode: host
     tty: true
     command: "celery -A tools.notifications.tasks worker --loglevel=info"
@@ -157,7 +157,7 @@ services:
     <<: *sk_base
     container_name: sk_filebeat
     user: root
-    image: elastic/filebeat:9.2.5
+    image: elastic/filebeat:9.1.3
     network_mode: host
     environment:
       FILEBEAT_HOST: ${FILEBEAT_HOST}
