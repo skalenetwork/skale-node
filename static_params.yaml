@@ -92,6 +92,7 @@ envs:
       externalGasPatchTimestamp: 1728817200
       invalidTransactionFormatPatchTimestamp: 1746442800
       clearPartialReceiptsPatchTimestamp: 1746615600
+      contractCreationReadOnlyPatchTimestamp: 1774620915
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -197,6 +198,7 @@ envs:
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1745319600
       clearPartialReceiptsPatchTimestamp: 1745323200
+      contractCreationReadOnlyPatchTimestamp: 1774620915
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -306,6 +308,7 @@ envs:
       groupIndexInitPatchTimestamp: 1771425408
       currentBlockRandomPatchTimestamp: 1771425408
       singleStateCommitPerBlockPatchTimestamp: 1771425408
+      contractCreationReadOnlyPatchTimestamp: 1774620915
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -419,6 +422,7 @@ envs:
       groupIndexInitPatchTimestamp: 1774620915
       currentBlockRandomPatchTimestamp: 1774620915
       singleStateCommitPerBlockPatchTimestamp: 1774620915
+      contractCreationReadOnlyPatchTimestamp: 1774620915
 
     ima:
       time_frame:
