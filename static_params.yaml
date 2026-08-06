@@ -96,7 +96,6 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1777415467
       contractCreationReadOnlyPatchTimestamp: 1777415467
       berlinForkPatchTimestamp: 1787225516
-      bite2PatchTimestamp: 1787225516
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -203,7 +202,6 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1777415467
       contractCreationReadOnlyPatchTimestamp: 1777415467
       berlinForkPatchTimestamp: 1787225516
-      bite2PatchTimestamp: 1787225516
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -313,7 +311,6 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1776781225
       contractCreationReadOnlyPatchTimestamp: 1776781225
       berlinForkPatchTimestamp: 1786361516
-      bite2PatchTimestamp: 1786361516
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -423,7 +420,6 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1777415467
       contractCreationReadOnlyPatchTimestamp: 1777415467
       berlinForkPatchTimestamp: 1786361516
-      bite2PatchTimestamp: 1786361516
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
