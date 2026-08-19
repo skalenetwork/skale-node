@@ -46,7 +46,6 @@ envs:
       disk: 1900000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -76,15 +75,27 @@ envs:
         elated-tan-skat: 1723460400
         green-giddy-denebola: 1723460400
         parallel-stormy-spica: 1723460400
+        affectionate-immediate-pollux: 0
+        light-vast-diphda: 0
+        fussy-smoggy-megrez: 0
+        round-hasty-alsafi: 0
+        gargantuan-wealthy-zosma: 0
+        portly-passionate-sirius: 0
+        haunting-devoted-deneb: 0
+        curly-red-alterf: 0
+        frayed-decent-antares: 0
+        wan-red-ain: 0
+        adorable-quaint-bellatrix: 0
+        wary-teeming-mizar: 0
       verifyBlsSyncPatchTimestamp: 1722855600
       externalGasPatchTimestamp: 1728817200
       invalidTransactionFormatPatchTimestamp: 1746442800
       clearPartialReceiptsPatchTimestamp: 1746615600
-      currentBlockRandomPatchTimestamp: 1775131620
-      singleStateCommitPerBlockPatchTimestamp: 1775131620
-      bite2PatchTimestamp: 1775131620
-      contractCreationReadOnlyPatchTimestamp: 1775131620
-      groupIndexInitPatchTimestamp: 0
+      groupIndexInitPatchTimestamp: 1785150041
+      currentBlockRandomPatchTimestamp: 1785150041
+      singleStateCommitPerBlockPatchTimestamp: 1785150041
+      contractCreationReadOnlyPatchTimestamp: 1785150041
+      berlinForkPatchTimestamp: 1787225516
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -104,9 +115,6 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
-        dynamicPricingMinPrice: 47619047620
-        dynamicPricingMaxPrice: 1000000000000000000
-        dynamicPricingStartPrice: 47619047620
       admin:
         automatic_repair: false
       small:
@@ -164,7 +172,6 @@ envs:
       disk: 200000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -193,15 +200,15 @@ envs:
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1745319600
       clearPartialReceiptsPatchTimestamp: 1745323200
-      currentBlockRandomPatchTimestamp: 1775158001
-      singleStateCommitPerBlockPatchTimestamp: 1775158001
-      bite2PatchTimestamp: 1775158001
-      contractCreationReadOnlyPatchTimestamp: 1775158001
+      groupIndexInitPatchTimestamp: 1780572541
+      currentBlockRandomPatchTimestamp: 1780572541
+      singleStateCommitPerBlockPatchTimestamp: 1780572541
+      contractCreationReadOnlyPatchTimestamp: 1780572541
+      berlinForkPatchTimestamp: 1787225516
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      groupIndexInitPatchTimestamp: 0
 
 
     ima:
@@ -218,9 +225,6 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
-        dynamicPricingMinPrice: 47619047620
-        dynamicPricingMaxPrice: 1000000000000000000
-        dynamicPricingStartPrice: 47619047620
       admin:
         automatic_repair: false
       small:
@@ -278,7 +282,6 @@ envs:
       disk: 200000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -297,21 +300,23 @@ envs:
       storageDestructionPatchTimestamp: 1699618500
       powCheckPatchTimestamp: 1699625700
       skipInvalidTransactionsPatchTimestamp: 1699632900
-      pushZeroPatchTimestamp: 1712142000
-      precompiledConfigPatchTimestamp: 1712314800
-      correctForkInPowPatchTimestamp: 1711969200
-      EIP1559TransactionsPatchTimestamp: 1711969200
-      fastConsensusPatchTimestamp: 1711969200
-      flexibleDeploymentPatchTimestamp: 1711969200
-      verifyBlsSyncPatchTimestamp: 1711969200
-      externalGasPatchTimestamp: 1727712000
-      invalidTransactionFormatPatchTimestamp: 1711969200
-      clearPartialReceiptsPatchTimestamp: 1711969200
-      currentBlockRandomPatchTimestamp: 1775131620
-      singleStateCommitPerBlockPatchTimestamp: 1775131620
-      bite2PatchTimestamp: 1775131620
-      contractCreationReadOnlyPatchTimestamp: 1775131620
-      groupIndexInitPatchTimestamp: 0
+      pushZeroPatchTimestamp: 1708516800
+      precompiledConfigPatchTimestamp: 1708520400
+      correctForkInPowPatchTimestamp: 1708527600
+      EIP1559TransactionsPatchTimestamp: 1721304000
+      fastConsensusPatchTimestamp: 1721307600
+      flexibleDeploymentPatchTimestamp:
+        miniature-live-tabit: 1760357100
+        default: 0
+      verifyBlsSyncPatchTimestamp: 1721311200
+      externalGasPatchTimestamp: 1727370000
+      invalidTransactionFormatPatchTimestamp: 1760357100
+      clearPartialReceiptsPatchTimestamp: 1760364300
+      groupIndexInitPatchTimestamp: 1776781225
+      currentBlockRandomPatchTimestamp: 1776781225
+      singleStateCommitPerBlockPatchTimestamp: 1776781225
+      contractCreationReadOnlyPatchTimestamp: 1776781225
+      berlinForkPatchTimestamp: 1787225516
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -331,9 +336,6 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
-        dynamicPricingMinPrice: 47619047620
-        dynamicPricingMaxPrice: 1000000000000000000
-        dynamicPricingStartPrice: 47619047620
       admin:
         automatic_repair: false
       small:
@@ -391,7 +393,6 @@ envs:
       disk: 80000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -446,9 +447,6 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
-        dynamicPricingMinPrice: 47619047620
-        dynamicPricingMaxPrice: 1000000000000000000
-        dynamicPricingStartPrice: 47619047620
       admin:
         automatic_repair: false
       small:
