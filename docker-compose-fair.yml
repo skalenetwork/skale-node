@@ -47,7 +47,7 @@ services:
   admin:
     <<: *sk_base
     container_name: sk_admin
-    image: skalenetwork/admin:3.3.0-beta.4
+    image: skalenetwork/admin:3.3.1
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -62,7 +62,7 @@ services:
       - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
       - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
     healthcheck:
-      test: ["CMD", "python3", "healthchecks/admin.py"]
+      test: [ "CMD", "python3", "healthchecks/admin.py" ]
       interval: 1m
       timeout: 10s
       retries: 2
@@ -71,7 +71,7 @@ services:
   boot-api:
     <<: *sk_base
     container_name: sk_boot_api
-    image: skalenetwork/admin:3.3.0-beta.4
+    image: skalenetwork/admin:3.3.1
     network_mode: host
     tty: true
     cap_add:
