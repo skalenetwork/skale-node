@@ -427,8 +427,8 @@ envs:
       contractCreationReadOnlyPatchTimestamp: 1775131620
       groupIndexInitPatchTimestamp: 1777536000
       berlinForkPatchTimestamp: 1783531290
-      londonForkPatchTimestamp: 1787234700
-      parisForkPatchTimestamp: 1787234700
+      londonForkPatchTimestamp: 1787236980
+      parisForkPatchTimestamp: 1787236980
       snapshotIntervalSec: 900
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
