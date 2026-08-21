@@ -24,7 +24,11 @@
   endpoint = "unix:///var/run/skale/docker.sock"
   timeout = "5s"
   perdevice_include = ["cpu", "blkio"]
-  container_name_include = ["skale_*"]
+  container_name_include = ["sk_*"]
+  container_name_exclude = []
+  perdevice = true
+  total = false
+  gather_services = false
 
 [[inputs.disk]]
   alias = "disk"
