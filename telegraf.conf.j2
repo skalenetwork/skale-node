@@ -24,7 +24,7 @@
   endpoint = "unix:///var/run/skale/docker.sock"
   timeout = "5s"
   perdevice_include = ["cpu", "blkio"]
-  container_name_include = ["sk_*"]
+  container_name_include = ["sk_*", "skale_telegraf"]
   container_name_exclude = []
   perdevice = true
   total = false
