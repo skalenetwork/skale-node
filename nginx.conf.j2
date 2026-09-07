@@ -9,21 +9,19 @@ server {
     ssl_certificate_key /ssl/ssl_key;
     {% endif %}
 
-    proxy_read_timeout 500s;
-    proxy_connect_timeout 500s;
-    proxy_send_timeout 500s;
+    proxy_read_timeout 35s;
+    proxy_connect_timeout 3s;
 
     error_log /var/log/nginx/error.log warn;
-    client_max_body_size 20m;
+    client_max_body_size 1k;
+    server_tokens off;
 
     server_name localhost;
     limit_req zone=one burst=10;
 
     location / {
-        include uwsgi_params;
-        uwsgi_read_timeout 500s;
-        uwsgi_socket_keepalive on;
-        uwsgi_pass 127.0.0.1:3010;
+        proxy_pass http://127.0.0.1:3010;
+        proxy_set_header X-Real-IP $remote_addr;
     }
 
     location /nginx-status {

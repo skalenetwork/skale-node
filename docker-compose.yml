@@ -94,17 +94,11 @@ services:
   watchdog:
     <<: *sk_base
     container_name: sk_watchdog
-    image: skalenetwork/watchdog:3.2.0-stable.0
+    image: skalenetwork/watchdog:4.0.0-PLACEHOLDER
     network_mode: host
+    stop_grace_period: 30s
     volumes:
       - ${SKALE_DIR}/node_data/settings:/settings:ro
-    environment:
-      ALLOWED_TS_DIFF: 300
-      FLASK_APP_PORT: 3010
-      FLASK_APP_HOST: "127.0.0.1"
-      FLASK_DEBUG_MODE: "False"
-      SKALE_NETWORK_TYPE: "skale"
-      PASSIVE_NODE: ${PASSIVE_NODE}
 
   nginx:
     <<: *sk_base
