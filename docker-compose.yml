@@ -124,35 +124,6 @@ services:
         target: ${SCHAINS_MNT_DIR}
         read_only: true
 
-  advisor:
-    <<: *sk_base
-    image: gcr.io/cadvisor/cadvisor-amd64:v0.50.0
-    container_name: monitor_cadvisor
-    cpu_shares: 128
-    network_mode: host
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:ro
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-      - /dev/disk/:/dev/disk:ro
-
-  node-exporter:
-    <<: *sk_base
-    container_name: monitor_node_exporter
-    image: quay.io/prometheus/node-exporter
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - /:/rootfs:ro
-    command:
-      - "--path.procfs=/host/proc"
-      - "--path.rootfs=/rootfs"
-      - "--path.sysfs=/host/sys"
-      - "--collector.filesystem.mount-points-exclude=^/(mnt|dev|proc|sys|var/li\
-        b/docker/.+|var/lib/kubelet/.+)($$|/)"
-    network_mode: host
-
   filebeat:
     <<: *sk_base
     container_name: sk_filebeat
