@@ -59,17 +59,6 @@ services:
       - ${SKALE_LIB_PATH}:${SKALE_LIB_PATH}
       - /etc/nft.conf.d/skale/chains:/etc/nft.conf.d/skale/chains
 
-  celery:
-    <<: *sk_base
-    container_name: celery
-    image: skalenetwork/admin:3.3.2-beta.0
-    network_mode: host
-    tty: true
-    command: "celery -A tools.notifications.tasks worker --loglevel=info"
-
-    volumes:
-      - /var/run/skale:/var/run/skale
-
   redis:
     <<: *sk_base
     container_name: sk_redis
