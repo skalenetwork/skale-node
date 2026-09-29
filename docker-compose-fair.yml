@@ -23,7 +23,7 @@ services:
   boot-admin:
     <<: *sk_base
     container_name: sk_boot_admin
-    image: skalenetwork/admin:3.3.1
+    image: skalenetwork/admin:3.3.2-beta.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -47,7 +47,7 @@ services:
   admin:
     <<: *sk_base
     container_name: sk_admin
-    image: skalenetwork/admin:3.3.1
+    image: skalenetwork/admin:3.3.2-beta.0
     cpu_shares: 192
     network_mode: host
     tty: true
@@ -71,7 +71,7 @@ services:
   boot-api:
     <<: *sk_base
     container_name: sk_boot_api
-    image: skalenetwork/admin:3.3.1
+    image: skalenetwork/admin:3.3.2-beta.0
     network_mode: host
     tty: true
     cap_add:
@@ -88,7 +88,7 @@ services:
   api:
     <<: *sk_base
     container_name: sk_api
-    image: skalenetwork/admin:3.3.1
+    image: skalenetwork/admin:3.3.2-beta.0
     network_mode: host
     tty: true
     cap_add:
@@ -120,7 +120,7 @@ services:
   watchdog:
     <<: *sk_base
     container_name: sk_watchdog
-    image: skalenetwork/watchdog:3.2.0-stable.0
+    image: skalenetwork/watchdog:4.0.0-beta.0
     network_mode: host
     environment:
       ALLOWED_TS_DIFF: 300
@@ -146,35 +146,6 @@ services:
         source: ${SCHAINS_MNT_DIR}
         target: ${SCHAINS_MNT_DIR}
         read_only: true
-
-  advisor:
-    <<: *sk_base
-    image: gcr.io/cadvisor/cadvisor-amd64:v0.50.0
-    container_name: monitor_cadvisor
-    cpu_shares: 128
-    network_mode: host
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:ro
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-      - /dev/disk/:/dev/disk:ro
-
-  node-exporter:
-    <<: *sk_base
-    container_name: monitor_node_exporter
-    image: quay.io/prometheus/node-exporter
-    volumes:
-      - /proc:/host/proc:ro
-      - /sys:/host/sys:ro
-      - /:/rootfs:ro
-    command:
-      - "--path.procfs=/host/proc"
-      - "--path.rootfs=/rootfs"
-      - "--path.sysfs=/host/sys"
-      - "--collector.filesystem.mount-points-exclude=^/(mnt|dev|proc|sys|var/li\
-        b/docker/.+|var/lib/kubelet/.+)($$|/)"
-    network_mode: host
 
   filebeat:
     <<: *sk_base
