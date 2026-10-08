@@ -8,6 +8,23 @@ SKALE-node is still in active development and therefore should be regarded as al
 
 ## Documentation
 
+### Nginx configuration sources
+
+Nginx templates and request handlers are stored in `nginx/`:
+
+```text
+nginx/
+├── nginx.conf.j2
+├── base.conf.j2
+├── chain.conf.j2
+└── njs/
+    └── rpc.js
+```
+
+Node CLI renders the main and base configurations and copies the njs handlers.
+SKALE Admin renders chain configurations and reloads the base configuration after certificate updates.
+Generated files are stored under `node_data/nginx/` and mounted by Docker Compose.
+
 ### Volume
 
 Directories created with the installation script: 
