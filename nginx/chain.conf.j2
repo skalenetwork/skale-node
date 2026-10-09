@@ -38,7 +38,7 @@ server {
 {% endif %}
 
     access_log /dev/stdout rpc buffer=64k flush=5s;
-    # njs reads the body from memory; a 1 MiB Filestorage chunk is over 2 MiB as hex
+    # a 1 MiB Filestorage chunk is over 2 MiB as hex
     client_max_body_size 4m;
     client_body_buffer_size 4m;
     client_body_timeout 10s;

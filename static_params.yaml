@@ -111,7 +111,7 @@ envs:
 
     nginx:
       rpc_proxy: false
-      njs: false
+      njs: true
       limits:
         per_client_rps: 1000
         burst: 200
@@ -235,7 +235,7 @@ envs:
 
     nginx:
       rpc_proxy: false
-      njs: false
+      njs: true
       limits:
         per_client_rps: 1000
         burst: 200
@@ -361,7 +361,7 @@ envs:
 
     nginx:
       rpc_proxy: false
-      njs: false
+      njs: true
       limits:
         per_client_rps: 1000
         burst: 200
@@ -488,7 +488,7 @@ envs:
 
     nginx:
       rpc_proxy: false
-      njs: false
+      njs: true
       limits:
         per_client_rps: 1000
         burst: 200

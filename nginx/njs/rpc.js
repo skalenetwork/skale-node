@@ -1,7 +1,9 @@
-// skaled trusts loopback for some methods, and every proxied call reaches it from loopback.
+// Older skaled trusts loopback with some methods, and every proxied call reaches it from loopback.
 // With $rpc_limits on, non-peer calls also get gating and a batch cap, public ones budgets too.
 
 const LOOPBACK_TRUSTED_METHODS = ['setSchainExitTime'];
+// newer skaled no longer serves them, so they get its answer
+const METHOD_NOT_FOUND = 'METHOD_NOT_FOUND: The method being requested is not available on this server';
 const GATED_METHODS = [
     'skale_getSnapshot',
     'skale_downloadSnapshotFragment',
@@ -9,7 +11,7 @@ const GATED_METHODS = [
     'skale_shutdownInstance',
 ];
 const GATED_PREFIXES = ['debug_', 'admin_', 'personal_', 'miner_', 'skale_performanceTracking'];
-const HEAVY_METHODS = ['eth_getLogs', 'eth_call', 'eth_estimateGas'];
+const HEAVY_METHODS = ['eth_getLogs', 'eth_getFilterLogs', 'eth_call', 'eth_estimateGas'];
 
 function isGated(method) {
     return GATED_METHODS.includes(method) || GATED_PREFIXES.some((prefix) => method.startsWith(prefix));
@@ -29,7 +31,8 @@ function reject(r, status, id, code, message) {
     if (status === 429) {
         r.headersOut['Retry-After'] = '1';
     }
-    const error = { jsonrpc: '2.0', id: id === undefined ? null : id, error: { code: code, message: message } };
+    // in skaled's key order, so a refused call reads exactly like its answer
+    const error = { error: { code: code, message: message }, id: id === undefined ? null : id, jsonrpc: '2.0' };
     r.return(status, JSON.stringify(error));
 }
 
@@ -43,7 +46,7 @@ function limited(r, calls, heavy) {
     if ((bans.get(client) || 0) > now) {
         return true;
     }
-    // the chain-wide cap bans no one, skaled's own global limit backs it up
+    // the chain-wide cap refuses calls without banning: the overflow is not one client's fault
     if (exceeded(r, `${chain}:*:${now}`, calls, 'rpc_global_rps')) {
         return true;
     }
@@ -81,7 +84,10 @@ function handle(r) {
         const call = calls[i];
         // skaled reads the method as a C string, up to the first NUL
         const method = call && typeof call.method === 'string' ? call.method.split('\0')[0] : '';
-        if (LOOPBACK_TRUSTED_METHODS.includes(method) || (limits && isGated(method))) {
+        if (LOOPBACK_TRUSTED_METHODS.includes(method)) {
+            return reject(r, 200, call.id, -32601, METHOD_NOT_FOUND);
+        }
+        if (limits && isGated(method)) {
             return reject(r, 403, call.id, -32601, 'method not allowed');
         }
         if (HEAVY_METHODS.includes(method)) {
