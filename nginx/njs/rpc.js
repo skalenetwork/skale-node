@@ -1,0 +1,104 @@
+// Older skaled trusts loopback with some methods, and every proxied call reaches it from loopback.
+// With $rpc_limits on, non-peer calls also get gating and a batch cap, public ones budgets too.
+
+const LOOPBACK_TRUSTED_METHODS = ['setSchainExitTime'];
+// newer skaled no longer serves them, so they get its answer
+const METHOD_NOT_FOUND = 'METHOD_NOT_FOUND: The method being requested is not available on this server';
+const GATED_METHODS = [
+    'skale_getSnapshot',
+    'skale_downloadSnapshotFragment',
+    'skale_getSnapshotSignature',
+    'skale_shutdownInstance',
+];
+const GATED_PREFIXES = ['debug_', 'admin_', 'personal_', 'miner_', 'skale_performanceTracking'];
+const HEAVY_METHODS = ['eth_getLogs', 'eth_getFilterLogs', 'eth_call', 'eth_estimateGas'];
+
+function isGated(method) {
+    return GATED_METHODS.includes(method) || GATED_PREFIXES.some((prefix) => method.startsWith(prefix));
+}
+
+function limit(r, name) {
+    return Number(r.variables[name]);
+}
+
+function exceeded(r, key, weight, name) {
+    return ngx.shared.rpc_counters.incr(key, weight, 0) > limit(r, name);
+}
+
+function reject(r, status, id, code, message) {
+    r.headersOut['Content-Type'] = 'application/json';
+    r.headersOut['Access-Control-Allow-Origin'] = '*';
+    if (status === 429) {
+        r.headersOut['Retry-After'] = '1';
+    }
+    // in skaled's key order, so a refused call reads exactly like its answer
+    const error = { error: { code: code, message: message }, id: id === undefined ? null : id, jsonrpc: '2.0' };
+    r.return(status, JSON.stringify(error));
+}
+
+// True when the client is over a budget; going over its own budget also bans it.
+function limited(r, calls, heavy) {
+    const now = Math.floor(Date.now() / 1000);
+    const chain = r.variables.rpc_chain;
+    const client = `${chain}:${r.remoteAddress}`;
+    const bans = ngx.shared.rpc_bans;
+
+    if ((bans.get(client) || 0) > now) {
+        return true;
+    }
+    // the chain-wide cap refuses calls without banning: the overflow is not one client's fault
+    if (exceeded(r, `${chain}:*:${now}`, calls, 'rpc_global_rps')) {
+        return true;
+    }
+    if (exceeded(r, `${client}:${now}`, calls, 'rpc_client_rps') ||
+        (heavy > 0 && exceeded(r, `${client}:h:${now}`, heavy, 'rpc_heavy_rps'))) {
+        bans.set(client, now + limit(r, 'rpc_ban'));
+        return true;
+    }
+    return false;
+}
+
+function handle(r) {
+    const peer = r.variables.rpc_class === 'peer';
+    const upstream = peer ? '@rpc_peer' : '@rpc_upstream';
+    if (r.method === 'OPTIONS') {
+        // CORS preflight, skaled answers it without reading a body
+        return r.internalRedirect(upstream);
+    }
+
+    let body;
+    try {
+        body = JSON.parse(r.requestText);
+    } catch (e) {
+        // skaled may read what njs cannot, so nothing unchecked goes through
+        return reject(r, 400, null, -32700, 'parse error');
+    }
+    const calls = Array.isArray(body) ? body : [body];
+    const limits = r.variables.rpc_limits === 'on' && !peer;
+    if (limits && (calls.length === 0 || calls.length > limit(r, 'rpc_max_batch'))) {
+        return reject(r, 400, null, -32600, 'invalid batch size');
+    }
+
+    let heavy = 0;
+    for (let i = 0; i < calls.length; i++) {
+        const call = calls[i];
+        // skaled reads the method as a C string, up to the first NUL
+        const method = call && typeof call.method === 'string' ? call.method.split('\0')[0] : '';
+        if (LOOPBACK_TRUSTED_METHODS.includes(method)) {
+            return reject(r, 200, call.id, -32601, METHOD_NOT_FOUND);
+        }
+        if (limits && isGated(method)) {
+            return reject(r, 403, call.id, -32601, 'method not allowed');
+        }
+        if (HEAVY_METHODS.includes(method)) {
+            heavy += 1;
+        }
+    }
+
+    if (limits && r.variables.rpc_class === 'public' && limited(r, calls.length, heavy)) {
+        return reject(r, 429, null, -32005, 'rate limited');
+    }
+    r.internalRedirect(upstream);
+}
+
+export default { handle: handle };
