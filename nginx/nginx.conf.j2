@@ -29,7 +29,7 @@ http {
 
     # sChain RPC call checks, see njs/rpc.js
     js_import rpc from /etc/nginx/njs/rpc.js;
-    js_shared_dict_zone zone=rpc_counters:16m timeout=60s type=number evict;
+    js_shared_dict_zone zone=rpc_counters:16m timeout=2s type=number evict;
     js_shared_dict_zone zone=rpc_bans:4m timeout=60s type=number evict;
 
     include /etc/nginx/conf.d/*.conf;
