@@ -1,0 +1,106 @@
+# sChain {{ chain }}, rendered by skale-admin: http {{ http_port }} fingerprint {{ fingerprint }}
+
+upstream {{ id }}_http {
+    server 127.0.0.1:{{ http_internal }};
+    keepalive 64;
+}
+
+# peers are node IPs and sync ranges, they and loopback bypass the limits
+geo $rpc_class_{{ id }} {
+    default public;
+    127.0.0.1/32 exempt;
+{% for cidr in peers %}
+    {{ cidr }} peer;
+{% endfor %}
+}
+
+map $rpc_class_{{ id }} $rpc_client_{{ id }} {
+    public  $binary_remote_addr;
+    default "";
+}
+
+map $rpc_class_{{ id }} $rpc_all_{{ id }} {
+    public  all;
+    default "";
+}
+
+limit_req_zone  $rpc_client_{{ id }} zone={{ id }}_burst:{{ client_zone_size }} rate={{ limits.per_client_rps }}r/s;
+limit_req_zone  $rpc_client_{{ id }} zone={{ id }}_sustained:{{ client_zone_size }} rate={{ limits.per_client_sustained_rps }}r/s;
+limit_req_zone  $rpc_all_{{ id }} zone={{ id }}_global:1m rate={{ limits.global_rps }}r/s;
+limit_conn_zone $rpc_client_{{ id }} zone={{ id }}_conn:{{ client_zone_size }};
+
+server {
+    listen {{ http_port }};
+{% if ssl %}
+    listen {{ https_port }} ssl;
+    ssl_certificate     /ssl/ssl_cert;
+    ssl_certificate_key /ssl/ssl_key;
+{% endif %}
+
+    access_log /dev/stdout rpc buffer=64k flush=5s;
+    # a 1 MiB Filestorage chunk is over 2 MiB as hex
+    client_max_body_size 4m;
+    client_body_buffer_size 4m;
+    client_body_timeout 10s;
+    limit_req_status  429;
+    limit_conn_status 429;
+    limit_req_log_level  info;
+    limit_conn_log_level info;
+    proxy_http_version 1.1;
+    proxy_set_header Connection "";
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+
+    set $rpc_class       $rpc_class_{{ id }};
+    set $rpc_limits      {{ 'on' if njs else 'off' }};
+{% if njs %}
+    set $rpc_chain       {{ id }};
+    set $rpc_max_batch   {{ limits.max_batch }};
+    set $rpc_client_rps  {{ limits.per_client_rps }};
+    set $rpc_global_rps  {{ limits.global_rps }};
+    set $rpc_heavy_rps   {{ limits.heavy_rps }};
+    set $rpc_ban         {{ limits.ban_s }};
+{% endif %}
+
+    location / {
+        # nginx refuses burst=0, a zero burst is written as no burst
+        limit_req zone={{ id }}_burst {% if limits.burst %}burst={{ limits.burst }} {% endif %}nodelay;
+        limit_req zone={{ id }}_sustained {% if limits.sustained_burst %}burst={{ limits.sustained_burst }} {% endif %}nodelay;
+        limit_req zone={{ id }}_global {% if limits.global_burst %}burst={{ limits.global_burst }} {% endif %}nodelay;
+        limit_conn {{ id }}_conn {{ limits.conn_per_client }};
+        error_page 429 = @rpc_429;
+        # skaled sees every proxied call coming from loopback, so njs checks each call first
+        js_content rpc.handle;
+    }
+
+    location @rpc_upstream {
+        proxy_pass http://{{ id }}_http;
+        proxy_read_timeout 120s;
+    }
+
+    # snapshot chunks are up to 100 MiB, and skaled allows 30 minutes of idle time
+    location @rpc_peer {
+        proxy_pass http://{{ id }}_http;
+        proxy_buffering off;
+        proxy_read_timeout 1800s;
+        proxy_send_timeout 1800s;
+        send_timeout 1800s;
+    }
+
+    # skale-admin reads this after a reload: nginx answers it only once it runs this file
+    location = {{ probe_path }} {
+        access_log off;
+        if ($remote_addr != 127.0.0.1) {
+            return 403;
+        }
+        default_type text/plain;
+        return 200 '{{ chain }} {{ fingerprint }}';
+    }
+
+    location @rpc_429 {
+        default_type application/json;
+        add_header Access-Control-Allow-Origin * always;
+        add_header Retry-After 1 always;
+        return 429 '{"jsonrpc":"2.0","id":null,"error":{"code":-32005,"message":"rate limited"}}';
+    }
+}
