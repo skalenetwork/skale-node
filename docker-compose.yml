@@ -86,7 +86,7 @@ services:
   bounty:
     <<: *sk_base
     container_name: sk_bounty
-    image: skalenetwork/bounty-agent:3.3.0-develop.0
+    image: skalenetwork/bounty-agent:3.3.0-develop.1
     network_mode: host
     volumes:
       - ${SKALE_DIR}:/skale_vol
@@ -122,7 +122,7 @@ services:
     <<: *sk_base
     container_name: sk_filebeat
     user: root
-    image: elastic/filebeat:9.5.5
+    image: elastic/filebeat:9.5.6
     network_mode: host
     environment:
       FILEBEAT_HOST: ${FILEBEAT_HOST}
