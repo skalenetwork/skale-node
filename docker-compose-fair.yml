@@ -133,8 +133,14 @@ services:
     network_mode: host
     depends_on:
       - watchdog
+    ulimits:
+      nofile:
+        soft: 131072
+        hard: 131072
     volumes:
-      - ${SKALE_DIR}/node_data/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ${SKALE_DIR}/node_data/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ${SKALE_DIR}/node_data/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ${SKALE_DIR}/node_data/nginx/njs:/etc/nginx/njs:ro
       - ${SKALE_DIR}/node_data/ssl:/ssl:ro
       - type: bind
         bind:
@@ -142,6 +148,12 @@ services:
         source: ${SCHAINS_MNT_DIR}
         target: ${SCHAINS_MNT_DIR}
         read_only: true
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "-o", "/dev/null", "http://127.0.0.1:3009/nginx-status"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
 
   filebeat:
     <<: *sk_base

@@ -29,6 +29,16 @@
 		"origins": [
 			{
 				"origin": [
+					"127.0.0.1"
+				],
+				"ban_lengthy": 0,
+				"ban_peak": 0,
+				"max_calls_per_minute": 18446744073709551615,
+				"max_calls_per_second": 18446744073709551615,
+				"max_ws_conn": 18446744073709551615
+			},
+			{
+				"origin": [
 					"*"
 				],
 				"ban_lengthy": 30,
