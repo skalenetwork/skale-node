@@ -74,8 +74,8 @@ function limited(r, calls, heavy) {
 }
 
 function handle(r) {
-    const peer = r.variables.rpc_class === 'peer';
-    const upstream = peer ? '@rpc_peer' : '@rpc_upstream';
+    const rpcClass = r.variables.rpc_class;
+    const upstream = rpcClass === 'peer' ? '@rpc_peer' : '@rpc_upstream';
     if (r.method === 'OPTIONS') {
         // CORS preflight, skaled answers it without reading a body
         return r.internalRedirect(upstream);
@@ -90,7 +90,7 @@ function handle(r) {
     }
     const batch = Array.isArray(body);
     const calls = batch ? body : [body];
-    const limits = r.variables.rpc_limits === 'on' && !peer;
+    const limits = r.variables.rpc_limits === 'on' && rpcClass !== 'peer';
     if (limits && (calls.length === 0 || calls.length > limit(r, 'rpc_max_batch'))) {
         return reply(r, 400, rpcError(null, -32600, 'invalid batch size'));
     }
@@ -104,7 +104,7 @@ function handle(r) {
     }
 
     const heavy = methods.filter((method) => HEAVY_METHODS.includes(method)).length;
-    if (limits && r.variables.rpc_class === 'public' && limited(r, calls.length, heavy)) {
+    if (limits && rpcClass === 'public' && limited(r, calls.length, heavy)) {
         return reply(r, 429, rpcError(null, -32005, 'rate limited'));
     }
     r.internalRedirect(upstream);

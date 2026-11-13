@@ -24,10 +24,10 @@ map $rpc_class_{{ id }} $rpc_all_{{ id }} {
     default "";
 }
 
-limit_req_zone  $rpc_client_{{ id }} zone={{ id }}_burst:{{ client_zone_size }} rate={{ limits.per_client_rps }}r/s;
-limit_req_zone  $rpc_client_{{ id }} zone={{ id }}_sustained:{{ client_zone_size }} rate={{ limits.per_client_sustained_rps }}r/s;
+limit_req_zone  $rpc_client_{{ id }} zone={{ id }}_burst:8m rate={{ limits.per_client_rps }}r/s;
+limit_req_zone  $rpc_client_{{ id }} zone={{ id }}_sustained:8m rate={{ limits.per_client_sustained_rps }}r/s;
 limit_req_zone  $rpc_all_{{ id }} zone={{ id }}_global:1m rate={{ limits.global_rps }}r/s;
-limit_conn_zone $rpc_client_{{ id }} zone={{ id }}_conn:{{ client_zone_size }};
+limit_conn_zone $rpc_client_{{ id }} zone={{ id }}_conn:8m;
 
 server {
     listen {{ http_port }};
@@ -102,5 +102,35 @@ server {
         add_header Access-Control-Allow-Origin * always;
         add_header Retry-After 1 always;
         return 429 '{"jsonrpc":"2.0","id":null,"error":{"code":-32005,"message":"rate limited"}}';
+    }
+}
+
+# nginx limits handshakes and sessions, skaled limits each client's calls by X-Real-IP
+server {
+    listen {{ ws_port }};
+{% if ssl %}
+    listen {{ wss_port }} ssl;
+    ssl_certificate     /ssl/ssl_cert;
+    ssl_certificate_key /ssl/ssl_key;
+{% endif %}
+
+    access_log /dev/stdout rpc buffer=64k flush=5s;
+    limit_req_status  429;
+    limit_conn_status 429;
+    limit_req_log_level  info;
+    limit_conn_log_level info;
+
+    location / {
+        limit_req zone={{ id }}_burst {% if limits.burst %}burst={{ limits.burst }} {% endif %}nodelay;
+        limit_req zone={{ id }}_sustained {% if limits.sustained_burst %}burst={{ limits.sustained_burst }} {% endif %}nodelay;
+        limit_req zone={{ id }}_global {% if limits.global_burst %}burst={{ limits.global_burst }} {% endif %}nodelay;
+        limit_conn {{ id }}_conn {{ limits.conn_per_client }};
+        proxy_pass http://127.0.0.1:{{ ws_internal }};
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection upgrade;
+        proxy_set_header X-Real-IP $remote_addr;
+        # skaled sends no pings, so a session closes after an hour without messages from it
+        proxy_read_timeout 1h;
     }
 }

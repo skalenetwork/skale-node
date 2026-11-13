@@ -34,7 +34,7 @@ envs:
     skaled_cmd: ["-v 2", "--aa no"]
 
     nginx:
-      rpc_proxy: false
+      rpc_proxy_timestamp: 0
       njs: true
       limits:
         per_client_rps: 1000
@@ -101,7 +101,7 @@ envs:
     skaled_cmd: ["-v 2", "--aa no"]
 
     nginx:
-      rpc_proxy: false
+      rpc_proxy_timestamp: 0
       njs: true
       limits:
         per_client_rps: 1000
@@ -167,7 +167,7 @@ envs:
     skaled_cmd: ["-v 2", "--aa no"]
 
     nginx:
-      rpc_proxy: false
+      rpc_proxy_timestamp: 0
       njs: true
       limits:
         per_client_rps: 1000
@@ -234,7 +234,7 @@ envs:
       ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     nginx:
-      rpc_proxy: false
+      rpc_proxy_timestamp: 0
       njs: true
       limits:
         per_client_rps: 1000
