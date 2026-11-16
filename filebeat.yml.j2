@@ -19,15 +19,21 @@ processors:
   - add_host_metadata: {}
   - add_docker_metadata:
       host: "unix:///var/run/skale/docker.sock"
+  # Only SKALE's own containers leave the node: the log servers keep nothing else, and the logs of other containers
+  # on the host (the validator's own tools) are not ours to collect.
+  - drop_event:
+      when:
+        and:
+          - regexp:
+              log.file.path: '^/var/lib/docker/containers/'
+          - not:
+              regexp:
+                container.name: '^sk_'
   - add_fields:
       fields:
         id: {{ id }}
         ip: '{{ ip }}'
         contract_address: '{{ contract_address }}'
-  - decode_json_fields:
-      fields: ["message"]
-      target: ""
-      overwrite_keys: true
 
 output.logstash:
   hosts: ["${FILEBEAT_HOST}"]
