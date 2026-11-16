@@ -13,14 +13,29 @@ filebeat.inputs:
     paths:
       - /var/log/docker-lvmpy/lvmpy.log
 
+  - type: filestream
+    id: node-cli-log
+    paths:
+      - /var/log/node-cli/node-cli.log
+    parsers:
+      - multiline:
+          type: pattern
+          pattern: '^\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3} '
+          negate: true
+          match: after
+
 processors:
   - add_host_metadata: {}
   - add_docker_metadata:
       host: "unix:///var/run/skale/docker.sock"
-  - decode_json_fields:
-      fields: ["message"]
-      target: ""
-      overwrite_keys: true
+  - drop_event:
+      when:
+        and:
+          - regexp:
+              log.file.path: '^/var/lib/docker/containers/'
+          - not:
+              regexp:
+                container.name: '^sk_'
 
 output.logstash:
   hosts: ["${FILEBEAT_HOST}"]
