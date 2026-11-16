@@ -13,6 +13,19 @@ filebeat.inputs:
     paths:
       - /var/log/docker-lvmpy/lvmpy.log
 
+  # node-cli on the host: its main log only. debug-node-cli.log is left out: it holds every command line and every
+  # shell command's output. A record starts with its timestamp, so a traceback stays in its record.
+  - type: filestream
+    id: node-cli-log
+    paths:
+      - /var/log/node-cli/node-cli.log
+    parsers:
+      - multiline:
+          type: pattern
+          pattern: '^\[\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3} '
+          negate: true
+          match: after
+
 processors:
   - add_host_metadata: {}
   - add_docker_metadata:
