@@ -13,8 +13,6 @@ filebeat.inputs:
     paths:
       - /var/log/docker-lvmpy/lvmpy.log
 
-  # node-cli on the host: its main log only. debug-node-cli.log is left out: it holds every command line and every
-  # shell command's output. A record starts with its timestamp, so a traceback stays in its record.
   - type: filestream
     id: node-cli-log
     paths:
@@ -30,8 +28,6 @@ processors:
   - add_host_metadata: {}
   - add_docker_metadata:
       host: "unix:///var/run/skale/docker.sock"
-  # Only SKALE's own containers leave the node: the log servers keep nothing else, and the logs of other containers
-  # on the host (the validator's own tools) are not ours to collect.
   - drop_event:
       when:
         and:
