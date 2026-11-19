@@ -8,6 +8,11 @@
           "name": "core",
           "soft": -1,
           "hard": -1
+        },
+        {
+          "name": "nofile",
+          "soft": 1048576,
+          "hard": 1048576
         }
       ],
       "logs": {
