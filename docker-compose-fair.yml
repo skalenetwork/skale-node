@@ -155,4 +155,5 @@ services:
       - ${SKALE_DIR}/node_data/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
       - /var/lib/docker:/var/lib/docker:ro
       - /var/log/docker-lvmpy:/var/log/docker-lvmpy:ro
+      - ${SKALE_DIR}/.skale-cli-log:/var/log/node-cli:ro
       - /var/run/skale:/var/run/skale
