@@ -91,13 +91,13 @@ envs:
       externalGasPatchTimestamp: 1728817200
       invalidTransactionFormatPatchTimestamp: 1746442800
       clearPartialReceiptsPatchTimestamp: 1746615600
-      groupIndexInitPatchTimestamp: 1777415467
-      currentBlockRandomPatchTimestamp: 1777415467
-      singleStateCommitPerBlockPatchTimestamp: 1777415467
-      contractCreationReadOnlyPatchTimestamp: 1777415467
+      groupIndexInitPatchTimestamp: 1785150041
+      currentBlockRandomPatchTimestamp: 1785150041
+      singleStateCommitPerBlockPatchTimestamp: 1785150041
+      contractCreationReadOnlyPatchTimestamp: 1785150041
       berlinForkPatchTimestamp: 1787225516
-      londonForkPatchTimestamp: 1792059996
-      parisForkPatchTimestamp: 1792059996
+      londonForkPatchTimestamp: 1793019316
+      parisForkPatchTimestamp: 1793019316
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -199,13 +199,13 @@ envs:
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1745319600
       clearPartialReceiptsPatchTimestamp: 1745323200
-      groupIndexInitPatchTimestamp: 1777415467
-      currentBlockRandomPatchTimestamp: 1777415467
-      singleStateCommitPerBlockPatchTimestamp: 1777415467
-      contractCreationReadOnlyPatchTimestamp: 1777415467
+      groupIndexInitPatchTimestamp: 1780572541
+      currentBlockRandomPatchTimestamp: 1780572541
+      singleStateCommitPerBlockPatchTimestamp: 1780572541
+      contractCreationReadOnlyPatchTimestamp: 1780572541
       berlinForkPatchTimestamp: 1787225516
-      londonForkPatchTimestamp: 1790939516
-      parisForkPatchTimestamp: 1790939516
+      londonForkPatchTimestamp: 1791460516
+      parisForkPatchTimestamp: 1791460516
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -315,8 +315,8 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1776781225
       contractCreationReadOnlyPatchTimestamp: 1776781225
       berlinForkPatchTimestamp: 1787225516
-      londonForkPatchTimestamp: 1790939516
-      parisForkPatchTimestamp: 1790939516
+      londonForkPatchTimestamp: 1791460516
+      parisForkPatchTimestamp: 1791460516
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -426,8 +426,8 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1777415467
       contractCreationReadOnlyPatchTimestamp: 1777415467
       berlinForkPatchTimestamp: 1787225516
-      londonForkPatchTimestamp: 1790939516
-      parisForkPatchTimestamp: 1790939516
+      londonForkPatchTimestamp: 1791460516
+      parisForkPatchTimestamp: 1791460516
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
