@@ -96,6 +96,10 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1785150041
       contractCreationReadOnlyPatchTimestamp: 1785150041
       berlinForkPatchTimestamp: 1787225516
+      londonForkPatchTimestamp: 1793019316
+      parisForkPatchTimestamp: 1793019316
+      decryptedTxFieldsLegacyStartPatchTimestamp: 1795527878
+      decryptedTxFieldsPatchTimestamp: 1795629912
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -205,6 +209,10 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1780572541
       contractCreationReadOnlyPatchTimestamp: 1780572541
       berlinForkPatchTimestamp: 1787225516
+      londonForkPatchTimestamp: 1793019316
+      parisForkPatchTimestamp: 1793019316
+      decryptedTxFieldsLegacyStartPatchTimestamp: 1795527878
+      decryptedTxFieldsPatchTimestamp: 1795629912
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -317,6 +325,10 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1776781225
       contractCreationReadOnlyPatchTimestamp: 1776781225
       berlinForkPatchTimestamp: 1787225516
+      londonForkPatchTimestamp: 1793019316
+      parisForkPatchTimestamp: 1793019316
+      decryptedTxFieldsLegacyStartPatchTimestamp: 1795527878
+      decryptedTxFieldsPatchTimestamp: 1795629912
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -429,6 +441,8 @@ envs:
       berlinForkPatchTimestamp: 1783531290
       londonForkPatchTimestamp: 1790783700
       parisForkPatchTimestamp: 1790783700
+      decryptedTxFieldsLegacyStartPatchTimestamp: 1795527878
+      decryptedTxFieldsPatchTimestamp: 1795629912
       snapshotIntervalSec: 900
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -461,8 +475,8 @@ envs:
         futureTransactionQueueLimitBytes: 140509184
         maxOpenLeveldbFiles: 25
       medium:
-        minCacheSize: 100000000
-        maxCacheSize: 160000000
+        minCacheSize: 8000000
+        maxCacheSize: 16000000
         collectionQueueSize: 20
         collectionDuration: 60
         transactionQueueSize: 1000
