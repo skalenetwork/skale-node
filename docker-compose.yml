@@ -132,3 +132,7 @@ services:
       - /var/log/docker-lvmpy:/var/log/docker-lvmpy:ro
       - ${SKALE_DIR}/.skale-cli-log:/var/log/node-cli:ro
       - /var/run/skale:/var/run/skale
+      - filebeat-data:/usr/share/filebeat/data
+
+volumes:
+  filebeat-data:
