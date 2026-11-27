@@ -46,7 +46,6 @@ envs:
       disk: 1900000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -92,21 +91,22 @@ envs:
       externalGasPatchTimestamp: 1728817200
       invalidTransactionFormatPatchTimestamp: 1746442800
       clearPartialReceiptsPatchTimestamp: 1746615600
+      groupIndexInitPatchTimestamp: 1777415467
+      currentBlockRandomPatchTimestamp: 1777415467
+      singleStateCommitPerBlockPatchTimestamp: 1777415467
+      contractCreationReadOnlyPatchTimestamp: 1777415467
+      berlinForkPatchTimestamp: 1783533970
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      groupIndexInitPatchTimestamp: 0
-      currentBlockRandomPatchTimestamp: 0
-      singleStateCommitPerBlockPatchTimestamp: 0
 
     ima:
       time_frame:
         before: 1800
         after: 900
 
-    schain_cmd:
-      ["-v 2", "--aa no"]
+    schain_cmd: ["-v 2", "--aa no"]
 
     node:
       common:
@@ -115,6 +115,8 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+      admin:
+        automatic_repair: false
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
@@ -170,7 +172,6 @@ envs:
       disk: 200000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -199,21 +200,22 @@ envs:
       externalGasPatchTimestamp: 1727712000
       invalidTransactionFormatPatchTimestamp: 1745319600
       clearPartialReceiptsPatchTimestamp: 1745323200
+      groupIndexInitPatchTimestamp: 1777415467
+      currentBlockRandomPatchTimestamp: 1777415467
+      singleStateCommitPerBlockPatchTimestamp: 1777415467
+      contractCreationReadOnlyPatchTimestamp: 1777415467
+      berlinForkPatchTimestamp: 1783533970
       snapshotIntervalSec: 86400
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-      groupIndexInitPatchTimestamp: 0
-      currentBlockRandomPatchTimestamp: 0
-      singleStateCommitPerBlockPatchTimestamp: 0
 
     ima:
       time_frame:
         before: 1800
         after: 900
 
-    schain_cmd:
-      ["-v 2", "--aa no"]
+    schain_cmd: ["-v 2", "--aa no"]
 
     node:
       common:
@@ -222,6 +224,8 @@ envs:
         logLevelConfig: "info"
         pg-threads: 10
         pg-threads-limit: 10
+      admin:
+        automatic_repair: false
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
@@ -277,7 +281,6 @@ envs:
       disk: 200000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -312,6 +315,7 @@ envs:
       currentBlockRandomPatchTimestamp: 1776781225
       singleStateCommitPerBlockPatchTimestamp: 1776781225
       contractCreationReadOnlyPatchTimestamp: 1776781225
+      berlinForkPatchTimestamp: 1795793911
       snapshotIntervalSec: 3600
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
@@ -323,7 +327,7 @@ envs:
         after: 900
 
     schain_cmd:
-      ["-v 2", "--aa no"]
+      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
       common:
@@ -389,7 +393,6 @@ envs:
       disk: 80000000000
 
     package:
-      iptables-persistent: 1.0.4
       lvm2: 2.02.0
       btrfs-progs: 4.15.1
       lsof: "4.89"
@@ -411,15 +414,19 @@ envs:
       pushZeroPatchTimestamp: 1712142000
       precompiledConfigPatchTimestamp: 1712314800
       correctForkInPowPatchTimestamp: 1711969200
-      EIP1559TransactionsPatchTimestamp: 0
-      fastConsensusPatchTimestamp: 0
+      EIP1559TransactionsPatchTimestamp: 1722942000
+      fastConsensusPatchTimestamp: 1723114800
       flexibleDeploymentPatchTimestamp: 0
-      verifyBlsSyncPatchTimestamp: 0
-      groupIndexInitPatchTimestamp: 0
-      currentBlockRandomPatchTimestamp: 0
-      singleStateCommitPerBlockPatchTimestamp: 0
-      contractCreationReadOnlyPatchTimestamp: 0
-      snapshotIntervalSec: 3600
+      verifyBlsSyncPatchTimestamp: 1722855600
+      externalGasPatchTimestamp: 1727353446
+      invalidTransactionFormatPatchTimestamp: 1741956440
+      clearPartialReceiptsPatchTimestamp: 1742042840
+      groupIndexInitPatchTimestamp: 1774620915
+      currentBlockRandomPatchTimestamp: 1774620915
+      singleStateCommitPerBlockPatchTimestamp: 1774620915
+      contractCreationReadOnlyPatchTimestamp: 1774620915
+      berlinForkPatchTimestamp: 1783533970
+      snapshotIntervalSec: 900
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
@@ -430,15 +437,17 @@ envs:
         after: 900
 
     schain_cmd:
-      ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+      ["-v 4", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
 
     node:
       common:
         bindIP: "0.0.0.0"
-        logLevel: "info"
-        logLevelConfig: "info"
+        logLevel: "trace"
+        logLevelConfig: "trace"
         pg-threads: 10
         pg-threads-limit: 10
+      admin:
+        automatic_repair: false
       small:
         minCacheSize: 1000000
         maxCacheSize: 2000000
