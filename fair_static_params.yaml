@@ -134,7 +134,7 @@ envs:
       maxConsensusStorageBytes: 30000000000
       disableSelfDestructPatchTimestamp: 1762357543
 
-    skaled_cmd: ["-v 3", "--web3-trace", "--enable-debug-behavior-apis", "--aa no"]
+    skaled_cmd: ["-v 2", "--aa no"]
 
     node:
       bindIP: "0.0.0.0"
@@ -142,6 +142,8 @@ envs:
       logLevelConfig: "info"
       pg-threads: 10
       pg-threads-limit: 10
+      admin:
+        automatic_repair: false
       admin:
         automatic_repair: false
       minCacheSize: 8000000

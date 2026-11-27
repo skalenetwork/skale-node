@@ -431,6 +431,8 @@ envs:
       singleStateCommitPerBlockPatchTimestamp: 1774620915
       contractCreationReadOnlyPatchTimestamp: 1774620915
       berlinForkPatchTimestamp: 1783533970
+      londonForkPatchTimestamp: 1793984748
+      parisForkPatchTimestamp: 1793984748
       snapshotIntervalSec: 900
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
