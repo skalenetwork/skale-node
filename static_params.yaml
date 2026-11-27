@@ -100,7 +100,6 @@ envs:
       emptyBlockIntervalMs: 10000
       snapshotDownloadTimeout: 18000
       snapshotDownloadInactiveTimeout: 120
-
     ima:
       time_frame:
         before: 1800

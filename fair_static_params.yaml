@@ -167,6 +167,7 @@ envs:
       disk: 80000000000
 
     package:
+      iptables-persistent: 1.0.4
       lvm2: disabled
       btrfs-progs: 4.15.1
       lsof: "4.89"
